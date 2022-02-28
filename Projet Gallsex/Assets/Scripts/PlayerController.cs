@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public PlayerData defaultData;
     public SpriteRenderer ren;
+    public BoxCollider2D playerCol;
+    public BoxCollider2D groundCheckCol;
 
     [Header("Input Related")]
     public InputActionAsset inputAsset;
@@ -22,10 +24,13 @@ public class PlayerController : MonoBehaviour
     #region Private var
     private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
     private Vector2 _playerPos;
+    private float _jumpTime;
+    private float _jumpForce;
     #endregion
 
     private void Start()
     {
+        _jumpTime = 0f;
         _playerPos = rb.position;
         anim.SetBool(IsGrounded, true);
 
@@ -38,30 +43,39 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        #region Inputs & Animations
+
         bool jump = _jumpAction.ReadValue<float>() != 0;
         if (jump) Jump();
 
-        float _hMove = _horizontalMove.ReadValue<float>();
-        if (_hMove > 0)
+        float hMove = _horizontalMove.ReadValue<float>();
+        if (hMove > 0)
         {
             LeftToRight();
             anim.SetBool("isWalking", true);
 
         }
-        if (_hMove < 0)
+        if (hMove < 0)
         {
             RightToLeft();
             anim.SetBool("isWalking", true);
         }
 
-        if (_hMove == 0)
+        if (hMove == 0)
         {
             anim.SetBool("isWalking", false);
         }
 
-        if (gc.isGrounded == true)
+        if (gc.isGrounded)
         {
             anim.SetBool("isGrounded", true);
+        }
+
+        #endregion
+
+        if (gc.isGrounded == false)
+        {
+            _jumpTime = 0f;
         }
     }
 
@@ -70,12 +84,13 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-
         if (gc.isGrounded == true)
         {
+            _jumpTime += Time.deltaTime;
+            _jumpForce = defaultData.jumpCurve.Evaluate(_jumpTime);
             Debug.Log("oui");
             anim.SetBool(IsGrounded, false);
-            rb.AddForce(Vector2.up * defaultData.jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -87,7 +102,9 @@ public class PlayerController : MonoBehaviour
     private void LeftToRight()
     {
         ren.flipX = false;
-
+        playerCol.offset = new Vector2((float) -0.09, (float) -0.28);
+        groundCheckCol.offset = new Vector2((float) -0.09, (float) -0.86);
+        
         if (gc.isGrounded == true)
         {
             rb.AddForce(new Vector2(_playerPos.x + defaultData.speed, _playerPos.y), ForceMode2D.Force);
@@ -104,6 +121,9 @@ public class PlayerController : MonoBehaviour
     private void RightToLeft()
     {
         ren.flipX = true;
+        playerCol.offset = new Vector2((float) 0.09, (float) -0.28);
+        groundCheckCol.offset = new Vector2((float) 0.09, (float) -0.86);
+
 
         if (gc.isGrounded == true)
         {

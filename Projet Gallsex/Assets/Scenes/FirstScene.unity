@@ -700,7 +700,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08, y: -0.3}
+  m_Offset: {x: -0.09, y: -0.28}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -751,6 +751,8 @@ MonoBehaviour:
   anim: {fileID: 1246776805}
   defaultData: {fileID: 11400000, guid: ac21d158e6b858444b04885b4e207751, type: 2}
   ren: {fileID: 1246776803}
+  playerCol: {fileID: 1246776806}
+  groundCheckCol: {fileID: 1376098196}
   inputAsset: {fileID: -944628639613478452, guid: d8d61c0d91d55d441944d4ae7bfb3aee, type: 3}
   playerInput: {fileID: 1246776804}
 --- !u!1 &1376098194
@@ -798,7 +800,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: -0.78}
+  m_Offset: {x: -0.09, y: -0.86}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -809,7 +811,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.06}
+  m_Size: {x: 0.5, y: 0.16}
   m_EdgeRadius: 0
 --- !u!114 &1376098197
 MonoBehaviour:

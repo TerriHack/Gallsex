@@ -17,6 +17,5 @@ public class PlayerData : ScriptableObject
     public float airState;
 
     [Header("Countdown")]
-    public float jumpBufferCountdown;
-    public float coyoteTimeCountdown;
+    public AnimationCurve jumpCurve;
 }
