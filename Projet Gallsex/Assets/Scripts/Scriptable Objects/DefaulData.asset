@@ -12,40 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
   m_Name: DefaulData
   m_EditorClassIdentifier: 
-  dataName: 
-  jumpForce: 1.3
-  speed: 5
-  airState: 3
-  jumpCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 3.934261
-      outSlope: 3.934261
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.50297874
-      value: 1.9788496
-      inSlope: -0.37736022
-      outSlope: -0.37736022
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.92499995
-      value: 0
-      inSlope: -4.6889815
-      outSlope: -4.6889815
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  jumpForce: 0
+  speed: 8
+  airState: 1.5

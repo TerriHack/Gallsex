@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer ren;
     public BoxCollider2D playerCol;
     public BoxCollider2D groundCheckCol;
+    public PhysicsMaterial2D ground;
 
     [Header("Input Related")]
     public InputActionAsset inputAsset;
@@ -22,15 +24,13 @@ public class PlayerController : MonoBehaviour
     private InputAction _horizontalMove;
 
     #region Private var
-    private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
     private Vector2 _playerPos;
-    private float _jumpTime;
-    private float _jumpForce;
+    private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
     #endregion
 
     private void Start()
     {
-        _jumpTime = 0f;
         _playerPos = rb.position;
         anim.SetBool(IsGrounded, true);
 
@@ -46,52 +46,50 @@ public class PlayerController : MonoBehaviour
         #region Inputs & Animations
 
         bool jump = _jumpAction.ReadValue<float>() != 0;
-        if (jump) Jump();
+        if (jump)
+        {
+            Jump();
+        }
 
         float hMove = _horizontalMove.ReadValue<float>();
         if (hMove > 0)
         {
             LeftToRight();
-            anim.SetBool("isWalking", true);
+            ground.friction = 5f; 
+             
+            anim.SetBool(IsWalking, true);
 
         }
         if (hMove < 0)
         {
             RightToLeft();
-            anim.SetBool("isWalking", true);
+            ground.friction = 5f;
+            anim.SetBool(IsWalking, true);
         }
 
         if (hMove == 0)
         {
-            anim.SetBool("isWalking", false);
+            ground.friction = 8f;
+            anim.SetBool(IsWalking, false);
         }
 
+        //When I'm on the floor the animation comes back to idle (the parameter isGrounded is set to true) 
         if (gc.isGrounded)
         {
-            anim.SetBool("isGrounded", true);
+            anim.SetBool(IsGrounded, true);
         }
-
         #endregion
-
-        if (gc.isGrounded == false)
-        {
-            _jumpTime = 0f;
-        }
     }
 
     /// <summary>
-    /// Applie a force to make the player jump et active l'animation state.
+    /// Applie a force to make the player jump et set the animation state.
     /// </summary>
     private void Jump()
     {
-        if (gc.isGrounded == true)
-        {
-            _jumpTime += Time.deltaTime;
-            _jumpForce = defaultData.jumpCurve.Evaluate(_jumpTime);
-            Debug.Log("oui");
-            anim.SetBool(IsGrounded, false);
-            rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-        }
+        Debug.Log("oui");
+        anim.SetBool(IsGrounded, false);
+        rb.AddForce(Vector2.up * defaultData.jumpForce, ForceMode2D.Impulse);
+
     }
 
     #region Horizontal Movement
@@ -102,17 +100,17 @@ public class PlayerController : MonoBehaviour
     private void LeftToRight()
     {
         ren.flipX = false;
+        
         playerCol.offset = new Vector2((float) -0.09, (float) -0.28);
         groundCheckCol.offset = new Vector2((float) -0.09, (float) -0.86);
-        
-        if (gc.isGrounded == true)
-        {
-            rb.AddForce(new Vector2(_playerPos.x + defaultData.speed, _playerPos.y), ForceMode2D.Force);
-        }
-        else
-        {
-            rb.AddForce(new Vector2(_playerPos.x + defaultData.airState, _playerPos.y), ForceMode2D.Force);
-        }
+
+        #region Movement
+        rb.AddForce(
+            gc.isGrounded == true
+                ? new Vector2(_playerPos.x + defaultData.speed, _playerPos.y)
+                : new Vector2(_playerPos.x + defaultData.airState, _playerPos.y), ForceMode2D.Force);
+
+        #endregion
     }
 
     /// <summary>
@@ -120,20 +118,22 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void RightToLeft()
     {
+        #region Sprite Flip
         ren.flipX = true;
+        #endregion
+
+        #region Collider Offset
         playerCol.offset = new Vector2((float) 0.09, (float) -0.28);
         groundCheckCol.offset = new Vector2((float) 0.09, (float) -0.86);
+        #endregion
 
+        #region Movement
+        rb.AddForce(
+            gc.isGrounded == true
+                ? new Vector2(_playerPos.x - defaultData.speed, _playerPos.y)
+                : new Vector2(_playerPos.x - defaultData.airState, _playerPos.y), ForceMode2D.Force);
 
-        if (gc.isGrounded == true)
-        {
-            rb.AddForce(new Vector2(_playerPos.x - defaultData.speed, _playerPos.y), ForceMode2D.Force);
-
-        }
-        else
-        {
-            rb.AddForce(new Vector2(_playerPos.x - defaultData.airState, _playerPos.y), ForceMode2D.Force);
-        }
+        #endregion
     }
     #endregion
 }
