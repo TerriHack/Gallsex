@@ -55,21 +55,17 @@ public class PlayerController : MonoBehaviour
         if (hMove > 0)
         {
             LeftToRight();
-            ground.friction = 5f; 
-             
             anim.SetBool(IsWalking, true);
 
         }
         if (hMove < 0)
         {
             RightToLeft();
-            ground.friction = 5f;
             anim.SetBool(IsWalking, true);
         }
 
         if (hMove == 0)
         {
-            ground.friction = 8f;
             anim.SetBool(IsWalking, false);
         }
 
@@ -86,10 +82,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        Debug.Log("oui");
-        anim.SetBool(IsGrounded, false);
-        rb.AddForce(Vector2.up * defaultData.jumpForce, ForceMode2D.Impulse);
-
+        if (gc.isGrounded)
+        {
+            Debug.Log("oui");
+            anim.SetBool(IsGrounded, false);
+            rb.AddForce(Vector2.up * defaultData.jumpForce, ForceMode2D.Impulse);
+        }
     }
 
     #region Horizontal Movement
