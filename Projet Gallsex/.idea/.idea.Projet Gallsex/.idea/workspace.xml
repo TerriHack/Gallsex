@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="101e6b3a-8dee-454f-8a70-c41f3e3c97f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ground.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ground.physicsMaterial2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FirstScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FirstScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
       <updated>1646079029078</updated>
       <workItem from="1646079050443" duration="5534000" />
       <workItem from="1646135081552" duration="12254000" />
-      <workItem from="1646313783270" duration="944000" />
+      <workItem from="1646313783270" duration="2779000" />
     </task>
     <servers />
   </component>

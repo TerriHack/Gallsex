@@ -15,10 +15,8 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer ren;
     public BoxCollider2D playerCol;
     public BoxCollider2D groundCheckCol;
-    public PhysicsMaterial2D ground;
 
     [Header("Input Related")]
-    public InputActionAsset inputAsset;
     public PlayerInput playerInput;
     private InputAction _jumpAction;
     private InputAction _horizontalMove;
@@ -27,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _playerPos;
     private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private float hMove;
     #endregion
 
     private void Start()
@@ -51,18 +50,10 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        float hMove = _horizontalMove.ReadValue<float>();
-        if (hMove > 0)
-        {
-            LeftToRight();
-            anim.SetBool(IsWalking, true);
-
-        }
-        if (hMove < 0)
-        {
-            RightToLeft();
-            anim.SetBool(IsWalking, true);
-        }
+        hMove = _horizontalMove.ReadValue<float>();
+        Debug.Log(hMove);
+        
+        HorizontalMovement();
 
         if (hMove == 0)
         {
@@ -90,48 +81,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    #region Horizontal Movement
-
-    /// <summary>
-    /// Applies a force to move the player left to right.
-    /// </summary>
-    private void LeftToRight()
+    private void HorizontalMovement()
     {
-        ren.flipX = false;
-        
-        playerCol.offset = new Vector2((float) -0.09, (float) -0.28);
-        groundCheckCol.offset = new Vector2((float) -0.09, (float) -0.86);
+        if (hMove == -1)
+        {
+            anim.SetBool(IsWalking, true);
+                
+            #region Sprite Flip
+            ren.flipX = true;
+            #endregion
 
-        #region Movement
-        rb.AddForce(
-            gc.isGrounded == true
-                ? new Vector2(_playerPos.x + defaultData.speed, _playerPos.y)
-                : new Vector2(_playerPos.x + defaultData.airState, _playerPos.y), ForceMode2D.Force);
+            #region Collider Offset
+            playerCol.offset = new Vector2((float) 0.09, (float) -0.28);
+            groundCheckCol.offset = new Vector2((float) 0.09, (float) -0.86);
+            #endregion
+                
+            rb.AddForce(
+                gc.isGrounded == true
+                    ? new Vector2(hMove - defaultData.speed, _playerPos.y)
+                    : new Vector2(hMove - defaultData.airState, _playerPos.y), ForceMode2D.Force);
+        }
+        if (hMove == 1)
+        {
+            anim.SetBool(IsWalking, true);
+                
+            #region Sprite Flip
+            ren.flipX = false;
+            #endregion
 
-        #endregion
+            playerCol.offset = new Vector2((float) -0.09, (float) -0.28);
+            groundCheckCol.offset = new Vector2((float) -0.09, (float) -0.86);
+
+            #region Movement
+            rb.AddForce(
+                gc.isGrounded == true
+                    ? new Vector2(hMove + defaultData.speed, _playerPos.y)
+                    : new Vector2(hMove + defaultData.airState, _playerPos.y), ForceMode2D.Force);
+
+            #endregion
+        }
+
     }
-
-    /// <summary>
-    /// Applies a force to move the player right to left.
-    /// </summary>
-    private void RightToLeft()
-    {
-        #region Sprite Flip
-        ren.flipX = true;
-        #endregion
-
-        #region Collider Offset
-        playerCol.offset = new Vector2((float) 0.09, (float) -0.28);
-        groundCheckCol.offset = new Vector2((float) 0.09, (float) -0.86);
-        #endregion
-
-        #region Movement
-        rb.AddForce(
-            gc.isGrounded == true
-                ? new Vector2(_playerPos.x - defaultData.speed, _playerPos.y)
-                : new Vector2(_playerPos.x - defaultData.airState, _playerPos.y), ForceMode2D.Force);
-
-        #endregion
-    }
-    #endregion
 }
