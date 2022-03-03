@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
     private void HorizontalMovement()
     {
+        #region Right to Left Movement
         if (hMove == -1)
         {
             anim.SetBool(IsWalking, true);
@@ -101,6 +102,9 @@ public class PlayerController : MonoBehaviour
                     ? new Vector2(hMove - defaultData.speed, 0)
                     : new Vector2(hMove - defaultData.airState, 0), ForceMode2D.Force);
         }
+        #endregion
+
+        #region Left to Right Movement
         if (hMove == 1)
         {
             anim.SetBool(IsWalking, true);
@@ -120,6 +124,8 @@ public class PlayerController : MonoBehaviour
 
             #endregion
         }
+        #endregion
+
 
     }
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
   m_Name: DefaulData
   m_EditorClassIdentifier: 
-  jumpForce: 0.5
-  speed: 6
+  jumpForce: 0.8
+  speed: 2
   airState: 1.5
