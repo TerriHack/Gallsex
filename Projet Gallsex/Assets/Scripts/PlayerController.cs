@@ -98,8 +98,8 @@ public class PlayerController : MonoBehaviour
                 
             rb.AddForce(
                 gc.isGrounded == true
-                    ? new Vector2(hMove - defaultData.speed, _playerPos.y)
-                    : new Vector2(hMove - defaultData.airState, _playerPos.y), ForceMode2D.Force);
+                    ? new Vector2(hMove - defaultData.speed, 0)
+                    : new Vector2(hMove - defaultData.airState, 0), ForceMode2D.Force);
         }
         if (hMove == 1)
         {
@@ -115,8 +115,8 @@ public class PlayerController : MonoBehaviour
             #region Movement
             rb.AddForce(
                 gc.isGrounded == true
-                    ? new Vector2(hMove + defaultData.speed, _playerPos.y)
-                    : new Vector2(hMove + defaultData.airState, _playerPos.y), ForceMode2D.Force);
+                    ? new Vector2(hMove + defaultData.speed, 0)
+                    : new Vector2(hMove + defaultData.airState, 0), ForceMode2D.Force);
 
             #endregion
         }
