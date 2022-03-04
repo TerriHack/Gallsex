@@ -7,8 +7,6 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Forces")] 
-    public float jumpForce;
-    [Tooltip("The Speed cannot exceed 100")]
-    public float speed;
-    public float airState;
+    public AnimationCurve axisY;
+    public AnimationCurve axisX;
 }

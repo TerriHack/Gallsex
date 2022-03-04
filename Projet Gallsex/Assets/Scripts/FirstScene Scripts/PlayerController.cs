@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
         if (gc.isGrounded)
         {
             anim.SetBool(IsGrounded, false);
-            rb.AddForce(Vector2.up * defaultData.jumpForce, ForceMode2D.Impulse);
+            // rb.AddForce(Vector2.up * defaultData.jumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -120,10 +120,10 @@ public class PlayerController : MonoBehaviour
             groundCheckCol.offset = new Vector2((float) 0.09, (float) -0.86);
             #endregion
                 
-            rb.AddForce(
-                gc.isGrounded == true
-                    ? new Vector2(hMove - defaultData.speed, 0)
-                    : new Vector2(hMove - defaultData.airState, 0), ForceMode2D.Force);
+            // rb.AddForce(
+            //     gc.isGrounded == true
+            //         ? new Vector2(hMove - defaultData.speed, 0)
+            //         : new Vector2(hMove - defaultData.airState, 0), ForceMode2D.Force);
         }
         #endregion
 
@@ -140,10 +140,10 @@ public class PlayerController : MonoBehaviour
             groundCheckCol.offset = new Vector2((float) -0.09, (float) -0.86);
 
             #region Movement
-            rb.AddForce(
-                gc.isGrounded == true
-                    ? new Vector2(hMove + defaultData.speed, 0)
-                    : new Vector2(hMove + defaultData.airState, 0), ForceMode2D.Force);
+            // rb.AddForce(
+            //     gc.isGrounded == true
+            //         ? new Vector2(hMove + defaultData.speed, 0)
+            //         : new Vector2(hMove + defaultData.airState, 0), ForceMode2D.Force);
 
             #endregion
         }
