@@ -19,17 +19,11 @@ namespace TerriScene_Scripts
 
         public float velocityX;
         public float velocityY;
-        public float fallMultiplier = 2.5f;
-        public float lowJumpMultiplier = 2f;
+        public float fallMultiplier = 1.5f;
+        public float lowJumpMultiplier = 1f;
         
         #endregion
 
-        #region Animation Curves
-
-        public AnimationCurve accelerationX;
-
-        #endregion
-        
         #region Layer Masks
 
         public LayerMask groundMask;
@@ -53,12 +47,6 @@ namespace TerriScene_Scripts
         [SerializeField] private float speed;
         [SerializeField] private float jumpForce;
         
-        #endregion
-        
-        #region Animation Curves
-        
-        [SerializeField] private AnimationCurve acceletationY;
-
         #endregion
 
         #region Boolean
