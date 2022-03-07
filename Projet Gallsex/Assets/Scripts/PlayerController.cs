@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
     public LineRenderer line;
     [SerializeField] private LayerMask groundlayer;
 
+    public float dashDir; // Variables pour le Dash - Martin
+    public bool isDashing;
+    public float DashDestination;
+    public float DashLRDir;
+
     #region Private var
     private Vector2 _playerPos;
     private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
@@ -49,8 +54,21 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        is_on_wall(); // nécéssaire pour le grappin
+    
+        //Dash - Martin
+        if (Input.GetKeyDown(KeyCode.Mouse0) && dashDir != 0)
+        {
+            InitDash();
+        }
+        else if(isDashing)
+        {
+            Dash();
+        }
+        
+        
         //Hookshot - Martin
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             RaycastHookshot(); // lance un raycast
         }
@@ -197,6 +215,79 @@ public class PlayerController : MonoBehaviour
         else
         {
             line.enabled = false;
+        }
+    }
+
+    private void InitDash()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(dashDir, 0), 100, groundlayer);
+        if (hit.point != null)
+        {
+            DashDestination = hit.point.x;
+            isDashing = true;
+        }
+        else
+        {
+            isDashing = false;
+        }
+        if (DashDestination > rb.position.x)
+        {
+            DashLRDir = 1; //going right
+        }
+        else if (DashDestination < rb.position.x)
+        {
+            DashLRDir = -1; // going left
+        }
+        else
+        {
+            DashLRDir = 0;
+            isDashing = false;
+        }
+    } // initialise la direction du dash
+
+    private void Dash()
+    {
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(rb.transform.position.x - DashDestination, 0).normalized * 20 *-1 ;
+        if (DashLRDir > 0)
+        {
+            if (rb.transform.position.x > DashDestination - 1)
+            {
+                isDashing = false;
+                rb.gravityScale = 1;
+            }
+        }
+
+        if (DashLRDir < 0)
+        {
+            if (rb.transform.position.x < DashDestination + 1)
+            {
+                isDashing = false;
+                rb.gravityScale = 1;
+            }
+        }
+    } // le dash
+    
+    private void is_on_wall()
+    {
+        Debug.DrawRay(new Vector3(transform.position.x -0.25f, transform.position.y),Vector2.left,Color.white);
+        Debug.DrawRay(new Vector3(transform.position.x +0.25f, transform.position.y),Vector2.right,Color.white);
+        if (Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x - 0.25f, gameObject.transform.position.y),
+            new Vector2(0.1f, 0.4f), 0f, groundlayer) || Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x - 0.25f, gameObject.transform.position.y),
+            new Vector2(0.1f, 0.4f), 0f, groundlayer))
+        {
+            dashDir = 1;
+            
+        }
+        else if (Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x + 0.25f, gameObject.transform.position.y),
+            new Vector2(0.1f, 0.4f), 0f, groundlayer))
+        {
+            dashDir= -1;
+            
+        }
+        else
+        {
+            dashDir= 0;
         }
     }
 }
