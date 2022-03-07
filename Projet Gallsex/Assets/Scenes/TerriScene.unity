@@ -1384,7 +1384,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0a208e7cc89a13428ad06b8f940595c, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1413,8 +1413,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.015686035
-        value: 0.4259262
+        time: 0.03207779
+        value: 0.45534134
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1422,8 +1422,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.36862758
-        value: 0.25000054
+        time: 0.15961269
+        value: 0.17157036
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1431,8 +1431,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.4353004
-        value: 0.67592674
+        time: 0.36971813
+        value: 0.36220223
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1440,8 +1440,17 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.60784316
-        value: 0.42592594
+        time: 0.46029067
+        value: 0.06863403
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.7090181
+        value: 0.22549224
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1453,32 +1462,32 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.2783019, g: 0.39341214, b: 1, a: 1}
-      key1: {r: 0.22380398, g: 0.74509805, b: 0.07450978, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.24363652, g: 0.3167528, b: 0.7075472, a: 1}
+      key1: {r: 0.2747419, g: 0.3793685, b: 0.9245283, a: 1}
+      key2: {r: 0.4575472, g: 0.54577744, b: 1, a: 1}
+      key3: {r: 0.64328945, g: 0.6971485, b: 0.9811321, a: 1}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 27178
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
+      ctime0: 4626
+      ctime1: 10987
+      ctime2: 16769
+      ctime3: 21588
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime2: 20239
+      atime3: 34310
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 1
-      m_NumColorKeys: 2
+      m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0

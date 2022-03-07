@@ -21,6 +21,7 @@ namespace TerriScene_Scripts
         public float velocityY;
         public float fallMultiplier = 1.5f;
         public float lowJumpMultiplier = 1f;
+        public float maxSpeed = 1f;
         
         #endregion
 
@@ -58,14 +59,18 @@ namespace TerriScene_Scripts
         
         #endregion
 
+        private void Start()
+        {
+            velocityX = rb.velocity.x;
+        }
+
         void Update()
         {
             
             #region Debug
 
-            velocityX = rb.velocity.x;
-            velocityY = rb.velocity.y;
-            
+            velocityX = rb.velocity.magnitude;
+
             #endregion
 
             #region Animation Curves
@@ -108,7 +113,11 @@ namespace TerriScene_Scripts
             }
 
             #endregion
-            
+
+            if (velocityX <= maxSpeed)
+            {
+                velocityX = maxSpeed;
+            }
         }
 
         private void FixedUpdate()
@@ -116,13 +125,17 @@ namespace TerriScene_Scripts
             HorizontalMove();
 
             if (_inputY && isGrounded) Jump();
-            
+
         }
 
         private void HorizontalMove()
         {
-            _time += Time.deltaTime;
-            rb.velocity = new Vector2(_inputX * speed, rb.velocity.y);
+            if (velocityX <= maxSpeed)
+            {
+                _time += Time.deltaTime;
+                rb.velocity += new Vector2(_inputX * speed, 0);
+
+            }
         }
 
         private void Jump()
