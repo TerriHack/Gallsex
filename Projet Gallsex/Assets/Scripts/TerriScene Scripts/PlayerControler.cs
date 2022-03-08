@@ -6,80 +6,24 @@ namespace TerriScene_Scripts
 {
     public class PlayerControler : MonoBehaviour
     {
-
-        #region Public Declarations
-
-        #region Scriptable Object
-
-        public PlayerData data;
-
-        #endregion
-        
-        #region Float
-
-        public float velocityX;
-        public float velocityY;
+        public PlayerData data; //Scriptable Object
         public float fallMultiplier = 1.5f;
         public float lowJumpMultiplier = 1f;
-        public float maxSpeed = 1f;
-        
-        #endregion
-
-        #region Layer Masks
-
-        public LayerMask groundMask;
-
-        #endregion
-        
-        #region Components
-
-        public Rigidbody2D rb;
-
-        #endregion
-
-        #endregion
-        
-        #region Private Declarations
-
-        #region Float
-        
         private float _inputX;
         private float _time;
-        [SerializeField] private float speed;
-        [SerializeField] private float jumpForce;
-        
-        #endregion
-
-        #region Boolean
-
+        public float _maxSpeed = 25f;
+        private float speed = 1000f;
+        private float maxHeight = 10f;
+        private float jumpForce =1000f;
+        public LayerMask groundMask;
+        public Rigidbody2D rb;
         private bool _inputY;
         [SerializeField] private bool isGrounded;
-
-        #endregion
+        [SerializeField] private Transform tr;
         
-        #endregion
-
-        private void Start()
-        {
-            velocityX = rb.velocity.x;
-        }
 
         void Update()
         {
-            
-            #region Debug
-
-            velocityX = rb.velocity.magnitude;
-
-            #endregion
-
-            #region Animation Curves
-
-            speed = data.axisX.Evaluate(_time);
-            jumpForce = data.axisY.Evaluate(_time);
-
-            #endregion
-
             #region Inputs
 
             _inputX = Input.GetAxisRaw("Horizontal");
@@ -87,61 +31,46 @@ namespace TerriScene_Scripts
 
             #endregion
 
-            #region Gravity
-
-            if (rb.velocity.y < 0)
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-                
-            }
-            else if (rb.velocity.y > 0 && !_inputY)
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-            }
-
-            #endregion
-
-            #region GroundCheck
-
-            if(Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f), new Vector2(0.4f, 0.6f), 0f, groundMask))
-            {
-                isGrounded = true;
-            }
-            else
-            {
-                isGrounded = false;
-            }
-
-            #endregion
-
-            if (velocityX <= maxSpeed)
-            {
-                velocityX = maxSpeed;
-            }
         }
 
         private void FixedUpdate()
         {
-            HorizontalMove();
-
+            if (_inputX != 0) HorizontalMove();
             if (_inputY && isGrounded) Jump();
-
+            Clamping();
         }
 
         private void HorizontalMove()
         {
-            if (velocityX <= maxSpeed)
-            {
-                _time += Time.deltaTime;
-                rb.velocity += new Vector2(_inputX * speed, 0);
-
-            }
+            Debug.Log("oui");
+            Vector2 addedVelocityX = new Vector2(_inputX * speed,0);
+            rb.AddForce(addedVelocityX * Time.fixedDeltaTime);
         }
 
         private void Jump()
         {
-            _time += Time.deltaTime;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Vector2 addedVelocityY = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = addedVelocityY;
+            isGrounded = false;
+        }
+
+        private void Clamping()
+        {
+            float verticalVelocity = Mathf.Clamp(rb.velocity.y, -5, maxHeight);
+            float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -_maxSpeed, _maxSpeed);
+            rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+        }
+        
+        //jumptime - TIme.Time < 1 second
+
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            isGrounded = col.GetContact(0).normal.y > 0.9f;
+        }
+
+        private void OnCollisionStay2D(Collision2D col)
+        {
+            isGrounded = col.GetContact(0).normal.y > 0.9f;
         }
     }
 }
