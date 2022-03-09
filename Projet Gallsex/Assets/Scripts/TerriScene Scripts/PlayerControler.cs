@@ -6,21 +6,21 @@ namespace TerriScene_Scripts
 {
     public class PlayerControler : MonoBehaviour
     {
-        public PlayerData data; //Scriptable Object
-        public float fallMultiplier = 1.5f;
-        public float lowJumpMultiplier = 1f;
         private float _inputX;
-        private float _time;
-        public float _maxSpeed = 25f;
-        private float speed = 1000f;
-        private float maxHeight = 10f;
-        private float jumpForce =1000f;
-        public LayerMask groundMask;
-        public Rigidbody2D rb;
         private bool _inputY;
-        [SerializeField] private bool isGrounded;
-        [SerializeField] private Transform tr;
         
+        
+        [Range(0f,100f)]
+        [SerializeField] private float speed = 1f;
+        [Range(0f,100f)]
+        [SerializeField] private float airSpeed = 0.9f;
+        [Range(0f,100f)]
+        [SerializeField] private float jumpForce = 60f;
+        private float _maxSpeed = 12f;
+        private float maxHeight = 35f;
+        private float compareTime;
+        [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private bool isGrounded;
 
         void Update()
         {
@@ -30,33 +30,45 @@ namespace TerriScene_Scripts
             _inputY = Input.GetKey(KeyCode.Space);
 
             #endregion
+            
 
+            Debug.Log(compareTime);
         }
 
         private void FixedUpdate()
         {
             if (_inputX != 0) HorizontalMove();
-            if (_inputY && isGrounded) Jump();
+            if (_inputY && isGrounded)
+            {
+                Jump();
+                compareTime = Time.time;
+            }
             Clamping();
+            Gravity();
         }
 
         private void HorizontalMove()
         {
-            Debug.Log("oui");
-            Vector2 addedVelocityX = new Vector2(_inputX * speed,0);
-            rb.AddForce(addedVelocityX * Time.fixedDeltaTime);
+            Vector2 movement = new Vector2(_inputX * speed, 0);
+
+            if (!isGrounded)
+            {
+                movement = new Vector2(_inputX * airSpeed, 0);
+            }
+            
+            rb.AddForce(movement, ForceMode2D.Impulse);
         }
 
         private void Jump()
         {
-            Vector2 addedVelocityY = new Vector2(rb.velocity.x, jumpForce);
-            rb.velocity = addedVelocityY;
+            Vector2 height = new Vector2(0, jumpForce);
+            rb.AddForce(height,ForceMode2D.Impulse);
             isGrounded = false;
         }
 
         private void Clamping()
         {
-            float verticalVelocity = Mathf.Clamp(rb.velocity.y, -5, maxHeight);
+            float verticalVelocity = Mathf.Clamp(rb.velocity.y, -10, maxHeight);
             float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -_maxSpeed, _maxSpeed);
             rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
         }
@@ -71,6 +83,11 @@ namespace TerriScene_Scripts
         private void OnCollisionStay2D(Collision2D col)
         {
             isGrounded = col.GetContact(0).normal.y > 0.9f;
+        }
+
+        private void Gravity()
+        {
+            
         }
     }
 }
