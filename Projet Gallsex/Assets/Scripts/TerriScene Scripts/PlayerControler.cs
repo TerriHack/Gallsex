@@ -16,9 +16,8 @@ namespace TerriScene_Scripts
         [SerializeField] private float airSpeed = 0.9f;
         [Range(0f,100f)]
         [SerializeField] private float jumpForce = 60f;
-        private float _maxSpeed = 12f;
+        private float _maxSpeed = 15f;
         private float maxHeight = 35f;
-        private float compareTime;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private bool isGrounded;
 
@@ -31,8 +30,7 @@ namespace TerriScene_Scripts
 
             #endregion
             
-
-            Debug.Log(compareTime);
+            Debug.Log(rb.velocity.x);
         }
 
         private void FixedUpdate()
@@ -41,7 +39,6 @@ namespace TerriScene_Scripts
             if (_inputY && isGrounded)
             {
                 Jump();
-                compareTime = Time.time;
             }
             Clamping();
             Gravity();
@@ -54,6 +51,10 @@ namespace TerriScene_Scripts
             if (!isGrounded)
             {
                 movement = new Vector2(_inputX * airSpeed, 0);
+            }
+            else
+            {
+                rb.gravityScale = 9f;
             }
             
             rb.AddForce(movement, ForceMode2D.Impulse);
@@ -87,7 +88,10 @@ namespace TerriScene_Scripts
 
         private void Gravity()
         {
-            
+            if (rb.velocity.y < - 0.5f)
+            {
+                rb.gravityScale += 4 + Time.fixedDeltaTime;
+            }
         }
     }
 }
