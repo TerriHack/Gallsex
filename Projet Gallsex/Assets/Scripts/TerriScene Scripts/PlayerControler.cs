@@ -12,8 +12,10 @@ namespace TerriScene_Scripts
         [SerializeField] private PlayerData playerData;
         private float _maxSpeed = 15f;
         private float maxHeight = 35f;
+        private float gravity;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private bool isGrounded;
+        [SerializeField] private SpriteRenderer spriteRen;
 
         void Update()
         {
@@ -39,10 +41,19 @@ namespace TerriScene_Scripts
 
             if (!isGrounded)
             {
-                movement = new Vector2(_inputX * playerData.airSpeed, 0);
+                movement = new Vector2(_inputX * playerData.airSpeed, gravity);
             }
 
             rb.AddForce(movement, ForceMode2D.Impulse);
+            
+            if (rb.velocity.x < 0)
+            {
+                spriteRen.flipX = true;
+            }
+            else
+            {
+                spriteRen.flipX = false;
+            }
         }
 
         private void Jump()
@@ -68,13 +79,13 @@ namespace TerriScene_Scripts
         {
             if (rb.velocity.y < -0.5f && !isGrounded)
             {
-                rb.gravityScale += 1f + Time.fixedDeltaTime;
+                gravity = -1f * Time.fixedDeltaTime;
                 isGrounded = false;
             }
             else
             {
-                rb.gravityScale = 9f;
-            }
+                gravity = 0f;
+            }         
         }
     }
 }
