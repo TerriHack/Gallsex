@@ -12,7 +12,7 @@ namespace TerriScene_Scripts
         [SerializeField] private PlayerData playerData;
         private float _maxSpeed = 15f;
         private float maxHeight = 35f;
-        private float gravity;
+        [SerializeField] private float gravity = 20f; 
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private bool isGrounded;
         [SerializeField] private SpriteRenderer spriteRen;
@@ -37,11 +37,15 @@ namespace TerriScene_Scripts
 
         private void HorizontalMove()
         {
-            Vector2 movement = new Vector2(_inputX * playerData.speed, 0);
-
+            Vector2 movement;
+            
             if (!isGrounded)
             {
-                movement = new Vector2(_inputX * playerData.airSpeed, gravity);
+                movement = new Vector2(_inputX * playerData.airSpeed, 0);
+            }
+            else
+            {
+                movement = new Vector2(_inputX * playerData.speed, 0);
             }
 
             rb.AddForce(movement, ForceMode2D.Impulse);
@@ -73,18 +77,29 @@ namespace TerriScene_Scripts
         private void OnCollisionEnter2D(Collision2D col)
         {
             isGrounded = col.GetContact(0).normal.y > 0.9f;
+            if (col.GetContact(0).normal.x > 0.9f && !isGrounded)
+            {
+                isGrounded = true;
+            }
+            else if (col.GetContact(0).normal.x < -0.9f && !isGrounded)
+            {
+                isGrounded = true;
+            }
+
         }
         
         private void Gravity()
         {
-            if (rb.velocity.y < -0.5f && !isGrounded)
+            if (rb.velocity.y < 0f)
             {
-                gravity = -1f * Time.fixedDeltaTime;
+                gravity += 15f;
+                rb.gravityScale += gravity * Time.fixedDeltaTime;
                 isGrounded = false;
             }
             else
             {
-                gravity = 0f;
+                rb.gravityScale = 9f;
+                gravity = 20f;
             }         
         }
     }
