@@ -29,7 +29,7 @@ namespace TerriScene_Scripts
 
             _inputX = Input.GetAxisRaw("Horizontal");
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
             {
                 _jumpBufferCounter = playerData.jumpBufferTime;
             }
@@ -38,7 +38,7 @@ namespace TerriScene_Scripts
                 _jumpBufferCounter -= Time.deltaTime;
             }
             
-            if (Input.GetKeyUp(KeyCode.Space)) _coyoteTimeCounter = 0f;
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Jump")) _coyoteTimeCounter = 0f;
 
             if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
             {
