@@ -2856,14 +2856,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1793962149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aeff758535c82b40aac3e6edde3d306, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fc99d89768410d46bbf617125c22afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 6bcccfba9204d9e45a8a0bbae531f9d7, type: 2}
-  gravity: 20
   rb: {fileID: 1793962151}
-  isGrounded: 0
   spriteRen: {fileID: 1793962152}
+  isGrounded: 0
+  gravity: 20
+  _jumpBufferCounter: 0
 --- !u!50 &1793962151
 Rigidbody2D:
   serializedVersion: 4
