@@ -8,29 +8,57 @@ namespace TerriScene_Scripts
     {
         private float _inputX;
         private bool _inputY;
+        private bool oui;
         
         [SerializeField] private PlayerData playerData;
         private float _maxSpeed = 15f;
         private float maxHeight = 35f;
-        [SerializeField] private float gravity = 20f; 
+        [SerializeField] private float gravity = 20f;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private bool isGrounded;
         [SerializeField] private SpriteRenderer spriteRen;
+        private float _coyoteTimeCounter;
+        public float _jumpBufferCounter;
 
-        void Update()
+            void Update()
         {
             #region Inputs
 
             _inputX = Input.GetAxisRaw("Horizontal");
-            _inputY = Input.GetKey(KeyCode.Space);
+            _inputY = Input.GetKeyDown(KeyCode.Space);
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _jumpBufferCounter = playerData.jumpBufferTime;
+            }
+            else
+            {
+                _jumpBufferCounter -= Time.deltaTime;
+            }
+            
+            if (Input.GetKeyUp(KeyCode.Space)) _coyoteTimeCounter = 0f;
+
+            if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+            {
+                Jump();
+                _jumpBufferCounter = 0f;
+            }
 
             #endregion
+
+            if (isGrounded)
+            {
+                _coyoteTimeCounter = playerData.coyoteTime;
+            }
+            else
+            {
+                _coyoteTimeCounter -= Time.deltaTime;
+            }
         }
 
         private void FixedUpdate()
         {
             if (_inputX != 0) HorizontalMove();
-            if (_inputY && isGrounded) Jump();
             Clamping();
             Gravity();
         }
@@ -39,13 +67,13 @@ namespace TerriScene_Scripts
         {
             Vector2 movement;
             
-            if (!isGrounded)
+            if (isGrounded)
             {
-                movement = new Vector2(_inputX * playerData.airSpeed, 0);
+                movement = new Vector2(_inputX * playerData.speed, 0);
             }
             else
             {
-                movement = new Vector2(_inputX * playerData.speed, 0);
+                movement = new Vector2(_inputX * playerData.airSpeed, 0);
             }
 
             rb.AddForce(movement, ForceMode2D.Impulse);
@@ -92,7 +120,7 @@ namespace TerriScene_Scripts
         {
             if (rb.velocity.y < 0f)
             {
-                gravity += 15f;
+                gravity += playerData.gravityMultiplier;
                 rb.gravityScale += gravity * Time.fixedDeltaTime;
                 isGrounded = false;
             }
