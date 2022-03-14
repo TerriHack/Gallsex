@@ -34,15 +34,14 @@ namespace TerriScene_Scripts
 
         private void Shoot()
         {
-            Vector2 slow = new Vector2(-5, -5);
-
-            if (Input.GetAxisRaw("Fire1") != 0)
+            if (Input.GetAxisRaw("Fire1") < 0.1f)
             {
                 Vector2 origin = originTr.position;
                 Vector2 direction = new Vector2(_inputX * 2,_inputY * 2);
 
                 Debug.DrawRay(origin, direction, Color.blue);
                 _hit = Physics2D.Raycast(origin, direction, 15f);
+                if(_hit.collider == null) return;
                 
                 if (_hit.collider.CompareTag("Ground"))
                 {

@@ -15,3 +15,6 @@ MonoBehaviour:
   speed: 2
   airSpeed: 0.9
   jumpForce: 60
+  gravityMultiplier: 15
+  coyoteTime: 0.2
+  jumpBufferTime: 0.2
