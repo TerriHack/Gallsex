@@ -10,7 +10,7 @@ namespace TerriScene_Scripts
         [SerializeField] private PlayerData playerData;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private SpriteRenderer spriteRen;
-        [SerializeField] private bool isGrounded;
+        public bool isGrounded;
         [SerializeField] private float gravity = 20f;
         
         private float _inputX;
