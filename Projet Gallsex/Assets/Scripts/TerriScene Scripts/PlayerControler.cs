@@ -6,142 +6,141 @@ namespace TerriScene_Scripts
 {
     public class PlayerControler : MonoBehaviour
     {
-
-        #region Public Declarations
-
-        #region Scriptable Object
-
-        public PlayerData data;
-
-        #endregion
-        
-        #region Float
-
-        public float velocityX;
-        public float velocityY;
-        public float fallMultiplier = 1.5f;
-        public float lowJumpMultiplier = 1f;
-        public float maxSpeed = 1f;
-        
-        #endregion
-
-        #region Layer Masks
-
-        public LayerMask groundMask;
-
-        #endregion
-        
-        #region Components
-
-        public Rigidbody2D rb;
-
-        #endregion
-
-        #endregion
-        
-        #region Private Declarations
-
-        #region Float
+        //Scriptable Object.
+        [SerializeField] private PlayerData playerData;
+        [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private SpriteRenderer spriteRen;
+        public bool isGrounded;
+        [SerializeField] private float gravity = 20f;
         
         private float _inputX;
-        private float _time;
-        [SerializeField] private float speed;
-        [SerializeField] private float jumpForce;
-        
-        #endregion
+        private float _maxSpeed = 15f;
+        private float maxHeight = 35f;
+        private float _coyoteTimeCounter;
+        public float _jumpBufferCounter;
 
-        #region Boolean
-
-        private bool _inputY;
-        [SerializeField] private bool isGrounded;
-
-        #endregion
-        
-        #endregion
-
-        private void Start()
+        private void Update()
         {
-            velocityX = rb.velocity.x;
-        }
-
-        void Update()
-        {
+            //Récupérer l'axe horizontal.
+            //Quand on tombe d'une platform on a "coyoteTime" pour sauter.
+            //Quand on appuie sur le bouton saut en l'air on a "jumpBufferTime" pour resauter à l'aterrisage.
             
-            #region Debug
-
-            velocityX = rb.velocity.magnitude;
-
-            #endregion
-
-            #region Animation Curves
-
-            speed = data.axisX.Evaluate(_time);
-            jumpForce = data.axisY.Evaluate(_time);
-
-            #endregion
-
             #region Inputs
 
             _inputX = Input.GetAxisRaw("Horizontal");
-            _inputY = Input.GetKey(KeyCode.Space);
 
-            #endregion
-
-            #region Gravity
-
-            if (rb.velocity.y < 0)
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
             {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-                
-            }
-            else if (rb.velocity.y > 0 && !_inputY)
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-            }
-
-            #endregion
-
-            #region GroundCheck
-
-            if(Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f), new Vector2(0.4f, 0.6f), 0f, groundMask))
-            {
-                isGrounded = true;
+                _jumpBufferCounter = playerData.jumpBufferTime;
             }
             else
             {
-                isGrounded = false;
+                _jumpBufferCounter -= Time.deltaTime;
+            }
+            
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Jump")) _coyoteTimeCounter = 0f;
+
+            if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+            {
+                Jump();
+                _jumpBufferCounter = 0f;
             }
 
             #endregion
 
-            if (velocityX <= maxSpeed)
+            if (isGrounded)
             {
-                velocityX = maxSpeed;
+                _coyoteTimeCounter = playerData.coyoteTime;
+            }
+            else
+            {
+                _coyoteTimeCounter -= Time.deltaTime;
             }
         }
 
         private void FixedUpdate()
         {
-            HorizontalMove();
-
-            if (_inputY && isGrounded) Jump();
-
+            //Le gobelin se déplace selon la valeur de l'axe X
+            if (_inputX != 0) HorizontalMove();
+            
+            //La velocité est contrainte.
+            Clamping();
+            
+            //Durnant la chute du gobelin,la gravité est multipliée. 
+            Gravity();
         }
 
         private void HorizontalMove()
         {
-            if (velocityX <= maxSpeed)
+            Vector2 movement;
+            
+            
+            if (isGrounded)
             {
-                _time += Time.deltaTime;
-                rb.velocity += new Vector2(_inputX * speed, 0);
-
+                movement = new Vector2(_inputX * playerData.speed, 0);
+            }
+            else
+            {
+                movement = new Vector2(_inputX * playerData.airSpeed, 0);
+            }
+            
+            //Si le gobelin est au sol il se déplace selon son input.
+            rb.AddForce(movement, ForceMode2D.Impulse);
+            
+            //Le sprite du gobelin flip selon sa direction.
+            if (rb.velocity.x < 0)
+            {
+                spriteRen.flipX = true;
+            }
+            else
+            {
+                spriteRen.flipX = false;
             }
         }
 
         private void Jump()
         {
-            _time += Time.deltaTime;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            Vector2 height = new Vector2(0, playerData.jumpForce);
+            rb.AddForce(height,ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+
+        private void Clamping()
+        {
+            float verticalVelocity = Mathf.Clamp(rb.velocity.y, -10, maxHeight);
+            float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -_maxSpeed, _maxSpeed);
+            rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+        }
+        
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            //GroundCheck avec les normals 
+            isGrounded = col.GetContact(0).normal.y > 0.9f;
+            if (col.GetContact(0).normal.x > 0.9f && !isGrounded)
+            {
+                isGrounded = true;
+            }
+            else if (col.GetContact(0).normal.x < -0.9f && !isGrounded)
+            {
+                isGrounded = true;
+            }
+
+        }
+        
+        private void Gravity()
+        {
+            //Si le gobelin chute sa gravité est modifiée. 
+            if (rb.velocity.y < 0f)
+            {
+                gravity += playerData.gravityMultiplier;
+                rb.gravityScale += gravity * Time.fixedDeltaTime;
+                isGrounded = false;
+            }
+            else
+            {
+                rb.gravityScale = 9f;
+                gravity = 20f;
+            }         
         }
     }
 }
