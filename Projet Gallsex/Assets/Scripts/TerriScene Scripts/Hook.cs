@@ -15,7 +15,9 @@ namespace TerriScene_Scripts
         public float _inputX;
         public float _inputY;
         private RaycastHit2D _hit;
+        private float hookTimeCounter;
         
+
         void Update()
         {
             _inputX = Input.GetAxisRaw("Mouse X");
@@ -34,19 +36,23 @@ namespace TerriScene_Scripts
 
         private void Shoot()
         {
-            if (Input.GetAxisRaw("Fire1") < 0.1f)
+            if (Input.GetAxisRaw("Fire1") < 0.9f)
             {
                 Vector2 origin = originTr.position;
                 Vector2 direction = new Vector2(_inputX * 2,_inputY * 2);
 
                 Debug.DrawRay(origin, direction, Color.blue);
-                _hit = Physics2D.Raycast(origin, direction, 15f);
+                _hit = Physics2D.Raycast(origin, direction, PlayerData.hookRange);
                 if(_hit.collider == null) return;
+
+                hookTimeCounter -= Time.deltaTime;
                 
-                if (_hit.collider.CompareTag("Ground"))
+                if (_hit.collider.CompareTag("Ground") && hookTimeCounter <= 0f)
                 {
+                    
                     Debug.Log("oui");
-                    gobelinRb.AddForce(direction,ForceMode2D.Impulse);
+                    gobelinRb.AddForce(new Vector2(_inputX,_inputY) * PlayerData.hookForce ,ForceMode2D.Impulse);
+                    hookTimeCounter = PlayerData.hookTime;
                 }
             }
         }
