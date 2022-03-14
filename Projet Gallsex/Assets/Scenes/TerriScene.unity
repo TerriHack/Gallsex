@@ -3249,7 +3249,6 @@ MonoBehaviour:
   spriteRen: {fileID: 1793962152}
   isGrounded: 0
   gravity: 20
-  _jumpBufferCounter: 0
 --- !u!50 &1793962151
 Rigidbody2D:
   serializedVersion: 4
