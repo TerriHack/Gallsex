@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
   m_Name: PlayerData_02
   m_EditorClassIdentifier: 
-  speed: 15.8
+  speed: 98.6
   airSpeed: 1.8
   jumpForce: 60
   gravityMultiplier: 9
