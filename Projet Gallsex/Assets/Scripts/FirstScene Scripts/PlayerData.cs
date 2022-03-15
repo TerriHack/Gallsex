@@ -7,11 +7,16 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Forces")]
+
+    [Range(0f,100f)]
+    public float maxSpeed = 15f;
+    [Range(0f,1000f)]
+    public float maxHeight = 35f;
     [Range(0f,100f)]
     public float speed = 1f;
     [Range(0f,100f)]
     public float airSpeed = 0.9f;
-    [Range(0f,100f)]
+    [Range(0f,500f)]
     public float jumpForce = 10f;
     [Range(0f, 100f)] 
     public float gravityMultiplier = 15f;
@@ -25,5 +30,11 @@ public class PlayerData : ScriptableObject
     public static float hookForce = 250f;   
     [Range(0f, 80f)]
     public static float hookRange = 15f;
+    [Range(0f, 500f)]
+    public float wallJumpForce = 100f;
+    [Min(0f)]
+    public float nuancerDuration = 3f;
+    [Min(0)]
+    public float nuancerForce = 10f;
 
 }

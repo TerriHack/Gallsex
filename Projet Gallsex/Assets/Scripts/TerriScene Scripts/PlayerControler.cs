@@ -14,10 +14,10 @@ namespace TerriScene_Scripts
         [SerializeField] private float gravity = 20f;
         
         private float _inputX;
-        private float _maxSpeed = 15f;
-        private float maxHeight = 35f;
         private float _coyoteTimeCounter;
         private float _jumpBufferCounter;
+        private float _jumpTime = -1f;
+        public Vector2 height;
 
         private void Update()
         {
@@ -32,25 +32,29 @@ namespace TerriScene_Scripts
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
             {
                 _jumpBufferCounter = playerData.jumpBufferTime;
+                _jumpTime = Time.time;
+                                
+                if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+                {
+                    Jump();
+                    _jumpBufferCounter = 0f;
+                }
             }
             else
             {
                 _jumpBufferCounter -= Time.deltaTime;
             }
-            
-            if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut")) _coyoteTimeCounter = 0f;
 
-            if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
             {
-                Jump();
-                _jumpBufferCounter = 0f;
+                _coyoteTimeCounter = 0f;
             }
-
             #endregion
 
             if (isGrounded)
             {
                 _coyoteTimeCounter = playerData.coyoteTime;
+                height = new Vector2(0, playerData.jumpForce);
             }
             else
             {
@@ -68,13 +72,18 @@ namespace TerriScene_Scripts
             
             //Durnant la chute du gobelin,la gravité est multipliée. 
             Gravity();
+
+            if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
+            {
+                Debug.Log("oui");
+                rb.AddForce(Vector2.up * playerData.nuancerForce * Time.fixedDeltaTime);
+            }
         }
 
         private void HorizontalMove()
         {
             Vector2 movement;
-            
-            
+
             if (isGrounded)
             {
                 movement = new Vector2(_inputX * playerData.speed, 0);
@@ -100,15 +109,16 @@ namespace TerriScene_Scripts
 
         private void Jump()
         {
-            Vector2 height = new Vector2(0, playerData.jumpForce);
+            Debug.Log("oui");
+            //height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height,ForceMode2D.Impulse);
             isGrounded = false;
         }
 
         private void Clamping()
         {
-            float verticalVelocity = Mathf.Clamp(rb.velocity.y, -10, maxHeight);
-            float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -_maxSpeed, _maxSpeed);
+            float verticalVelocity = Mathf.Clamp(rb.velocity.y, -10, playerData.maxHeight);
+            float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxSpeed, playerData.maxSpeed);
             rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
         }
         
@@ -120,10 +130,12 @@ namespace TerriScene_Scripts
             if (col.GetContact(0).normal.x > 0.9f && !isGrounded)
             {
                 isGrounded = true;
+                height = new Vector2(col.GetContact(0).normal.x * playerData.wallJumpForce, playerData.jumpForce);
             }
             else if (col.GetContact(0).normal.x < -0.9f && !isGrounded)
             {
                 isGrounded = true;
+                height = new Vector2(col.GetContact(0).normal.x * playerData.wallJumpForce, playerData.jumpForce);
             }
         }
         
