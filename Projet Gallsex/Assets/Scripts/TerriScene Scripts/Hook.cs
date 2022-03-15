@@ -36,24 +36,20 @@ namespace TerriScene_Scripts
 
         private void Shoot()
         {
-            if (Input.GetAxisRaw("Fire1") < 0.9f)
-            {
-                Vector2 origin = originTr.position;
-                Vector2 direction = new Vector2(_inputX * 2,_inputY * 2);
+            Vector2 origin = originTr.position;
+            Vector2 direction = new Vector2(_inputX * 2,_inputY * 2);
 
-                Debug.DrawRay(origin, direction, Color.blue);
-                _hit = Physics2D.Raycast(origin, direction, PlayerData.hookRange);
-                if(_hit.collider == null) return;
+            Debug.DrawRay(origin, direction, Color.blue);
+            _hit = Physics2D.Raycast(origin, direction, PlayerData.hookRange);
+            if(_hit.collider == null) return;
 
-                hookTimeCounter -= Time.deltaTime;
+            hookTimeCounter -= Time.deltaTime;
                 
-                if (_hit.collider.CompareTag("Ground") && hookTimeCounter <= 0f)
-                {
-                    
-                    Debug.Log("oui");
-                    gobelinRb.AddForce(new Vector2(_inputX,_inputY) * PlayerData.hookForce ,ForceMode2D.Impulse);
-                    hookTimeCounter = PlayerData.hookTime;
-                }
+            if (_hit.collider.CompareTag("Ground") && hookTimeCounter <= 0f)
+            {
+                Debug.Log("oui");
+                gobelinRb.AddForce(new Vector2(_inputX,_inputY) * PlayerData.hookForce ,ForceMode2D.Impulse);
+                hookTimeCounter = PlayerData.hookTime;
             }
         }
     }
