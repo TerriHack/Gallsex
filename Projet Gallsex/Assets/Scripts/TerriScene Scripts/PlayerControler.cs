@@ -17,6 +17,8 @@ namespace TerriScene_Scripts
         private float _coyoteTimeCounter;
         private float _jumpBufferCounter;
         private float _jumpTime = -1f;
+        private float _normalX;
+        private float _normalY;
         public Vector2 height;
 
         private void Update()
@@ -48,13 +50,14 @@ namespace TerriScene_Scripts
             if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
             {
                 _coyoteTimeCounter = 0f;
+                height = new Vector2(0, playerData.jumpForce);
             }
             #endregion
 
             if (isGrounded)
             {
                 _coyoteTimeCounter = playerData.coyoteTime;
-                height = new Vector2(0, playerData.jumpForce);
+                
             }
             else
             {
@@ -73,11 +76,7 @@ namespace TerriScene_Scripts
             //Durnant la chute du gobelin,la gravité est multipliée. 
             Gravity();
 
-            if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
-            {
-                Debug.Log("oui");
-                rb.AddForce(Vector2.up * playerData.nuancerForce * Time.fixedDeltaTime);
-            }
+            JumpNuancer();
         }
 
         private void HorizontalMove()
@@ -95,7 +94,8 @@ namespace TerriScene_Scripts
             
             //Si le gobelin est au sol il se déplace selon son input.
             rb.AddForce(movement, ForceMode2D.Impulse);
-            
+
+            #region Flip the Sprite
             //Le sprite du gobelin flip selon sa direction.
             if (rb.velocity.x < 0)
             {
@@ -105,12 +105,11 @@ namespace TerriScene_Scripts
             {
                 spriteRen.flipX = false;
             }
+            #endregion
         }
 
         private void Jump()
         {
-            Debug.Log("oui");
-            //height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height,ForceMode2D.Impulse);
             isGrounded = false;
         }
@@ -124,18 +123,38 @@ namespace TerriScene_Scripts
         
         private void OnCollisionEnter2D(Collision2D col)
         {
+
+            _normalX = col.GetContact(0).normal.x;
+
             //GroundCheck avec les normals 
             isGrounded = col.GetContact(0).normal.y > 0.9f;
             
-            if (col.GetContact(0).normal.x > 0.9f && !isGrounded)
+                if (col.GetContact(0).normal.x >= 0.9f && !isGrounded)
+                {
+                    isOnWall = true;
+                    height = new Vector2(_normalX * playerData.wallJumpForce, playerData.jumpForce);
+                }
+                else
+                {
+                    
+                }
+
+                if (col.GetContact(0).normal.x <= 0.9f && !isGrounded)
+                {
+                    isOnWall = true;
+                    height = new Vector2(_normalX * playerData.wallJumpForce, playerData.jumpForce);
+                }
+                else
+                {
+                    
+                }
+        }
+
+        private void JumpNuancer()
+        {
+            if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
             {
-                isGrounded = true;
-                height = new Vector2(col.GetContact(0).normal.x * playerData.wallJumpForce, playerData.jumpForce);
-            }
-            else if (col.GetContact(0).normal.x < -0.9f && !isGrounded)
-            {
-                isGrounded = true;
-                height = new Vector2(col.GetContact(0).normal.x * playerData.wallJumpForce, playerData.jumpForce);
+                rb.AddForce(Vector2.up * playerData.nuancerForce * Time.fixedDeltaTime);
             }
         }
         
