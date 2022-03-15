@@ -17,7 +17,7 @@ namespace TerriScene_Scripts
         private float _maxSpeed = 15f;
         private float maxHeight = 35f;
         private float _coyoteTimeCounter;
-        public float _jumpBufferCounter;
+        private float _jumpBufferCounter;
 
         private void Update()
         {
@@ -29,7 +29,7 @@ namespace TerriScene_Scripts
 
             _inputX = Input.GetAxisRaw("Horizontal");
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
             {
                 _jumpBufferCounter = playerData.jumpBufferTime;
             }
@@ -38,7 +38,7 @@ namespace TerriScene_Scripts
                 _jumpBufferCounter -= Time.deltaTime;
             }
             
-            if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Jump")) _coyoteTimeCounter = 0f;
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut")) _coyoteTimeCounter = 0f;
 
             if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
             {
@@ -116,6 +116,7 @@ namespace TerriScene_Scripts
         {
             //GroundCheck avec les normals 
             isGrounded = col.GetContact(0).normal.y > 0.9f;
+            
             if (col.GetContact(0).normal.x > 0.9f && !isGrounded)
             {
                 isGrounded = true;
@@ -124,7 +125,6 @@ namespace TerriScene_Scripts
             {
                 isGrounded = true;
             }
-
         }
         
         private void Gravity()

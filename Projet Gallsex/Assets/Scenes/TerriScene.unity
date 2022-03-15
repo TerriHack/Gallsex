@@ -3244,12 +3244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc99d89768410d46bbf617125c22afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 6bcccfba9204d9e45a8a0bbae531f9d7, type: 2}
+  playerData: {fileID: 11400000, guid: ed4c01d945b650e4ca3ce484b573cf59, type: 2}
   rb: {fileID: 1793962151}
   spriteRen: {fileID: 1793962152}
   isGrounded: 0
   gravity: 20
-  _jumpBufferCounter: 0
 --- !u!50 &1793962151
 Rigidbody2D:
   serializedVersion: 4
