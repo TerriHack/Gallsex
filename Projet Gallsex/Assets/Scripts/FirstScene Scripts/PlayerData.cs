@@ -22,12 +22,10 @@ public class PlayerData : ScriptableObject
     public float gravityMultiplier = 15f;
     [Range(0f,1f)]
     public float coyoteTime = 0.2f;   
-    [Range(0f,1f)]
+    [Range(0f,10f)]
     public float jumpBufferTime = 0.2f;
     [Range(0f, 1f)] 
     public static float hookTime = 0.6f;
-    [Range(0f, 500f)]
-    public static float hookForce = 500f;   
     [Range(0f, 80f)]
     public static float hookRange = 15f;
     [Range(0f, 500f)]

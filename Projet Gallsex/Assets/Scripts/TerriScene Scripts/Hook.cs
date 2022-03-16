@@ -48,7 +48,7 @@ namespace TerriScene_Scripts
             if (_hit.collider.CompareTag("Ground") && _hookTimeCounter <= 0f)
             {
                 Debug.Log("oui");
-                gobelinRb.AddForce(new Vector2(_inputX,_inputY) * PlayerData.hookForce ,ForceMode2D.Impulse);
+                gobelinRb.AddForce((direction * 200f),ForceMode2D.Impulse);
                 _hookTimeCounter = PlayerData.hookTime;
             }
         }

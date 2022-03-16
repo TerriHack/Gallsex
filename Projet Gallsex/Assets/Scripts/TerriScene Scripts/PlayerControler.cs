@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace TerriScene_Scripts
@@ -15,11 +13,17 @@ namespace TerriScene_Scripts
         
         private float _inputX;
         private float _coyoteTimeCounter;
-        private float _jumpBufferCounter;
+        public float jumpBufferCounter;
         private float _jumpTime = -1f;
         private float _normalX;
-        private float _normalY;
         public Vector2 height;
+        public bool isWalled;
+
+
+        private void Start()
+        {
+            isGrounded = true;
+        }
 
         private void Update()
         {
@@ -33,31 +37,35 @@ namespace TerriScene_Scripts
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
             {
-                _jumpBufferCounter = playerData.jumpBufferTime;
+                jumpBufferCounter = playerData.jumpBufferTime;
                 _jumpTime = Time.time;
                                 
-                if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+                if (_coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
                 {
                     Jump();
-                    _jumpBufferCounter = 0f;
+                    JumpNuancer();
+                    jumpBufferCounter = 0f;
                 }
             }
             else
             {
-                _jumpBufferCounter -= Time.deltaTime;
+                jumpBufferCounter -= Time.deltaTime;
             }
 
             if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
             {
                 _coyoteTimeCounter = 0f;
                 height = new Vector2(0, playerData.jumpForce);
+                isWalled = false;
             }
             #endregion
 
+            WallJump();
+            
             if (isGrounded)
             {
+                height = new Vector2(0, playerData.jumpForce);
                 _coyoteTimeCounter = playerData.coyoteTime;
-                
             }
             else
             {
@@ -76,7 +84,7 @@ namespace TerriScene_Scripts
             //Durnant la chute du gobelin,la gravité est multipliée. 
             Gravity();
 
-            JumpNuancer();
+            //JumpNuancer();
         }
 
         private void HorizontalMove()
@@ -123,38 +131,27 @@ namespace TerriScene_Scripts
         
         private void OnCollisionEnter2D(Collision2D col)
         {
-
             _normalX = col.GetContact(0).normal.x;
 
             //GroundCheck avec les normals 
-            isGrounded = col.GetContact(0).normal.y > 0.9f;
+            isGrounded = col.GetContact(0).normal.y >= 0.9f;
             
-                if (col.GetContact(0).normal.x >= 0.9f && !isGrounded)
-                {
-                    isOnWall = true;
-                    height = new Vector2(_normalX * playerData.wallJumpForce, playerData.jumpForce);
-                }
-                else
-                {
-                    
-                }
+            if (col.GetContact(0).normal.x <= -0.9f && !isGrounded)
+            {
+                isWalled = true;
+            }
 
-                if (col.GetContact(0).normal.x <= 0.9f && !isGrounded)
-                {
-                    isOnWall = true;
-                    height = new Vector2(_normalX * playerData.wallJumpForce, playerData.jumpForce);
-                }
-                else
-                {
-                    
-                }
+            if (col.GetContact(0).normal.x >= 0.9f && !isGrounded)
+            {
+                isWalled = true;
+            }
         }
 
         private void JumpNuancer()
         {
             if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
             {
-                rb.AddForce(Vector2.up * playerData.nuancerForce * Time.fixedDeltaTime);
+                rb.AddForce((Vector2.up * playerData.nuancerForce * Time.fixedDeltaTime),ForceMode2D.Impulse);
             }
         }
         
@@ -171,7 +168,17 @@ namespace TerriScene_Scripts
             {
                 rb.gravityScale = 9f;
                 gravity = 20f;
-            }         
+            }
+        }
+
+        private void WallJump()
+        {
+            if (isWalled)
+            {
+                height = new Vector2(_normalX * playerData.wallJumpForce, playerData.jumpForce);
+            }
+
+            if (Input.GetButtonDown("Saut") && isWalled) Jump();
         }
     }
 }

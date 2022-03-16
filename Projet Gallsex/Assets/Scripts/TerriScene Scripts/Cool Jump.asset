@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
-  m_Name: PlayerData_04
+  m_Name: Cool Jump
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  maxHeight: 100
-  speed: 1
-  airSpeed: 0.9
-  jumpForce: 30
-  gravityMultiplier: 15
-  coyoteTime: 0.2
-  jumpBufferTime: 0.2
+  maxSpeed: 15
+  maxHeight: 35
+  speed: 5
+  airSpeed: 1.8
+  jumpForce: 60
+  gravityMultiplier: 9
+  coyoteTime: 0.1
+  jumpBufferTime: 0.12
   wallJumpForce: 100
   nuancerDuration: 3
-  nuancerForce: 10
+  nuancerForce: 30
