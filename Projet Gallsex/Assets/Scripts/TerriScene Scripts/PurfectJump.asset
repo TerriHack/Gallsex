@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
-  m_Name: PlayerData_03 1
+  m_Name: PurfectJump
   m_EditorClassIdentifier: 
   maxSpeed: 15
-  maxHeight: 100
-  speed: 5
-  airSpeed: 3
-  jumpForce: 30
-  gravityMultiplier: 18
+  maxHeight: 20
+  speed: 4
+  airSpeed: 1.8
+  jumpForce: 35
+  gravityMultiplier: 9
   coyoteTime: 0.1
-  jumpBufferTime: 0.12
+  jumpBufferTime: 3
   wallJumpForce: 100
-  nuancerDuration: 1
-  nuancerForce: 3000
+  nuancerDuration: 0.2
+  nuancerForce: 2

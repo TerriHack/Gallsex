@@ -6,35 +6,34 @@ using UnityEngine;
 
 public class PlayerData : ScriptableObject
 {
-    [Header("Forces")]
 
-    [Range(0f,100f)]
-    public float maxSpeed = 15f;
-    [Range(0f,1000f)]
-    public float maxHeight = 35f;
     [Range(0f,100f)]
     public float speed = 1f;
     [Range(0f,100f)]
     public float airSpeed = 0.9f;
     [Range(0f,500f)]
     public float jumpForce = 10f;
-    [Range(0f, 100f)] 
-    public float gravityMultiplier = 15f;
-    [Range(0f,1f)]
-    public float coyoteTime = 0.2f;   
-    [Range(0f,1f)]
-    public float jumpBufferTime = 0.2f;
-    [Range(0f, 1f)] 
-    public static float hookTime = 0.6f;
-    [Range(0f, 500f)]
-    public static float hookForce = 250f;   
-    [Range(0f, 80f)]
-    public static float hookRange = 15f;
     [Range(0f, 500f)]
     public float wallJumpForce = 100f;
+    [Space]
     [Min(0f)]
     public float nuancerDuration = 3f;
     [Min(0)]
     public float nuancerForce = 10f;
+    [Space]
+    [Range(0f, 100f)] 
+    public float gravityMultiplier = 15f;
+    [Space]
+    [Range(0f,1f)]
+    public float coyoteTime = 0.2f;   
+    [Range(0f,10f)]
+    public float jumpBufferTime = 0.2f;
+    [Space]
+    [Range(0f,100f)]
+    public float maxSpeed = 15f;
+    [Range(0f,1000f)]
+    public float maxHeight = 35f;
+    public static float hookTime = 0.6f;
+    public static float hookRange = 15f;
 
 }
