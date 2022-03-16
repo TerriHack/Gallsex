@@ -84,7 +84,7 @@ namespace TerriScene_Scripts
             //Durnant la chute du gobelin,la gravité est multipliée. 
             Gravity();
 
-            //JumpNuancer();
+            JumpNuancer();
         }
 
         private void HorizontalMove()
@@ -151,7 +151,8 @@ namespace TerriScene_Scripts
         {
             if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
             {
-                rb.AddForce((Vector2.up * playerData.nuancerForce * Time.fixedDeltaTime),ForceMode2D.Impulse);
+                Debug.Log("oui");
+                rb.AddForce((Vector2.up * playerData.nuancerForce),ForceMode2D.Impulse);
             }
         }
         
