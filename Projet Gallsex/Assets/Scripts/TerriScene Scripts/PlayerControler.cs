@@ -18,6 +18,7 @@ namespace TerriScene_Scripts
         private float _normalX;
         public Vector2 height;
         public bool isWalled;
+        public float jumpTime = 0.2f;
 
 
         private void Start()
@@ -39,17 +40,16 @@ namespace TerriScene_Scripts
             {
                 jumpBufferCounter = playerData.jumpBufferTime;
                 _jumpTime = Time.time;
-                                
-                if (_coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
-                {
-                    Jump();
-                    JumpNuancer();
-                    jumpBufferCounter = 0f;
-                }
             }
             else
             {
                 jumpBufferCounter -= Time.deltaTime;
+            }
+            
+            if (_coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+            {
+                Jump();
+                jumpBufferCounter = 0f;
             }
 
             if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
@@ -120,6 +120,7 @@ namespace TerriScene_Scripts
         {
             rb.AddForce(height,ForceMode2D.Impulse);
             isGrounded = false;
+            JumpNuancer();
         }
 
         private void Clamping()
