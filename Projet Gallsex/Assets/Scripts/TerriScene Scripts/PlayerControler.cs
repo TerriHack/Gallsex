@@ -18,8 +18,7 @@ namespace TerriScene_Scripts
         private float _normalX;
         public Vector2 height;
         public bool isWalled;
-        public float jumpTime = 0.2f;
-
+        public float canJump;
 
         private void Start()
         {
@@ -93,10 +92,12 @@ namespace TerriScene_Scripts
 
             if (isGrounded)
             {
+                height = new Vector2(0, playerData.jumpForce);
                 movement = new Vector2(_inputX * playerData.speed, 0);
             }
             else
             {
+                isWalled = false;
                 movement = new Vector2(_inputX * playerData.airSpeed, 0);
             }
             
@@ -118,9 +119,18 @@ namespace TerriScene_Scripts
 
         private void Jump()
         {
-            rb.AddForce(height,ForceMode2D.Impulse);
-            isGrounded = false;
-            JumpNuancer();
+            if (canJump == 0f)
+            {
+                rb.AddForce(height,ForceMode2D.Impulse);
+                isGrounded = false;
+                JumpNuancer();
+            }
+            canJump += 1f;
+            
+            if (canJump > 0f)
+            {
+                DoubleJump();
+            }
         }
 
         private void Clamping()
@@ -130,19 +140,20 @@ namespace TerriScene_Scripts
             rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
         }
         
-        private void OnCollisionEnter2D(Collision2D col)
+        private void OnCollisionStay2D(Collision2D col)
         {
             _normalX = col.GetContact(0).normal.x;
-
+            canJump = 1f;
+            
             //GroundCheck avec les normals 
             isGrounded = col.GetContact(0).normal.y >= 0.9f;
             
-            if (col.GetContact(0).normal.x <= -0.9f && !isGrounded)
+            if (col.GetContact(0).normal.x <= -0.5f && !isGrounded)
             {
                 isWalled = true;
             }
 
-            if (col.GetContact(0).normal.x >= 0.9f && !isGrounded)
+            if (col.GetContact(0).normal.x >= 0.5f && !isGrounded)
             {
                 isWalled = true;
             }
@@ -152,7 +163,6 @@ namespace TerriScene_Scripts
         {
             if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
             {
-                Debug.Log("oui");
                 rb.AddForce((Vector2.up * playerData.nuancerForce),ForceMode2D.Impulse);
             }
         }
@@ -164,7 +174,6 @@ namespace TerriScene_Scripts
             {
                 gravity += playerData.gravityMultiplier;
                 rb.gravityScale += gravity * Time.fixedDeltaTime;
-                isGrounded = false;
             }
             else
             {
@@ -181,6 +190,14 @@ namespace TerriScene_Scripts
             }
 
             if (Input.GetButtonDown("Saut") && isWalled) Jump();
+        }
+        
+        private void DoubleJump()
+        {
+            height = new Vector2(0, playerData.doubleJumpForce);
+            rb.AddForce(height,ForceMode2D.Impulse);
+            isGrounded = false;
+            JumpNuancer();
         }
     }
 }
