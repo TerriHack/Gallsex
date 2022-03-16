@@ -20,6 +20,7 @@ public class Haircontrol : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     private Vector2 Offsetplus;
     private Vector2 Offsetbase;
+    public SpriteRenderer spriteRen;
     private void FixedUpdate()
     {
         UpdateHairOffset();
@@ -61,7 +62,7 @@ public class Haircontrol : MonoBehaviour
             currentOffset = runOffset;
         }
         //flip
-        if (rb.velocity.x < 0)
+        if (spriteRen.flipX == true)
         {
             currentOffset.x = currentOffset.x * -1;
         }
