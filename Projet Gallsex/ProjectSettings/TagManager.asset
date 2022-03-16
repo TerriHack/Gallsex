@@ -42,6 +42,9 @@ TagManager:
   - name: Background
     uniqueID: 2257201829
     locked: 0
+  - name: triche
+    uniqueID: 2415788335
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
