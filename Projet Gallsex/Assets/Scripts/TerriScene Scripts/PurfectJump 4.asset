@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
-  m_Name: PurfectJump 3
+  m_Name: PurfectJump 4
   m_EditorClassIdentifier: 
-  speed: 2
-  airSpeed: 1
-  numberOfJump: 1
-  jumpForce: 10
-  doubleJumpForce: 100
+  speed: 8
+  airSpeed: 4
+  jumpForce: 57
   wallJumpForceX: 20
-  wallJumpForceY: 35
+  wallJumpForceY: 40
   nuancerDuration: 0.2
-  nuancerForce: 3
+  nuancerForce: 10
   gravityMultiplier: 9
-  coyoteTime: 0.1
+  coyoteTime: 0.2
   jumpBufferTime: 0.12
-  maxSpeed: 100
-  maxAirSpeed: 15
+  maxSpeed: 9
+  maxAirSpeed: 13.6
   maxFallSpeed: -15
-  maxRiseSpeed: 20
-  maxHeight: 1000
+  maxRiseSpeed: 14.2
+  maxAirSpeedWallJump: 50
+  maxRiseSpeedWallJump: 50
+  wallJumpTime: 0.7

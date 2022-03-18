@@ -11,11 +11,8 @@ public class PlayerData : ScriptableObject
     public float speed = 1f;
     [Range(0f,100f)]
     public float airSpeed = 0.9f;
-    public float numberOfJump = 1; 
     [Range(0f,500f)]
     public float jumpForce = 10f;
-    [Range(0f,500f)]
-    public float doubleJumpForce = 10f;
     [Range(0f, 500f)]
     public float wallJumpForceX = 100f;
     [Range(0f, 500f)]
@@ -42,8 +39,11 @@ public class PlayerData : ScriptableObject
     public float maxFallSpeed = 15f;
     [Range(0f,100f)]
     public float maxRiseSpeed = 15f;
-    [Range(0f,1000f)]
-    public float maxHeight = 35f;
+    [Range(0f,100f)]
+    public float maxAirSpeedWallJump = 15f;
+    [Range(0f,100f)]
+    public float maxRiseSpeedWallJump = 15f;
+    public float wallJumpTime = 0.5f;
     public static float hookTime = 0.6f;
     public static float hookRange = 15f;
 }

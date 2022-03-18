@@ -18,10 +18,18 @@ namespace TerriScene_Scripts
         private float _normalX;
         public Vector2 height;
         public bool isWalled;
+        public float _wallJumpCounter;
+        public bool _isWallJumping;
+        public bool isGroundClamped;
+        public bool isAirClamped;
+        public bool isAirWallJumpClamped;
+        private WallCheck WC;
+        private RightWallCheck RWC;
 
         private void Start()
         {
             isGrounded = true;
+            _isWallJumping = false;
         }
 
         private void Update()
@@ -31,8 +39,8 @@ namespace TerriScene_Scripts
             //Quand on appuie sur le bouton saut en l'air on a "jumpBufferTime" pour resauter à l'aterrisage.
             
             #region Inputs
-
             _inputX = Input.GetAxisRaw("Horizontal");
+            //if (isWalled) _inputX = 0;
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut") && isGrounded)
             {
@@ -57,15 +65,14 @@ namespace TerriScene_Scripts
                 isGrounded = false;
                 isWalled = false;
             }
-
-            if (Input.GetButton("Saut")) isGrounded = false;
-            
             #endregion
 
             WallJump();
             
             if (isGrounded)
             {
+                _isWallJumping = false;
+                GroundClamp();
                 height = new Vector2(0, playerData.jumpForce);
                 _coyoteTimeCounter = playerData.coyoteTime;
             }
@@ -74,16 +81,15 @@ namespace TerriScene_Scripts
                 AirClamp();
                 _coyoteTimeCounter -= Time.deltaTime;
             }
+
+            if (rb.velocity.y < 0f) isGrounded = false;
         }
 
         private void FixedUpdate()
         {
             //Le gobelin se déplace selon la valeur de l'axe X
             if (_inputX != 0) HorizontalMove();
-            
-            //La velocité est contrainte.
-            //Clamping();
-            
+
             //Durnant la chute du gobelin,la gravité est multipliée. 
             Gravity();
 
@@ -129,23 +135,56 @@ namespace TerriScene_Scripts
 
         private void AirClamp()
         {
-            float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
-            float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+            float verticalVelocity;
+            float horizontalVelocity;
+            
+            if (_isWallJumping && isWalled)
+            {
+                verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeedWallJump);
+                horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeedWallJump);
+                isAirWallJumpClamped = true;
+                isAirClamped = false;
+                isGroundClamped = false;
+            }
+            else
+            {
+                verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
+                horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+                isAirWallJumpClamped = false;
+                isAirClamped = true;
+                isGroundClamped = false;
+            }
+            
             rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+        }
+
+        private void GroundClamp()
+        {
+            float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
+            float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxSpeed, playerData.maxSpeed);
+            rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+
+            isAirClamped = false;
+            isAirWallJumpClamped = false;
+            isGroundClamped = true;
         }
         
         private void OnCollisionStay2D(Collision2D col)
         {
             _normalX = col.GetContact(0).normal.x;
-
+        
             //GroundCheck avec les normals 
             isGrounded = col.GetContact(0).normal.y >= 0.9f;
-            
+        
+            if (col.GetContact(0).normal.y >= 0.9f)
+            {
+                isWalled = false;
+            }
             if (col.GetContact(0).normal.x <= -0.5f && !isGrounded)
             {
                 isWalled = true;
             }
-
+        
             if (col.GetContact(0).normal.x >= 0.5f && !isGrounded)
             {
                 isWalled = true;
@@ -163,7 +202,7 @@ namespace TerriScene_Scripts
         private void Gravity()
         {
             //Si le gobelin chute sa gravité est modifiée. 
-            if (rb.velocity.y < 0f)
+            if (rb.velocity.y < 0f && !isWalled)
             {
                 gravity += playerData.gravityMultiplier;
                 rb.gravityScale += gravity * Time.fixedDeltaTime;
@@ -173,23 +212,30 @@ namespace TerriScene_Scripts
                 rb.gravityScale = 9f;
                 gravity = 20f;
             }
+
+            if (_isWallJumping) gravity = 0f;
         }
 
         private void WallJump()
         {
             if (Input.GetButtonDown("Saut") && isWalled)
             {
+                _wallJumpCounter = playerData.wallJumpTime;
                 height = new Vector2(_normalX * playerData.wallJumpForceX, playerData.wallJumpForceY);
                 Jump();
+                
             }
-        }
-        
-        private void DoubleJump()
-        {
-            height = new Vector2(0, playerData.doubleJumpForce);
-            rb.AddForce(height,ForceMode2D.Impulse);
-            isGrounded = false;
-            JumpNuancer();
+            
+            _wallJumpCounter -= Time.deltaTime;
+
+            if (_wallJumpCounter > 0f)
+            {
+                _isWallJumping = true;
+            }
+            else
+            {
+                _isWallJumping = false;
+            }
         }
     }
 }
