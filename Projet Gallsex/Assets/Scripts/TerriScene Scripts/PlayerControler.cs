@@ -12,7 +12,7 @@ namespace TerriScene_Scripts
         [SerializeField] private float gravity = 20f;
         
         private float _inputX;
-        private float _coyoteTimeCounter;
+        public float _coyoteTimeCounter;
         public float jumpBufferCounter;
         private float _jumpTime = -1f;
         private float _normalX;
@@ -40,9 +40,8 @@ namespace TerriScene_Scripts
             
             #region Inputs
             _inputX = Input.GetAxisRaw("Horizontal");
-            //if (isWalled) _inputX = 0;
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut") && isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
             {
                 jumpBufferCounter = playerData.jumpBufferTime;
                 _jumpTime = Time.time;
@@ -52,7 +51,7 @@ namespace TerriScene_Scripts
                 jumpBufferCounter -= Time.deltaTime;
             }
             
-            if (_coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+            if (_coyoteTimeCounter > 0f && jumpBufferCounter > 0f && isGrounded)
             {
                 Jump();
                 jumpBufferCounter = 0f;
@@ -91,9 +90,9 @@ namespace TerriScene_Scripts
             if (_inputX != 0) HorizontalMove();
 
             //Durnant la chute du gobelin,la gravité est multipliée. 
-            Gravity();
-
-            JumpNuancer();
+            if(!_isWallJumping) Gravity();
+            
+            if(isGrounded || _coyoteTimeCounter > 0f)JumpNuancer();
         }
 
         private void HorizontalMove()
@@ -111,7 +110,6 @@ namespace TerriScene_Scripts
                 movement = new Vector2(_inputX * playerData.airSpeed, 0);
             }
             
-            //Si le gobelin est au sol il se déplace selon son input.
             rb.AddForce(movement, ForceMode2D.Impulse);
 
             #region Flip the Sprite
@@ -129,7 +127,6 @@ namespace TerriScene_Scripts
 
         private void Jump()
         {
-            isGrounded = false;
             rb.AddForce(height,ForceMode2D.Impulse);
         }
 

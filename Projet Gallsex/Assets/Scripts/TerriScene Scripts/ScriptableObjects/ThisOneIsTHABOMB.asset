@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
-  m_Name: PurfectJump 4
+  m_Name: ThisOneIsTHABOMB
   m_EditorClassIdentifier: 
   speed: 8
   airSpeed: 4
   jumpForce: 57
-  wallJumpForceX: 12
-  wallJumpForceY: 35
+  wallJumpForceX: 20
+  wallJumpForceY: 40
   nuancerDuration: 0.2
   nuancerForce: 10
   gravityMultiplier: 9
@@ -26,6 +26,6 @@ MonoBehaviour:
   maxAirSpeed: 13.6
   maxFallSpeed: -15
   maxRiseSpeed: 14.2
-  maxAirSpeedWallJump: 100
-  maxRiseSpeedWallJump: 100
+  maxAirSpeedWallJump: 50
+  maxRiseSpeedWallJump: 50
   wallJumpTime: 0.7
