@@ -11,15 +11,17 @@ namespace TerriScene_Scripts
         [SerializeField] private Transform originTr;
         [SerializeField] private Transform gobelinTr;
         [SerializeField] private Rigidbody2D gobelinRb;
-        [SerializeField] private PlayerControler pC;
+        [SerializeField] private LineRenderer lineRen;
         public float _inputX;
         public float _inputY;
         private RaycastHit2D _hit;
         private float _hookTimeCounter;
+        private float hookTime;
         
 
         void Update()
         {
+            Debug.Log(hookTime);
             _inputX = Input.GetAxisRaw("Mouse X");
             _inputY = Input.GetAxisRaw("Mouse Y");
 
@@ -37,19 +39,34 @@ namespace TerriScene_Scripts
         private void Shoot()
         {
             Vector2 origin = originTr.position;
-            Vector2 direction = new Vector2(_inputX * 2,_inputY * 2);
+            Vector2 direction = new Vector2(_inputX * PlayerData.hookRange,_inputY * PlayerData.hookRange);
+            lineRen.SetPosition(0, gobelinTr.position);
 
-            Debug.DrawRay(origin, direction, Color.blue);
-            _hit = Physics2D.Raycast(origin, direction, PlayerData.hookRange);
+            
+            _hit = Physics2D.Raycast(origin, direction, PlayerData.hookMaxRange);
             if(_hit.collider == null) return;
 
             _hookTimeCounter -= Time.deltaTime;
-                
+            hookTime -= Time.deltaTime;
+
             if (_hit.collider.CompareTag("Ground") && _hookTimeCounter <= 0f)
             {
-                Debug.Log("oui");
-                gobelinRb.AddForce((direction * 10000),ForceMode2D.Impulse);
+                hookTime = PlayerData.hookRenDuration;
+                gobelinRb.AddForce((direction.normalized * PlayerData.hookForce),ForceMode2D.Impulse);
                 _hookTimeCounter = PlayerData.hookTime;
+            }
+            
+            if (hookTime >= 0f)
+            {
+                Vector3 line = _hit.point; 
+                
+                lineRen.SetPosition(1, line);
+                lineRen.enabled = true;
+            }
+            else
+            {
+                Debug.Log("non");
+                lineRen.enabled = false;
             }
         }
     }

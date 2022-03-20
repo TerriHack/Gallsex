@@ -34,13 +34,9 @@ namespace TerriScene_Scripts
 
         private void Update()
         {
-            //Récupérer l'axe horizontal.
-            //Quand on tombe d'une platform on a "coyoteTime" pour sauter.
-            //Quand on appuie sur le bouton saut en l'air on a "jumpBufferTime" pour resauter à l'aterrisage.
-            
             #region Inputs
             _inputX = Input.GetAxisRaw("Horizontal");
-
+            
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
             {
                 jumpBufferCounter = playerData.jumpBufferTime;
@@ -86,10 +82,8 @@ namespace TerriScene_Scripts
 
         private void FixedUpdate()
         {
-            //Le gobelin se déplace selon la valeur de l'axe X
             if (_inputX != 0) HorizontalMove();
-
-            //Durnant la chute du gobelin,la gravité est multipliée. 
+            
             if(!_isWallJumping) Gravity();
             
             if(isGrounded || _coyoteTimeCounter > 0f)JumpNuancer();
@@ -98,7 +92,7 @@ namespace TerriScene_Scripts
         private void HorizontalMove()
         {
             Vector2 movement;
-
+            
             if (isGrounded)
             {
                 height = new Vector2(0, playerData.jumpForce);
@@ -138,7 +132,7 @@ namespace TerriScene_Scripts
             if (_isWallJumping && isWalled)
             {
                 verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeedWallJump);
-                horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeedWallJump);
+                horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeedWallJump, playerData.maxAirSpeedWallJump);
                 isAirWallJumpClamped = true;
                 isAirClamped = false;
                 isGroundClamped = false;
@@ -169,8 +163,7 @@ namespace TerriScene_Scripts
         private void OnCollisionStay2D(Collision2D col)
         {
             _normalX = col.GetContact(0).normal.x;
-        
-            //GroundCheck avec les normals 
+            
             isGrounded = col.GetContact(0).normal.y >= 0.9f;
         
             if (col.GetContact(0).normal.y >= 0.9f)
@@ -198,7 +191,6 @@ namespace TerriScene_Scripts
         
         private void Gravity()
         {
-            //Si le gobelin chute sa gravité est modifiée. 
             if (rb.velocity.y < 0f && !isWalled)
             {
                 gravity += playerData.gravityMultiplier;
