@@ -44,7 +44,7 @@ public class PlayerData : ScriptableObject
     [Range(0f,100f)]
     public float maxRiseSpeedWallJump = 15f;
     [Range(0f, 100f)]
-    public static float hookForce = 40f;
+    public static float hookForce = 30f;
     public float wallJumpTime = 0.2f;
     public static float hookTime = 0.4f;
     public static float hookRange = 0.2f;

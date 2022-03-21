@@ -23,9 +23,6 @@ namespace TerriScene_Scripts
         public bool isGroundClamped;
         public bool isAirClamped;
         public bool isAirWallJumpClamped;
-        private WallCheck WC;
-        private RightWallCheck RWC;
-
         private void Start()
         {
             isGrounded = true;
