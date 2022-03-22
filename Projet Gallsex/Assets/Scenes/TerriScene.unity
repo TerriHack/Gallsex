@@ -2861,7 +2861,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.08, y: 1}
+  m_Offset: {x: 10.08, y: 0.93}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3094,7 +3094,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0.57574487, b: 0.4117647, a: 1}
+  m_BackGroundColor: {r: 0.2988163, g: 0.5540255, b: 0.745283, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -11766,11 +11766,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101407, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_Size.x
-      value: 1.0348682
+      value: 0.40232468
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178299340679101407, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8549592
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101407, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0048666
+      value: 0.0015888214
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178299340679101407, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34970173
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101407, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_IsTrigger
