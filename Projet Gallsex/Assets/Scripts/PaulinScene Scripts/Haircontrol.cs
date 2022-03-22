@@ -49,7 +49,7 @@ public class Haircontrol : MonoBehaviour
         else if (rb.velocity.y < 0 && rb.velocity.x != 0)
         {
             Offsetplus = new Vector2(runOffset[0]/2, runOffset[1]/2);
-            Offsetbase = new Vector2(fallOffset[0]/2, fallOffset[1]/2);
+            Offsetbase = new Vector2(fallOffset[0]/2, fallOffset[1]);
             currentOffset = Offsetbase + Offsetplus;
         }
         else if (rb.velocity.y < 0)
