@@ -3608,7 +3608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202eb6da3fbb46245888d734a2e05af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repeatable: 1
+  repeatable: 0
   offsetX: 0
   offsetY: 25
   cam: {fileID: 767770866}
@@ -11705,7 +11705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202eb6da3fbb46245888d734a2e05af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repeatable: 1
+  repeatable: 0
   offsetX: 0
   offsetY: 25
   cam: {fileID: 767770866}
@@ -12208,7 +12208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202eb6da3fbb46245888d734a2e05af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repeatable: 1
+  repeatable: 0
   offsetX: 0
   offsetY: 25
   cam: {fileID: 767770866}
