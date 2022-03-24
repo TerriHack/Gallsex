@@ -11,6 +11,7 @@ namespace TerriScene_Scripts
         [SerializeField] public SpriteRenderer spriteRen;
         public bool isGrounded;
         [SerializeField] private float gravity = 20f;
+        [SerializeField] private Animator anim;
         
         private float _inputX;
         public float _coyoteTimeCounter;
@@ -60,6 +61,18 @@ namespace TerriScene_Scripts
             }
             #endregion
 
+            #region Animation
+
+            if (_inputX != 0f)
+            {
+                anim.SetBool("isRunning", true);
+            }
+            else
+            {
+                anim.SetBool("isRunning", false);
+            }
+            #endregion
+
             WallJump();
             
             if (isGrounded)
@@ -90,7 +103,7 @@ namespace TerriScene_Scripts
         private void HorizontalMove()
         {
             Vector2 movement;
-            
+
             if (isGrounded)
             {
                 height = new Vector2(0, playerData.jumpForce);
