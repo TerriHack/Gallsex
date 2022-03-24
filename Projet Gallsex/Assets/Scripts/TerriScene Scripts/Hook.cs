@@ -21,7 +21,7 @@ namespace TerriScene_Scripts
 
         void Update()
         {
-            Debug.Log(hookTime);
+            //Debug.Log(hookTime);
             _inputX = Input.GetAxisRaw("Mouse X");
             _inputY = Input.GetAxisRaw("Mouse Y");
 
