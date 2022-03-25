@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62fee1e2125ee347aa6752c9550a3be, type: 3}
   m_Name: PurfectJump 4
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 9
   airSpeed: 2.5
   jumpForce: 20
   wallJumpForceX: 18
