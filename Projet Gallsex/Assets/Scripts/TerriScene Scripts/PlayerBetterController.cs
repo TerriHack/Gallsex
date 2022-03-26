@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerBetterController : MonoBehaviour
 {
-    [SerializeField] private PlayerData playerData;
+    [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator anim;
 
@@ -13,18 +13,14 @@ public class PlayerBetterController : MonoBehaviour
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
-    [SerializeField] private float wallSlidingSpeed;
 
     public bool isGrounded;
     public bool isTouchingFront;
+    public bool isTouchingBack;
     private bool _wallSliding;
+    private bool _wallSlidingBack;
     private bool _facingRight;
-
-
-    void Start()
-    {
-        
-    }
+    private bool _wallJumping;
     
     void Update()
     {
@@ -40,7 +36,7 @@ public class PlayerBetterController : MonoBehaviour
             _jumpBufferCounter -= Time.deltaTime;
         }
         
-        if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f && isGrounded)
+        if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
         {
             Jump();
             _jumpBufferCounter = 0f;
@@ -73,9 +69,21 @@ public class PlayerBetterController : MonoBehaviour
 
         if (_wallSliding)
         {
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
         }
-        
+
+        if (Input.GetButtonDown("Saut") && isTouchingBack || Input.GetButtonDown("Saut") && isTouchingFront)
+        {
+            _wallJumping = true;
+            Invoke("SetWallJumpingToFalse", playerData.wallJumpTime);
+        }
+
+        if (_wallJumping)
+        {
+            Debug.Log("it works");
+            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+        }
+
         #region Animation
 
         if (_inputX != 0f)
@@ -157,5 +165,10 @@ public class PlayerBetterController : MonoBehaviour
         float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
         float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+    }
+    
+    private void SetWallJumpingToFalse()
+    {
+        _wallJumping = false;
     }
 }
