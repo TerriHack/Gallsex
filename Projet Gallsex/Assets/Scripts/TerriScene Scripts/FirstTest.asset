@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: FirstTest
   m_EditorClassIdentifier: 
   speed: 7
-  airSpeed: 0.9
-  jumpForce: 10
-  wallJumpTime: 0.1
-  xWallForce: 3
-  yWallForce: 4
-  wallSlidingSpeed: 2.5
-  nuancerDuration: 3
-  nuancerForce: 10
+  airControl: 0.35
+  jumpForce: 20
+  wallJumpTime: 0.2
+  xWallForce: 63
+  yWallForce: 63
+  wallSlidingSpeed: 5
+  nuancerDuration: 0.3
+  nuancerForce: 1.4
   coyoteTime: 0.2
   jumpBufferTime: 0.2
   maxSpeed: 15
   maxAirSpeed: 15
   maxFallSpeed: -15
-  maxRiseSpeed: 15
+  maxRiseSpeed: 30
+  gravity: 20
+  gravityMultiplier: 1.5

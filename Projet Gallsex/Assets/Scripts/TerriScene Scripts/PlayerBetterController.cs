@@ -13,15 +13,15 @@ public class PlayerBetterController : MonoBehaviour
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
+    private float _wallJumpTime;
+    public float _gravity;
 
     public bool isGrounded;
     public bool isTouchingFront;
-    public bool isTouchingBack;
     private bool _wallSliding;
-    private bool _wallSlidingBack;
     private bool _facingRight;
     private bool _wallJumping;
-    
+
     void Update()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
@@ -61,27 +61,32 @@ public class PlayerBetterController : MonoBehaviour
         if (isTouchingFront && !isGrounded && _inputX != 0)
         {
             _wallSliding = true;
+            _wallJumpTime = playerData.wallJumpTime;
         }
         else
         {
             _wallSliding = false;
         }
 
+        _wallJumpTime -= Time.deltaTime;
+        
         if (_wallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
         }
 
-        if (Input.GetButtonDown("Saut") && isTouchingBack || Input.GetButtonDown("Saut") && isTouchingFront)
+        if (_wallJumpTime > 0f)
         {
             _wallJumping = true;
-            Invoke("SetWallJumpingToFalse", playerData.wallJumpTime);
+        }
+        else
+        {
+            _wallJumping = false;
         }
 
-        if (_wallJumping)
+        if (_wallJumping && Input.GetButtonDown("Saut"))
         {
-            Debug.Log("it works");
-            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            WallJump();
         }
 
         #region Animation
@@ -102,6 +107,7 @@ public class PlayerBetterController : MonoBehaviour
     {
         if (_inputX != 0) HorizontalMove();
         if (isGrounded || _coyoteTimeCounter > 0f) JumpNuancer();
+        Gravity();
     }
     
     private void HorizontalMove()
@@ -114,7 +120,7 @@ public class PlayerBetterController : MonoBehaviour
         }
         else
         {
-            movement = new Vector2(_inputX * playerData.airSpeed, 0);
+            movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
         }
 
         rb.AddForce(movement, ForceMode2D.Impulse);
@@ -152,7 +158,7 @@ public class PlayerBetterController : MonoBehaviour
             rb.AddForce((Vector2.up * playerData.nuancerForce), ForceMode2D.Impulse);
         }
     }
-
+    
     private void GroundClamp()
     {
         float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
@@ -164,11 +170,34 @@ public class PlayerBetterController : MonoBehaviour
     {
         float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
         float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+        
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
     }
-    
-    private void SetWallJumpingToFalse()
+
+    private void WallJump()
     {
-        _wallJumping = false;
+        if (_wallSliding)
+        {
+            rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
+ 
+        }
+        else
+        {
+            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+        }
     }
+
+    private void Gravity()
+     {
+        if (rb.velocity.y < -0.3f && !_wallSliding) 
+        {
+            _gravity += playerData.gravityMultiplier;
+             rb.gravityScale += _gravity * Time.fixedDeltaTime; 
+        }
+        else 
+        {
+            rb.gravityScale = 9f;
+            _gravity = playerData.gravity;
+        }
+     }
 }
