@@ -9,7 +9,7 @@ public class triggerjump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DustJump.Play();
+           DustJump.Play();
         }
     }
 }
