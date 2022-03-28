@@ -46,6 +46,9 @@ public class PlayerControllerData : ScriptableObject
     public float gravity = 20;
     public float gravityMultiplier = 1.5f;
 
+    [Space]
+    public float dashForce;
+    
     public static float hookForce = 30f;
     public static float hookTime = 0.4f;
     public static float hookRange = 0.2f;

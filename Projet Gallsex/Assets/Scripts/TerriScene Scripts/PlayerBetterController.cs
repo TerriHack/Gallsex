@@ -8,7 +8,8 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator anim;
-
+    [SerializeField] private Transform tr;
+    
     private float _inputX;
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;

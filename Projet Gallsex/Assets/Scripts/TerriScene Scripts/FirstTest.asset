@@ -15,9 +15,9 @@ MonoBehaviour:
   speed: 7
   airControl: 0.35
   jumpForce: 20
-  wallJumpTime: 0.2
-  xWallForce: 63
-  yWallForce: 63
+  wallJumpTime: 0.07
+  xWallForce: 40
+  yWallForce: 40
   wallSlidingSpeed: 5
   nuancerDuration: 0.3
   nuancerForce: 1.4
@@ -29,3 +29,4 @@ MonoBehaviour:
   maxRiseSpeed: 30
   gravity: 20
   gravityMultiplier: 1.5
+  dashForce: 1000
