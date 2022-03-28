@@ -12,9 +12,9 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Lights
+  - Testing
   - 
   - 
   - 
@@ -42,9 +42,27 @@ TagManager:
   - name: Background
     uniqueID: 2257201829
     locked: 0
+  - name: Background_Assets_01
+    uniqueID: 1316971291
+    locked: 0
+  - name: Background_Assets_02
+    uniqueID: 398588481
+    locked: 0
+  - name: Background_Assets_03
+    uniqueID: 3878500315
+    locked: 0
+  - name: Background_Assets_04
+    uniqueID: 740241687
+    locked: 0
   - name: triche
     uniqueID: 2415788335
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2100058639
+    locked: 0
+  - name: VFX
+    uniqueID: 803059587
     locked: 0

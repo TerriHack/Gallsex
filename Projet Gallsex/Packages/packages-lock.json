@@ -19,6 +19,18 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.2d.tilemap.extras": {
+      "version": "1.8.1-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.tilemap": "1.0.0",
+        "com.unity.2d.tilemap": "1.0.0",
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.cinemachine": {
       "version": "2.6.11",
       "depth": 0,
@@ -81,6 +93,15 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.postprocessing": {
+      "version": "3.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
