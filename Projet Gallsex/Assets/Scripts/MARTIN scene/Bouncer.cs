@@ -12,19 +12,6 @@ public class Bouncer : MonoBehaviour
     {
         rbtarget.velocity = new Vector2(rbtarget.velocity.x, 0);
         rbtarget.AddForce(new Vector2(0, Strength), ForceMode2D.Impulse);
-        Debug.Log("bounce");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 }
