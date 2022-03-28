@@ -21,7 +21,6 @@ namespace TerriScene_Scripts
 
         void Update()
         {
-            //Debug.Log(hookTime);
             _inputX = Input.GetAxisRaw("Mouse X");
             _inputY = Input.GetAxisRaw("Mouse Y");
 
@@ -49,7 +48,7 @@ namespace TerriScene_Scripts
             _hookTimeCounter -= Time.deltaTime;
             hookTime -= Time.deltaTime;
 
-            if (_hit.collider.CompareTag("Ground") && _hookTimeCounter <= 0f)
+            if (_hit.collider.CompareTag("JumpableGround") && _hookTimeCounter <= 0f)
             {
                 hookTime = PlayerData.hookRenDuration;
                 gobelinRb.AddForce((direction.normalized * PlayerData.hookForce),ForceMode2D.Impulse);
@@ -65,7 +64,6 @@ namespace TerriScene_Scripts
             }
             else
             {
-                Debug.Log("non");
                 lineRen.enabled = false;
             }
         }
