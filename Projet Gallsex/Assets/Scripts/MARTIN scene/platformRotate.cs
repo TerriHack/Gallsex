@@ -14,16 +14,26 @@ public class platformRotate : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        State = true;
-        Timer = 0;
-        if (rotation == 0)
+        if (other.gameObject.CompareTag("Player"))
         {
-            animator.Play("rotate platform anim 2");
-        }
+            if (State)
+            {
+                
+            }
+            else
+            {
+                State = true;
+                Timer = 0;
+            }
 
-        else if (rotation == 90)
-        {
-            animator.Play("rotate platform anim 1");
+            if (rotation == 0)
+            {
+                animator.Play("rotate platform anim 2");
+            }
+            else if(rotation == 90)
+            {
+                animator.Play("rotate platform anim 1");
+            }
         }
     }
 
@@ -52,20 +62,18 @@ public class platformRotate : MonoBehaviour
 
     private void turn()
     {
-        animator.Stop();
         if (rotation < 80)
         {
             animator.Play("rotate platform 0to90");
-            Debug.Log("anim rotate 1");
             rotation = 90;
         }
         else if (rotation > 10)
         {
             animator.Play("rotate platform 90to0");
-            Debug.Log("anim rotate 2");
             rotation = 0;
         }
 
         State = false;
+        Debug.Log(State);
     }
 }

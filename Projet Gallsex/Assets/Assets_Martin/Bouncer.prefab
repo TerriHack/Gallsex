@@ -180,5 +180,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb19466944bb7934398bbb2fa5d57894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Strength: 500
+  Strength: 40
   rbtarget: {fileID: 0}
