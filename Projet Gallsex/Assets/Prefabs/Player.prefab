@@ -276,7 +276,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2037765467
-  m_SortingLayer: -2
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Time: 1
   m_Parameters:
@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 20073583}
   - component: {fileID: 410723800}
   - component: {fileID: 1443644433}
+  - component: {fileID: 1933754024}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -646,6 +647,21 @@ MonoBehaviour:
   _gravity: 0
   isGrounded: 0
   isTouchingFront: 0
+--- !u!114 &1933754024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178299340679101392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c7e9c6dc8768b408c8daa0f459a342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointArray:
+  - {x: 0, y: 0}
+  PlayerPos: {fileID: 7178299340679101404}
 --- !u!1 &7178299341282507982
 GameObject:
   m_ObjectHideFlags: 0
