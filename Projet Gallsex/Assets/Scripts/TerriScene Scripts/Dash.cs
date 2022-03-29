@@ -13,6 +13,8 @@ public class Dash : MonoBehaviour
     public float _inputX;
     public float _inputY;
     public float canDash;
+    
+    public bool isDashing;
 
     private void Start()
     {
@@ -21,31 +23,34 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
-        _inputX = Input.GetAxisRaw("Mouse X");
-        _inputY = Input.GetAxisRaw("Mouse Y");
+        
+        _inputX = Input.GetAxis("Mouse X");
+        _inputY = Input.GetAxis("Mouse Y");
 
         if (_inputX > 0.5 || _inputX < -0.5 || _inputY > 0.5 || _inputY < -0.5)
         {
+            isDashing = true;
             Propulsion();
+        }
+        else
+        {
+            isDashing = false;
         }
 
         if (playerController.isGrounded || playerController.isTouchingFront)
         {
             canDash = 0f;
         }
-        
     }
 
     private void Propulsion()
     {
+        Vector2 direction= new Vector2(_inputX, _inputY);
 
-        Vector2 direction = new Vector2(_inputX * playerData.dashForce, _inputY * playerData.dashForce);
-        
-        if (canDash == 0f)
+        if (canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
         {
-            rb.AddForce( (direction),ForceMode2D.Impulse);
+            rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse);
             canDash += 1f;
         }
-
     }
 }
