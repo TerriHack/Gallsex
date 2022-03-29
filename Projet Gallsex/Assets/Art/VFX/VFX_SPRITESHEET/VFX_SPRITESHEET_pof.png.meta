@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 093d198b5cfa1984c85253a40d8efeab
+guid: b1a337c451d0fc4458e40f4953b0ebf6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2401237369838713600
-    second: SPRITESHEET_poof_0
+      213: 2178856502038021219
+    second: VFX_SPRITESHEET_pof_0
   - first:
-      213: -4092627752578243878
-    second: SPRITESHEET_poof_1
+      213: -7589142547596964256
+    second: VFX_SPRITESHEET_pof_1
   - first:
-      213: 8947395920149231
-    second: SPRITESHEET_poof_2
+      213: -2823213021170869773
+    second: VFX_SPRITESHEET_pof_2
   - first:
-      213: 7595666476634061983
-    second: SPRITESHEET_poof_3
+      213: 6642009271087531712
+    second: VFX_SPRITESHEET_pof_3
   - first:
-      213: 4421388433753446233
-    second: SPRITESHEET_poof_4
+      213: -8143033165644001424
+    second: VFX_SPRITESHEET_pof_4
   - first:
-      213: 3468191107763015417
-    second: SPRITESHEET_poof_5
+      213: 3249916439688508972
+    second: VFX_SPRITESHEET_pof_5
   - first:
-      213: 8939607055856303239
-    second: SPRITESHEET_poof_6
+      213: -5200435998187890872
+    second: VFX_SPRITESHEET_pof_6
   - first:
-      213: 8193452553811711145
-    second: SPRITESHEET_poof_7
+      213: 5095727690602968336
+    second: VFX_SPRITESHEET_pof_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,7 +151,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPRITESHEET_poof_0
+      name: VFX_SPRITESHEET_pof_0
       rect:
         serializedVersion: 2
         x: 0
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00b31a26aa8e25120800000000000000
-      internalID: 2401237369838713600
+      spriteID: 364c68cc17adc3e10800000000000000
+      internalID: 2178856502038021219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_1
+      name: VFX_SPRITESHEET_pof_1
       rect:
         serializedVersion: 2
         x: 24
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad22ba12eb01437c0800000000000000
-      internalID: -4092627752578243878
+      spriteID: 06e0eacdf03fda690800000000000000
+      internalID: -7589142547596964256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_2
+      name: VFX_SPRITESHEET_pof_2
       rect:
         serializedVersion: 2
         x: 48
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fea3c73fb99cf1000800000000000000
-      internalID: 8947395920149231
+      spriteID: 3f95adb17bee1d8d0800000000000000
+      internalID: -2823213021170869773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_3
+      name: VFX_SPRITESHEET_pof_3
       rect:
         serializedVersion: 2
         x: 72
@@ -228,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9cbd1cba6a396960800000000000000
-      internalID: 7595666476634061983
+      spriteID: 0c6060ebd382d2c50800000000000000
+      internalID: 6642009271087531712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_4
+      name: VFX_SPRITESHEET_pof_4
       rect:
         serializedVersion: 2
         x: 96
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95715efda5deb5d30800000000000000
-      internalID: 4421388433753446233
+      spriteID: 07f809fba722efe80800000000000000
+      internalID: -8143033165644001424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_5
+      name: VFX_SPRITESHEET_pof_5
       rect:
         serializedVersion: 2
         x: 120
@@ -270,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fe026fef6d712030800000000000000
-      internalID: 3468191107763015417
+      spriteID: c26f55978c50a1d20800000000000000
+      internalID: 3249916439688508972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_6
+      name: VFX_SPRITESHEET_pof_6
       rect:
         serializedVersion: 2
         x: 144
@@ -291,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78cf3e3d04ddf0c70800000000000000
-      internalID: 8939607055856303239
+      spriteID: 8475bd2430754d7b0800000000000000
+      internalID: -5200435998187890872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPRITESHEET_poof_7
+      name: VFX_SPRITESHEET_pof_7
       rect:
         serializedVersion: 2
         x: 168
@@ -312,8 +312,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a4d6f9dfadf4b170800000000000000
-      internalID: 8193452553811711145
+      spriteID: 015f2861659a7b640800000000000000
+      internalID: 5095727690602968336
       vertices: []
       indices: 
       edges: []
@@ -321,7 +321,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 22b73680d88278f45be5482f6a451c3f
+    spriteID: cab91ed88247d874aa330326c3d8bc7d
     internalID: 0
     vertices: []
     indices: 

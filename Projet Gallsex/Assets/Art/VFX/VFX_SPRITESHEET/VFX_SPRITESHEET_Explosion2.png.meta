@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: d8dd6b6a98957e4488cb586cc1308175
+guid: e4324c6eef3a8fb46a5cfebf6dce9eef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3027495491231042933
-    second: VFX_poof2_0
+      213: -8719707083440561841
+    second: VFX_SPRITESHEET_Explosion2_0
   - first:
-      213: -1853264510007031260
-    second: VFX_poof2_1
+      213: -2265243910293373042
+    second: VFX_SPRITESHEET_Explosion2_1
   - first:
-      213: 2031350920433712668
-    second: VFX_poof2_2
+      213: 804042948224585331
+    second: VFX_SPRITESHEET_Explosion2_2
   - first:
-      213: -4878330213397511489
-    second: VFX_poof2_3
+      213: -5451870998447156868
+    second: VFX_SPRITESHEET_Explosion2_3
   - first:
-      213: -9166685919626972146
-    second: VFX_poof2_4
+      213: -4004755692906312288
+    second: VFX_SPRITESHEET_Explosion2_4
   - first:
-      213: -2009513073822278551
-    second: VFX_poof2_5
+      213: -2456098763443028602
+    second: VFX_SPRITESHEET_Explosion2_5
   - first:
-      213: 6789794804238620956
-    second: VFX_poof2_6
+      213: -2225111272007187119
+    second: VFX_SPRITESHEET_Explosion2_6
   - first:
-      213: -7162106888825532094
-    second: VFX_poof2_7
+      213: -6485021267968697518
+    second: VFX_SPRITESHEET_Explosion2_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +44,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 2
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -151,7 +151,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VFX_poof2_0
+      name: VFX_SPRITESHEET_Explosion2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d4ce1eb13d30a20800000000000000
-      internalID: 3027495491231042933
+      spriteID: f41611a4b906df680800000000000000
+      internalID: -8719707083440561841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_1
+      name: VFX_SPRITESHEET_Explosion2_1
       rect:
         serializedVersion: 2
         x: 24
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42a41364fb1e746e0800000000000000
-      internalID: -1853264510007031260
+      spriteID: e8fb8555aac3090e0800000000000000
+      internalID: -2265243910293373042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_2
+      name: VFX_SPRITESHEET_Explosion2_2
       rect:
         serializedVersion: 2
         x: 48
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1e3d9a46eec03c10800000000000000
-      internalID: 2031350920433712668
+      spriteID: 37e85192dc8882b00800000000000000
+      internalID: 804042948224585331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_3
+      name: VFX_SPRITESHEET_Explosion2_3
       rect:
         serializedVersion: 2
         x: 72
@@ -228,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb2c2657480bc4cb0800000000000000
-      internalID: -4878330213397511489
+      spriteID: c719d4056301754b0800000000000000
+      internalID: -5451870998447156868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_4
+      name: VFX_SPRITESHEET_Explosion2_4
       rect:
         serializedVersion: 2
         x: 96
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e043f0929b369c080800000000000000
-      internalID: -9166685919626972146
+      spriteID: 0ad88185aef3c68c0800000000000000
+      internalID: -4004755692906312288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_5
+      name: VFX_SPRITESHEET_Explosion2_5
       rect:
         serializedVersion: 2
         x: 120
@@ -270,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96cd1579186cc14e0800000000000000
-      internalID: -2009513073822278551
+      spriteID: 68db3b7003f2aedd0800000000000000
+      internalID: -2456098763443028602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_6
+      name: VFX_SPRITESHEET_Explosion2_6
       rect:
         serializedVersion: 2
         x: 144
@@ -291,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c199f6c86623a3e50800000000000000
-      internalID: 6789794804238620956
+      spriteID: 1554b465611de11e0800000000000000
+      internalID: -2225111272007187119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_poof2_7
+      name: VFX_SPRITESHEET_Explosion2_7
       rect:
         serializedVersion: 2
         x: 168
@@ -312,8 +312,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2411d282bb51b9c90800000000000000
-      internalID: -7162106888825532094
+      spriteID: 25b5fd114839006a0800000000000000
+      internalID: -6485021267968697518
       vertices: []
       indices: 
       edges: []
@@ -321,7 +321,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3f4d4c741d1ac284594ad04fec07c7ad
+    spriteID: 363f3c6b832f431499e09c2495c7d24e
     internalID: 0
     vertices: []
     indices: 

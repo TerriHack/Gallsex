@@ -19,7 +19,7 @@ public class PlayerBetterController : MonoBehaviour
     public bool isGrounded;
     public bool isTouchingFront;
     private bool _wallSliding;
-    private bool _facingRight;
+    public bool _facingRight;
     private bool _wallJumping;
 
     void Update()
