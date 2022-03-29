@@ -97,11 +97,6 @@ public class PlayerBetterController : MonoBehaviour
         {
             WallJump();
         }
-
-        if (dash.isDashing)
-        {
-            DashClamp();
-        }
         
         #region Animation
 
@@ -185,14 +180,6 @@ public class PlayerBetterController : MonoBehaviour
     {
         float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
         float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
-        
-        rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
-    }
-    
-    private void DashClamp()
-    {
-        float verticalVelocity = Mathf.Clamp(rb.velocity.y, -50, 50);
-        float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -50, 50);
         
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
     }

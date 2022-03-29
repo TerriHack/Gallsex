@@ -24,17 +24,12 @@ public class Dash : MonoBehaviour
     void Update()
     {
         
-        _inputX = Input.GetAxis("Mouse X");
-        _inputY = Input.GetAxis("Mouse Y");
+        _inputX = Input.GetAxisRaw("Mouse X");
+        _inputY = Input.GetAxisRaw("Mouse Y");
 
         if (_inputX > 0.5 || _inputX < -0.5 || _inputY > 0.5 || _inputY < -0.5)
         {
-            isDashing = true;
             Propulsion();
-        }
-        else
-        {
-            isDashing = false;
         }
 
         if (playerController.isGrounded || playerController.isTouchingFront)
