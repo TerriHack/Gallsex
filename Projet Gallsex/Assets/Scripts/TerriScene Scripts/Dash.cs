@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+
 using UnityEngine;
 
 public class Dash : MonoBehaviour
@@ -40,11 +37,13 @@ public class Dash : MonoBehaviour
 
     private void Propulsion()
     {
-        Vector2 direction= new Vector2(_inputX, _inputY);
+        Vector2 direction = new Vector2(_inputX, _inputY);
 
         if (canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
         {
-            rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse);
+            rb.velocity = Vector2.zero;
+            rb.velocity += new Vector2(_inputX, _inputY).normalized * playerData.dashForce;
+            //rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse);
             canDash += 1f;
         }
     }
