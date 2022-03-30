@@ -200,7 +200,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: UVModule.tilesX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: UVModule.tilesY
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: ForceModule.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
@@ -212,6 +224,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: ForceModule.x.scalar
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.remapEnabled
       value: 1
       objectReference: {fileID: 0}
@@ -221,23 +249,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strength.scalar
-      value: 1.67
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strengthY.scalar
-      value: -2.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strengthZ.scalar
-      value: -0.93
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strength.minScalar
-      value: -0.74
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.orbitalX.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.orbitalZ.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -245,11 +293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strengthY.minScalar
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strengthZ.minScalar
-      value: 0.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.strength.minMaxState
@@ -276,6 +324,18 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.orbitalX.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.orbitalY.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
+      propertyPath: VelocityModule.orbitalZ.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: InitialModule.startSpeed.minMaxState
       value: 3
       objectReference: {fileID: 0}
@@ -289,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284124, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: NoiseModule.remap.maxCurve.m_Curve.Array.data[1].time
@@ -337,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284127, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5442099668283284127, guid: ce27671c96ae80943a36f56c1672d9fd, type: 3}
       propertyPath: m_SortingLayer
