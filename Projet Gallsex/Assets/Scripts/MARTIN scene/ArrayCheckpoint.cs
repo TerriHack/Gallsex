@@ -24,6 +24,11 @@ public class ArrayCheckpoint : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+        checkpointArray[0] = gameObject.transform.position;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad0))

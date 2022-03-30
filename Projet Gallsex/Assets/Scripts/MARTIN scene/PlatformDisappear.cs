@@ -11,7 +11,7 @@ public class PlatformDisappear : MonoBehaviour
     
     public SpriteRenderer ParentSpriteRenderer;
     public BoxCollider2D ParentBoxCollider2D;
-    //public Animation ParentAnimation;
+    public Animation ParentAnimation;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +19,7 @@ public class PlatformDisappear : MonoBehaviour
         {
             WillDisappear = true;
             TIME = 0;
+            ParentAnimation.Play("disappear platform anim");
         }
     }
     
@@ -28,24 +29,25 @@ public class PlatformDisappear : MonoBehaviour
         if (WillDisappear)
         {
             TIME = TIME += Time.deltaTime;
-            //ParentAnimation.Play();
             if (TIME > timer)
             {
                 WillDisappear = false;
                 ParentSpriteRenderer.enabled = false;
                 ParentBoxCollider2D.enabled = false;
                 TIME = 0;
+                tag = "Ground";
             }
         }
         else
         {
             TIME = TIME += Time.deltaTime;
-            //ParentAnimation.Stop();
+            ParentAnimation.Stop();
             if (TIME > timer)
             {
                 ParentSpriteRenderer.enabled = true;
                 ParentBoxCollider2D.enabled = true;
                 TIME = 0;
+                tag = "JumpableGround";
             }
         }
     }
@@ -54,5 +56,6 @@ public class PlatformDisappear : MonoBehaviour
     {
         TIME = 0;
         WillDisappear = false;
+        
     }
 }
