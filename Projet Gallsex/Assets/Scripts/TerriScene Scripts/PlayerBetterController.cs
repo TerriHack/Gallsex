@@ -8,7 +8,8 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator anim;
-
+    [SerializeField] private Dash dash;
+    
     private float _inputX;
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
@@ -16,11 +17,14 @@ public class PlayerBetterController : MonoBehaviour
     private float _wallJumpTime;
     public float _gravity;
 
+
+    
     public bool isGrounded;
     public bool isTouchingFront;
     private bool _wallSliding;
-    private bool _facingRight;
+    public bool _facingRight;
     private bool _wallJumping;
+
 
     void Update()
     {
@@ -30,6 +34,7 @@ public class PlayerBetterController : MonoBehaviour
         {
             _jumpBufferCounter = playerData.jumpBufferTime;
             _jumpTime = Time.time;
+            
         }
         else
         {
@@ -55,9 +60,13 @@ public class PlayerBetterController : MonoBehaviour
         else
         {
             _coyoteTimeCounter -= Time.deltaTime;
-            AirClamp();
         }
 
+        if (!isGrounded && !dash.isDashing)
+        {
+            AirClamp();
+        }
+        
         if (isTouchingFront && !isGrounded && _inputX != 0)
         {
             _wallSliding = true;
@@ -88,7 +97,7 @@ public class PlayerBetterController : MonoBehaviour
         {
             WallJump();
         }
-
+        
         #region Animation
 
         if (_inputX != 0f)
@@ -141,6 +150,7 @@ public class PlayerBetterController : MonoBehaviour
  
     private void Jump()
     {
+        Debug.Log("vui");
         Vector2 height = new Vector2(0, playerData.jumpForce);
         rb.AddForce(height, ForceMode2D.Impulse);
     }
@@ -200,4 +210,5 @@ public class PlayerBetterController : MonoBehaviour
             _gravity = playerData.gravity;
         }
      }
+    
 }
