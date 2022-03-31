@@ -18,15 +18,15 @@ MonoBehaviour:
   wallJumpTime: 0.07
   xWallForce: 30
   yWallForce: 30
-  wallSlidingSpeed: 8
+  wallSlidingSpeed: 4
   nuancerDuration: 0.3
   nuancerForce: 1.4
   coyoteTime: 0.2
   jumpBufferTime: 0.2
   maxSpeed: 15
   maxAirSpeed: 15
-  maxFallSpeed: -15
+  maxFallSpeed: -20
   maxRiseSpeed: 30
-  gravity: 20
-  gravityMultiplier: 1.5
+  gravity: 3
+  gravityMultiplier: 2
   dashForce: 50
