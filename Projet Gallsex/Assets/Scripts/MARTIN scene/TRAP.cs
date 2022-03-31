@@ -11,20 +11,12 @@ public class TRAP : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        int I = Player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
-        Debug.Log(I--);
+        if(other.CompareTag("Player"))
+        {
+            int I = Player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
+        
         Vector2 pos = Player.GetComponent<ArrayCheckpoint>().checkpointArray[I--];
         Player.transform.position = pos;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }
