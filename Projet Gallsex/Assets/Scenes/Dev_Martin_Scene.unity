@@ -2050,7 +2050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Manager: {fileID: 613117959}
   TYPE: 0
-  Variable: {x: 0.5, y: 0.5}
+  Variable: {x: 15, y: 1}
   ChangeTracking: 0
 --- !u!1 &447848705
 GameObject:
