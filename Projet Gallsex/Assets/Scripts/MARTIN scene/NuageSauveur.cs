@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class NuageSauveur : MonoBehaviour
@@ -21,6 +22,8 @@ public class NuageSauveur : MonoBehaviour
 
     public void Action(int Go,float AppearBelow)
     {
-        Cloud.transform.position = new Vector2(Triggers[Go].transform.position.x,Triggers[Go].transform.position.y - AppearBelow);
+        //Cloud.transform.position = new Vector2(Triggers[Go].transform.position.x,Triggers[Go].transform.position.y - AppearBelow);
+        DOTween.To( () => Cloud.transform.position, x => Cloud.transform.position = x,
+            new Vector3(Cloud.transform.position.x, Triggers[Go].transform.position.y - AppearBelow), SPEED);
     }
 }

@@ -82,6 +82,7 @@ public class PlayerBetterController : MonoBehaviour
         if (_wallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
+            rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
         }
 
         if (_wallJumpTime > 0f)
@@ -150,7 +151,6 @@ public class PlayerBetterController : MonoBehaviour
  
     private void Jump()
     {
-        Debug.Log("vui");
         Vector2 height = new Vector2(0, playerData.jumpForce);
         rb.AddForce(height, ForceMode2D.Impulse);
     }

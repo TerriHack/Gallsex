@@ -2,19 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraTriggerManager : MonoBehaviour
 {
     public GameObject Camera;
+    public float TweenTime;
 
     public void EditScale(Vector2 newScale)
     {
-        Camera.GetComponent<Camera>().orthographicSize = 5;
+        DOTween.To(() => Camera.GetComponent<Camera>().orthographicSize,
+            x => Camera.GetComponent<Camera>().orthographicSize = x, newScale.x, TweenTime);
     }
 
     public void EditOffset(Vector2 newOffset)
     {
-        Camera.transform.GetComponent<camerafollow>().offset = new Vector3(newOffset.x,newOffset.y, -10);
+        DOTween.To(() => Camera.transform.GetComponent<camerafollow>().offset,
+            x => Camera.transform.GetComponent<camerafollow>().offset = x, new Vector3(newOffset.x,newOffset.y, -10), TweenTime);
     }
 
     public void EditTracking(bool newTracking)

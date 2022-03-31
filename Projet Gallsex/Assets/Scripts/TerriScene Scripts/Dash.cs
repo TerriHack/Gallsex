@@ -41,9 +41,7 @@ public class Dash : MonoBehaviour
 
         if (canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
         {
-            rb.velocity = Vector2.zero;
-            rb.velocity += new Vector2(_inputX, _inputY).normalized * playerData.dashForce;
-            //rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse);
+            rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse);
             canDash += 1f;
         }
     }

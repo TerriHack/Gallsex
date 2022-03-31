@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="101e6b3a-8dee-454f-8a70-c41f3e3c97f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev_Antoine_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev_Antoine_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev_Paulin_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev_Paulin_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/Dash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/Dash.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/FirstTest.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/FirstTest.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/Hook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/Hook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/FirstTest 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/FirstTest 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/PlayerBetterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/PlayerBetterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/PlayerControllerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/PlayerControllerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +16,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,10 +58,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8212">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8212" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
