@@ -12310,6 +12310,7 @@ MonoBehaviour:
   target: {fileID: 1793962153}
   smoothSpeed: 0.125
   offset: {x: 0, y: 3, z: -2}
+  tracking: 1
 --- !u!1001 &769813226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34839,6 +34840,10 @@ PrefabInstance:
       propertyPath: dash
       value: 
       objectReference: {fileID: 1708374355}
+    - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: c4df9ec808144c94c8cb96b5dadb92b0, type: 2}
     - target: {fileID: 1933754024, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: checkpointArray.Array.data[0].x
       value: 200
@@ -34846,6 +34851,10 @@ PrefabInstance:
     - target: {fileID: 1933754024, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: checkpointArray.Array.data[0].y
       value: -163
+      objectReference: {fileID: 0}
+    - target: {fileID: 991096048698266737, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Size.y
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7178299339570833491, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_RootOrder
