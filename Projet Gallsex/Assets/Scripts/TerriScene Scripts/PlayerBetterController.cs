@@ -24,6 +24,7 @@ public class PlayerBetterController : MonoBehaviour
     private bool _wallSliding;
     public bool _facingRight;
     private bool _wallJumping;
+    public bool coyoteGrounded;
 
 
     void Update()
@@ -34,14 +35,13 @@ public class PlayerBetterController : MonoBehaviour
         {
             _jumpBufferCounter = playerData.jumpBufferTime;
             _jumpTime = Time.time;
-            
         }
         else
         {
             _jumpBufferCounter -= Time.deltaTime;
         }
         
-        if (_coyoteTimeCounter > 0f && _jumpBufferCounter > 0f)
+        if (coyoteGrounded && _jumpBufferCounter > 0f)
         {
             Jump();
             _jumpBufferCounter = 0f;
@@ -50,6 +50,15 @@ public class PlayerBetterController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
         {
             _coyoteTimeCounter = 0f;
+        }
+
+        if (_coyoteTimeCounter > 0f)
+        {
+            coyoteGrounded = true;
+        }
+        else
+        {
+            coyoteGrounded = false;
         }
 
         if (isGrounded)
@@ -116,7 +125,7 @@ public class PlayerBetterController : MonoBehaviour
     private void FixedUpdate()
     {
         if (_inputX != 0) HorizontalMove();
-        if (isGrounded || _coyoteTimeCounter > 0f) JumpNuancer();
+        if (isGrounded || coyoteGrounded) JumpNuancer();
         Gravity();
     }
     
@@ -199,7 +208,7 @@ public class PlayerBetterController : MonoBehaviour
 
     private void Gravity()
      {
-        if (rb.velocity.y < -0.3f && !_wallSliding) 
+        if (rb.velocity.y < -0.3f && !_wallSliding && !coyoteGrounded) 
         {
             _gravity += playerData.gravityMultiplier;
              rb.gravityScale += _gravity * Time.fixedDeltaTime; 
