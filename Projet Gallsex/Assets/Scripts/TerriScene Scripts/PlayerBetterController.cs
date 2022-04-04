@@ -197,12 +197,8 @@ public class PlayerBetterController : MonoBehaviour
     {
         if (_wallSliding)
         {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
- 
-        }
-        else
-        {
-            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
         }
     }
 
