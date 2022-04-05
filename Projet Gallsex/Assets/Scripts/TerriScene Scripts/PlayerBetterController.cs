@@ -41,7 +41,7 @@ public class PlayerBetterController : MonoBehaviour
             _jumpBufferCounter -= Time.deltaTime;
         }
         
-        if (coyoteGrounded && _jumpBufferCounter > 0f)
+        if (_jumpBufferCounter > 0f)
         {
             Jump();
             _jumpBufferCounter = 0f;
@@ -49,28 +49,26 @@ public class PlayerBetterController : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
         {
-            _coyoteTimeCounter = 0f;
-        }
-
-        if (_coyoteTimeCounter > 0f)
-        {
-            coyoteGrounded = true;
-        }
-        else
-        {
             coyoteGrounded = false;
         }
 
         if (isGrounded)
         {
+            coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
             GroundClamp();
         }
-        else
+        else if(rb.velocity.y < -0.1f)
         {
             _coyoteTimeCounter -= Time.deltaTime;
         }
-
+        
+        if (_coyoteTimeCounter <= 0)
+        {
+            coyoteGrounded = false;
+        }
+        
+        
         if (!isGrounded && !dash.isDashing)
         {
             AirClamp();
@@ -160,8 +158,11 @@ public class PlayerBetterController : MonoBehaviour
  
     private void Jump()
     {
-        Vector2 height = new Vector2(0, playerData.jumpForce);
-        rb.AddForce(height, ForceMode2D.Impulse);
+        if (isGrounded || coyoteGrounded)
+        {
+            Vector2 height = new Vector2(0, playerData.jumpForce);
+            rb.AddForce(height, ForceMode2D.Impulse);
+        }
     }
     
     private void Flip()
@@ -174,6 +175,7 @@ public class PlayerBetterController : MonoBehaviour
     {
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
         {
+            Debug.Log("itworks");
             rb.AddForce((Vector2.up * playerData.nuancerForce), ForceMode2D.Impulse);
         }
     }
@@ -197,12 +199,8 @@ public class PlayerBetterController : MonoBehaviour
     {
         if (_wallSliding)
         {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
- 
-        }
-        else
-        {
-            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
         }
     }
 

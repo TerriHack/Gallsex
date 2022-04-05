@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="101e6b3a-8dee-454f-8a70-c41f3e3c97f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/FirstTest 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/FirstTest 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/PlayerBetterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerriScene Scripts/PlayerBetterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +82,7 @@
       <workItem from="1646321475094" duration="10298000" />
       <workItem from="1646331885132" duration="1745000" />
       <workItem from="1648543650095" duration="17166000" />
+      <workItem from="1648988611145" duration="898000" />
     </task>
     <servers />
   </component>
@@ -122,6 +122,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

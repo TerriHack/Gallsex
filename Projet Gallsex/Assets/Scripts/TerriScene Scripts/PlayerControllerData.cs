@@ -46,11 +46,4 @@ public class PlayerControllerData : ScriptableObject
 
     [Space]
     public float dashForce;
-    
-    public static float hookForce = 30f;
-    public static float hookTime = 0.4f;
-    public static float hookRange = 0.2f;
-    public static float hookMaxRange = 10f;   
-    public static float hookRenDuration = 0.3f;
-    
 }
