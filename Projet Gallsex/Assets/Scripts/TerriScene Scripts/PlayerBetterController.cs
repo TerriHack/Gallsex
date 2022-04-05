@@ -20,7 +20,8 @@ public class PlayerBetterController : MonoBehaviour
 
     
     public bool isGrounded;
-    public bool isTouchingFront;
+    public bool isTouchingFront;    
+    public bool isTouchingBack;
     private bool _wallSliding;
     public bool _facingRight;
     private bool _wallJumping;
@@ -74,7 +75,7 @@ public class PlayerBetterController : MonoBehaviour
             AirClamp();
         }
         
-        if (isTouchingFront && !isGrounded && _inputX != 0)
+        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0)
         {
             _wallSliding = true;
             _wallJumpTime = playerData.wallJumpTime;
@@ -197,7 +198,13 @@ public class PlayerBetterController : MonoBehaviour
 
     private void WallJump()
     {
-        if (_wallSliding)
+        if (_wallSliding && isTouchingBack)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+        }
+        
+        if (_wallSliding && isTouchingFront)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
