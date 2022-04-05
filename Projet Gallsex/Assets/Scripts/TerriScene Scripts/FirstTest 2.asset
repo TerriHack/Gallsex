@@ -15,7 +15,7 @@ MonoBehaviour:
   speed: 7
   airControl: 0.35
   jumpForce: 20
-  wallJumpTime: 0.15
+  wallJumpTime: 1
   xWallForce: 30
   yWallForce: 30
   wallSlidingSpeed: 5

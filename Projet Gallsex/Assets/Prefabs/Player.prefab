@@ -19486,7 +19486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1443644433}
-  vfxJump: {fileID: 1781537762}
+  vfxJump: {fileID: 897163131}
 --- !u!1 &6259068355486683036
 GameObject:
   m_ObjectHideFlags: 0
@@ -19557,6 +19557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429299819cb05e7429615c881424fdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1443644433}
 --- !u!1 &6932830895224275486
 GameObject:
   m_ObjectHideFlags: 0
@@ -19893,7 +19894,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0015888214, y: -0.33104205}
+  m_Offset: {x: 0.0015888214, y: -0.2613194}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19904,7 +19905,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40232468, y: 0.8176398}
+  m_Size: {x: 0.40232468, y: 0.95708513}
   m_EdgeRadius: 0
 --- !u!95 &410723800
 Animator:
@@ -19944,6 +19945,7 @@ MonoBehaviour:
   _gravity: 0
   isGrounded: 0
   isTouchingFront: 0
+  isTouchingBack: 0
   _facingRight: 0
   coyoteGrounded: 0
 --- !u!114 &1933754024
