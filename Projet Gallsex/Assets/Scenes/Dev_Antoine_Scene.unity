@@ -22127,6 +22127,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1299729905 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 897163131, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+  m_PrefabInstance: {fileID: 7178299340307598197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1380595622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7178299340679101392, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
@@ -22141,6 +22146,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3059ffabf5613694492f0e0523eb909f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1380595625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+  m_PrefabInstance: {fileID: 7178299340307598197}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380595622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea91101d8e2ebce43ba22ef5d0194af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1380595627
@@ -40197,6 +40213,10 @@ PrefabInstance:
       propertyPath: playerData
       value: 
       objectReference: {fileID: 11400000, guid: c4df9ec808144c94c8cb96b5dadb92b0, type: 2}
+    - target: {fileID: 1431638443, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: vfxJump
+      value: 
+      objectReference: {fileID: 1299729905}
     - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: dash
       value: 
@@ -40208,7 +40228,7 @@ PrefabInstance:
     - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: playerData
       value: 
-      objectReference: {fileID: 11400000, guid: c4df9ec808144c94c8cb96b5dadb92b0, type: 2}
+      objectReference: {fileID: 11400000, guid: 0a32eb7b0cc51f2499312624a44ebc88, type: 2}
     - target: {fileID: 991096048698266737, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_Size.x
       value: 1.3598982
@@ -40221,6 +40241,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.03999999
       objectReference: {fileID: 0}
+    - target: {fileID: 2020973827960226923, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: playerBetterController
+      value: 
+      objectReference: {fileID: 1380595625}
     - target: {fileID: 7178299339570833490, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_Enabled
       value: 1
