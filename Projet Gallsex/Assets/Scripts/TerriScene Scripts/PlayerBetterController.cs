@@ -15,18 +15,24 @@ public class PlayerBetterController : MonoBehaviour
     private float _coyoteTimeCounter;
     private float _jumpTime;
     private float _wallJumpTime;
-    public float _gravity;
+    private float _gravity;
 
 
     
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
+    
     private bool _wallSliding;
     public bool _facingRight;
     private bool _wallJumping;
-    public bool coyoteGrounded;
+    private bool _coyoteGrounded;
 
+
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
 
     void Update()
     {
@@ -50,12 +56,12 @@ public class PlayerBetterController : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
         {
-            coyoteGrounded = false;
+            _coyoteGrounded = false;
         }
 
         if (isGrounded)
         {
-            coyoteGrounded = true;
+            _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
             GroundClamp();
         }
@@ -66,7 +72,7 @@ public class PlayerBetterController : MonoBehaviour
         
         if (_coyoteTimeCounter <= 0)
         {
-            coyoteGrounded = false;
+            _coyoteGrounded = false;
         }
         
         
@@ -124,7 +130,7 @@ public class PlayerBetterController : MonoBehaviour
     private void FixedUpdate()
     {
         if (_inputX != 0) HorizontalMove();
-        if (isGrounded || coyoteGrounded) JumpNuancer();
+        if (isGrounded || _coyoteGrounded) JumpNuancer();
         Gravity();
     }
     
@@ -159,7 +165,7 @@ public class PlayerBetterController : MonoBehaviour
  
     private void Jump()
     {
-        if (isGrounded || coyoteGrounded)
+        if (isGrounded || _coyoteGrounded)
         {
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
@@ -213,7 +219,7 @@ public class PlayerBetterController : MonoBehaviour
 
     private void Gravity()
      {
-        if (rb.velocity.y < -0.3f && !_wallSliding && !coyoteGrounded) 
+        if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
         {
             _gravity += playerData.gravityMultiplier;
              rb.gravityScale += _gravity * Time.fixedDeltaTime; 
