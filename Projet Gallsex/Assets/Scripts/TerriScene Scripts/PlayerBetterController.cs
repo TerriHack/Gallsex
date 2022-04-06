@@ -11,7 +11,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Dash dash;
     
     private float _inputX;
-    private float _jumpBufferCounter;
+    public float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
     private float _wallJumpTime;
@@ -174,12 +174,11 @@ public class PlayerBetterController : MonoBehaviour
     {
         if (isGrounded || _coyoteGrounded && rb.velocity.y < 0)
         {
-            Debug.Log("jejejh");
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
-            isJumping = false;
         }
+        isJumping = false;
     }
     
     private void Flip()
