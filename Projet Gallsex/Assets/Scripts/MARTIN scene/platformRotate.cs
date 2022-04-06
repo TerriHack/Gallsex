@@ -1,14 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class platformRotate : MonoBehaviour
 {
-    public float MaxTimer = 60;
-    private float Timer = 0;
-    private bool State = false;
+    public float maxTimer = 60;
+    private float timer = 0;
+    private bool state = false;
     public float rotation = 0;
     public Animation animator;
     
@@ -16,14 +12,14 @@ public class platformRotate : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (State)
+            if (state)
             {
                 
             }
             else
             {
-                State = true;
-                Timer = 0;
+                state = true;
+                timer = 0;
             }
 
             if (rotation == 0)
@@ -39,15 +35,15 @@ public class platformRotate : MonoBehaviour
 
     private void Start()
     {
-        State = false;
+        state = false;
     }
 
 
     private void Update()
     {
-        if (State)
+        if (state)
         {
-            if (Timer > MaxTimer)
+            if (timer > maxTimer)
             {
                 animator.Stop();
                 turn();
@@ -55,7 +51,7 @@ public class platformRotate : MonoBehaviour
             
             else
             {
-                Timer = Timer + Time.deltaTime;
+                timer = timer + Time.deltaTime;
             }
         }
     }
@@ -73,7 +69,7 @@ public class platformRotate : MonoBehaviour
             rotation = 0;
         }
 
-        State = false;
-        Debug.Log(State);
+        state = false;
+        Debug.Log(state);
     }
 }
