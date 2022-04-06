@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class CameraTrigger : MonoBehaviour
 {
-    public GameObject Manager;
-    public float TYPE = 0;
-    public Vector2 Variable;
-    public bool ChangeTracking;
+    public GameObject manager;
+    public float type = 0;
+    public Vector2 variable;
+    public bool changeTracking;
 
     private void OnTriggerEnter2D(Collider2D player)
     {
         if (player.CompareTag("Player"))
         {
-            if (TYPE == 0) //Scale changer
+            if (type == 0) //Scale changer
             {
-                Manager.GetComponent<CameraTriggerManager>().EditScale(Variable);
+                manager.GetComponent<CameraTriggerManager>().EditScale(variable);
             }
-            else if (TYPE == 1)// Offset changer
+            else if (type == 1)// Offset changer
             {
-                Manager.GetComponent<CameraTriggerManager>().EditOffset(Variable);
+                manager.GetComponent<CameraTriggerManager>().EditOffset(variable);
             }
-            else if (TYPE == 2)// Tracking changer
+            else if (type == 2)// Tracking changer
             {
-                Manager.GetComponent<CameraTriggerManager>().EditTracking(ChangeTracking);
+                manager.GetComponent<CameraTriggerManager>().EditTracking(changeTracking);
             }
             Debug.Log("hello");
         }

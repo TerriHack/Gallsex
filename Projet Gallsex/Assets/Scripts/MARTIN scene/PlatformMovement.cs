@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject[] waypoints;
+    [SerializeField] private GameObject[] wayPoints;
     private int currentWaypointIndex = 0;
 
     [SerializeField] public float speed = 2f;
@@ -17,21 +14,19 @@ public class PlatformMovement : MonoBehaviour
             collision2D.gameObject.transform.SetParent(transform);
         }
     }
-
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+        if (Vector2.Distance(wayPoints[currentWaypointIndex].transform.position, transform.position) < .1f)
         {
             currentWaypointIndex++;
-            if (currentWaypointIndex >= waypoints.Length)
+            if (currentWaypointIndex >= wayPoints.Length)
             {
                 currentWaypointIndex = 0;
             }
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position,
+        transform.position = Vector2.MoveTowards(transform.position, wayPoints[currentWaypointIndex].transform.position,
             Time.deltaTime * speed);
     }
 

@@ -1,17 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bouncer : MonoBehaviour
 {
-    public float Strength;
-    public Rigidbody2D rbtarget;
+    public float strength;
+    public Rigidbody2D rbTarget;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        rbtarget.velocity = new Vector2(rbtarget.velocity.x, 0);
-        rbtarget.AddForce(new Vector2(0, Strength), ForceMode2D.Impulse);
+        rbTarget.velocity = new Vector2(rbTarget.velocity.x, 0);
+        rbTarget.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
     }
 
 }
