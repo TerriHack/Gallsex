@@ -6,24 +6,24 @@ using DG.Tweening;
 
 public class CameraTriggerManager : MonoBehaviour
 {
-    public GameObject Camera;
-    public float TweenTime;
+    public GameObject camera;
+    public float tweenTime;
 
     public void EditScale(Vector2 newScale)
     {
-        DOTween.To(() => Camera.GetComponent<Camera>().orthographicSize,
-            x => Camera.GetComponent<Camera>().orthographicSize = x, newScale.x, TweenTime);
+        DOTween.To(() => camera.GetComponent<Camera>().orthographicSize,
+            x => camera.GetComponent<Camera>().orthographicSize = x, newScale.x, tweenTime);
     }
 
     public void EditOffset(Vector2 newOffset)
     {
-        DOTween.To(() => Camera.transform.GetComponent<camerafollow>().offset,
-            x => Camera.transform.GetComponent<camerafollow>().offset = x, new Vector3(newOffset.x,newOffset.y, -10), TweenTime);
+        DOTween.To(() => camera.transform.GetComponent<camerafollow>().offset,
+            x => camera.transform.GetComponent<camerafollow>().offset = x, new Vector3(newOffset.x,newOffset.y, -10), tweenTime);
     }
 
     public void EditTracking(bool newTracking)
     {
-        Camera.GetComponent<camerafollow>().tracking = newTracking;
+        camera.GetComponent<camerafollow>().tracking = newTracking;
     }
     
 }
