@@ -28,12 +28,9 @@ public class PlayerBetterController : MonoBehaviour
     public bool _facingRight;
     private bool _wallJumping;
     private bool _coyoteGrounded;
-
-
-    private void Start()
-    {
-        Cursor.visible = false;
-    }
+    private bool wallJumping;
+    private bool canNuance;
+    private bool isNuancing;
 
     void Update()
     {
@@ -59,9 +56,10 @@ public class PlayerBetterController : MonoBehaviour
             _jumpTime = 0f;
         }
 
-        if (_coyoteGrounded && Input.GetButtonDown("Saut"))
+        if (_coyoteGrounded && Input.GetButtonDown("Saut") || isJumping && Input.GetButtonDown("Saut"))
         {
             _jumpTime = Time.time;
+            isJumping = false;
         }
 
         if (isGrounded)
@@ -116,9 +114,14 @@ public class PlayerBetterController : MonoBehaviour
 
         if (_wallJumping && Input.GetButtonDown("Saut"))
         {
-            WallJump();
+            wallJumping = true;
         }
-        
+
+        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
+        {
+            isNuancing = true;
+        }
+
         #region Animation
 
         if (_inputX != 0f)
@@ -136,8 +139,9 @@ public class PlayerBetterController : MonoBehaviour
     private void FixedUpdate()
     {
         if (_inputX != 0) HorizontalMove();
-        if (!isGrounded || _coyoteGrounded) JumpNuancer();
+        if (isNuancing) JumpNuancer();
         if (isJumping) Jump();
+        if(wallJumping) WallJump();
         Gravity();
     }
     
@@ -189,11 +193,10 @@ public class PlayerBetterController : MonoBehaviour
     
     private void JumpNuancer()
     {
-        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
-        {
-            Vector2 height = new Vector2(0, playerData.nuancerForce);
-            rb.AddForce(height, ForceMode2D.Impulse);
-        }
+        Vector2 height = new Vector2(0, playerData.nuancerForce);
+        rb.AddForce(height, ForceMode2D.Impulse);
+        
+        isNuancing = false;
     }
     
     private void GroundClamp()
@@ -224,6 +227,8 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
         }
+
+        wallJumping = false;
     }
 
     private void Gravity()

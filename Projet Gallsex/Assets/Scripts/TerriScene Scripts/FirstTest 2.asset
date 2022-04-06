@@ -16,13 +16,13 @@ MonoBehaviour:
   airControl: 0.35
   jumpForce: 20
   wallJumpTime: 1
-  xWallForce: 30
-  yWallForce: 30
+  xWallForce: 26.5
+  yWallForce: 26.5
   wallSlidingSpeed: 5
   nuancerDuration: 0.23
   nuancerForce: 1.4
-  coyoteTime: 0.2
-  jumpBufferTime: 0.3
+  coyoteTime: 0.16
+  jumpBufferTime: 0.18
   maxSpeed: 15
   maxAirSpeed: 15
   maxFallSpeed: -20
