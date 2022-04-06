@@ -14,7 +14,7 @@ public class PlayerBetterController : MonoBehaviour
     public float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
-    private float _wallJumpTime;
+    public float _wallJumpTime;
     private float _gravity;
 
 
@@ -23,12 +23,12 @@ public class PlayerBetterController : MonoBehaviour
     public bool isTouchingFront;    
     public bool isTouchingBack;
     public bool isJumping;
-
-    private bool _wallSliding;
     public bool _facingRight;
-    private bool _wallJumping;
+    
+    private bool _wallSliding;
+    public bool _wallJumping;
     private bool _coyoteGrounded;
-    private bool wallJumping;
+    private bool _isWallJumping;
     private bool canNuance;
     private bool isNuancing;
 
@@ -67,7 +67,6 @@ public class PlayerBetterController : MonoBehaviour
             GroundClamp();
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
-            
         }
         else if(rb.velocity.y < -0.1f)
         {
@@ -95,13 +94,13 @@ public class PlayerBetterController : MonoBehaviour
             _wallSliding = false;
         }
 
-        _wallJumpTime -= Time.deltaTime;
-        
         if (_wallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
         }
+        
+        _wallJumpTime -= Time.deltaTime;
 
         if (_wallJumpTime > 0f)
         {
@@ -114,7 +113,7 @@ public class PlayerBetterController : MonoBehaviour
 
         if (_wallJumping && Input.GetButtonDown("Saut"))
         {
-            wallJumping = true;
+            _isWallJumping = true;
         }
 
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
@@ -141,7 +140,7 @@ public class PlayerBetterController : MonoBehaviour
         if (_inputX != 0) HorizontalMove();
         if (isNuancing) JumpNuancer();
         if (isJumping) Jump();
-        if(wallJumping) WallJump();
+        if(_isWallJumping) WallJump();
         Gravity();
     }
     
@@ -216,7 +215,7 @@ public class PlayerBetterController : MonoBehaviour
 
     private void WallJump()
     {
-        if (_wallSliding && isTouchingBack)
+        if (isTouchingBack)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
@@ -228,7 +227,7 @@ public class PlayerBetterController : MonoBehaviour
             rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
         }
 
-        wallJumping = false;
+        _isWallJumping = false;
     }
 
     private void Gravity()
