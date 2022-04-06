@@ -22,7 +22,7 @@ MonoBehaviour:
   nuancerDuration: 0.23
   nuancerForce: 1.4
   coyoteTime: 0.2
-  jumpBufferTime: 0.2
+  jumpBufferTime: 0.1
   maxSpeed: 15
   maxAirSpeed: 15
   maxFallSpeed: -20

@@ -22,7 +22,8 @@ public class PlayerBetterController : MonoBehaviour
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
-    
+    public bool isJumping;
+
     private bool _wallSliding;
     public bool _facingRight;
     private bool _wallJumping;
@@ -41,7 +42,6 @@ public class PlayerBetterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
         {
             _jumpBufferCounter = playerData.jumpBufferTime;
-            _jumpTime = Time.time;
         }
         else
         {
@@ -50,20 +50,26 @@ public class PlayerBetterController : MonoBehaviour
         
         if (_jumpBufferCounter > 0f)
         {
-            Jump();
-            _jumpBufferCounter = 0f;
+            isJumping = true;
         }
-        
+
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
         {
             _coyoteGrounded = false;
+            _jumpTime = 0f;
+        }
+
+        if (_coyoteGrounded && Input.GetButtonDown("Saut"))
+        {
+            _jumpTime = Time.time;
         }
 
         if (isGrounded)
         {
+            GroundClamp();
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
-            GroundClamp();
+            
         }
         else if(rb.velocity.y < -0.1f)
         {
@@ -130,7 +136,8 @@ public class PlayerBetterController : MonoBehaviour
     private void FixedUpdate()
     {
         if (_inputX != 0) HorizontalMove();
-        if (isGrounded || _coyoteGrounded) JumpNuancer();
+        if (!isGrounded || _coyoteGrounded) JumpNuancer();
+        if (isJumping) Jump();
         Gravity();
     }
     
@@ -165,10 +172,13 @@ public class PlayerBetterController : MonoBehaviour
  
     private void Jump()
     {
-        if (isGrounded || _coyoteGrounded)
+        if (isGrounded || _coyoteGrounded && rb.velocity.y < 0)
         {
+            Debug.Log("jejejh");
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
+            _jumpBufferCounter = 0f;
+            isJumping = false;
         }
     }
     
@@ -182,8 +192,8 @@ public class PlayerBetterController : MonoBehaviour
     {
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration)
         {
-            Debug.Log("itworks");
-            rb.AddForce((Vector2.up * playerData.nuancerForce), ForceMode2D.Impulse);
+            Vector2 height = new Vector2(0, playerData.nuancerForce);
+            rb.AddForce(height, ForceMode2D.Impulse);
         }
     }
     
