@@ -232,6 +232,11 @@ public class PlayerBetterController : MonoBehaviour
 
     private void Gravity()
      {
+         if (dash.isDashing)
+         {
+             rb.gravityScale = 0f;
+         }
+         
         if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
         {
             _gravity += playerData.gravityMultiplier;

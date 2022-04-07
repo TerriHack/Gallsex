@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9dcdd22491c954c9eb06974e05eaaf, type: 3}
   m_Name: FirstTest 2
   m_EditorClassIdentifier: 
-  speed: 7
-  airControl: 0.35
+  speed: 4
+  airControl: 0.45
   jumpForce: 20
   wallJumpTime: 1
   xWallForce: 23
   yWallForce: 23
-  wallSlidingSpeed: 5
+  wallSlidingSpeed: 9
   nuancerDuration: 0.23
   nuancerForce: 1.4
   coyoteTime: 0.16
@@ -29,4 +29,5 @@ MonoBehaviour:
   maxRiseSpeed: 30
   gravity: 3
   gravityMultiplier: 2
-  dashForce: 50
+  dashTime: 0.07
+  dashForce: 40
