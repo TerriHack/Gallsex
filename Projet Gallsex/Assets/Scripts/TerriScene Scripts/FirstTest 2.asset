@@ -30,4 +30,5 @@ MonoBehaviour:
   gravity: 3
   gravityMultiplier: 2
   dashTime: 0.05
+  dashCooldown: 0.25
   dashForce: 40

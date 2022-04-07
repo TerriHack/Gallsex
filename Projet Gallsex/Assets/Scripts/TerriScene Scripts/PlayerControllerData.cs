@@ -43,7 +43,8 @@ public class PlayerControllerData : ScriptableObject
     
     public float gravity = 20;
     public float gravityMultiplier = 1.5f;
-    public float dashTime;
+    public float dashTime = 0.05f;
+    public float dashCooldown = 1f; 
 
     [Space]
     public float dashForce;
