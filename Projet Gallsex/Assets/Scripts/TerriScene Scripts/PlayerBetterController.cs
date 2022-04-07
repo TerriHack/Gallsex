@@ -22,9 +22,12 @@ public class PlayerBetterController : MonoBehaviour
     #endregion
 
     #region Public bool
+    [Header("Collision Related")]
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
+    [Space]
+    [Header("Other")]
     public bool isJumping;
     public bool _facingRight;
     #endregion
