@@ -5,37 +5,47 @@ using UnityEngine;
 
 public class PlayerBetterController : MonoBehaviour
 {
+    #region Components
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
+    #endregion
     
+    #region Private float
     private float _inputX;
-    public float _jumpBufferCounter;
+    private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
-    public float _wallJumpTime;
+    private float _wallJumpTime;
     private float _gravity;
+    #endregion
 
-
-    
+    #region Public bool
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
     public bool isJumping;
     public bool _facingRight;
-    
+    #endregion
+
+    #region Private bool
     private bool _wallSliding;
-    public bool _wallJumping;
+    private bool _wallJumping;
     private bool _coyoteGrounded;
     private bool _isWallJumping;
-    private bool canNuance;
-    private bool isNuancing;
-
+    private bool _canNuance;
+    private bool _isNuancing;
+    #endregion
+    
     void Update()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
         
+        _wallJumpTime -= Time.deltaTime;
+
+        //This section is hell don't trespass
+        #region La vallé des IF
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
         {
             _jumpBufferCounter = playerData.jumpBufferTime;
@@ -78,7 +88,6 @@ public class PlayerBetterController : MonoBehaviour
             _coyoteGrounded = false;
         }
         
-        
         if (!isGrounded && !dash.isDashing)
         {
             AirClamp();
@@ -99,8 +108,6 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
         }
-        
-        _wallJumpTime -= Time.deltaTime;
 
         if (_wallJumpTime > 0f)
         {
@@ -118,9 +125,10 @@ public class PlayerBetterController : MonoBehaviour
 
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
         {
-            isNuancing = true;
+            _isNuancing = true;
         }
-
+        #endregion
+        
         #region Animation
 
         if (_inputX != 0f)
@@ -134,16 +142,21 @@ public class PlayerBetterController : MonoBehaviour
 
         #endregion
     }
-
+    
     private void FixedUpdate()
     {
         if (_inputX != 0) HorizontalMove();
-        if (isNuancing) JumpNuancer();
+        
+        if (_isNuancing) JumpNuancer();
+        
         if (isJumping) Jump();
+        
         if(_isWallJumping) WallJump();
+        
         Gravity();
     }
-    
+
+    #region Movement Related Fonctions
     private void HorizontalMove()
     {
         Vector2 movement;
@@ -172,6 +185,13 @@ public class PlayerBetterController : MonoBehaviour
 
         #endregion
     }
+    private void Flip()
+    {
+        transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        _facingRight = !_facingRight;
+    }
+    
+    //***********************************
  
     private void Jump()
     {
@@ -183,38 +203,16 @@ public class PlayerBetterController : MonoBehaviour
         }
         isJumping = false;
     }
-    
-    private void Flip()
-    {
-        transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-        _facingRight = !_facingRight;
-    }
-    
     private void JumpNuancer()
     {
         Vector2 height = new Vector2(0, playerData.nuancerForce);
         rb.AddForce(height, ForceMode2D.Impulse);
         
-        isNuancing = false;
+        _isNuancing = false;
     }
-    
-    private void GroundClamp()
-    {
-        float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
-        float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxSpeed, playerData.maxSpeed);
-        rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
-    }
-
-    private void AirClamp()
-    {
-        float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
-        float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
-        
-        rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
-    }
-
     private void WallJump()
     {
+        //When turning in the opposite side of the wall you're jumping to, you can still wall jump 
         if (isTouchingBack)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -230,23 +228,43 @@ public class PlayerBetterController : MonoBehaviour
         _isWallJumping = false;
     }
 
+    //***********************************
+    
     private void Gravity()
      {
+         
+         //When Dashing the gravity is set to 0
          if (dash.isDashing)
          {
              rb.gravityScale = 0f;
          }
          
-        if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
-        {
-            _gravity += playerData.gravityMultiplier;
+         //When falling, gravity increase during time
+         if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
+         {
+             _gravity += playerData.gravityMultiplier;
              rb.gravityScale += _gravity * Time.fixedDeltaTime; 
-        }
-        else 
-        {
-            rb.gravityScale = 9f;
-            _gravity = playerData.gravity;
-        }
+         }
+         else 
+         {
+             //Default gravity value
+             rb.gravityScale = 9f;
+             _gravity = playerData.gravity;
+         }
      }
+    private void GroundClamp()
+    {
+        float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
+        float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxSpeed, playerData.maxSpeed);
+        rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+    }
+    private void AirClamp()
+    {
+        float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
+        float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+        
+        rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
+    }
+    #endregion
     
 }
