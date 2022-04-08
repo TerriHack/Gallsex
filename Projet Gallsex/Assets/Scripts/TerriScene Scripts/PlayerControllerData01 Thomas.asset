@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9dcdd22491c954c9eb06974e05eaaf, type: 3}
   m_Name: PlayerControllerData01 Thomas
   m_EditorClassIdentifier: 
-  speed: 5
-  airControl: 0.6
-  jumpForce: 20
-  wallJumpTime: 0.2
+  speed: 4
+  airControl: 0.5
+  jumpForce: 21.5
+  wallJumpTime: 0.19
   xWallForce: 23
-  yWallForce: 24
-  wallSlidingSpeed: 8
+  yWallForce: 26
+  wallSlidingSpeed: 6
   nuancerDuration: 0.23
   nuancerForce: 1.4
   coyoteTime: 0.1
@@ -31,4 +31,4 @@ MonoBehaviour:
   gravityMultiplier: 2
   dashTime: 0.05
   dashCooldown: 0.09
-  dashForce: 32
+  dashForce: 40
