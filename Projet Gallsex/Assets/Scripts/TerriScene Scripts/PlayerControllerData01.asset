@@ -16,9 +16,9 @@ MonoBehaviour:
   airControl: 0.45
   jumpForce: 20
   wallJumpTime: 1
-  xWallForce: 23
-  yWallForce: 23
-  wallSlidingSpeed: 9
+  xWallForce: 26
+  yWallForce: 26
+  wallSlidingSpeed: 8
   nuancerDuration: 0.23
   nuancerForce: 1.4
   coyoteTime: 0.1
