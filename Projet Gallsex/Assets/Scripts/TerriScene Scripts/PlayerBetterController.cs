@@ -34,28 +34,28 @@ public class PlayerBetterController : MonoBehaviour
 
     #region Private bool
     private bool _wallSliding;
-    private bool _wallJumping;
+    public bool _wallJumping;
     private bool _coyoteGrounded;
-    private bool _isWallJumping;
     private bool _canNuance;
     private bool _isNuancing;
+    private bool _inputIsNull;
     #endregion
     
     void Update()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
-        
-        _wallJumpTime -= Time.deltaTime;
 
         //This section is hell don't trespass
         #region La vallé des IF
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
         {
             _jumpBufferCounter = playerData.jumpBufferTime;
+            _wallJumpTime = playerData.wallJumpTime;
         }
         else
         {
             _jumpBufferCounter -= Time.deltaTime;
+            _wallJumpTime -= Time.deltaTime;
         }
         
         if (_jumpBufferCounter > 0f)
@@ -98,11 +98,12 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0)
         {
+            _inputIsNull= false;
             _wallSliding = true;
-            _wallJumpTime = playerData.wallJumpTime;
         }
         else
         {
+            _inputIsNull= true;
             _wallSliding = false;
         }
 
@@ -120,18 +121,13 @@ public class PlayerBetterController : MonoBehaviour
         {
             _wallJumping = false;
         }
-
-        if (_wallJumping && Input.GetButtonDown("Saut"))
-        {
-            _isWallJumping = true;
-        }
-
+        
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
         {
             _isNuancing = true;
         }
         #endregion
-        
+
         #region Animation
 
         if (_inputX != 0f)
@@ -154,8 +150,8 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isJumping) Jump();
         
-        if(_isWallJumping) WallJump();
-        
+        if(_wallJumping) WallJump();
+
         Gravity();
     }
 
@@ -216,21 +212,21 @@ public class PlayerBetterController : MonoBehaviour
     private void WallJump()
     {
         //When turning in the opposite side of the wall you're jumping to, you can still wall jump 
-        if (isTouchingBack)
+        if (isTouchingBack && _inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            _wallJumping = false;
         }
         
-        if (_wallSliding && isTouchingFront)
+        if (isTouchingFront&& _inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            _wallJumping = false;
         }
-
-        _isWallJumping = false;
     }
-
+    
     //***********************************
     
     private void Gravity()
