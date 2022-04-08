@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1389103108312166350}
   - component: {fileID: 3212952318897159467}
-  - component: {fileID: 6485680243803085592}
   m_Layer: 0
   m_Name: Bouncer
   m_TagString: Untagged
@@ -84,32 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6485680243803085592
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5446284467124275205}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.025}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.95}
-  m_EdgeRadius: 0
 --- !u!1 &7295402682804725382
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,5 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb19466944bb7934398bbb2fa5d57894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Strength: 40
-  rbtarget: {fileID: 0}
+  rbTarget: {fileID: 0}
+  data: {fileID: 11400000, guid: 72d13b71ceb608f48a95cca45fea8945, type: 2}
+  pC: {fileID: 0}
+  dash: {fileID: 0}
+  strength: 45
+  isBouncing: 0

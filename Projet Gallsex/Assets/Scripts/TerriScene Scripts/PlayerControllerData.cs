@@ -9,7 +9,7 @@ public class PlayerControllerData : ScriptableObject
     public float airControl = 0.35f;
     [Range(0f,500f)]
     public float jumpForce = 20f;
-    [Range(0f,1f)]
+    [Range(0f,5f)]
     public float wallJumpTime = 0.2f;
     [Range(0f, 100f)] 
     public float xWallForce = 63f;

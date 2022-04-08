@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e9dcdd22491c954c9eb06974e05eaaf, type: 3}
-  m_Name: PlayerControllerData01
+  m_Name: PlayerControllerData01 Thomas
   m_EditorClassIdentifier: 
   speed: 4
   airControl: 0.5
-  jumpForce: 20
+  jumpForce: 21.5
   wallJumpTime: 0.19
   xWallForce: 23
   yWallForce: 26
