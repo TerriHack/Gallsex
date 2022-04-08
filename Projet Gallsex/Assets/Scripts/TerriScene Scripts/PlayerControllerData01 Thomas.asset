@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   airControl: 0.5
-  jumpForce: 20
+  jumpForce: 21.5
   wallJumpTime: 0.19
   xWallForce: 23
   yWallForce: 26
