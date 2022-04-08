@@ -19942,12 +19942,12 @@ MonoBehaviour:
   rb: {fileID: 7178299340679101394}
   anim: {fileID: 410723800}
   dash: {fileID: 1195328312}
-  _gravity: 0
+  bouncer: {fileID: 0}
   isGrounded: 0
   isTouchingFront: 0
   isTouchingBack: 0
+  isJumping: 0
   _facingRight: 0
-  coyoteGrounded: 0
 --- !u!114 &1933754024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19962,7 +19962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointArray:
   - {x: 0, y: 0}
-  PlayerPos: {fileID: 7178299340679101404}
+  playerPos: {fileID: 0}
 --- !u!114 &1195328312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19978,9 +19978,6 @@ MonoBehaviour:
   rb: {fileID: 7178299340679101394}
   playerData: {fileID: 11400000, guid: 0a32eb7b0cc51f2499312624a44ebc88, type: 2}
   playerController: {fileID: 1443644433}
-  _inputX: 0
-  _inputY: 0
-  canDash: 0
   isDashing: 0
 --- !u!1001 &8488748533637222409
 PrefabInstance:

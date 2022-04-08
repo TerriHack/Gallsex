@@ -10,6 +10,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
+    [SerializeField] private Bouncer bouncer;
     #endregion
     
     #region Private float
@@ -34,7 +35,7 @@ public class PlayerBetterController : MonoBehaviour
 
     #region Private bool
     private bool _wallSliding;
-    public bool _wallJumping;
+    private bool _wallJumping;
     private bool _coyoteGrounded;
     private bool _canNuance;
     private bool _isNuancing;
@@ -260,7 +261,18 @@ public class PlayerBetterController : MonoBehaviour
     private void AirClamp()
     {
         float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
-        float horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+        float horizontalVelocity;
+        
+        if (bouncer.isBouncing)
+        {
+            horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+            verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, 50);
+        }
+        else
+        {
+            horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+            verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
+        }
         
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
     }
