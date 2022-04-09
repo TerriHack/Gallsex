@@ -62,6 +62,7 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerJumpRise = "JumpRise_Animation";
     private const String PlayerJumpFall = "JumpFall_Animation";
     private const String PlayerHorizontalDash = "HorizontalDash_Animation";
+    private const String PlayerWallSlide = "WallSlide_Animation";
     #endregion
 
     public float VeloY;
@@ -136,36 +137,21 @@ public class PlayerBetterController : MonoBehaviour
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
 
         #region Animation Related
-        if (isGrounded && _inputX == 0f && _inputY > -0.5f)
-        {
-            ChangeAnimationState(PlayerIdle);
-        }
-        if (_inputX != 0f && isGrounded)
-        {
-            ChangeAnimationState(PlayerRun);
-        }
+        if (isGrounded && _inputX == 0f && _inputY > -0.5f) ChangeAnimationState(PlayerIdle);
         
-        if (rb.velocity.y > 0 && !isGrounded)
-        {
-            ChangeAnimationState(PlayerJumpRise);
-        }
-        
-        if(rb.velocity.y < 0 && !isGrounded)
-        {
-            ChangeAnimationState(PlayerJumpFall);
-        }
-        
-        if(_inputY < -0.5 && isGrounded && _inputX == 0f)
-        {
-            ChangeAnimationState(PlayerCrouch);
-        }
+        if (_inputX != 0f && isGrounded) ChangeAnimationState(PlayerRun);
 
-        if (_inputXRight != 0 && dash.isDashing)
-        {
-            ChangeAnimationState(PlayerHorizontalDash);
-        }
-        
+        if (rb.velocity.y > 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpRise);
+
+        if(rb.velocity.y < 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpFall);
+
+        if(_inputY < -0.5 && isGrounded && _inputX == 0f) ChangeAnimationState(PlayerCrouch);
+
+        if (_inputXRight != 0 && dash.isDashing) ChangeAnimationState(PlayerHorizontalDash);
+
+        if (_wallSliding) ChangeAnimationState(PlayerWallSlide);
         #endregion
+        
         #endregion
 
         VeloY = rb.velocity.y;
@@ -228,7 +214,7 @@ public class PlayerBetterController : MonoBehaviour
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
-            feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.65f); //Instanciation particules jump
+            feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
             Instantiate(DustJump, feetPos, groundCheckTr.rotation);
         }
         isJumping = false;

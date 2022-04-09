@@ -9779,7 +9779,7 @@ GameObject:
   m_Layer: 0
   m_Name: BackCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9850,7 +9850,7 @@ GameObject:
   m_Layer: 0
   m_Name: FrontCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10075,7 +10075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea91101d8e2ebce43ba22ef5d0194af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 0a32eb7b0cc51f2499312624a44ebc88, type: 2}
+  playerData: {fileID: 11400000, guid: 72d13b71ceb608f48a95cca45fea8945, type: 2}
   rb: {fileID: 7178299340679101394}
   anim: {fileID: 410723800}
   dash: {fileID: 1195328312}
@@ -10088,6 +10088,7 @@ MonoBehaviour:
   isJumping: 0
   _facingRight: 0
   DustJump: {fileID: 5225242303262374427, guid: 258be6e99b742ea4b9dbf925c2b5c8f2, type: 3}
+  VeloY: 0
 --- !u!114 &1933754024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10101,8 +10102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointArray:
+  - {x: -40, y: -5}
   - {x: 0, y: 0}
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 7178299340679101404}
 --- !u!114 &1195328312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10116,6 +10118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7178299340679101394}
-  playerData: {fileID: 11400000, guid: 0a32eb7b0cc51f2499312624a44ebc88, type: 2}
+  playerData: {fileID: 11400000, guid: 72d13b71ceb608f48a95cca45fea8945, type: 2}
   playerController: {fileID: 1443644433}
   isDashing: 0
