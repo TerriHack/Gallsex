@@ -116,6 +116,9 @@ TextureImporter:
   - first:
       213: 6649882524264172976
     second: AssetLight_4
+  - first:
+      213: 8473601157182687960
+    second: AssetLight_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -687,7 +690,7 @@ TextureImporter:
         serializedVersion: 2
         x: 69
         y: 34
-        width: 8
+        width: 3
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1034,6 +1037,27 @@ TextureImporter:
       bones: []
       spriteID: 0bd08d85ce0294c50800000000000000
       internalID: 6649882524264172976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetLight_10
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 34
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da863e7b57489570800000000000000
+      internalID: 8473601157182687960
       vertices: []
       indices: 
       edges: []

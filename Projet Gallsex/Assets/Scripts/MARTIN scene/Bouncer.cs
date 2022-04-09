@@ -19,7 +19,7 @@ public class Bouncer : MonoBehaviour
         isBouncing = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (dash.isDashing || pC.isGrounded) isBouncing = false;
     }
