@@ -19,8 +19,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_c928f3d36f8f4503b88d912c23636cf6:
+        m_Texture: {fileID: 2800000, guid: 212c057f062fca94ba34dc4640e280a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlphaTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 2800000, guid: 212c057f062fca94ba34dc4640e280a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -50,7 +58,8 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     m_Colors:
-    - Color_5509bedcd7464cdfb04d6436b48af05d: {r: 8, g: 8, b: 8, a: 0}
+    - Color_5509bedcd7464cdfb04d6436b48af05d: {r: 6.964706, g: 6.0862746, b: 6.0862746, a: 0}
+    - Color_87c48683c94f4741ad271b5cc8548f41: {r: 5.992157, g: 5.992157, b: 5.992157, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
