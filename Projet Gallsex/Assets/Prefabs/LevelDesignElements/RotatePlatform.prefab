@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 6400226376796166591}
   - component: {fileID: 8579347197906817590}
   m_Layer: 0
-  m_Name: Rotate_Platform
+  m_Name: RotatePlatform
   m_TagString: JumpableGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,8 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c229332dc7835c145bb7b8ffbc9e3f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTimer: 1
-  rotation: 0
+  maxTimer: 0.5
   animator: {fileID: 8579347197906817590}
 --- !u!61 &6400226376796166591
 BoxCollider2D:

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1440896301848738266}
   - component: {fileID: 4176783574254107053}
   m_Layer: 0
-  m_Name: borders
+  m_Name: Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 1532950481243542226}
   - component: {fileID: 7437850361223742235}
   m_Layer: 0
-  m_Name: SPIKES
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,4 +180,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe45533b9b4dfd4ca111b08e8e46507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 0}

@@ -1,24 +1,20 @@
 using UnityEngine;
 
-public class platformRotate : MonoBehaviour
+public class PlatformRotation : MonoBehaviour
 {
-    public float maxTimer = 60;
+    [SerializeField] private float maxTimer;
     private float timer = 0;
-    private bool state = false;
-    public float rotation = 0;
-    public Animation animator;
-    
+    private  bool State = false;
+    private float rotation = 0;
+    [SerializeField] private Animation animator;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (state)
+            if (!State)
             {
-                
-            }
-            else
-            {
-                state = true;
+                State = true;
                 timer = 0;
             }
 
@@ -35,28 +31,28 @@ public class platformRotate : MonoBehaviour
 
     private void Start()
     {
-        state = false;
+        State = false;
     }
 
 
     private void Update()
     {
-        if (state)
+        if (State)
         {
             if (timer > maxTimer)
             {
                 animator.Stop();
-                turn();
+                Turn();
             }
-            
+
             else
             {
-                timer = timer + Time.deltaTime;
+                timer += Time.deltaTime;
             }
         }
     }
 
-    private void turn()
+    private void Turn()
     {
         if (rotation < 80)
         {
@@ -69,7 +65,7 @@ public class platformRotate : MonoBehaviour
             rotation = 0;
         }
 
-        state = false;
-        Debug.Log(state);
+        State = false;
+        Debug.Log(State);
     }
 }

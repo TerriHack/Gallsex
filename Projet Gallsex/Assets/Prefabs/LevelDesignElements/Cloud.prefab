@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5832185066823566425}
   m_Layer: 0
-  m_Name: TRIGGERS
+  m_Name: ---TRIGGERS---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 952254585844716014}
   - component: {fileID: 4169086620486561290}
   m_Layer: 0
-  m_Name: trigger (1)
+  m_Name: Trigger03
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3116991355793003395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5832185066823566425}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2151751485456334968}
   - component: {fileID: 9128178148711382424}
   m_Layer: 0
-  m_Name: trigger (2)
+  m_Name: Trigger02
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 8364284237274105941}
   - component: {fileID: 4877047000843769120}
   m_Layer: 0
-  m_Name: the platform itself
+  m_Name: CloudCollision
   m_TagString: JumpableGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe45533b9b4dfd4ca111b08e8e46507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 7178299340679101392, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
 --- !u!1 &5573151373840268104
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 3451087354649554639}
   - component: {fileID: 6314739141735569499}
   m_Layer: 0
-  m_Name: trigger
+  m_Name: Trigger01
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 6185956015670189090}
   - component: {fileID: 7946242035542532213}
   m_Layer: 0
-  m_Name: CLOUD
+  m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

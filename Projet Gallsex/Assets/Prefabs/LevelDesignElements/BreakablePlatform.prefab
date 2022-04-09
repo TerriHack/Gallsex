@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8909836234200482096}
   - component: {fileID: 9134814536732243452}
   m_Layer: 0
-  m_Name: disappear platform
+  m_Name: Collider
   m_TagString: JumpableGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3214105243116603601}
   - component: {fileID: 4336661090251398807}
   m_Layer: 0
-  m_Name: trigger
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0.5
-  ParentSpriteRenderer: {fileID: 8962453341658791256}
-  ParentBoxCollider2D: {fileID: 8909836234200482096}
-  ParentAnimation: {fileID: 9134814536732243452}
+  parentSpriteRenderer: {fileID: 8962453341658791256}
+  parentBoxCollider2D: {fileID: 8909836234200482096}
+  parentAnimation: {fileID: 9134814536732243452}
 --- !u!1 &6589263620936388125
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330281730548953422}
   m_Layer: 0
-  m_Name: disappear platform
+  m_Name: BreakablePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

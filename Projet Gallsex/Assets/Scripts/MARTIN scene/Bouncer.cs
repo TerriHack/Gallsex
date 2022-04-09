@@ -4,7 +4,6 @@ using UnityEngine;
 public class Bouncer : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rbTarget;
-    [SerializeField] private PlayerControllerData data;
     [SerializeField] private PlayerBetterController pC;
     [SerializeField] private Dash dash;
     
