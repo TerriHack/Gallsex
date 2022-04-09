@@ -32,7 +32,7 @@ public class PlatformDisappear : MonoBehaviour
                 parentSpriteRenderer.enabled = false;
                 parentBoxCollider2D.enabled = false;
                 time = 0;
-                tag = "Ground";
+                tag = "JumpableGround";
             }
         }
         else
