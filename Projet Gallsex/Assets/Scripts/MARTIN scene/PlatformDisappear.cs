@@ -5,57 +5,56 @@ using UnityEngine;
 
 public class PlatformDisappear : MonoBehaviour
 {
-    public float timer;
-    private bool WillDisappear = false;
-    private float TIME;
-    
-    public SpriteRenderer ParentSpriteRenderer;
-    public BoxCollider2D ParentBoxCollider2D;
-    public Animation ParentAnimation;
+    private bool destroyed;
+    private float timer;
+    public float maxTimer;
+    private bool active = false;
+    public BoxCollider2D trigger;
+    public BoxCollider2D collision;
+    public Animation animation;
+    public SpriteRenderer sprite;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (WillDisappear == false)
+        if(other.CompareTag("Player"))
         {
-            WillDisappear = true;
-            TIME = 0;
-            ParentAnimation.Play("disappear platform anim");
-        }
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (WillDisappear)
-        {
-            TIME = TIME += Time.deltaTime;
-            if (TIME > timer)
+            if (destroyed == false)
             {
-                WillDisappear = false;
-                ParentSpriteRenderer.enabled = false;
-                ParentBoxCollider2D.enabled = false;
-                TIME = 0;
-                tag = "Ground";
-            }
-        }
-        else
-        {
-            TIME = TIME += Time.deltaTime;
-            ParentAnimation.Stop();
-            if (TIME > timer)
-            {
-                ParentSpriteRenderer.enabled = true;
-                ParentBoxCollider2D.enabled = true;
-                TIME = 0;
-                tag = "JumpableGround";
+                active = true;
+                timer = 0;
+                animation.Play("disappear platform anim");
             }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void Update()
     {
-        TIME = 0;
-        WillDisappear = false;
-        
+        if (active)
+        {
+            if (destroyed == false)
+            {
+                timer += Time.deltaTime;
+                if (timer > maxTimer)
+                {
+                    collision.enabled = false;
+                    timer = 0;
+                    destroyed = true;
+                    sprite.enabled = false;
+                }
+            }
+            else
+            {
+                animation.Stop();
+                timer += Time.deltaTime;
+                if (timer > maxTimer)
+                {
+                    collision.enabled = true;
+                    timer = 0;
+                    destroyed = false;
+                    sprite.enabled = true;
+                }
+            }
+        }
     }
 }
