@@ -6,11 +6,14 @@ public class PlatformRotation : MonoBehaviour
     private float timer = 0;
     private  bool State = false;
     private float rotation = 0;
+    public float maxBuffer;
+    private float buffer = 10;
+    private bool isBuffering = false;
     [SerializeField] private Animation animator;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && buffer >= maxBuffer)
         {
             if (!State)
             {
@@ -50,6 +53,8 @@ public class PlatformRotation : MonoBehaviour
                 timer += Time.deltaTime;
             }
         }
+        buffering();
+        Debug.Log(buffer);
     }
 
     private void Turn()
@@ -58,14 +63,25 @@ public class PlatformRotation : MonoBehaviour
         {
             animator.Play("rotate platform 0to90");
             rotation = 90;
+
         }
         else if (rotation > 10)
         {
             animator.Play("rotate platform 90to0");
             rotation = 0;
         }
+        
 
         State = false;
-        Debug.Log(State);
+        //buffer = 0;
+        isBuffering = true;
+    }
+
+    private void buffering()
+    {
+        if (isBuffering)
+        {
+            buffer += Time.deltaTime;
+        }
     }
 }

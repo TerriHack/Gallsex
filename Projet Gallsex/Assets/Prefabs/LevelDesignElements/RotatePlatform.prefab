@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTimer: 0.5
+  maxBuffer: 2
   animator: {fileID: 8579347197906817590}
 --- !u!61 &6400226376796166591
 BoxCollider2D:
