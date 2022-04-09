@@ -23,7 +23,7 @@ public class CameraTriggerManager : MonoBehaviour
 
     public void EditTracking(bool newTracking)
     {
-        Camera.GetComponent<camerafollow>().tracking = newTracking;
+        Camera.GetComponent<camerafollow>().movementType = 1;
     }
     
 }
