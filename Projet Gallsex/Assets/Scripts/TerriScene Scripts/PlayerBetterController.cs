@@ -11,8 +11,10 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
     [SerializeField] private Bouncer bouncer;
+    [SerializeField] private Vector2 feetPos;
+    [SerializeField] private Transform tr;
     #endregion
-    
+
     #region Private float
     private float _inputX;
     private float _jumpBufferCounter;
@@ -41,7 +43,11 @@ public class PlayerBetterController : MonoBehaviour
     private bool _isNuancing;
     private bool _inputIsNull;
     #endregion
-    
+
+    #region Particle System
+    public ParticleSystem DustJump;
+    #endregion
+
     void Update()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
@@ -200,6 +206,8 @@ public class PlayerBetterController : MonoBehaviour
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
+            feetPos = new Vector2(tr.position.x, tr.position.y - 0.65f); //Instanciation particules jump
+            Instantiate(DustJump, feetPos, tr.rotation);
         }
         isJumping = false;
     }
