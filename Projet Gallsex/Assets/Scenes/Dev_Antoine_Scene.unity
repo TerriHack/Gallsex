@@ -180,11 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33d712904fc4ad9428d408d3c6057d95, type: 3}
---- !u!198 &238843407 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1781537762, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
-  m_PrefabInstance: {fileID: 7178299340307598197}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &438419515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7178299340679101392, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
@@ -202,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438419515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dbebe3e6cdc3f845a3a3d4a00c80552, type: 3}
   m_Name: 
@@ -15854,7 +15849,7 @@ PrefabInstance:
     - target: {fileID: 1431638443, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: vfxJump
       value: 
-      objectReference: {fileID: 238843407}
+      objectReference: {fileID: 0}
     - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: bouncer
       value: 
