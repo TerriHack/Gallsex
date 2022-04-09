@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class TRAP : MonoBehaviour
 {
-    public GameObject Player;
-    private bool boss = false;
-    
-    // Start is called before the first frame update
+    public GameObject player;
+    public GameObject camera;
+    public bool boss = false;
 
+    [SerializeField] private Vector3 bossRespawn;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            int I = Player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
-            Debug.Log(I);
-            Vector2 pos = Player.GetComponent<ArrayCheckpoint>().checkpointArray[I - 1];
+            int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
+            Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I - 1];
             if (boss)
             {
-                
+                camera.transform.position = camera.GetComponent<camerafollow>().respawnPosition;
             }
             else
             {
-                Player.transform.position = pos;
+                player.transform.position = pos;
             }
+            
         }
     }
 }

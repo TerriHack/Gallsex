@@ -1,14 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class platformRotate : MonoBehaviour
 {
     public float MaxTimer = 60;
     private float Timer = 0;
-    private bool State = false;
+    public  bool State = false;
     public float rotation = 0;
     public Animation animator;
     

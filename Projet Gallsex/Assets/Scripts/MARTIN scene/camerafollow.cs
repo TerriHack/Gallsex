@@ -13,7 +13,8 @@ public class camerafollow : MonoBehaviour
    public float changeSpeed;
    public float minSpeed;
    public float maxSpeed;
-   private Vector3 respawnPosition;
+   public GameObject cloud;
+   public Vector3 respawnPosition;
    
    [SerializeField] private GameObject[] waypoints;
    private int currentWaypointIndex = 0;
@@ -55,18 +56,28 @@ public class camerafollow : MonoBehaviour
                currentWaypointIndex = 0;
                //cinemachine.GetComponent<CinemachineVirtualCamera>().enabled = true;
             }
+            else
+            {
+               //cloud.transform.Rotate(0,0,-90);
+               DOTween.To( () => cloud.transform.rotation, x => cloud.transform.rotation= x,
+                  new Vector3(cloud.transform.rotation.x,cloud.transform.rotation.y, 180 ), 2);
+               DOTween.To( () => cloud.transform.position, x => cloud.transform.position= x,
+                  new Vector3(cloud.transform.position.x + 5,cloud.transform.position.y - 3, cloud.transform.position.z), 2);
+            }
          }
          transform.position = Vector3.MoveTowards(new Vector3(transform.position.x, transform.position.y,offset.z), new Vector3(waypoints[currentWaypointIndex].transform.position.x,waypoints[currentWaypointIndex].transform.position.y,offset.z),
             Time.deltaTime * speed);
       }
       else if (movementType == 2)
       {
+         cloud.transform.SetParent(null);
          DOTween.To( () => transform.position, x => transform.position = x,
-            new Vector3(target.transform.position.x, target.transform.position.y + 2,-10), 2);
+            new Vector3(target.transform.position.x, target.transform.position.y + 1,-10), 2);
          if (Vector2.Distance(transform.position,new Vector2(target.transform.position.x, target.transform.position.y + 2)) < 1)
          {
             movementType = 0;
             cinemachine.GetComponent<CinemachineVirtualCamera>().enabled = true;
+            //cloud.transform.SetParent();
          }
       }
    }
