@@ -29,6 +29,6 @@ public class GroundCheck : MonoBehaviour
 
     private void Update()
     {
-        feetPos = new Vector2(tr.position.x, tr.position.y - 0.95f);
+        feetPos = new Vector2(tr.position.x, tr.position.y - 0.15f);
     }
 }
