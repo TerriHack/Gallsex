@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="101e6b3a-8dee-454f-8a70-c41f3e3c97f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/ArrayCheckpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/ArrayCheckpoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial_Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/Bouncer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/Bouncer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/CameraTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/CameraTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/CameraTriggerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/CameraTriggerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/Parallax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/Parallax.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/PlatformDisappear.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/PlatformDisappear.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/PlatformMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/PlatformMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/checkpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/checkpoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/platformRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MARTIN scene/platformRotate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +87,7 @@
       <workItem from="1648988611145" duration="898000" />
       <workItem from="1649256846570" duration="831000" />
       <workItem from="1649257709513" duration="443000" />
+      <workItem from="1649490422311" duration="1230000" />
     </task>
     <servers />
   </component>
