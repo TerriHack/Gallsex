@@ -9761,8 +9761,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1905514cedcb6fd4eb59747adbaa98a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tr: {fileID: 7824335608248257836}
   playerController: {fileID: 1443644433}
-  vfxJump: {fileID: 0}
+  vfxLanding: {fileID: 3103397541079787081, guid: 7d27e55e30a5ce84695a86cc30e76124, type: 3}
+  feetPos: {x: 0, y: 0}
 --- !u!1 &6259068355486683036
 GameObject:
   m_ObjectHideFlags: 0
@@ -10078,12 +10080,14 @@ MonoBehaviour:
   anim: {fileID: 410723800}
   dash: {fileID: 1195328312}
   bouncer: {fileID: 0}
+  feetPos: {x: 0, y: 0}
+  groundCheckTr: {fileID: 7824335608248257836}
   isGrounded: 0
   isTouchingFront: 0
   isTouchingBack: 0
   isJumping: 0
   _facingRight: 0
-  DustJump: {fileID: 0}
+  DustJump: {fileID: 5225242303262374427, guid: 258be6e99b742ea4b9dbf925c2b5c8f2, type: 3}
 --- !u!114 &1933754024
 MonoBehaviour:
   m_ObjectHideFlags: 0
