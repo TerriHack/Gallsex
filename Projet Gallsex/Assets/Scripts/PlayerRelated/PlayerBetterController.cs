@@ -36,6 +36,8 @@ public class PlayerBetterController : MonoBehaviour
     [Header("Other")]
     public bool isJumping;
     public bool _facingRight;
+    public bool isDashing;
+    public bool isFalling;
     #endregion
 
     #region Private bool
@@ -46,6 +48,7 @@ public class PlayerBetterController : MonoBehaviour
     private bool _isNuancing;
     private bool _isWaiting;
     private bool _isSleeping;
+    private bool _isMoving;
     #endregion
 
     #region Private String
@@ -135,15 +138,15 @@ public class PlayerBetterController : MonoBehaviour
         if (_wallJumpTime > 0f) _wallJumping = true;
         else _wallJumping = false;
 
-        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded ||
-            Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
-        {
-            _isNuancing = true;
-        }
+        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || 
+            Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
+
+        if (rb.velocity.x != 0) _isMoving = true;
+        else _isMoving = false;
+        
         #endregion
         
         Animations();
-        
     }
     
     private void FixedUpdate()
@@ -169,15 +172,13 @@ public class PlayerBetterController : MonoBehaviour
             movement = new Vector2(_inputX * playerData.speed, 0);
 
             #region Animation Related
-            
-            ChangeAnimationState(PlayerRun);
+            if (_isMoving) ChangeAnimationState(PlayerRun);
             
             _waitCounter = playerData.waitTime;
             _isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
             _isSleeping = false;
-            
             #endregion
         }
         else
@@ -267,14 +268,9 @@ public class PlayerBetterController : MonoBehaviour
     
     private void Gravity()
      {
-         
          //When Dashing the gravity is set to 0
-         if (dash.isDashing)
-         {
-             rb.gravityScale = 0f;
-             ChangeAnimationState(PlayerJumpFall);
-         }
-         
+         if (dash.isDashing) rb.gravityScale = 0f;
+
          //When falling, gravity increase during time
          if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
          {
@@ -328,7 +324,7 @@ public class PlayerBetterController : MonoBehaviour
         {
             ChangeAnimationState(PlayerIdle);
         }
-        else if(_inputY < -0.5f) ChangeAnimationState(PlayerCrouch);
+        else if(_inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
 
         if (_waitCounter <= 0f && !_isSleeping)
         {
@@ -342,6 +338,14 @@ public class PlayerBetterController : MonoBehaviour
             _isSleeping = true;
             ChangeAnimationState(PlayerSleep);
         }
+
+        if (!isGrounded && !_wallSliding && !isDashing)
+        {
+            isFalling = true;
+            ChangeAnimationState(PlayerJumpFall);
+        }
+        else isFalling = false;
+
     }
     #endregion
     
