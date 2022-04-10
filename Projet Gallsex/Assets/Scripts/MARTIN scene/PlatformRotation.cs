@@ -19,6 +19,7 @@ public class PlatformRotation : MonoBehaviour
             {
                 State = true;
                 timer = 0;
+                buffer = 0;
             }
 
             if (rotation == 0)
@@ -30,6 +31,7 @@ public class PlatformRotation : MonoBehaviour
                 animator.Play("rotate platform anim 1");
             }
         }
+        Debug.Log(buffer);
     }
 
     private void Start()
@@ -54,7 +56,6 @@ public class PlatformRotation : MonoBehaviour
             }
         }
         buffering();
-        Debug.Log(buffer);
     }
 
     private void Turn()
@@ -82,6 +83,7 @@ public class PlatformRotation : MonoBehaviour
         if (isBuffering)
         {
             buffer += Time.deltaTime;
+            Debug.Log("isBuffering");
         }
     }
 }

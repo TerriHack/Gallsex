@@ -18,13 +18,13 @@ public class PlayerBetterController : MonoBehaviour
     #region Private float
     private float _inputX;
     private float _inputY;
-    private float _inputXRight;
-    private float _inputYRight;
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
     private float _wallJumpTime;
     private float _gravity;
+    public float _waitCounter;
+    private float _sittingCounter;
     #endregion
 
     #region Public bool
@@ -44,7 +44,8 @@ public class PlayerBetterController : MonoBehaviour
     private bool _coyoteGrounded;
     private bool _canNuance;
     private bool _isNuancing;
-    private bool _inputIsNull;
+    private bool _isWaiting;
+    private bool _isSleeping;
     #endregion
 
     #region Private String
@@ -52,7 +53,7 @@ public class PlayerBetterController : MonoBehaviour
     #endregion
 
     #region Particle System
-    public ParticleSystem DustJump;
+    public ParticleSystem dustJump;
     #endregion
     
     #region Animation States
@@ -61,19 +62,27 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerCrouch = "Crouch_Animation";
     private const String PlayerJumpRise = "JumpRise_Animation";
     private const String PlayerJumpFall = "JumpFall_Animation";
-    private const String PlayerHorizontalDash = "HorizontalDash_Animation";
+    public const String PlayerVerticalDash = "VerticalDash_Animation";
     private const String PlayerWallSlide = "WallSlide_Animation";
+    private const String PlayerSit = "Sit_Animation"; 
+    private const String PlayerSleep = "Sleep_Animation";
     #endregion
 
-    public float VeloY;
-
+    void Start()
+    {
+        #region Animation Related
+        _waitCounter = playerData.waitTime;
+        _sittingCounter = playerData.timeToSleep;
+        #endregion
+    }
+    
     void Update()
     {
+        #region Inputs Left Stick
         _inputX = Input.GetAxisRaw("Horizontal");
         _inputY = Input.GetAxisRaw("Vertical");
-        _inputXRight = Input.GetAxisRaw("Mouse X");
-        _inputYRight = Input.GetAxisRaw("Mouse Y");
-
+        #endregion
+        
         //This section is hell don't trespass
         #region La vallé des IF
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
@@ -107,54 +116,34 @@ public class PlayerBetterController : MonoBehaviour
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
         }
-        else if(rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
+        else if (rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
 
         if (_coyoteTimeCounter <= 0) _coyoteGrounded = false;
 
         if (!isGrounded && !dash.isDashing) AirClamp();
         
-        
-        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0)
-        {
-            _inputIsNull= false;
-            _wallSliding = true;
-        }
-        else
-        {
-            _inputIsNull= true;
-            _wallSliding = false;
-        }
+        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0) _wallSliding = true;
+        else _wallSliding = false;
 
         if (_wallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
+            ChangeAnimationState(PlayerWallSlide);
         }
 
         if (_wallJumpTime > 0f) _wallJumping = true;
         else _wallJumping = false;
 
-        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
-
-        #region Animation Related
-        if (isGrounded && _inputX == 0f && _inputY > -0.5f) ChangeAnimationState(PlayerIdle);
-        
-        if (_inputX != 0f && isGrounded) ChangeAnimationState(PlayerRun);
-
-        if (rb.velocity.y > 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpRise);
-
-        if(rb.velocity.y < 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpFall);
-
-        if(_inputY < -0.5 && isGrounded && _inputX == 0f) ChangeAnimationState(PlayerCrouch);
-
-        if (_inputXRight != 0 && dash.isDashing) ChangeAnimationState(PlayerHorizontalDash);
-
-        if (_wallSliding) ChangeAnimationState(PlayerWallSlide);
+        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded ||
+            Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
+        {
+            _isNuancing = true;
+        }
         #endregion
         
-        #endregion
-
-        VeloY = rb.velocity.y;
+        Animations();
+        
     }
     
     private void FixedUpdate()
@@ -174,14 +163,34 @@ public class PlayerBetterController : MonoBehaviour
     private void HorizontalMove()
     {
         Vector2 movement;
-
+        
         if (isGrounded)
         {
             movement = new Vector2(_inputX * playerData.speed, 0);
+
+            #region Animation Related
+            
+            ChangeAnimationState(PlayerRun);
+            
+            _waitCounter = playerData.waitTime;
+            _isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            _isSleeping = false;
+            
+            #endregion
         }
         else
         {
             movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
+            
+            #region Animation Related
+            _sittingCounter = playerData.timeToSleep;
+            _isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            _isSleeping = false;
+            #endregion
         }
         
         rb.AddForce(movement, ForceMode2D.Impulse);
@@ -199,7 +208,7 @@ public class PlayerBetterController : MonoBehaviour
 
         #endregion
     }
-    private void Flip()
+    public void Flip()
     {
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         _facingRight = !_facingRight;
@@ -215,15 +224,25 @@ public class PlayerBetterController : MonoBehaviour
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
             feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
-            Instantiate(DustJump, feetPos, groundCheckTr.rotation);
+            Instantiate(dustJump, feetPos, groundCheckTr.rotation);
+            
+            #region Animation Related
+            _waitCounter = playerData.waitTime;
+            _isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            _isSleeping = false;
+            #endregion
         }
+        
         isJumping = false;
     }
     private void JumpNuancer()
     {
         Vector2 height = new Vector2(0, playerData.nuancerForce);
         rb.AddForce(height, ForceMode2D.Impulse);
-        
+        ChangeAnimationState(PlayerJumpRise);
+
         _isNuancing = false;
     }
     private void WallJump()
@@ -253,13 +272,14 @@ public class PlayerBetterController : MonoBehaviour
          if (dash.isDashing)
          {
              rb.gravityScale = 0f;
+             ChangeAnimationState(PlayerJumpFall);
          }
          
          //When falling, gravity increase during time
          if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
          {
              _gravity += playerData.gravityMultiplier;
-             rb.gravityScale += _gravity * Time.fixedDeltaTime; 
+             rb.gravityScale += _gravity * Time.fixedDeltaTime;
          }
          else 
          {
@@ -294,13 +314,35 @@ public class PlayerBetterController : MonoBehaviour
     }
     
     //************************************
-    private void ChangeAnimationState(string newState)
+    public void ChangeAnimationState(string newState)
     {
         if(_currentState == newState) return;
         anim.Play(newState);
         _currentState = newState;
     }
-    
+    private void Animations()
+    {
+        _waitCounter -= Time.deltaTime;
+        
+        if (isGrounded && _inputX == 0f && _inputY > -0.5f && !_isWaiting)
+        {
+            ChangeAnimationState(PlayerIdle);
+        }
+        else if(_inputY < -0.5f) ChangeAnimationState(PlayerCrouch);
+
+        if (_waitCounter <= 0f && !_isSleeping)
+        {
+            _isWaiting = true;
+            ChangeAnimationState(PlayerSit);
+            _sittingCounter -= Time.deltaTime;
+        }
+
+        if (_sittingCounter <= 0f)
+        {
+            _isSleeping = true;
+            ChangeAnimationState(PlayerSleep);
+        }
+    }
     #endregion
     
 }
