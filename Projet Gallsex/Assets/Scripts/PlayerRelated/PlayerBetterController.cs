@@ -18,13 +18,12 @@ public class PlayerBetterController : MonoBehaviour
     #region Private float
     private float _inputX;
     private float _inputY;
-    public float _inputXRight;
-    private float _inputYRight;
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
     private float _wallJumpTime;
     private float _gravity;
+    public float _waitCounter;
     #endregion
 
     #region Public bool
@@ -45,6 +44,7 @@ public class PlayerBetterController : MonoBehaviour
     private bool _canNuance;
     private bool _isNuancing;
     private bool _inputIsNull;
+    private bool _isWaiting;
     #endregion
 
     #region Private String
@@ -63,17 +63,16 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerJumpFall = "JumpFall_Animation";
     public const String PlayerVerticalDash = "VerticalDash_Animation";
     private const String PlayerWallSlide = "WallSlide_Animation";
+    private const String PlayerSit = "Sit_Animation";
     #endregion
-
-    public float VeloY;
 
     void Update()
     {
+        #region Inputs Left Stick
         _inputX = Input.GetAxisRaw("Horizontal");
         _inputY = Input.GetAxisRaw("Vertical");
-        _inputXRight = Input.GetAxisRaw("Mouse X");
-        _inputYRight = Input.GetAxisRaw("Mouse Y");
-
+        #endregion
+        
         //This section is hell don't trespass
         #region La vallé des IF
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Saut"))
@@ -139,13 +138,10 @@ public class PlayerBetterController : MonoBehaviour
         {
             _isNuancing = true;
         }
-
-        #region Animation Related
-        if (isGrounded && _inputX == 0f && _inputY > -0.5f) ChangeAnimationState(PlayerIdle);
-        else if(_inputY < -0.5f) ChangeAnimationState(PlayerCrouch);
         #endregion
         
-        #endregion
+        Animations();
+        
     }
     
     private void FixedUpdate()
@@ -172,6 +168,9 @@ public class PlayerBetterController : MonoBehaviour
             movement = new Vector2(_inputX * playerData.speed, 0);
             
             ChangeAnimationState(PlayerRun);
+            
+            _waitCounter = playerData.waitTime;
+            _isWaiting = false;
         }
         else
         {
@@ -212,9 +211,6 @@ public class PlayerBetterController : MonoBehaviour
             Instantiate(DustJump, feetPos, groundCheckTr.rotation);
             
         }
-
-        //if (rb.velocity.y > 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpRise);
-       //if(rb.velocity.y < 0 && !isGrounded && !dash.isDashing && !_wallSliding && dash._dashCounter > 0f) ChangeAnimationState(PlayerJumpFall);
         
         isJumping = false;
     }
@@ -301,7 +297,23 @@ public class PlayerBetterController : MonoBehaviour
         anim.Play(newState);
         _currentState = newState;
     }
-    
+
+    private void Animations()
+    {
+        if (isGrounded && _inputX == 0f && _inputY > -0.5f && !_isWaiting)
+        {
+            ChangeAnimationState(PlayerIdle);
+        }
+        else if(_inputY < -0.5f) ChangeAnimationState(PlayerCrouch);
+
+        if (_waitCounter <= 0f)
+        {
+            ChangeAnimationState(PlayerSit);
+            _isWaiting = true;
+        }
+
+        _waitCounter -= Time.deltaTime;
+    }
     #endregion
     
 }
