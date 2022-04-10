@@ -21,9 +21,9 @@ public class CameraTriggerManager : MonoBehaviour
             x => camera.transform.GetComponent<camerafollow>().offset = x, new Vector3(newOffset.x,newOffset.y, -10), tweenTime);
     }
 
-    public void EditTracking(bool newTracking)
+    /*public void EditTracking(bool newTracking)
     {
-        camera.GetComponent<camerafollow>().tracking = newTracking;
-    }
+        camera.GetComponent<camerafollow>().movementType = newTracking;
+    }*/
     
 }

@@ -24,7 +24,7 @@ public class CameraTrigger : MonoBehaviour
             }
             else if (type == 2)// Tracking changer
             {
-                manager.GetComponent<CameraTriggerManager>().EditTracking(changeTracking);
+                //manager.GetComponent<CameraTriggerManager>().EditTracking(changeTracking);
             }
             Debug.Log("hello");
         }
