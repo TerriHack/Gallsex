@@ -44,6 +44,9 @@ TextureImporter:
   - first:
       213: 7402543237091978996
     second: SuperBack_13
+  - first:
+      213: 4519860919580019820
+    second: SuperBack_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -450,7 +453,7 @@ TextureImporter:
         width: 33
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -458,6 +461,27 @@ TextureImporter:
       bones: []
       spriteID: 4fe66519add1bb660800000000000000
       internalID: 7402543237091978996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 756
+        width: 835
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cccb12f85c9be30800000000000000
+      internalID: 4519860919580019820
       vertices: []
       indices: 
       edges: []
