@@ -24,6 +24,7 @@ public class PlayerBetterController : MonoBehaviour
     private float _wallJumpTime;
     private float _gravity;
     public float _waitCounter;
+    private float _sittingCounter;
     #endregion
 
     #region Public bool
@@ -43,8 +44,8 @@ public class PlayerBetterController : MonoBehaviour
     private bool _coyoteGrounded;
     private bool _canNuance;
     private bool _isNuancing;
-    private bool _inputIsNull;
     private bool _isWaiting;
+    private bool _isSleeping;
     #endregion
 
     #region Private String
@@ -52,7 +53,7 @@ public class PlayerBetterController : MonoBehaviour
     #endregion
 
     #region Particle System
-    public ParticleSystem DustJump;
+    public ParticleSystem dustJump;
     #endregion
     
     #region Animation States
@@ -63,12 +64,16 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerJumpFall = "JumpFall_Animation";
     public const String PlayerVerticalDash = "VerticalDash_Animation";
     private const String PlayerWallSlide = "WallSlide_Animation";
-    private const String PlayerSit = "Sit_Animation";
+    private const String PlayerSit = "Sit_Animation"; 
+    private const String PlayerSleep = "Sleep_Animation";
     #endregion
 
     void Start()
     {
+        #region Animation Related
         _waitCounter = playerData.waitTime;
+        _sittingCounter = playerData.timeToSleep;
+        #endregion
     }
     
     void Update()
@@ -117,16 +122,8 @@ public class PlayerBetterController : MonoBehaviour
 
         if (!isGrounded && !dash.isDashing) AirClamp();
         
-        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0)
-        {
-            _inputIsNull= false;
-            _wallSliding = true;
-        }
-        else
-        {
-            _inputIsNull= true;
-            _wallSliding = false;
-        }
+        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0) _wallSliding = true;
+        else _wallSliding = false;
 
         if (_wallSliding)
         {
@@ -170,17 +167,30 @@ public class PlayerBetterController : MonoBehaviour
         if (isGrounded)
         {
             movement = new Vector2(_inputX * playerData.speed, 0);
+
+            #region Animation Related
             
             ChangeAnimationState(PlayerRun);
             
             _waitCounter = playerData.waitTime;
             _isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            _isSleeping = false;
+            
+            #endregion
         }
         else
         {
             movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
-            _waitCounter = playerData.waitTime;
+            
+            #region Animation Related
+            _sittingCounter = playerData.timeToSleep;
             _isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            _isSleeping = false;
+            #endregion
         }
         
         rb.AddForce(movement, ForceMode2D.Impulse);
@@ -214,10 +224,15 @@ public class PlayerBetterController : MonoBehaviour
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
             feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
-            Instantiate(DustJump, feetPos, groundCheckTr.rotation);
+            Instantiate(dustJump, feetPos, groundCheckTr.rotation);
             
+            #region Animation Related
             _waitCounter = playerData.waitTime;
             _isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            _isSleeping = false;
+            #endregion
         }
         
         isJumping = false;
@@ -305,7 +320,6 @@ public class PlayerBetterController : MonoBehaviour
         anim.Play(newState);
         _currentState = newState;
     }
-
     private void Animations()
     {
         _waitCounter -= Time.deltaTime;
@@ -316,10 +330,17 @@ public class PlayerBetterController : MonoBehaviour
         }
         else if(_inputY < -0.5f) ChangeAnimationState(PlayerCrouch);
 
-        if (_waitCounter <= 0f)
+        if (_waitCounter <= 0f && !_isSleeping)
         {
             _isWaiting = true;
             ChangeAnimationState(PlayerSit);
+            _sittingCounter -= Time.deltaTime;
+        }
+
+        if (_sittingCounter <= 0f)
+        {
+            _isSleeping = true;
+            ChangeAnimationState(PlayerSleep);
         }
     }
     #endregion

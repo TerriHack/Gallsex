@@ -58,4 +58,5 @@ public class PlayerControllerData : ScriptableObject
 
     [Space] [Header("Animation")]
     public float waitTime = 2f;
+    public float timeToSleep = 2f;
 }
