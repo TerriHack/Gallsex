@@ -66,6 +66,11 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerSit = "Sit_Animation";
     #endregion
 
+    void Start()
+    {
+        _waitCounter = playerData.waitTime;
+    }
+    
     void Update()
     {
         #region Inputs Left Stick
@@ -161,7 +166,6 @@ public class PlayerBetterController : MonoBehaviour
     private void HorizontalMove()
     {
         Vector2 movement;
-        bool _isMoving = true;
         
         if (isGrounded)
         {
@@ -175,6 +179,8 @@ public class PlayerBetterController : MonoBehaviour
         else
         {
             movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
+            _waitCounter = playerData.waitTime;
+            _isWaiting = false;
         }
         
         rb.AddForce(movement, ForceMode2D.Impulse);
@@ -210,6 +216,8 @@ public class PlayerBetterController : MonoBehaviour
             feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
             Instantiate(DustJump, feetPos, groundCheckTr.rotation);
             
+            _waitCounter = playerData.waitTime;
+            _isWaiting = false;
         }
         
         isJumping = false;
@@ -300,6 +308,8 @@ public class PlayerBetterController : MonoBehaviour
 
     private void Animations()
     {
+        _waitCounter -= Time.deltaTime;
+        
         if (isGrounded && _inputX == 0f && _inputY > -0.5f && !_isWaiting)
         {
             ChangeAnimationState(PlayerIdle);
@@ -308,11 +318,9 @@ public class PlayerBetterController : MonoBehaviour
 
         if (_waitCounter <= 0f)
         {
-            ChangeAnimationState(PlayerSit);
             _isWaiting = true;
+            ChangeAnimationState(PlayerSit);
         }
-
-        _waitCounter -= Time.deltaTime;
     }
     #endregion
     
