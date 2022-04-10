@@ -1,58 +1,58 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformDisappear : MonoBehaviour
 {
     public float timer;
-    private bool WillDisappear = false;
-    private float TIME;
+    private bool willDisappear = false;
+    private float time;
     
-    public SpriteRenderer ParentSpriteRenderer;
-    public BoxCollider2D ParentBoxCollider2D;
-    //public Animation ParentAnimation;
+    public SpriteRenderer parentSpriteRenderer;
+    public BoxCollider2D parentBoxCollider2D;
+    public Animation parentAnimation;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (WillDisappear == false)
+        if (willDisappear == false)
         {
-            WillDisappear = true;
-            TIME = 0;
+            willDisappear = true;
+            time = 0;
+            parentAnimation.Play("disappear platform anim");
         }
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (WillDisappear)
+        if (willDisappear)
         {
-            TIME = TIME += Time.deltaTime;
-            //ParentAnimation.Play();
-            if (TIME > timer)
+            time = time += Time.deltaTime;
+            if (time > timer)
             {
-                WillDisappear = false;
-                ParentSpriteRenderer.enabled = false;
-                ParentBoxCollider2D.enabled = false;
-                TIME = 0;
+                willDisappear = false;
+                parentSpriteRenderer.enabled = false;
+                parentBoxCollider2D.enabled = false;
+                time = 0;
+                tag = "JumpableGround";
             }
         }
         else
         {
-            TIME = TIME += Time.deltaTime;
-            //ParentAnimation.Stop();
-            if (TIME > timer)
+            time = time += Time.deltaTime;
+            parentAnimation.Stop();
+            if (time > timer)
             {
-                ParentSpriteRenderer.enabled = true;
-                ParentBoxCollider2D.enabled = true;
-                TIME = 0;
+                parentSpriteRenderer.enabled = true;
+                parentBoxCollider2D.enabled = true;
+                time = 0;
+                tag = "JumpableGround";
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        TIME = 0;
-        WillDisappear = false;
+        time = 0;
+        willDisappear = false;
+        
     }
 }

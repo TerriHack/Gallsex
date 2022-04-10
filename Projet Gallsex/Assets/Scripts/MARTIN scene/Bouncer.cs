@@ -1,17 +1,26 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bouncer : MonoBehaviour
 {
-    public float Strength;
-    public Rigidbody2D rbtarget;
+    [SerializeField] private Rigidbody2D rbTarget;
+    [SerializeField] private PlayerBetterController pC;
+    [SerializeField] private Dash dash;
+    
+    public float strength;
+
+    public bool isBouncing;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        rbtarget.velocity = new Vector2(rbtarget.velocity.x, 0);
-        rbtarget.AddForce(new Vector2(0, Strength), ForceMode2D.Impulse);
+        rbTarget.velocity = new Vector2(rbTarget.velocity.x, 0);
+        rbTarget.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
+
+        isBouncing = true;
     }
 
+    private void FixedUpdate()
+    {
+        if (dash.isDashing || pC.isGrounded) isBouncing = false;
+    }
 }
