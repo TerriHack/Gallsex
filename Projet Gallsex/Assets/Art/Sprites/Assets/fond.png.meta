@@ -56,6 +56,9 @@ TextureImporter:
   - first:
       213: 1527976485386185948
     second: fond_17
+  - first:
+      213: -4355387498707396293
+    second: fond_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -546,7 +549,7 @@ TextureImporter:
         width: 55
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,6 +557,27 @@ TextureImporter:
       bones: []
       spriteID: cdce7949486743510800000000000000
       internalID: 1527976485386185948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fond_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 47
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b395e50552e8e83c0800000000000000
+      internalID: -4355387498707396293
       vertices: []
       indices: 
       edges: []

@@ -26,6 +26,24 @@ TextureImporter:
   - first:
       213: -902380467122627056
     second: SuperBack_7
+  - first:
+      213: -7755759731588285671
+    second: SuperBack_8
+  - first:
+      213: -2868793820309291284
+    second: SuperBack_9
+  - first:
+      213: 4936053642809854023
+    second: SuperBack_10
+  - first:
+      213: -7242142389854699371
+    second: SuperBack_11
+  - first:
+      213: -2849981452996091544
+    second: SuperBack_12
+  - first:
+      213: 7402543237091978996
+    second: SuperBack_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -159,7 +177,7 @@ TextureImporter:
         width: 835
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,7 +198,7 @@ TextureImporter:
         width: 167
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,7 +219,7 @@ TextureImporter:
         width: 327
         height: 327
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,7 +240,7 @@ TextureImporter:
         width: 75
         height: 325
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,7 +261,7 @@ TextureImporter:
         width: 320
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,7 +282,7 @@ TextureImporter:
         width: 368
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,7 +303,7 @@ TextureImporter:
         width: 284
         height: 343
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -306,7 +324,7 @@ TextureImporter:
         width: 3
         height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,6 +332,132 @@ TextureImporter:
       bones: []
       spriteID: 01e97e40fb91a73f0800000000000000
       internalID: -902380467122627056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 756
+        width: 501
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bb66bad910e5490800000000000000
+      internalID: -7755759731588285671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 309
+        width: 150
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceef0ae483fff28d0800000000000000
+      internalID: -2868793820309291284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 516
+        width: 41
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74844f3c2a2608440800000000000000
+      internalID: 4936053642809854023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_11
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 419
+        width: 75
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59089efedddbe7b90800000000000000
+      internalID: -7242142389854699371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_12
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 462
+        width: 75
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86167b5e7f4d278d0800000000000000
+      internalID: -2849981452996091544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperBack_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 756
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe66519add1bb660800000000000000
+      internalID: 7402543237091978996
       vertices: []
       indices: 
       edges: []

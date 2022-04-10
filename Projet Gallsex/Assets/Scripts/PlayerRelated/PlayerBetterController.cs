@@ -12,11 +12,14 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Dash dash;
     [SerializeField] private Bouncer bouncer;
     [SerializeField] private Vector2 feetPos;
-    [SerializeField] private Transform tr;
+    [SerializeField] private Transform groundCheckTr;
     #endregion
 
     #region Private float
     private float _inputX;
+    private float _inputY;
+    public float _inputXRight;
+    private float _inputYRight;
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
@@ -44,13 +47,32 @@ public class PlayerBetterController : MonoBehaviour
     private bool _inputIsNull;
     #endregion
 
+    #region Private String
+    private string _currentState;
+    #endregion
+
     #region Particle System
     public ParticleSystem DustJump;
     #endregion
+    
+    #region Animation States
+    private const String PlayerIdle = "Idle_Animation";
+    private const String PlayerRun = "Running_Animation";
+    private const String PlayerCrouch = "Crouch_Animation";
+    private const String PlayerJumpRise = "JumpRise_Animation";
+    private const String PlayerJumpFall = "JumpFall_Animation";
+    private const String PlayerHorizontalDash = "HorizontalDash_Animation";
+    private const String PlayerWallSlide = "WallSlide_Animation";
+    #endregion
+
+    public float VeloY;
 
     void Update()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
+        _inputY = Input.GetAxisRaw("Vertical");
+        _inputXRight = Input.GetAxisRaw("Mouse X");
+        _inputYRight = Input.GetAxisRaw("Mouse Y");
 
         //This section is hell don't trespass
         #region La vallé des IF
@@ -65,10 +87,7 @@ public class PlayerBetterController : MonoBehaviour
             _wallJumpTime -= Time.deltaTime;
         }
         
-        if (_jumpBufferCounter > 0f)
-        {
-            isJumping = true;
-        }
+        if (_jumpBufferCounter > 0f) isJumping = true;
 
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Saut"))
         {
@@ -88,20 +107,11 @@ public class PlayerBetterController : MonoBehaviour
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
         }
-        else if(rb.velocity.y < -0.1f)
-        {
-            _coyoteTimeCounter -= Time.deltaTime;
-        }
-        
-        if (_coyoteTimeCounter <= 0)
-        {
-            _coyoteGrounded = false;
-        }
-        
-        if (!isGrounded && !dash.isDashing)
-        {
-            AirClamp();
-        }
+        else if(rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
+
+        if (_coyoteTimeCounter <= 0) _coyoteGrounded = false;
+
+        if (!isGrounded && !dash.isDashing) AirClamp();
         
         if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0)
         {
@@ -120,33 +130,30 @@ public class PlayerBetterController : MonoBehaviour
             rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
         }
 
-        if (_wallJumpTime > 0f)
-        {
-            _wallJumping = true;
-        }
-        else
-        {
-            _wallJumping = false;
-        }
+        if (_wallJumpTime > 0f) _wallJumping = true;
+        else _wallJumping = false;
+
+        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
+
+        #region Animation Related
+        if (isGrounded && _inputX == 0f && _inputY > -0.5f) ChangeAnimationState(PlayerIdle);
         
-        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
-        {
-            _isNuancing = true;
-        }
+        if (_inputX != 0f && isGrounded) ChangeAnimationState(PlayerRun);
+
+        if (rb.velocity.y > 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpRise);
+
+        if(rb.velocity.y < 0 && !isGrounded && !dash.isDashing && !_wallSliding && dash._dashCounter > 0f) ChangeAnimationState(PlayerJumpFall);
+
+        if(_inputY < -0.5 && isGrounded && _inputX == 0f) ChangeAnimationState(PlayerCrouch);
+
+        if (_inputXRight != 0 && dash._dashCounter <= 0f && !isGrounded && !_wallSliding) ChangeAnimationState(PlayerHorizontalDash);
+
+        if (_wallSliding) ChangeAnimationState(PlayerWallSlide);
+        #endregion
+        
         #endregion
 
-        #region Animation
-
-        if (_inputX != 0f)
-        {
-            anim.SetBool("isRunning", true);
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
-
-        #endregion
+        VeloY = rb.velocity.y;
     }
     
     private void FixedUpdate()
@@ -175,7 +182,7 @@ public class PlayerBetterController : MonoBehaviour
         {
             movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
         }
-
+        
         rb.AddForce(movement, ForceMode2D.Impulse);
 
         #region Flip the Sprite
@@ -191,7 +198,7 @@ public class PlayerBetterController : MonoBehaviour
 
         #endregion
     }
-    private void Flip()
+    public void Flip()
     {
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         _facingRight = !_facingRight;
@@ -206,8 +213,8 @@ public class PlayerBetterController : MonoBehaviour
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
-            feetPos = new Vector2(tr.position.x, tr.position.y - 0.65f); //Instanciation particules jump
-            Instantiate(DustJump, feetPos, tr.rotation);
+            feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
+            Instantiate(DustJump, feetPos, groundCheckTr.rotation);
         }
         isJumping = false;
     }
@@ -284,6 +291,15 @@ public class PlayerBetterController : MonoBehaviour
         
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
     }
+    
+    //************************************
+    private void ChangeAnimationState(string newState)
+    {
+        if(_currentState == newState) return;
+        anim.Play(newState);
+        _currentState = newState;
+    }
+    
     #endregion
     
 }
