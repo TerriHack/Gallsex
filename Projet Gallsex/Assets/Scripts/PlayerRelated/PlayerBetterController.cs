@@ -18,7 +18,7 @@ public class PlayerBetterController : MonoBehaviour
     #region Private float
     private float _inputX;
     private float _inputY;
-    private float _inputXRight;
+    public float _inputXRight;
     private float _inputYRight;
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
@@ -113,7 +113,6 @@ public class PlayerBetterController : MonoBehaviour
 
         if (!isGrounded && !dash.isDashing) AirClamp();
         
-        
         if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0)
         {
             _inputIsNull= false;
@@ -143,11 +142,11 @@ public class PlayerBetterController : MonoBehaviour
 
         if (rb.velocity.y > 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpRise);
 
-        if(rb.velocity.y < 0 && !isGrounded && !dash.isDashing && !_wallSliding) ChangeAnimationState(PlayerJumpFall);
+        if(rb.velocity.y < 0 && !isGrounded && !dash.isDashing && !_wallSliding && dash._dashCounter > 0f) ChangeAnimationState(PlayerJumpFall);
 
         if(_inputY < -0.5 && isGrounded && _inputX == 0f) ChangeAnimationState(PlayerCrouch);
 
-        if (_inputXRight != 0 && dash.isDashing) ChangeAnimationState(PlayerHorizontalDash);
+        if (_inputXRight != 0 && dash._dashCounter <= 0f && !isGrounded && !_wallSliding) ChangeAnimationState(PlayerHorizontalDash);
 
         if (_wallSliding) ChangeAnimationState(PlayerWallSlide);
         #endregion
@@ -199,7 +198,7 @@ public class PlayerBetterController : MonoBehaviour
 
         #endregion
     }
-    private void Flip()
+    public void Flip()
     {
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         _facingRight = !_facingRight;
