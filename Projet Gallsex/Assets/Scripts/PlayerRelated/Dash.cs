@@ -17,6 +17,8 @@ public class Dash : MonoBehaviour
     public float _dashCounter;
     
     public bool isDashing;
+    
+    private const String PlayerHorizontalDash = "HorizontalDash_Animation";
 
     private void Start()
     {
@@ -36,10 +38,11 @@ public class Dash : MonoBehaviour
             {
                 _dashDelay = playerData.dashTime;
             }
-            
+
+            #region Flip when dashing
             if(_inputX > 0 && !playerController._facingRight) playerController.Flip();
             else if(_inputX < 0 && playerController._facingRight)playerController.Flip();
-
+            #endregion
         }
 
         if (playerController.isGrounded  && _dashCounter <= 0f|| playerController.isTouchingFront && _dashCounter <= 0f)
@@ -60,6 +63,8 @@ public class Dash : MonoBehaviour
         
         _dashDelay -= Time.deltaTime;
         _dashCounter -= Time.deltaTime;
+        
+        if(_canDash > 0) playerController.ChangeAnimationState(PlayerHorizontalDash);
     }
 
     private void FixedUpdate()
