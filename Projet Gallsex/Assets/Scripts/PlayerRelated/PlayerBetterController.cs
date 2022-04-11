@@ -333,7 +333,7 @@ public class PlayerBetterController : MonoBehaviour
         }
         else if(inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
 
-        if (_waitCounter <= 0f && !_isSleeping && !_wallSliding)
+        if (_waitCounter <= 0f && !_isSleeping && !_wallSliding && !isFalling)
         {
             _isWaiting = true;
             ChangeAnimationState(PlayerSit);
