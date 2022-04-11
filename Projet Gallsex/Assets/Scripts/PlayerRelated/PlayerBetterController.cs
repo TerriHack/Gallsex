@@ -19,10 +19,12 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private ParticleSystem dustJump;
     [Space]
     #endregion
-
+    
+    [HideInInspector] public float inputX;
+    [HideInInspector] public float inputY;
+    
     #region Private float
-    private float _inputX;
-    private float _inputY;
+
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
@@ -83,8 +85,8 @@ public class PlayerBetterController : MonoBehaviour
     void Update()
     {
         #region Inputs Left Stick
-        _inputX = Input.GetAxisRaw("Horizontal");
-        _inputY = Input.GetAxisRaw("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
         #endregion
         
         //This section is hell don't trespass
@@ -126,7 +128,7 @@ public class PlayerBetterController : MonoBehaviour
 
         if (!isGrounded && !dash.isDashing) AirClamp();
         
-        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0) _wallSliding = true;
+        if (isTouchingFront && !isGrounded && inputX != 0 || isTouchingBack && !isGrounded && inputX != 0) _wallSliding = true;
         else _wallSliding = false;
 
         if (_wallSliding)
@@ -151,7 +153,7 @@ public class PlayerBetterController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (_inputX != 0) HorizontalMove();
+        if (inputX != 0) HorizontalMove();
         
         if (_isNuancing) JumpNuancer();
         
@@ -167,7 +169,7 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isGrounded)
         {
-            movement = new Vector2(_inputX * playerData.speed, 0);
+            movement = new Vector2(inputX * playerData.speed, 0);
 
             #region Animation Related
             if (_isMoving) ChangeAnimationState(PlayerRun);
@@ -181,7 +183,7 @@ public class PlayerBetterController : MonoBehaviour
         }
         else
         {
-            movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
+            movement = new Vector2(inputX * playerData.speed * playerData.airControl, 0);
             
             #region Animation Related
             _sittingCounter = playerData.timeToSleep;
@@ -196,11 +198,11 @@ public class PlayerBetterController : MonoBehaviour
 
         #region Flip the Sprite
 
-        if (_inputX < 0 && _facingRight) 
+        if (inputX < 0 && _facingRight) 
         {
             Flip();
         }
-        else if(_inputX > 0 && !_facingRight)
+        else if(inputX > 0 && !_facingRight)
         {
             Flip();
         }
@@ -220,6 +222,7 @@ public class PlayerBetterController : MonoBehaviour
         if (isGrounded || _coyoteGrounded && rb.velocity.y < 0)
         {
             Vector2 height = new Vector2(0, playerData.jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x,0);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
             _feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
@@ -247,17 +250,17 @@ public class PlayerBetterController : MonoBehaviour
     private void WallJump()
     {
         //When turning in the opposite side of the wall you're jumping to, you can still wall jump 
-        if (isTouchingBack && _inputX != 0)
+        if (isTouchingBack && inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(playerData.xWallForce * inputX,playerData.yWallForce),ForceMode2D.Impulse);
             _wallJumping = false;
         }
         
-        if (isTouchingFront&& _inputX != 0)
+        if (isTouchingFront&& inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(playerData.xWallForce * -inputX,playerData.yWallForce),ForceMode2D.Impulse);
             _wallJumping = false;
         }
     }
@@ -318,13 +321,13 @@ public class PlayerBetterController : MonoBehaviour
     {
         _waitCounter -= Time.deltaTime;
         
-        if (isGrounded && _inputX == 0f && _inputY > -0.5f && !_isWaiting)
+        if (isGrounded && inputX == 0f && inputY > -0.5f && !_isWaiting)
         {
             ChangeAnimationState(PlayerIdle);
         }
-        else if(_inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
+        else if(inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
 
-        if (_waitCounter <= 0f && !_isSleeping)
+        if (_waitCounter <= 0f && !_isSleeping && !_wallSliding)
         {
             _isWaiting = true;
             ChangeAnimationState(PlayerSit);
