@@ -18,8 +18,6 @@ public class Dash : MonoBehaviour
     private float _dashCooldownCounter;
     
     public bool isDashing;
-    
-    private const String PlayerHorizontalDash = "HorizontalDash_Animation";
 
     private void Start()
     {
@@ -46,7 +44,11 @@ public class Dash : MonoBehaviour
         }
 
         //Reset Dash (Ground/Cooldown) 
-        if (playerController.isGrounded  && _dashCooldownCounter <= 0f|| playerController.isTouchingFront && _dashCooldownCounter <= 0f) _canDash = 0f;
+        if (playerController.isGrounded && _dashCooldownCounter <= 0f ||
+            playerController.isTouchingFront && _dashCooldownCounter <= 0f)
+        {
+            _canDash = 0f;
+        }
 
         //This determines how long the force is added to the player dashing
         if (_dashDelay >= 0f) isDashing = true;
@@ -57,8 +59,7 @@ public class Dash : MonoBehaviour
         _dashDelay -= Time.deltaTime;
         _dashAnimCounter -= Time.deltaTime;
         _dashCooldownCounter -= Time.deltaTime;
-
-        if(_canDash > 0f && !playerController.isFalling) playerController.ChangeAnimationState(PlayerHorizontalDash);
+        
         if (_dashAnimCounter > 0f) playerController.isDashing = true;
         else playerController.isDashing = false;
     }
@@ -77,6 +78,9 @@ public class Dash : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
             _canDash += 1f;
+
+            if (_inputY > 0.3f) playerController.isDashingUp = true;
+            else playerController.isDashingUp = false;
         }
     }
 

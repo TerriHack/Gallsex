@@ -39,12 +39,14 @@ public class PlayerBetterController : MonoBehaviour
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
-    [Header("Other")]
+    [Header("States")]
     public bool isJumping;
     public bool _facingRight;
     public bool isDashing;
     public bool isFalling;
     public bool isBouncing;
+    public bool isCrouching;
+    public bool isDashingUp;
     #endregion
 
     #region Private bool
@@ -68,10 +70,11 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerCrouch = "Crouch_Animation";
     private const String PlayerJumpRise = "JumpRise_Animation";
     private const String PlayerJumpFall = "JumpFall_Animation";
-    public const String PlayerVerticalDash = "VerticalDash_Animation";
     private const String PlayerWallSlide = "WallSlide_Animation";
     private const String PlayerSit = "Sit_Animation"; 
     private const String PlayerSleep = "Sleep_Animation";
+    private const String PlayerHorizontalDash = "HorizontalDash_Animation";
+    private const String PlayerVerticalDash = "VerticalDash_Animation";
     #endregion
 
     void Start()
@@ -326,21 +329,27 @@ public class PlayerBetterController : MonoBehaviour
     private void Animations()
     {
         _waitCounter -= Time.deltaTime;
-        
-        if (isGrounded && inputX == 0f && inputY > -0.5f && !_isWaiting)
+
+        if (isGrounded && inputX == 0f && inputY > -0.5f && !_isWaiting && !isCrouching)
         {
             ChangeAnimationState(PlayerIdle);
+        } 
+        
+        if (inputY < -0.3f && !_isMoving)
+        {
+            isCrouching = true;
+            ChangeAnimationState(PlayerCrouch);
         }
-        else if(inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
+        else isCrouching = false;
 
-        if (_waitCounter <= 0f && !_isSleeping && !_wallSliding && !isFalling)
+        if (_waitCounter <= 0f && !_isSleeping && !_wallSliding && !isFalling && !isCrouching)
         {
             _isWaiting = true;
             ChangeAnimationState(PlayerSit);
             _sittingCounter -= Time.deltaTime;
         }
 
-        if (_sittingCounter <= 0f)
+        if (_sittingCounter <= 0f && !isCrouching)
         {
             _isSleeping = true;
             ChangeAnimationState(PlayerSleep);
@@ -352,6 +361,9 @@ public class PlayerBetterController : MonoBehaviour
             ChangeAnimationState(PlayerJumpFall);
         }
         else isFalling = false;
+        
+        if(isDashingUp && !_wallSliding && !isFalling && !isGrounded) ChangeAnimationState(PlayerVerticalDash);
+        if(!isDashingUp && !_wallSliding && !isFalling && !isGrounded) ChangeAnimationState(PlayerHorizontalDash);
 
     }
 }
