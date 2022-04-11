@@ -63,7 +63,7 @@ public class PlatformRotation : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && buffer >= maxBuffer)
+        if (other.gameObject.CompareTag("Checks") && buffer >= maxBuffer)
         {
             if (!State)
             {
