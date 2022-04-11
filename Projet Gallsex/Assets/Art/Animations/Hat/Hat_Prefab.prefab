@@ -619,6 +619,7 @@ MonoBehaviour:
   fallOffset: {x: -0.05, y: 0.3}
   hairAnchor: {fileID: 7621752128293229677}
   rb: {fileID: 0}
+  playerBetterController: {fileID: 0}
 --- !u!1 &7621752128460361187
 GameObject:
   m_ObjectHideFlags: 0
