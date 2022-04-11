@@ -19,12 +19,15 @@ public class GroundCheck : MonoBehaviour
             Instantiate(vfxLanding, feetPos, tr.rotation);
         }
     }
+    
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("JumpableGround"))
-        {
-            playerController.isGrounded = false;
-        }
+        if (col.gameObject.CompareTag("JumpableGround")) playerController.isGrounded = false;
+    }
+    
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("JumpableGround")) playerController.isGrounded = true;
     }
 
     private void Update()

@@ -4,7 +4,6 @@ using UnityEngine;
 public class ArrayCheckpoint : MonoBehaviour
 {
     public List<Vector2> checkpointArray;
-    public Transform playerPos;
 
     public void AddingCheckpoint(Vector2 newCheckpoint)
     {
@@ -18,8 +17,8 @@ public class ArrayCheckpoint : MonoBehaviour
                 }
             }
         }
-        checkpointArray.Add(newCheckpoint);
         
+        checkpointArray.Add(newCheckpoint);
     }
 
     private void Start()

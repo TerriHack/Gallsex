@@ -157,4 +157,3 @@ MonoBehaviour:
   pC: {fileID: 0}
   dash: {fileID: 0}
   strength: 40
-  isBouncing: 0

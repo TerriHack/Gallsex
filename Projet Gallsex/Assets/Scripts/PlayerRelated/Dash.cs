@@ -14,7 +14,8 @@ public class Dash : MonoBehaviour
     private float _inputY;
     public float _canDash;
     private float _dashDelay;
-    public float _dashCounter;
+    private float _dashAnimCounter;
+    private float _dashCooldownCounter;
     
     public bool isDashing;
     
@@ -37,7 +38,8 @@ public class Dash : MonoBehaviour
             if (_canDash == 0f)
             {
                 _dashDelay = playerData.dashTime;
-                _dashCounter = playerData.dashDuration;
+                _dashAnimCounter = playerData.dashDuration;
+                _dashCooldownCounter = playerData.dashCooldown;
             }
 
             #region Flip when dashing
@@ -47,7 +49,7 @@ public class Dash : MonoBehaviour
         }
 
         //Reset Dash (Ground/Cooldown) 
-        if (playerController.isGrounded  && _dashCounter <= 0f|| playerController.isTouchingFront && _dashCounter <= 0f) _canDash = 0f;
+        if (playerController.isGrounded  && _dashCooldownCounter <= 0f|| playerController.isTouchingFront && _dashCooldownCounter <= 0f) _canDash = 0f;
 
         //This determines how long the force is added to the player dashing
         if (_dashDelay >= 0f) isDashing = true;
@@ -56,10 +58,11 @@ public class Dash : MonoBehaviour
         #endregion
         
         _dashDelay -= Time.deltaTime;
-        _dashCounter -= Time.deltaTime;
+        _dashAnimCounter -= Time.deltaTime;
+        _dashCooldownCounter -= Time.deltaTime;
 
         if(_canDash > 0f && !playerController.isFalling) playerController.ChangeAnimationState(PlayerHorizontalDash);
-        if (_dashCounter > 0f) playerController.isDashing = true;
+        if (_dashAnimCounter > 0f) playerController.isDashing = true;
         else playerController.isDashing = false;
     }
 

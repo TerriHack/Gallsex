@@ -7,8 +7,11 @@ public class checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        spriteRenderer.color = Color.green;
-        //Player.GetComponent<ArrayCheckpoint>().checkpointArray.Un;
-        player.GetComponent<ArrayCheckpoint>().AddingCheckpoint(new Vector2(transform.position.x,transform.position.y));
+        if (other.gameObject.CompareTag("Player"))
+        {
+            spriteRenderer.color = Color.green;
+            player.GetComponent<ArrayCheckpoint>().AddingCheckpoint(new Vector2(player.transform.position.x,player.transform.position.y));
+            gameObject.SetActive(false);
+        }
     }
 }
