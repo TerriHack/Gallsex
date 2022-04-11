@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
   waypoint1: {x: 104, y: 6, z: -10}
-  waypoint2: {x: 104, y: 40, z: -10}
+  waypoint2: {x: 104, y: 54, z: -10}
   speed: 10
   startsHorizontally: 1
   cloudStartRotation: 90
