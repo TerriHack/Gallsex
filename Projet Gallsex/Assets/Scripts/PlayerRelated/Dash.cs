@@ -41,11 +41,8 @@ public class Dash : MonoBehaviour
                 _dashAnimCounter = playerData.dashDuration;
                 _dashCooldownCounter = playerData.dashCooldown;
             }
-
-            #region Flip when dashing
-            if(_inputX > 0 && !playerController._facingRight) playerController.Flip();
-            else if(_inputX < 0 && playerController._facingRight) playerController.Flip();
-            #endregion
+            
+            Flip();
         }
 
         //Reset Dash (Ground/Cooldown) 
@@ -81,5 +78,20 @@ public class Dash : MonoBehaviour
             rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
             _canDash += 1f;
         }
+    }
+
+    private void Flip()
+    {
+        if (playerController.isGrounded)
+        {
+            if(_inputX > 0 && !playerController._facingRight && playerController.inputX !> 0f) playerController.Flip();
+            else if(_inputX < 0 && playerController._facingRight && playerController.inputX !< 0f) playerController.Flip();
+        }
+        else
+        {
+            if(_inputX > 0 && !playerController._facingRight) playerController.Flip();
+            else if(_inputX < 0 && playerController._facingRight) playerController.Flip();
+        }
+
     }
 }
