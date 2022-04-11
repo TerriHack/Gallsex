@@ -34,4 +34,4 @@ MonoBehaviour:
   dashForce: 40
   waitTime: 2
   timeToSleep: 5
-  dashDuration: 1
+  dashDuration: 0.4

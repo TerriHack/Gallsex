@@ -301,11 +301,17 @@ public class PlayerBetterController : MonoBehaviour
             horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
             verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, 50);
         }
+        else if(dash._canDash > 0f)
+        {
+            horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+            verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, 20);
+        }
         else
         {
             horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
             verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
         }
+        
         
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
     }
