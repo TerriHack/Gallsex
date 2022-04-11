@@ -6,6 +6,7 @@ TagManager:
   tags:
   - JumpableGround
   - Ground
+  - Checks
   layers:
   - Default
   - TransparentFX
@@ -55,7 +56,7 @@ TagManager:
   - name: Background_Assets_04
     uniqueID: 740241687
     locked: 0
-  - name: triche
+  - name: Assets_Lights
     uniqueID: 2415788335
     locked: 0
   - name: Default

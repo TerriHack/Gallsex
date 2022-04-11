@@ -6,13 +6,18 @@ using UnityEngine;
 public class PlayerBetterController : MonoBehaviour
 {
     #region Components
+    [Header("Components")]
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
-    [SerializeField] private Bouncer bouncer;
-    [SerializeField] private Vector2 feetPos;
     [SerializeField] private Transform groundCheckTr;
+    private Vector2 _feetPos;
+    #endregion
+    
+    #region Particle System
+    [SerializeField] private ParticleSystem dustJump;
+    [Space]
     #endregion
 
     #region Private float
@@ -23,7 +28,7 @@ public class PlayerBetterController : MonoBehaviour
     private float _jumpTime;
     private float _wallJumpTime;
     private float _gravity;
-    public float _waitCounter;
+    private float _waitCounter;
     private float _sittingCounter;
     #endregion
 
@@ -32,10 +37,12 @@ public class PlayerBetterController : MonoBehaviour
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
-    [Space]
     [Header("Other")]
     public bool isJumping;
     public bool _facingRight;
+    public bool isDashing;
+    public bool isFalling;
+    public bool isBouncing;
     #endregion
 
     #region Private bool
@@ -46,14 +53,11 @@ public class PlayerBetterController : MonoBehaviour
     private bool _isNuancing;
     private bool _isWaiting;
     private bool _isSleeping;
+    private bool _isMoving;
     #endregion
 
     #region Private String
     private string _currentState;
-    #endregion
-
-    #region Particle System
-    public ParticleSystem dustJump;
     #endregion
     
     #region Animation States
@@ -135,15 +139,14 @@ public class PlayerBetterController : MonoBehaviour
         if (_wallJumpTime > 0f) _wallJumping = true;
         else _wallJumping = false;
 
-        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded ||
-            Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded)
-        {
-            _isNuancing = true;
-        }
+        if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
+
+        if (rb.velocity.x != 0) _isMoving = true;
+        else _isMoving = false;
+        
         #endregion
         
         Animations();
-        
     }
     
     private void FixedUpdate()
@@ -158,8 +161,6 @@ public class PlayerBetterController : MonoBehaviour
 
         Gravity();
     }
-
-    #region Movement Related Fonctions
     private void HorizontalMove()
     {
         Vector2 movement;
@@ -169,15 +170,13 @@ public class PlayerBetterController : MonoBehaviour
             movement = new Vector2(_inputX * playerData.speed, 0);
 
             #region Animation Related
-            
-            ChangeAnimationState(PlayerRun);
+            if (_isMoving) ChangeAnimationState(PlayerRun);
             
             _waitCounter = playerData.waitTime;
             _isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
             _isSleeping = false;
-            
             #endregion
         }
         else
@@ -223,8 +222,8 @@ public class PlayerBetterController : MonoBehaviour
             Vector2 height = new Vector2(0, playerData.jumpForce);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
-            feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
-            Instantiate(dustJump, feetPos, groundCheckTr.rotation);
+            _feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
+            Instantiate(dustJump, _feetPos, groundCheckTr.rotation);
             
             #region Animation Related
             _waitCounter = playerData.waitTime;
@@ -267,14 +266,9 @@ public class PlayerBetterController : MonoBehaviour
     
     private void Gravity()
      {
-         
          //When Dashing the gravity is set to 0
-         if (dash.isDashing)
-         {
-             rb.gravityScale = 0f;
-             ChangeAnimationState(PlayerJumpFall);
-         }
-         
+         if (dash.isDashing) rb.gravityScale = 0f;
+
          //When falling, gravity increase during time
          if (rb.velocity.y < -0.3f && !_wallSliding && !_coyoteGrounded) 
          {
@@ -299,7 +293,7 @@ public class PlayerBetterController : MonoBehaviour
         float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
         float horizontalVelocity;
         
-        if (bouncer.isBouncing)
+        if (isBouncing)
         {
             horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
             verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, 50);
@@ -328,7 +322,7 @@ public class PlayerBetterController : MonoBehaviour
         {
             ChangeAnimationState(PlayerIdle);
         }
-        else if(_inputY < -0.5f) ChangeAnimationState(PlayerCrouch);
+        else if(_inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
 
         if (_waitCounter <= 0f && !_isSleeping)
         {
@@ -342,7 +336,13 @@ public class PlayerBetterController : MonoBehaviour
             _isSleeping = true;
             ChangeAnimationState(PlayerSleep);
         }
+
+        if (!isGrounded && !_wallSliding && !isDashing)
+        {
+            isFalling = true;
+            ChangeAnimationState(PlayerJumpFall);
+        }
+        else isFalling = false;
+
     }
-    #endregion
-    
 }
