@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerBetterController : MonoBehaviour
 {
@@ -46,7 +47,11 @@ public class PlayerBetterController : MonoBehaviour
     public bool isFalling;
     public bool isBouncing;
     public bool isCrouching;
-    public bool isDashingUp;
+    public bool isDashingUp; 
+    public bool isWaiting;
+    public bool isSleeping;
+    public bool isMoving;
+    public bool isRising;
     #endregion
 
     #region Private bool
@@ -55,9 +60,6 @@ public class PlayerBetterController : MonoBehaviour
     private bool _coyoteGrounded;
     private bool _canNuance;
     private bool _isNuancing;
-    private bool _isWaiting;
-    private bool _isSleeping;
-    private bool _isMoving;
     #endregion
 
     #region Private String
@@ -146,8 +148,12 @@ public class PlayerBetterController : MonoBehaviour
 
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
 
-        if (rb.velocity.x != 0) _isMoving = true;
-        else _isMoving = false;
+        if (rb.velocity.x != 0) isMoving = true;
+        else isMoving = false;
+        if (rb.velocity.y > 0.3) isRising = true;
+        else isRising = false;
+        if (rb.velocity.y < -0.3) isFalling = true;
+        else isFalling = false;
         
         #endregion
         
@@ -175,13 +181,13 @@ public class PlayerBetterController : MonoBehaviour
             movement = new Vector2(inputX * playerData.speed, 0);
 
             #region Animation Related
-            if (_isMoving) ChangeAnimationState(PlayerRun);
+            if (isMoving) ChangeAnimationState(PlayerRun);
             
             _waitCounter = playerData.waitTime;
-            _isWaiting = false;
+            isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
-            _isSleeping = false;
+            isSleeping = false;
             #endregion
         }
         else
@@ -190,10 +196,10 @@ public class PlayerBetterController : MonoBehaviour
             
             #region Animation Related
             _sittingCounter = playerData.timeToSleep;
-            _isWaiting = false;
+            isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
-            _isSleeping = false;
+            isSleeping = false;
             #endregion
         }
         
@@ -233,10 +239,10 @@ public class PlayerBetterController : MonoBehaviour
             
             #region Animation Related
             _waitCounter = playerData.waitTime;
-            _isWaiting = false;
+            isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
-            _isSleeping = false;
+            isSleeping = false;
             #endregion
         }
         
@@ -330,40 +336,38 @@ public class PlayerBetterController : MonoBehaviour
     {
         _waitCounter -= Time.deltaTime;
 
-        if (isGrounded && inputX == 0f && inputY > -0.5f && !_isWaiting && !isCrouching)
+        if (isGrounded && !isMoving && !isWaiting && !isCrouching)
         {
             ChangeAnimationState(PlayerIdle);
         } 
         
-        if (inputY < -0.3f && !_isMoving)
+        if (inputY < -0.3f && !isMoving)
         {
             isCrouching = true;
             ChangeAnimationState(PlayerCrouch);
         }
         else isCrouching = false;
 
-        if (_waitCounter <= 0f && !_isSleeping && !_wallSliding && !isFalling && !isCrouching)
+        if (_waitCounter <= 0f && !isSleeping && !_wallSliding && !isFalling && !isCrouching)
         {
-            _isWaiting = true;
+            isWaiting = true;
             ChangeAnimationState(PlayerSit);
             _sittingCounter -= Time.deltaTime;
         }
 
         if (_sittingCounter <= 0f && !isCrouching)
         {
-            _isSleeping = true;
+            isSleeping = true;
             ChangeAnimationState(PlayerSleep);
         }
 
-        if (!isGrounded && !_wallSliding && !isDashing)
+        if (!isGrounded && !_wallSliding && !isDashing && isFalling)
         {
-            isFalling = true;
             ChangeAnimationState(PlayerJumpFall);
         }
-        else isFalling = false;
-        
-        if(isDashingUp && !_wallSliding && !isFalling && !isGrounded) ChangeAnimationState(PlayerVerticalDash);
-        if(!isDashingUp && !_wallSliding && !isFalling && !isGrounded) ChangeAnimationState(PlayerHorizontalDash);
+
+        if(isDashingUp && !_wallSliding && !isGrounded) ChangeAnimationState(PlayerVerticalDash);
+        if(!isDashingUp && !_wallSliding && !isGrounded) ChangeAnimationState(PlayerHorizontalDash);
 
     }
 }
