@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="101e6b3a-8dee-454f-8a70-c41f3e3c97f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/Bouncer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/Bouncer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/BreakablePlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/BreakablePlatform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/JumpThrough.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/JumpThrough.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/MovingPlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/MovingPlatform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/RotatePlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/RotatePlatform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.1_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.1_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HierarchyDecorator/Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HierarchyDecorator/Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HierarchyDecorator/Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HierarchyDecorator/Settings.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +91,8 @@
       <workItem from="1649579367982" duration="16000" />
       <workItem from="1649579680076" duration="3000" />
       <workItem from="1649614453596" duration="340000" />
+      <workItem from="1649751616437" duration="6000" />
+      <workItem from="1649751697386" duration="26000" />
     </task>
     <servers />
   </component>
