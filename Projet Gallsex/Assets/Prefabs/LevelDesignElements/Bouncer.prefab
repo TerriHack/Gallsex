@@ -72,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8247263403898113371, guid: ef391f219c1a164448839371554debec, type: 3}
-  m_Color: {r: 1, g: 0.9736161, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d784290fb0e989d4685b1546b18abf59, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -153,9 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb19466944bb7934398bbb2fa5d57894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbTarget: {fileID: 7178299340679101394, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
-  data: {fileID: 11400000, guid: 72d13b71ceb608f48a95cca45fea8945, type: 2}
-  pC: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
-  dash: {fileID: 1195328312, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
-  strength: 45
-  isBouncing: 0
+  rbTarget: {fileID: 0}
+  pC: {fileID: 0}
+  dash: {fileID: 0}
+  strength: 40

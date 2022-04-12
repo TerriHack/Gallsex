@@ -5,32 +5,61 @@ public class PlatformDisappear : MonoBehaviour
     public float timer;
     private bool willDisappear = false;
     private float time;
+    public bool active = false;
     
-    public SpriteRenderer parentSpriteRenderer;
-    public BoxCollider2D parentBoxCollider2D;
-    public Animation parentAnimation;
+    public SpriteRenderer spriteRenderer;
+    public BoxCollider2D boxCollider2D;
+    public Animation animation;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (willDisappear == false)
+        if (active == false && other.CompareTag("Player"))
         {
             willDisappear = true;
             time = 0;
-            parentAnimation.Play("disappear platform anim");
+            animation.Play();
+            active = true;
         }
     }
     
-    // Update is called once per frame
     void Update()
     {
+        if (active)
+        {
+            if (willDisappear)
+            {
+                time = time += Time.deltaTime;
+                if (time > timer)
+                {
+                    willDisappear = false;
+                    spriteRenderer.enabled = false;
+                    boxCollider2D.enabled = false;
+                    time = 0;
+                    tag = "JumpableGround";
+                }
+            }
+            else
+            {
+                time = time += Time.deltaTime;
+                animation.Stop();
+                if (time > timer)
+                {
+                    spriteRenderer.enabled = true;
+                    boxCollider2D.enabled = true;
+                    time = 0;
+                    tag = "JumpableGround";
+                    active = false;
+                }
+            }
+        }/*
         if (willDisappear)
         {
             time = time += Time.deltaTime;
             if (time > timer)
             {
                 willDisappear = false;
-                parentSpriteRenderer.enabled = false;
-                parentBoxCollider2D.enabled = false;
+                spriteRenderer.enabled = false;
+                boxCollider2D.enabled = false;
                 time = 0;
                 tag = "JumpableGround";
             }
@@ -38,21 +67,15 @@ public class PlatformDisappear : MonoBehaviour
         else
         {
             time = time += Time.deltaTime;
-            parentAnimation.Stop();
+            animation.Stop();
             if (time > timer)
             {
-                parentSpriteRenderer.enabled = true;
-                parentBoxCollider2D.enabled = true;
+                spriteRenderer.enabled = true;
+                boxCollider2D.enabled = true;
                 time = 0;
                 tag = "JumpableGround";
             }
-        }
+        }*/
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        time = 0;
-        willDisappear = false;
-        
-    }
 }

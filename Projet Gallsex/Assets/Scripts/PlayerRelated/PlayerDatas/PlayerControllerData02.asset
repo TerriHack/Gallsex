@@ -32,3 +32,6 @@ MonoBehaviour:
   dashTime: 0.05
   dashCooldown: 0.09
   dashForce: 40
+  waitTime: 2
+  timeToSleep: 2
+  dashDuration: 1

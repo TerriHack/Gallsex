@@ -9,18 +9,16 @@ public class Bouncer : MonoBehaviour
     
     public float strength;
 
-    public bool isBouncing;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         rbTarget.velocity = new Vector2(rbTarget.velocity.x, 0);
         rbTarget.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
 
-        isBouncing = true;
+        pC.isBouncing = true;
     }
 
     private void FixedUpdate()
     {
-        if (dash.isDashing || pC.isGrounded) isBouncing = false;
+        if (dash.isDashing || pC.isGrounded) pC.isBouncing = false;
     }
 }
