@@ -141,6 +141,14 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
+            
+            #region Animation Related
+            _waitCounter = playerData.waitTime;
+            isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            isSleeping = false;
+            #endregion
         }
 
         if (_wallJumpTime > 0f) _wallJumping = true;
