@@ -9,7 +9,7 @@ public class PlatformDisappear : MonoBehaviour
     
     public SpriteRenderer spriteRenderer;
     public BoxCollider2D boxCollider2D;
-    public Animation animation;
+    public Animation anim;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +17,7 @@ public class PlatformDisappear : MonoBehaviour
         {
             willDisappear = true;
             time = 0;
-            animation.Play();
+            anim.Play();
             active = true;
         }
     }
@@ -41,7 +41,7 @@ public class PlatformDisappear : MonoBehaviour
             else
             {
                 time = time += Time.deltaTime;
-                animation.Stop();
+                anim.Stop();
                 if (time > timer)
                 {
                     spriteRenderer.enabled = true;
