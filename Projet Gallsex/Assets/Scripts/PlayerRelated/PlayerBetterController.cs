@@ -156,8 +156,10 @@ public class PlayerBetterController : MonoBehaviour
 
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
 
-        if (rb.velocity.x != 0) isMoving = true;
+        if (rb.velocity.x > 0.3f) isMoving = true;
+        else if(rb.velocity.x < -0.3f) isMoving = true;
         else isMoving = false;
+        
         if (rb.velocity.y > 0.3) isRising = true;
         else isRising = false;
         if (rb.velocity.y < -0.3) isFalling = true;
@@ -189,8 +191,6 @@ public class PlayerBetterController : MonoBehaviour
             movement = new Vector2(inputX * playerData.speed, 0);
 
             #region Animation Related
-            if (isMoving) ChangeAnimationState(PlayerRun);
-            
             _waitCounter = playerData.waitTime;
             isWaiting = false;
             
@@ -369,13 +369,15 @@ public class PlayerBetterController : MonoBehaviour
             ChangeAnimationState(PlayerSleep);
         }
 
-        if (!isGrounded && !_wallSliding && !isDashing && isFalling)
+        if (!_wallSliding && isFalling && !isDashing)
         {
             ChangeAnimationState(PlayerJumpFall);
         }
+        
+        if (isMoving && isGrounded) ChangeAnimationState(PlayerRun);
 
-        if(isDashingUp && !_wallSliding && !isGrounded) ChangeAnimationState(PlayerVerticalDash);
-        if(!isDashingUp && !_wallSliding && !isGrounded) ChangeAnimationState(PlayerHorizontalDash);
+        if(isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerVerticalDash);
+        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerHorizontalDash);
 
     }
 }
