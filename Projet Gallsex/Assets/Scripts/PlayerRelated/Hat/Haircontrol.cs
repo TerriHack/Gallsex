@@ -35,33 +35,34 @@ public class Haircontrol : MonoBehaviour
             currentOffset = idleOffset;
         }
         // jump
-        else if (rb.velocity.y > 0 && rb.velocity.x != 0)
+        if (rb.velocity.y > 0 && rb.velocity.x != 0)
         {
             Offsetplus = new Vector2(runOffset[0]/2, runOffset[1]/2);
             Offsetbase = new Vector2(jumpOffset[0]/2, jumpOffset[1]/2);
             currentOffset = Offsetbase + Offsetplus;
         }
-        else if (rb.velocity.y > 0)
+        if (rb.velocity.y > 0)
         {
             currentOffset = jumpOffset;
         }
         //fall
-        else if (rb.velocity.y < 0 && rb.velocity.x != 0)
+        if (rb.velocity.y < 0 && rb.velocity.x != 0)
         {
             Offsetplus = new Vector2(runOffset[0]/2, runOffset[1]/2);
             Offsetbase = new Vector2(fallOffset[0]/2, fallOffset[1]);
             currentOffset = Offsetbase + Offsetplus;
         }
-        else if (rb.velocity.y < 0)
+        if (rb.velocity.y < 0)
         {
             currentOffset = fallOffset;
         }
         //run
-        else if (rb.velocity.x != 0)
+        if (rb.velocity.x != 0)
         {
             currentOffset = runOffset;
         }
         //flip
+        Debug.Log(playerBetterController._facingRight);
         if (playerBetterController._facingRight == false)
         {
             currentOffset.x = currentOffset.x * -1;
