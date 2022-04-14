@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerBetterController : MonoBehaviour
 {
@@ -19,10 +20,12 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private ParticleSystem dustJump;
     [Space]
     #endregion
-
+    
+    [HideInInspector] public float inputX;
+    [HideInInspector] public float inputY;
+    
     #region Private float
-    private float _inputX;
-    private float _inputY;
+
     private float _jumpBufferCounter;
     private float _coyoteTimeCounter;
     private float _jumpTime;
@@ -37,12 +40,18 @@ public class PlayerBetterController : MonoBehaviour
     public bool isGrounded;
     public bool isTouchingFront;    
     public bool isTouchingBack;
-    [Header("Other")]
+    [Header("States")]
     public bool isJumping;
     public bool _facingRight;
     public bool isDashing;
     public bool isFalling;
     public bool isBouncing;
+    public bool isCrouching;
+    public bool isDashingUp; 
+    public bool isWaiting;
+    public bool isSleeping;
+    public bool isMoving;
+    public bool isRising;
     #endregion
 
     #region Private bool
@@ -51,9 +60,6 @@ public class PlayerBetterController : MonoBehaviour
     private bool _coyoteGrounded;
     private bool _canNuance;
     private bool _isNuancing;
-    private bool _isWaiting;
-    private bool _isSleeping;
-    private bool _isMoving;
     #endregion
 
     #region Private String
@@ -66,10 +72,11 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerCrouch = "Crouch_Animation";
     private const String PlayerJumpRise = "JumpRise_Animation";
     private const String PlayerJumpFall = "JumpFall_Animation";
-    public const String PlayerVerticalDash = "VerticalDash_Animation";
     private const String PlayerWallSlide = "WallSlide_Animation";
     private const String PlayerSit = "Sit_Animation"; 
     private const String PlayerSleep = "Sleep_Animation";
+    private const String PlayerHorizontalDash = "HorizontalDash_Animation";
+    private const String PlayerVerticalDash = "VerticalDash_Animation";
     #endregion
 
     void Start()
@@ -83,8 +90,8 @@ public class PlayerBetterController : MonoBehaviour
     void Update()
     {
         #region Inputs Left Stick
-        _inputX = Input.GetAxisRaw("Horizontal");
-        _inputY = Input.GetAxisRaw("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
         #endregion
         
         //This section is hell don't trespass
@@ -126,7 +133,7 @@ public class PlayerBetterController : MonoBehaviour
 
         if (!isGrounded && !dash.isDashing) AirClamp();
         
-        if (isTouchingFront && !isGrounded && _inputX != 0 || isTouchingBack && !isGrounded && _inputX != 0) _wallSliding = true;
+        if (isTouchingFront && !isGrounded && inputX != 0 || isTouchingBack && !isGrounded && inputX != 0) _wallSliding = true;
         else _wallSliding = false;
 
         if (_wallSliding)
@@ -134,6 +141,14 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
+            
+            #region Animation Related
+            _waitCounter = playerData.waitTime;
+            isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            isSleeping = false;
+            #endregion
         }
 
         if (_wallJumpTime > 0f) _wallJumping = true;
@@ -141,8 +156,14 @@ public class PlayerBetterController : MonoBehaviour
 
         if (Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && !isGrounded || Input.GetButton("Saut") && Time.time - _jumpTime < playerData.nuancerDuration && _coyoteGrounded) _isNuancing = true;
 
-        if (rb.velocity.x != 0) _isMoving = true;
-        else _isMoving = false;
+        if (rb.velocity.x > 0.3f) isMoving = true;
+        else if(rb.velocity.x < -0.3f) isMoving = true;
+        else isMoving = false;
+        
+        if (rb.velocity.y > 0.3) isRising = true;
+        else isRising = false;
+        if (rb.velocity.y < -0.3) isFalling = true;
+        else isFalling = false;
         
         #endregion
         
@@ -151,7 +172,7 @@ public class PlayerBetterController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (_inputX != 0) HorizontalMove();
+        if (inputX != 0) HorizontalMove();
         
         if (_isNuancing) JumpNuancer();
         
@@ -167,28 +188,26 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isGrounded)
         {
-            movement = new Vector2(_inputX * playerData.speed, 0);
+            movement = new Vector2(inputX * playerData.speed, 0);
 
             #region Animation Related
-            if (_isMoving) ChangeAnimationState(PlayerRun);
-            
             _waitCounter = playerData.waitTime;
-            _isWaiting = false;
+            isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
-            _isSleeping = false;
+            isSleeping = false;
             #endregion
         }
         else
         {
-            movement = new Vector2(_inputX * playerData.speed * playerData.airControl, 0);
+            movement = new Vector2(inputX * playerData.speed * playerData.airControl, 0);
             
             #region Animation Related
             _sittingCounter = playerData.timeToSleep;
-            _isWaiting = false;
+            isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
-            _isSleeping = false;
+            isSleeping = false;
             #endregion
         }
         
@@ -196,11 +215,11 @@ public class PlayerBetterController : MonoBehaviour
 
         #region Flip the Sprite
 
-        if (_inputX < 0 && _facingRight) 
+        if (inputX < 0 && _facingRight) 
         {
             Flip();
         }
-        else if(_inputX > 0 && !_facingRight)
+        else if(inputX > 0 && !_facingRight)
         {
             Flip();
         }
@@ -220,6 +239,7 @@ public class PlayerBetterController : MonoBehaviour
         if (isGrounded || _coyoteGrounded && rb.velocity.y < 0)
         {
             Vector2 height = new Vector2(0, playerData.jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x,0);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
             _feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
@@ -227,10 +247,10 @@ public class PlayerBetterController : MonoBehaviour
             
             #region Animation Related
             _waitCounter = playerData.waitTime;
-            _isWaiting = false;
+            isWaiting = false;
             
             _sittingCounter = playerData.timeToSleep;
-            _isSleeping = false;
+            isSleeping = false;
             #endregion
         }
         
@@ -247,17 +267,17 @@ public class PlayerBetterController : MonoBehaviour
     private void WallJump()
     {
         //When turning in the opposite side of the wall you're jumping to, you can still wall jump 
-        if (isTouchingBack && _inputX != 0)
+        if (isTouchingBack && inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(playerData.xWallForce * _inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(playerData.xWallForce * inputX,playerData.yWallForce),ForceMode2D.Impulse);
             _wallJumping = false;
         }
         
-        if (isTouchingFront&& _inputX != 0)
+        if (isTouchingFront&& inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(playerData.xWallForce * -_inputX,playerData.yWallForce),ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(playerData.xWallForce * -inputX,playerData.yWallForce),ForceMode2D.Impulse);
             _wallJumping = false;
         }
     }
@@ -298,11 +318,17 @@ public class PlayerBetterController : MonoBehaviour
             horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
             verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, 50);
         }
+        else if(dash._canDash > 0f)
+        {
+            horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
+            verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, 20);
+        }
         else
         {
             horizontalVelocity = Mathf.Clamp(rb.velocity.x, -playerData.maxAirSpeed, playerData.maxAirSpeed);
             verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
         }
+        
         
         rb.velocity = new Vector2(horizontalVelocity, verticalVelocity);
     }
@@ -317,32 +343,41 @@ public class PlayerBetterController : MonoBehaviour
     private void Animations()
     {
         _waitCounter -= Time.deltaTime;
-        
-        if (isGrounded && _inputX == 0f && _inputY > -0.5f && !_isWaiting)
+
+        if (isGrounded && !isMoving && !isWaiting && !isCrouching)
         {
             ChangeAnimationState(PlayerIdle);
-        }
-        else if(_inputY < -0.5f && !_isMoving) ChangeAnimationState(PlayerCrouch);
-
-        if (_waitCounter <= 0f && !_isSleeping)
+        } 
+        
+        if (inputY < -0.3f && !isMoving)
         {
-            _isWaiting = true;
+            isCrouching = true;
+            ChangeAnimationState(PlayerCrouch);
+        }
+        else isCrouching = false;
+
+        if (_waitCounter <= 0f && !isSleeping && !_wallSliding && !isFalling && !isCrouching)
+        {
+            isWaiting = true;
             ChangeAnimationState(PlayerSit);
             _sittingCounter -= Time.deltaTime;
         }
 
-        if (_sittingCounter <= 0f)
+        if (_sittingCounter <= 0f && !isCrouching)
         {
-            _isSleeping = true;
+            isSleeping = true;
             ChangeAnimationState(PlayerSleep);
         }
 
-        if (!isGrounded && !_wallSliding && !isDashing)
+        if (!_wallSliding && isFalling && !isDashing)
         {
-            isFalling = true;
             ChangeAnimationState(PlayerJumpFall);
         }
-        else isFalling = false;
+        
+        if (isMoving && isGrounded) ChangeAnimationState(PlayerRun);
+
+        if(isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerVerticalDash);
+        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerHorizontalDash);
 
     }
 }
