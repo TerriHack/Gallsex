@@ -1,5 +1,6 @@
 using Cinemachine;
 using DG.Tweening;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class camerafollow : MonoBehaviour
@@ -132,6 +133,9 @@ public class camerafollow : MonoBehaviour
       {
          transform.position = respawnPosition;
          speed = 0.1f;
+         currentWaypointIndex = 0;
+         cloud.transform.rotation = Quaternion.Euler(0,0,90);
+         cloud.transform.localPosition = new Vector3(-14, -7, 10);
       }
    }
 
