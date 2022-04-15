@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9054dec68a7a37a4ba04178a235605f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 24, y: 6, z: -10}
   waypoint1: {x: 104, y: 6, z: -10}
   waypoint2: {x: 104, y: 54, z: -10}
   speed: 10
@@ -3614,6 +3614,7 @@ MonoBehaviour:
   maxSpeed: 10
   cloud: {fileID: 2015462576}
   respawnPosition: {x: 0, y: 0, z: 0}
+  deathMaxBuffer: 5
   waypoints:
   - {fileID: 1658829863}
   - {fileID: 944577702}

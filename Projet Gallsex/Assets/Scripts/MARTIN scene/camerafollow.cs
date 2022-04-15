@@ -16,6 +16,7 @@ public class camerafollow : MonoBehaviour
    public float maxSpeed;
    public GameObject cloud;
    public Vector3 respawnPosition;
+   private float tweenTimeLeft;
    
    [SerializeField] private GameObject[] waypoints;
    private int currentWaypointIndex = 0;
@@ -122,6 +123,15 @@ public class camerafollow : MonoBehaviour
          movementType = 1;
          speed = transitionTime;
          cinemachine.GetComponent<CinemachineVirtualCamera>().enabled = false;
+      }
+   }
+
+   public void OnDeath()
+   {
+      if (movementType != 0)
+      {
+         transform.position = respawnPosition;
+         speed = 0.1f;
       }
    }
 
