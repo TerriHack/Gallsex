@@ -59,6 +59,9 @@ TagManager:
   - name: Assets_Lights
     uniqueID: 2415788335
     locked: 0
+  - name: Default_Spike
+    uniqueID: 3339668421
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
