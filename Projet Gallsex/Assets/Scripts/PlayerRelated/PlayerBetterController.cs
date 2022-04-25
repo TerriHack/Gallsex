@@ -54,7 +54,7 @@ public class PlayerBetterController : MonoBehaviour
     public bool isMoving;
     public bool isRising;
     public bool isDashingDown;
-    public bool celestModOn;
+    public bool celesteModeOn;
     #endregion
 
     #region Private bool
@@ -171,7 +171,7 @@ public class PlayerBetterController : MonoBehaviour
         
         #endregion
 
-        if (Input.GetButtonDown("CelestMode")) celestModOn = !celestModOn;
+        if (Input.GetButtonDown("CelesteMode")) celesteModeOn = !celesteModeOn;
         
         Animations();
     }

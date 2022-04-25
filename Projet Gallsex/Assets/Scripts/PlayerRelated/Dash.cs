@@ -37,7 +37,7 @@ public class Dash : MonoBehaviour
 
         #region La vallé des IF
 
-        if (playerController.celestModOn)
+        if (playerController.celesteModeOn)
         {
             if (Input.GetButtonDown("Dash") && _inputXRightStick > 0.5 ||Input.GetButtonDown("Dash") && _inputXRightStick < -0.5 || Input.GetButtonDown("Dash") && _inputYRightStick > 0.5 || Input.GetButtonDown("Dash") && _inputYRightStick < -0.5)
             {
@@ -95,7 +95,7 @@ public class Dash : MonoBehaviour
 
     private void Propulsion()
     {
-        if (playerController.celestModOn)_direction = new Vector2(_inputXRightStick, _inputYRightStick);
+        if (playerController.celesteModeOn)_direction = new Vector2(_inputXRightStick, _inputYRightStick);
         else _direction = new Vector2(_inputX, _inputY);
 
         if (_canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
