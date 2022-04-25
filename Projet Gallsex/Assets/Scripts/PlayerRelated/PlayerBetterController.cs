@@ -369,7 +369,7 @@ public class PlayerBetterController : MonoBehaviour
             ChangeAnimationState(PlayerSleep);
         }
 
-        if (!_wallSliding && isFalling && !isDashing)
+        if (!_wallSliding && isFalling && !isDashing && !isGrounded)
         {
             ChangeAnimationState(PlayerJumpFall);
         }
