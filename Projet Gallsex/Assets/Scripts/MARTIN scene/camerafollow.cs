@@ -1,3 +1,4 @@
+using System;
 using Cinemachine;
 using DG.Tweening;
 using Unity.Mathematics;
@@ -7,7 +8,6 @@ public class camerafollow : MonoBehaviour
 {
    public Transform target;
    public bool horizontal;
-   public float smoothSpeed = 0.125f;
    public Vector3 offset;
    public float movementType = 0; // 0(cineMachine), 1(Boss), 2(Tween After Boss)
    public GameObject cinemachine;
@@ -17,12 +17,18 @@ public class camerafollow : MonoBehaviour
    public float maxSpeed;
    public GameObject cloud;
    public Vector3 respawnPosition;
+
+   public BoxCollider2D colliderTop;
+   public BoxCollider2D colliderRight;
+   public BoxCollider2D colliderLeft;
+   
    private float tweenTimeLeft;
    
    [SerializeField] private GameObject[] waypoints;
    private int currentWaypointIndex = 0;
    private Vector3 StartPosition;
    private float speed;
+
 
    private void FixedUpdate()
    {
