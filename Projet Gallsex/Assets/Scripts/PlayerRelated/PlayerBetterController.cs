@@ -52,6 +52,7 @@ public class PlayerBetterController : MonoBehaviour
     public bool isSleeping;
     public bool isMoving;
     public bool isRising;
+    public bool isDashingDown;
     #endregion
 
     #region Private bool
@@ -77,6 +78,7 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerSleep = "Sleep_Animation";
     private const String PlayerHorizontalDash = "HorizontalDash_Animation";
     private const String PlayerVerticalDash = "VerticalDash_Animation";
+    private const String PlayerDashDown = "DashDown_Animation"; //Elle n'est pas utilisée mais le state est fait ;D
     #endregion
 
     void Start()
@@ -350,8 +352,16 @@ public class PlayerBetterController : MonoBehaviour
             ChangeAnimationState(PlayerIdle);
         } 
         
-        if (inputY < -0.3f && !isMoving)
+        if (inputY < -0.3f && !isMoving && isGrounded)
         {
+            #region Animation Related
+            _sittingCounter = playerData.timeToSleep;
+            isWaiting = false;
+            
+            _sittingCounter = playerData.timeToSleep;
+            isSleeping = false;
+            #endregion
+            
             isCrouching = true;
             ChangeAnimationState(PlayerCrouch);
         }
@@ -377,8 +387,9 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isMoving && isGrounded) ChangeAnimationState(PlayerRun);
 
-        if(isDashingUp && !_wallSliding && !isGrounded && isDashing) {ChangeAnimationState(PlayerVerticalDash);}
-        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerHorizontalDash);
+        if(isDashingUp && !_wallSliding && !isGrounded && isDashing && !isDashingDown) ChangeAnimationState(PlayerVerticalDash);
+        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing && !isDashingDown) ChangeAnimationState(PlayerHorizontalDash);
+        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing && isDashingDown) ChangeAnimationState(PlayerJumpFall);
 
     }
 }
