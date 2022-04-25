@@ -81,6 +81,9 @@ public class Dash : MonoBehaviour
 
             if (_inputY > 0.3f) playerController.isDashingUp = true;
             else playerController.isDashingUp = false;
+            
+            if (_inputY < -0.3f) playerController.isDashingDown = true;
+            else playerController.isDashingDown = false;
         }
     }
 
