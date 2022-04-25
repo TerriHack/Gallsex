@@ -171,7 +171,7 @@ public class PlayerBetterController : MonoBehaviour
         
         #endregion
 
-        if (Input.GetButtonDown("Fire1")) celestModOn = true;
+        if (Input.GetButtonDown("CelestMode")) celestModOn = !celestModOn;
         
         Animations();
     }

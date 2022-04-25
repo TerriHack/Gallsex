@@ -18,6 +18,8 @@ public class Dash : MonoBehaviour
     private float _dashDelay;
     private float _dashAnimCounter;
     private float _dashCooldownCounter;
+
+    private Vector2 _direction;
     
     public bool isDashing;
 
@@ -30,12 +32,12 @@ public class Dash : MonoBehaviour
     {
         _inputX = Input.GetAxisRaw("Mouse X");
         _inputY = Input.GetAxisRaw("Mouse Y");
-        _inputXRightStick = Input.GetAxisRaw("Mouse X");
-        _inputYRightStick = Input.GetAxisRaw("Mouse Y");
+        _inputXRightStick = Input.GetAxisRaw("Horizontal");
+        _inputYRightStick = Input.GetAxisRaw("Vertical");
 
         #region La vallé des IF
 
-        if (!playerController.celestModOn)
+        if (playerController.celestModOn)
         {
             if (Input.GetButtonDown("Dash") && _inputXRightStick > 0.5 ||Input.GetButtonDown("Dash") && _inputXRightStick < -0.5 || Input.GetButtonDown("Dash") && _inputYRightStick > 0.5 || Input.GetButtonDown("Dash") && _inputYRightStick < -0.5)
             {
@@ -93,18 +95,32 @@ public class Dash : MonoBehaviour
 
     private void Propulsion()
     {
-        Vector2 direction = new Vector2(_inputX, _inputY);
-        
+        if (playerController.celestModOn)_direction = new Vector2(_inputXRightStick, _inputYRightStick);
+        else _direction = new Vector2(_inputX, _inputY);
+
         if (_canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
         {
             rb.velocity = new Vector2(0, 0);
-            rb.AddForce(direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
+            rb.AddForce(_direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
             _canDash += 1f;
 
             if (_inputY > 0.3f) playerController.isDashingUp = true;
             else playerController.isDashingUp = false;
             
             if (_inputY < -0.3f) playerController.isDashingDown = true;
+            else playerController.isDashingDown = false;
+        }
+        
+        if (_canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
+        {
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(_direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
+            _canDash += 1f;
+
+            if (_inputYRightStick > 0.3f) playerController.isDashingUp = true;
+            else playerController.isDashingUp = false;
+            
+            if (_inputYRightStick < -0.3f) playerController.isDashingDown = true;
             else playerController.isDashingDown = false;
         }
     }
