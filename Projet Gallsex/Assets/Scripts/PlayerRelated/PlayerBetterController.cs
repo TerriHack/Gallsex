@@ -139,7 +139,7 @@ public class PlayerBetterController : MonoBehaviour
         if (_wallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
-            rb.AddForce(new Vector2(rb.velocity.x ,rb.velocity.y - playerData.wallSlidingSpeed));
+            rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
             
             #region Animation Related
@@ -260,7 +260,8 @@ public class PlayerBetterController : MonoBehaviour
     {
         Vector2 height = new Vector2(0, playerData.nuancerForce);
         rb.AddForce(height, ForceMode2D.Impulse);
-        ChangeAnimationState(PlayerJumpRise);
+        
+        if(!isDashing) ChangeAnimationState(PlayerJumpRise);
 
         _isNuancing = false;
     }
@@ -376,7 +377,7 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isMoving && isGrounded) ChangeAnimationState(PlayerRun);
 
-        if(isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerVerticalDash);
+        if(isDashingUp && !_wallSliding && !isGrounded && isDashing) {ChangeAnimationState(PlayerVerticalDash);}
         if(!isDashingUp && !_wallSliding && !isGrounded && isDashing) ChangeAnimationState(PlayerHorizontalDash);
 
     }
