@@ -10028,7 +10028,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7178299340679101392}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0d9290e3876a85b49bc1fc6799b99824, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -10090,7 +10090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea91101d8e2ebce43ba22ef5d0194af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 85063202487c9e44fa8e51249a6c4ea6, type: 2}
+  playerData: {fileID: 11400000, guid: 1dec1752477863b4bab5baabeb92502a, type: 2}
   rb: {fileID: 7178299340679101394}
   anim: {fileID: 410723800}
   dash: {fileID: 1195328312}
@@ -10112,6 +10112,7 @@ MonoBehaviour:
   isSleeping: 0
   isMoving: 0
   isRising: 0
+  isDashingDown: 0
 --- !u!114 &1195328312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10125,7 +10126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7178299340679101394}
-  playerData: {fileID: 11400000, guid: 85063202487c9e44fa8e51249a6c4ea6, type: 2}
+  playerData: {fileID: 11400000, guid: 1dec1752477863b4bab5baabeb92502a, type: 2}
   playerController: {fileID: 1443644433}
   _canDash: 0
   isDashing: 0
@@ -10195,6 +10196,10 @@ PrefabInstance:
     - target: {fileID: 7621752128293229678, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
       propertyPath: m_Name
       value: Hat_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621752128293229678, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7621752128293229679, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
       propertyPath: m_RootOrder

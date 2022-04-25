@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.InputSystem;
 
 public class PlayerBetterController : MonoBehaviour
 {
@@ -20,10 +21,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private ParticleSystem dustJump;
     [Space]
     #endregion
-    
-    [HideInInspector] public float inputX;
-    [HideInInspector] public float inputY;
-    
+
     #region Private float
 
     private float _jumpBufferCounter;
@@ -36,6 +34,9 @@ public class PlayerBetterController : MonoBehaviour
     #endregion
 
     #region Public bool
+    [HideInInspector] public float inputX;
+    [HideInInspector] public float inputY;
+    
     [Header("Collision Related")]
     public bool isGrounded;
     public bool isTouchingFront;    
@@ -53,6 +54,7 @@ public class PlayerBetterController : MonoBehaviour
     public bool isMoving;
     public bool isRising;
     public bool isDashingDown;
+    public bool celestModOn;
     #endregion
 
     #region Private bool
@@ -168,6 +170,8 @@ public class PlayerBetterController : MonoBehaviour
         else isFalling = false;
         
         #endregion
+
+        if (Input.GetButtonDown("CelestMode")) celestModOn = !celestModOn;
         
         Animations();
     }
@@ -277,7 +281,7 @@ public class PlayerBetterController : MonoBehaviour
             _wallJumping = false;
         }
         
-        if (isTouchingFront&& inputX != 0)
+        if (isTouchingFront && inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -inputX,playerData.yWallForce),ForceMode2D.Impulse);
