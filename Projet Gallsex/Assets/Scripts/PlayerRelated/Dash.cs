@@ -12,6 +12,8 @@ public class Dash : MonoBehaviour
 
     private float _inputX;
     private float _inputY;
+    private float _inputXRightStick; 
+    private float _inputYRightStick; 
     public float _canDash;
     private float _dashDelay;
     private float _dashAnimCounter;
@@ -28,20 +30,40 @@ public class Dash : MonoBehaviour
     {
         _inputX = Input.GetAxisRaw("Mouse X");
         _inputY = Input.GetAxisRaw("Mouse Y");
+        _inputXRightStick = Input.GetAxisRaw("Mouse X");
+        _inputYRightStick = Input.GetAxisRaw("Mouse Y");
 
         #region La vallé des IF
-        
-        if (_inputX > 0.5 || _inputX < -0.5 || _inputY > 0.5 || _inputY < -0.5)
+
+        if (!playerController.celestModOn)
         {
-            if (_canDash == 0f)
+            if (Input.GetButtonDown("Dash") && _inputXRightStick > 0.5 ||Input.GetButtonDown("Dash") && _inputXRightStick < -0.5 || Input.GetButtonDown("Dash") && _inputYRightStick > 0.5 || Input.GetButtonDown("Dash") && _inputYRightStick < -0.5)
             {
-                _dashDelay = playerData.dashTime;
-                _dashAnimCounter = playerData.dashDuration;
-                _dashCooldownCounter = playerData.dashCooldown;
-            }
+                if (_canDash == 0f)
+                {
+                    _dashDelay = playerData.dashTime;
+                    _dashAnimCounter = playerData.dashDuration;
+                    _dashCooldownCounter = playerData.dashCooldown;
+                }
             
-            Flip();
+                Flip();
+            }
         }
+        else
+        {
+            if (_inputX > 0.5 || _inputX < -0.5 || _inputY > 0.5 || _inputY < -0.5)
+            {
+                if (_canDash == 0f)
+                {
+                    _dashDelay = playerData.dashTime;
+                    _dashAnimCounter = playerData.dashDuration;
+                    _dashCooldownCounter = playerData.dashCooldown;
+                }
+            
+                Flip();
+            }
+        }
+
 
         //Reset Dash (Ground/Cooldown) 
         if (playerController.isGrounded && _dashCooldownCounter <= 0f ||
