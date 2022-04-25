@@ -497,13 +497,23 @@ MonoBehaviour:
       shown: 0
     - name: LightIntensity
       shown: 0
-    - name: ArrayCheckpoint
+    - name: LightOn
       shown: 0
-    - name: Bouncer
+    - name: MyJointBecauseUnitySucks
+      shown: 0
+    - name: TriggerBossFight
+      shown: 0
+    - name: initiateBossFight
       shown: 0
     - name: CameraTrigger
       shown: 0
     - name: CameraTriggerManager
+      shown: 0
+    - name: camerafollow
+      shown: 0
+    - name: ArrayCheckpoint
+      shown: 0
+    - name: Bouncer
       shown: 0
     - name: CloudTrigger
       shown: 0
@@ -517,19 +527,11 @@ MonoBehaviour:
       shown: 0
     - name: PlatformRotation
       shown: 0
+    - name: Teleporter
+      shown: 0
     - name: Trap
       shown: 0
-    - name: TriggerBossFight
-      shown: 0
-    - name: camerafollow
-      shown: 0
     - name: checkpoint
-      shown: 0
-    - name: initiateBossFight
-      shown: 0
-    - name: Haircontrol
-      shown: 0
-    - name: HatAnchor
       shown: 0
     - name: Dash
       shown: 0
@@ -537,11 +539,11 @@ MonoBehaviour:
       shown: 0
     - name: GroundCheck
       shown: 0
-    - name: PlayerAnimatorManager
+    - name: Haircontrol
+      shown: 0
+    - name: HatAnchor
       shown: 0
     - name: PlayerBetterController
-      shown: 0
-    - name: Teleporter
       shown: 0
     - name: TeleporterToLevel01
       shown: 0
