@@ -27,7 +27,7 @@ public class tentaculeTrigger : MonoBehaviour
                 }
                 else
                 {
-                    DOTween.To(() => tentacule.transform.localPosition.x,x => tentacule.transform.localPosition = new Vector2(tentacule.transform.localPosition.x, x),endPos.y,tweenTime);
+                    DOTween.To(() => tentacule.transform.localPosition.y,x => tentacule.transform.localPosition = new Vector2(tentacule.transform.localPosition.x, x),endPos.y,tweenTime);
                 }
 
                 activated = true;
