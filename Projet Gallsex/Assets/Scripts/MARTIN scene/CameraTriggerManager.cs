@@ -11,8 +11,9 @@ public class CameraTriggerManager : MonoBehaviour
     public BoxCollider2D colliderCameraRight;
     public BoxCollider2D colliderCameraLeft;
     public BoxCollider2D colliderCameraTop;
+    public GameObject cloud;
 
-    public void EditScale(Vector2 newScale)
+    public void EditScale(Vector2 newScale,float cloudPosition)
     {
         DOTween.To(() => camera.GetComponent<Camera>().orthographicSize, x => camera.GetComponent<Camera>().orthographicSize = x, newScale.x, tweenTime);
         // changing collider sizes and position
@@ -25,7 +26,15 @@ public class CameraTriggerManager : MonoBehaviour
         
         DOTween.To(() => colliderCameraLeft.offset.x, x => colliderCameraLeft.offset = new Vector2(x, colliderCameraLeft.offset.y), newScale.x * -2 +0.5f, tweenTime);
         DOTween.To(() => colliderCameraLeft.size.y, x => colliderCameraLeft.size = new Vector2(colliderCameraLeft.size.x ,x), newScale.x * 2, tweenTime);
-
+        
+        
+        DOTween.To(() => cloud.transform.localPosition.x, x => cloud.transform.localPosition = new Vector3(x ,cloud.transform.localPosition.y, 10),  newScale.x * -2 + newScale.x /cloudPosition, tweenTime);
+        Debug.Log(newScale.x * -2 - newScale.x / 1.5);
+        
+        //DOTween.To(() => cloud.transform.position.x, x => cloud.transform.position = new Vector2(x,cloud.transform.position.y),new Vector2(newScale.x * 2 - newScale.x / 3, cloud.transform.position.y), tweenTime);
+        //DOTween.To(() => cloud.transform.position , x =>  = x, , tweenTime);
+        
+        
         //colliderCameraRight.offset = new Vector2(newScale.x * 2 - 0.5f, colliderCameraRight.offset.y);
         //colliderCameraRight.size = new Vector2(colliderCameraRight.size.x, newScale.x * 2);
         

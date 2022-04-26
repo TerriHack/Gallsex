@@ -8,6 +8,7 @@ public class CameraTrigger : MonoBehaviour
     public GameObject Manager;
     public float TYPE = 0;
     public Vector2 Variable;
+    public float cloudPositionX;
     public bool ChangeTracking;
 
     private void OnTriggerEnter2D(Collider2D player)
@@ -16,7 +17,7 @@ public class CameraTrigger : MonoBehaviour
         {
             if (TYPE == 0) //Scale changer
             {
-                Manager.GetComponent<CameraTriggerManager>().EditScale(Variable);
+                Manager.GetComponent<CameraTriggerManager>().EditScale(Variable, cloudPositionX);
             }
             else if (TYPE == 1)// Offset changer
             {

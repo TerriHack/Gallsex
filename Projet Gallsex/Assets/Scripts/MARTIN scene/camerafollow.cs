@@ -17,10 +17,8 @@ public class camerafollow : MonoBehaviour
    public float maxSpeed;
    public GameObject cloud;
    public Vector3 respawnPosition;
-
-   public BoxCollider2D colliderTop;
-   public BoxCollider2D colliderRight;
-   public BoxCollider2D colliderLeft;
+   
+   
    
    private float tweenTimeLeft;
    
@@ -122,7 +120,7 @@ public class camerafollow : MonoBehaviour
    {
       if (movementType == 0)
       {
-         cloud.transform.position = Vector3.zero;
+         cloud.transform.position = new Vector3();
          horizontal = isHorizontal;
          respawnPosition = StartPos;
          waypoints[0].transform.position = new Vector3(waypoint1.x,waypoint1.y,-10);
@@ -141,7 +139,7 @@ public class camerafollow : MonoBehaviour
          speed = 0.1f;
          currentWaypointIndex = 0;
          cloud.transform.rotation = Quaternion.Euler(0,0,90);
-         cloud.transform.localPosition = new Vector3(-14, -7, 10);
+         cloud.transform.localPosition = new Vector3(0, 0, 10);
       }
    }
 

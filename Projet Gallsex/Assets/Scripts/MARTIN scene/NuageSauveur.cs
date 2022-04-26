@@ -11,7 +11,6 @@ public class NuageSauveur : MonoBehaviour
     public GameObject target;
     public GameObject cloud;
     public float speed;
-    public bool bossTime;
 
     private void Start()
     {
@@ -30,11 +29,4 @@ public class NuageSauveur : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (bossTime)
-        {
-            // à faire pour le boss fight
-        }
-    }
 }
