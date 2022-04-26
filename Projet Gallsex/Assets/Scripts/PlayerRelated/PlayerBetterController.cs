@@ -393,7 +393,7 @@ public class PlayerBetterController : MonoBehaviour
 
         if(isDashingUp && !_wallSliding && !isGrounded && isDashing && !isDashingDown) ChangeAnimationState(PlayerVerticalDash);
         if(!isDashingUp && !_wallSliding && !isGrounded && isDashing && !isDashingDown) ChangeAnimationState(PlayerHorizontalDash);
-        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing && isDashingDown) ChangeAnimationState(PlayerJumpFall);
+        if(!isDashingUp && !_wallSliding && !isGrounded && isDashing && isDashingDown) ChangeAnimationState(PlayerDashDown);
 
     }
 }
