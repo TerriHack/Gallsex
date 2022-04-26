@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: PlayerControllerData04
   m_EditorClassIdentifier: 
   speed: 6
-  airControl: 0.5
+  airControl: 0.4
   jumpForce: 21.5
   wallJumpTime: 0.1
   xWallForce: 22
   yWallForce: 24
-  wallSlidingSpeed: 14
+  wallSlidingSpeed: 12
   nuancerDuration: 0.23
   nuancerForce: 1.4
   coyoteTime: 0.1

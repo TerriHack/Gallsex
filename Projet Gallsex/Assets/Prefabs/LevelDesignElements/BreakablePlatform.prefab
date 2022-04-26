@@ -159,7 +159,7 @@ MonoBehaviour:
   active: 0
   spriteRenderer: {fileID: 8962453341658791256}
   boxCollider2D: {fileID: 8909836234200482096}
-  animation: {fileID: 2749877538202956846}
+  anim: {fileID: 2749877538202956846}
 --- !u!111 &2749877538202956846
 Animation:
   m_ObjectHideFlags: 0
