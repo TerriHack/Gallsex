@@ -27,7 +27,6 @@ public class CameraTrigger : MonoBehaviour
             {
                 Manager.GetComponent<CameraTriggerManager>().EditTracking(ChangeTracking);
             }
-            Debug.Log("hello");
         }
     }
 }

@@ -105,8 +105,8 @@ public class camerafollow : MonoBehaviour
       else if (movementType == 2)
       {
          cloud.transform.SetParent(null);
-         DOTween.To( () => transform.position, x => transform.position = x,
-            new Vector3(target.transform.position.x, target.transform.position.y + 1,-10), 2);
+         DOTween.To( () => transform.position, x => transform.position = x, new Vector3(target.transform.position.x, target.transform.position.y + 1,-10), 2);
+         DOTween.To(() => GetComponent<Camera>().orthographicSize, x => GetComponent<Camera>().orthographicSize = x,10, 2 );
          if (Vector2.Distance(transform.position,new Vector2(target.transform.position.x, target.transform.position.y + 2)) < 1)
          {
             movementType = 0;

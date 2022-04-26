@@ -16,8 +16,7 @@ public class TRAP : MonoBehaviour
             if (camera.GetComponent<camerafollow>().movementType == 1)
             {
                 camera.GetComponent<camerafollow>().OnDeath();
-                player.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y,
-                    player.transform.position.z); //camera.transform.position;
+                player.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, player.transform.position.z); //camera.transform.position;
             }
             else
             {

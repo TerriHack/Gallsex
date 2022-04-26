@@ -29,8 +29,7 @@ public class CameraTriggerManager : MonoBehaviour
         
         
         DOTween.To(() => cloud.transform.localPosition.x, x => cloud.transform.localPosition = new Vector3(x ,cloud.transform.localPosition.y, 10),  newScale.x * -2 + newScale.x /cloudPosition, tweenTime);
-        Debug.Log(newScale.x * -2 - newScale.x / 1.5);
-        
+
         //DOTween.To(() => cloud.transform.position.x, x => cloud.transform.position = new Vector2(x,cloud.transform.position.y),new Vector2(newScale.x * 2 - newScale.x / 3, cloud.transform.position.y), tweenTime);
         //DOTween.To(() => cloud.transform.position , x =>  = x, , tweenTime);
         
