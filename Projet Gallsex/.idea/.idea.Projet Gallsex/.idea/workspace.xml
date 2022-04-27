@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="101e6b3a-8dee-454f-8a70-c41f3e3c97f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet Gallsex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Plateformes spéciales/Plateformes spéciales.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Plateformes spéciales/Plateformes spéciales.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/BreakablePlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelDesignElements/BreakablePlatform.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelDesignElementsRelated/PlatformDisappear.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelDesignElementsRelated/PlatformDisappear.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,7 @@
       <workItem from="1649751616437" duration="6000" />
       <workItem from="1649751697386" duration="26000" />
       <workItem from="1649956916450" duration="1000" />
-      <workItem from="1651068548882" duration="1247000" />
+      <workItem from="1651068548882" duration="1636000" />
     </task>
     <servers />
   </component>
