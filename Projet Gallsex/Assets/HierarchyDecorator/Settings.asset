@@ -517,19 +517,21 @@ MonoBehaviour:
       shown: 0
     - name: Bouncer
       shown: 0
+    - name: BreakablePlatform
+      shown: 0
     - name: CloudTrigger
       shown: 0
     - name: MovingCLoud
       shown: 0
     - name: Parallax
       shown: 0
-    - name: BreakablePlatform
-      shown: 0
     - name: PlatformMovement
       shown: 0
     - name: PlatformRotation
       shown: 0
     - name: Teleporter
+      shown: 0
+    - name: TeleporterToNextLevel
       shown: 0
     - name: Trap
       shown: 0
@@ -562,10 +564,6 @@ MonoBehaviour:
     - name: HatAnchor
       shown: 0
     - name: PlayerBetterController
-      shown: 0
-    - name: TeleporterToLevel01
-      shown: 0
-    - name: TeleporterToTuto
       shown: 0
     - name: BossTriggers
       shown: 0
