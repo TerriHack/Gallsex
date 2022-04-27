@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerBossFight : MonoBehaviour
+public class BossTriggers : MonoBehaviour
 {
    public Vector3 startPosition;
    public Vector3 waypoint1;
@@ -16,7 +16,8 @@ public class TriggerBossFight : MonoBehaviour
    {
       if (other.CompareTag("Player"))
       {
-         other.GetComponent<initiateBossFight>().Horizontal(startPosition, waypoint1, waypoint2, speed,startsHorizontally,cloudStartRotation);
+         //other.GetComponent<initiateBossFight>().Horizontal(startPosition, waypoint1, waypoint2, speed,startsHorizontally,cloudStartRotation);
+         other.GetComponent<initiateBossFight>().Horizontal(startPosition, waypoint1,waypoint2,speed);
       }
    }
 }

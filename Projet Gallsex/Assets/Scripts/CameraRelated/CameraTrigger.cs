@@ -16,7 +16,8 @@ public class CameraTrigger : MonoBehaviour
         {
             if (type == 0) //Scale changer
             {
-                manager.GetComponent<CameraTriggerManager>().EditScale(variable);
+                //manager.GetComponent<CameraTriggerManager>().EditScale(variable);
+                manager.GetComponent<CameraTriggersManager>().EditScale(variable);
             }
             else if (type == 1)// Offset changer
             {

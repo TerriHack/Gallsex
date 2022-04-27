@@ -12,7 +12,7 @@ public class CloudTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Parent.GetComponent<MovingCloud>().Action(variable,AppearBelow);
+            Parent.GetComponent<MovingCLoud>().Action(variable,AppearBelow);
         }
     }
 }

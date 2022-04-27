@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlatformDisappear : MonoBehaviour
+public class BreakablePlatform : MonoBehaviour
 {
     public float timer;
     private bool willDisappear = false;

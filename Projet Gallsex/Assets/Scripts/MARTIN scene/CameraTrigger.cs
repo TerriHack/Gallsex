@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraTrigger : MonoBehaviour
+public class Camera_Trigger : MonoBehaviour
 {
     public GameObject Manager;
     public float TYPE = 0;

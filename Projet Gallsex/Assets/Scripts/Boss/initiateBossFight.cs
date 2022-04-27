@@ -8,7 +8,7 @@ public class initiateBossFight : MonoBehaviour
     public float cloudOffset;
     public void Horizontal(Vector3 startPos,Vector3 waypoint1, Vector3 waypoint2, float transitionTime)
     {
-        cam.GetComponent<camerafollow>().BossFight(startPos, waypoint1,waypoint2,transitionTime);
+        cam.GetComponent<Camerafollow>().BossFight(startPos, waypoint1,waypoint2,transitionTime);
         cloud.transform.SetParent(cam.transform);
         //float orthographicSize = camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize;
         cloud.transform.position = new Vector3(cam.transform.position.x - cloudOffset, cam.transform.position.y);

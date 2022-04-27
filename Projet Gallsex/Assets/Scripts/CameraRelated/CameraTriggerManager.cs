@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class CameraTriggerManager : MonoBehaviour
+public class CameraTriggersManager : MonoBehaviour
 {
     public GameObject cam;
     public float tweenTime;

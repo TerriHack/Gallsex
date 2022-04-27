@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-public class initiateBossFight : MonoBehaviour
+public class Trigger_Boss_Fight : MonoBehaviour
 {
     public GameObject camera;
     public CinemachineVirtualCamera virtualCamera;

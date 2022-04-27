@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class NuageSauveur : MonoBehaviour
+public class MovingCLoud : MonoBehaviour
 {
     [SerializeField] private List<GameObject> triggers;
     [SerializeField] private GameObject[] bossWaypoints;
@@ -17,7 +17,7 @@ public class NuageSauveur : MonoBehaviour
         for (int i = 0; i < target.transform.childCount; i++)
         {
             triggers.Add(target.transform.GetChild(i).gameObject);
-            triggers[i].GetComponent<triggerNuage>().variable = i;
+            triggers[i].GetComponent<CloudTrigger>().variable = i;
         }
     }
 

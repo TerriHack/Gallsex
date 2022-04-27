@@ -2,7 +2,7 @@ using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
 
-public class camerafollow : MonoBehaviour
+public class Camerafollow : MonoBehaviour
 {
    public Transform target;
 
