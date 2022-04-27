@@ -9810,7 +9810,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9, y: -0.14}
+  m_Offset: {x: 0.9, y: -0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9881,7 +9881,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: -0.14}
+  m_Offset: {x: 0.2, y: -0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10095,6 +10095,7 @@ MonoBehaviour:
   anim: {fileID: 410723800}
   dash: {fileID: 1195328312}
   groundCheckTr: {fileID: 7824335608248257836}
+  playerMat: {fileID: 6200000, guid: 0d9290e3876a85b49bc1fc6799b99824, type: 2}
   dustJump: {fileID: 5225242303262374427, guid: 258be6e99b742ea4b9dbf925c2b5c8f2, type: 3}
   inputX: 0
   inputY: 0
@@ -10114,6 +10115,7 @@ MonoBehaviour:
   isRising: 0
   isDashingDown: 0
   celesteModeOn: 0
+  isDebug: 0
 --- !u!114 &1195328312
 MonoBehaviour:
   m_ObjectHideFlags: 0
