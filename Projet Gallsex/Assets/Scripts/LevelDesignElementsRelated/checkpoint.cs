@@ -9,6 +9,7 @@ public class checkpoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("hehe");
             spriteRenderer.color = Color.green;
             player.GetComponent<ArrayCheckpoint>().AddingCheckpoint(new Vector2(player.transform.position.x,player.transform.position.y));
             gameObject.SetActive(false);
