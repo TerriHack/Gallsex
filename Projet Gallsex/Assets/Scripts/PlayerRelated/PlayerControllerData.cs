@@ -33,6 +33,8 @@ public class PlayerControllerData : ScriptableObject
     public float coyoteTime = 0.1f;   
     [Range(0f,10f)]
     public float jumpBufferTime = 0.18f;
+    [Range(0f, 1f)] 
+    public float slideDuration = 0.08f;
     
     [Space]
     [Header("Clamp")]

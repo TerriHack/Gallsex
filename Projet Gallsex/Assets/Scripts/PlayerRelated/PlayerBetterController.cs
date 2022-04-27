@@ -14,6 +14,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
     [SerializeField] private Transform groundCheckTr;
+    [SerializeField] private PhysicsMaterial2D playerMat;
     private Vector2 _feetPos;
     #endregion
     
@@ -31,6 +32,7 @@ public class PlayerBetterController : MonoBehaviour
     private float _gravity;
     private float _waitCounter;
     private float _sittingCounter;
+    private float _slideCounter;
     #endregion
 
     #region Public bool
@@ -55,6 +57,7 @@ public class PlayerBetterController : MonoBehaviour
     public bool isRising;
     public bool isDashingDown;
     public bool celesteModeOn;
+    public bool isDebug;
     #endregion
 
     #region Private bool
@@ -80,7 +83,7 @@ public class PlayerBetterController : MonoBehaviour
     private const String PlayerSleep = "Sleep_Animation";
     private const String PlayerHorizontalDash = "HorizontalDash_Animation";
     private const String PlayerVerticalDash = "VerticalDash_Animation";
-    private const String PlayerDashDown = "DashDown_Animation"; //Elle n'est pas utilisée mais le state est fait ;D
+    private const String PlayerDashDown = "DashDown_Animation";
     #endregion
 
     void Start()
@@ -174,6 +177,20 @@ public class PlayerBetterController : MonoBehaviour
         if (Input.GetButtonDown("CelesteMode")) celesteModeOn = !celesteModeOn;
         
         Animations();
+
+        if (inputX == 0f && isGrounded)
+        {
+            _slideCounter -= Time.deltaTime;
+            
+            if (_slideCounter < 0f)
+            {
+                rb.velocity = new Vector2(0f, rb.velocity.y); 
+            }
+            
+        }else
+        {
+            _slideCounter = playerData.slideDuration;
+        }
     }
     
     private void FixedUpdate()
@@ -317,7 +334,7 @@ public class PlayerBetterController : MonoBehaviour
     }
     private void AirClamp()
     {
-        float verticalVelocity = Mathf.Clamp(rb.velocity.y, playerData.maxFallSpeed, playerData.maxRiseSpeed);
+        float verticalVelocity;
         float horizontalVelocity;
         
         if (isBouncing)
