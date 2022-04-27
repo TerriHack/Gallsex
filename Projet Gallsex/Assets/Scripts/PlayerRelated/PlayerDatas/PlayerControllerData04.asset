@@ -23,6 +23,7 @@ MonoBehaviour:
   nuancerForce: 1.4
   coyoteTime: 0.1
   jumpBufferTime: 0.18
+  slideDuration: 0.08
   maxSpeed: 15
   maxAirSpeed: 15
   maxFallSpeed: -20

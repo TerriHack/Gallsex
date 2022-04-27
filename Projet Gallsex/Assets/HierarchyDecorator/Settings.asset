@@ -505,11 +505,13 @@ MonoBehaviour:
       shown: 0
     - name: initiateBossFight
       shown: 0
+    - name: CameraFollowTest
+      shown: 0
     - name: CameraTrigger
       shown: 0
-    - name: CameraTriggerManager
+    - name: CameraTriggersManager
       shown: 0
-    - name: camerafollow
+    - name: Camerafollow
       shown: 0
     - name: ArrayCheckpoint
       shown: 0
@@ -517,11 +519,11 @@ MonoBehaviour:
       shown: 0
     - name: CloudTrigger
       shown: 0
-    - name: MovingCloud
+    - name: MovingCLoud
       shown: 0
     - name: Parallax
       shown: 0
-    - name: PlatformDisappear
+    - name: BreakablePlatform
       shown: 0
     - name: PlatformMovement
       shown: 0
@@ -532,6 +534,20 @@ MonoBehaviour:
     - name: Trap
       shown: 0
     - name: checkpoint
+      shown: 0
+    - name: Trigger_Boss_Fight
+      shown: 0
+    - name: Camera_Trigger
+      shown: 0
+    - name: CameraTriggerManager
+      shown: 0
+    - name: PlatformDisappear
+      shown: 0
+    - name: TRAP
+      shown: 0
+    - name: camerafollow
+      shown: 0
+    - name: platformRotate
       shown: 0
     - name: Dash
       shown: 0
@@ -548,6 +564,12 @@ MonoBehaviour:
     - name: TeleporterToLevel01
       shown: 0
     - name: TeleporterToTuto
+      shown: 0
+    - name: BossTriggers
+      shown: 0
+    - name: calculateCameraBox
+      shown: 0
+    - name: tentaculeTrigger
       shown: 0
     - name: triggerdash
       shown: 0
