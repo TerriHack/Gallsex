@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlatformDisappear : MonoBehaviour
 {
-    private bool destroyed;
-    private float timer;
+    private bool _destroyed;
+    private float _counter;
     public float maxTimer;
-    private bool active = false;
+    private bool _isOn = false;
     public BoxCollider2D trigger;
     public BoxCollider2D collision;
-    public Animation animation;
+    public Animation anim;
     public SpriteRenderer sprite;
 
 
@@ -19,39 +19,39 @@ public class PlatformDisappear : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if (destroyed == false)
+            if (_destroyed == false)
             {
-                active = true;
-                timer = 0;
-                animation.Play("disappear platform anim");
+                _isOn = true;
+                _counter = 0;
+                anim.Play("disappear platform anim");
             }
         }
     }
 
     private void Update()
     {
-        if (active)
+        if (_isOn)
         {
-            if (destroyed == false)
+            if (_destroyed == false)
             {
-                timer += Time.deltaTime;
-                if (timer > maxTimer)
+                _counter += Time.deltaTime;
+                if (_counter > maxTimer)
                 {
                     collision.enabled = false;
-                    timer = 0;
-                    destroyed = true;
+                    _counter = 0;
+                    _destroyed = true;
                     sprite.enabled = false;
                 }
             }
             else
             {
-                animation.Stop();
-                timer += Time.deltaTime;
-                if (timer > maxTimer)
+                anim.Stop();
+                _counter += Time.deltaTime;
+                if (_counter > maxTimer)
                 {
                     collision.enabled = true;
-                    timer = 0;
-                    destroyed = false;
+                    _counter = 0;
+                    _destroyed = false;
                     sprite.enabled = true;
                 }
             }
