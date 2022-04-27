@@ -157,10 +157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 404322556}
-  smoothSpeed: 0.125
+  horizontal: 0
   offset: {x: 0, y: 3, z: -2}
   movementType: 0
   cinemachine: {fileID: 0}
+  virtualCamera: {fileID: 0}
   changeSpeed: 0
   minSpeed: 0
   maxSpeed: 0
