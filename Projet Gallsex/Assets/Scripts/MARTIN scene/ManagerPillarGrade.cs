@@ -14,6 +14,7 @@ public class ManagerPillarGrade : MonoBehaviour
     void Start()
     {
         loopVariable = pillars.Count;
+        // put every children in the pillars[] list
         for (int i = 0; i < loopVariable; i++)
         {
             pillars[i].GetComponent<pillierGrade>().pillarNb = i;
