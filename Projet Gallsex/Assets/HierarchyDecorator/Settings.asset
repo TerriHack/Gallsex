@@ -547,9 +547,11 @@ MonoBehaviour:
       shown: 0
     - name: TRAP
       shown: 0
-    - name: Timer
+    - name: prefabTimer
       shown: 0
     - name: camerafollow
+      shown: 0
+    - name: pillierGrade
       shown: 0
     - name: platformRotate
       shown: 0
