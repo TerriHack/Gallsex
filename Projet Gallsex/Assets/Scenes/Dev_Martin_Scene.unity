@@ -6773,6 +6773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 767770869}
     m_Modifications:
+    - target: {fileID: 8153320831571809872, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_Name
+      value: prefabTimer
+      objectReference: {fileID: 0}
     - target: {fileID: 8153320831636344556, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
       propertyPath: m_Name
       value: timerCanvas
@@ -6861,7 +6865,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8153320831571809874, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
 --- !u!1 &1687243024
 GameObject:
@@ -27769,6 +27774,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8153320831571809872, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
   m_PrefabInstance: {fileID: 1666329927}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2142067979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142067978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59464b9a46d45a46a571c2e78cfedb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  currentTimeText: {fileID: 2142067980}
+--- !u!114 &2142067980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8153320831571809877, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+  m_PrefabInstance: {fileID: 1666329927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142067978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &198881156451668401
 GameObject:
   m_ObjectHideFlags: 0
@@ -27894,6 +27924,22 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 2142067978}
+    - target: {fileID: 5846318831617858676, guid: aed56fbdc57359b43af3ac624a88b343, type: 3}
+      propertyPath: timeThreshold.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846318831617858676, guid: aed56fbdc57359b43af3ac624a88b343, type: 3}
+      propertyPath: timeThreshold.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846318831617858676, guid: aed56fbdc57359b43af3ac624a88b343, type: 3}
+      propertyPath: timeThreshold.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846318831617858676, guid: aed56fbdc57359b43af3ac624a88b343, type: 3}
+      propertyPath: timeThreshold.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5892425859072125559, guid: aed56fbdc57359b43af3ac624a88b343, type: 3}
       propertyPath: m_RootOrder
       value: 16

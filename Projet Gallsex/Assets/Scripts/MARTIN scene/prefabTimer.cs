@@ -6,7 +6,6 @@ public class prefabTimer : MonoBehaviour
 {
     private bool timerActive = true;
     public float currentTime;
-    public int startMinutes;
     public TextMeshProUGUI currentTimeText;
     
     void Start()
