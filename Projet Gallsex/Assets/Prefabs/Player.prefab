@@ -10097,6 +10097,7 @@ MonoBehaviour:
   groundCheckTr: {fileID: 7824335608248257836}
   playerMat: {fileID: 6200000, guid: 0d9290e3876a85b49bc1fc6799b99824, type: 2}
   dustJump: {fileID: 5225242303262374427, guid: 258be6e99b742ea4b9dbf925c2b5c8f2, type: 3}
+  _sittingCounter: 0
   inputX: 0
   inputY: 0
   isGrounded: 0
@@ -10202,7 +10203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621752128293229678, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7621752128293229679, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
       propertyPath: m_RootOrder

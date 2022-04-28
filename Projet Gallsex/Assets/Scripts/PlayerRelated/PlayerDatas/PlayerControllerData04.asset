@@ -18,7 +18,7 @@ MonoBehaviour:
   wallJumpTime: 0.1
   xWallForce: 22
   yWallForce: 24
-  wallSlidingSpeed: 12
+  wallSlidingSpeed: 8
   nuancerDuration: 0.23
   nuancerForce: 1.4
   coyoteTime: 0.1
