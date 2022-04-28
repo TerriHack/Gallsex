@@ -18,13 +18,13 @@ public class pillierGrade : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            TimeSpan time = TimeSpan.FromSeconds(timer.GetComponent<prefabTimer>().currentTime);
-            text.text = time.ToString(@"mm\:ss\:fff");
-            if (triggeredTime != 0)
+            if (triggeredTime == 0)
             {
+                TimeSpan time = TimeSpan.FromSeconds(timer.GetComponent<prefabTimer>().currentTime);
+                text.text = time.ToString(@"mm\:ss\:fff");
                 triggeredTime = timer.GetComponent<prefabTimer>().currentTime;
+                manager.GetComponent<ManagerPillarGrade>().CalculateTime(pillarNb);
             }
-            manager.GetComponent<ManagerPillarGrade>().CalculateTime(pillarNb);
         }
     }
 

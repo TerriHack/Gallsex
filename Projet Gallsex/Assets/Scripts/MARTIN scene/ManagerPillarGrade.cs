@@ -19,7 +19,6 @@ public class ManagerPillarGrade : MonoBehaviour
             pillars[i].GetComponent<pillierGrade>().pillarNb = i;
             pillars[i].GetComponent<pillierGrade>().timer = stopwatch;
         }
-        Debug.Log(loopVariable);
     }
 
     public void CalculateTime(int whichPillar)
@@ -30,14 +29,15 @@ public class ManagerPillarGrade : MonoBehaviour
         if (rememberingPillar == -1)
         {
             lastPillar = 0;
+            Debug.Log("no last pillar");
         }
         else
         { 
             lastPillar = pillars[rememberingPillar].GetComponent<pillierGrade>().triggeredTime;
         }
-        /*float thisPillar = pillars[actingOnPillar].GetComponent<pillierGrade>().triggeredTime;
+        float thisPillar = pillars[actingOnPillar].GetComponent<pillierGrade>().triggeredTime;
         float calculatedTimeSpent = thisPillar - lastPillar;
-        pillars[actingOnPillar].GetComponent<pillierGrade>().timeSpent = calculatedTimeSpent;*/
+        pillars[actingOnPillar].GetComponent<pillierGrade>().timeSpent = calculatedTimeSpent;
     }
 
 }
