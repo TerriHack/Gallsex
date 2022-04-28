@@ -31,7 +31,7 @@ public class PlayerBetterController : MonoBehaviour
     private float _wallJumpTime;
     private float _gravity;
     private float _waitCounter;
-    private float _sittingCounter;
+    public float _sittingCounter;
     private float _slideCounter;
     #endregion
 
@@ -376,11 +376,8 @@ public class PlayerBetterController : MonoBehaviour
         if (inputY < -0.3f && !isMoving && isGrounded)
         {
             #region Animation Related
+            _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
-            isWaiting = false;
-            
-            _sittingCounter = playerData.timeToSleep;
-            isSleeping = false;
             #endregion
             
             isCrouching = true;
