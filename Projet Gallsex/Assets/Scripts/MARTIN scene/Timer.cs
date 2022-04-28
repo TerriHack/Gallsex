@@ -2,10 +2,10 @@ using TMPro;
 using UnityEngine;
 using System;
 
-public class Timer : MonoBehaviour
+public class prefabTimer : MonoBehaviour
 {
     private bool timerActive = true;
-    private float currentTime;
+    public float currentTime;
     public int startMinutes;
     public TextMeshProUGUI currentTimeText;
     
