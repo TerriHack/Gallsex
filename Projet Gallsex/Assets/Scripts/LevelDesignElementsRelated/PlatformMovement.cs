@@ -5,6 +5,9 @@ public class PlatformMovement : MonoBehaviour
     public bool active;
     [SerializeField] private GameObject[] wayPoints;
     private int currentWaypointIndex = 0;
+    public float waitTime = 1;
+    public float waitFor;
+    public bool waiting = false;
 
     [SerializeField] public float speed = 2f;
 
@@ -19,22 +22,40 @@ public class PlatformMovement : MonoBehaviour
             }
         }
     }
-    
+
     void Update()
     {
-        if (active)
+        if (active == true)
         {
             if (Vector2.Distance(wayPoints[currentWaypointIndex].transform.position, transform.position) < .1f)
-            {
-                currentWaypointIndex++;
+            { currentWaypointIndex++;
                 if (currentWaypointIndex >= wayPoints.Length)
                 {
                     currentWaypointIndex = 0;
                 }
+                waitFor = waitTime;
+                waiting = true;
+                active = false;
             }
-            transform.position = Vector2.MoveTowards(transform.position, wayPoints[currentWaypointIndex].transform.position,
-                Time.deltaTime * speed);
+
+            transform.position = Vector2.MoveTowards(transform.position,
+                    wayPoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+            
         }
+        else
+        {
+            if (waiting)
+            {
+                waitFor -= Time.deltaTime;
+                if (waitFor <= 0)
+                { 
+                    waiting = false;
+                    active = true;
+                }
+                Debug.Log("isWaiting");   
+            }
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D Collision2D)
