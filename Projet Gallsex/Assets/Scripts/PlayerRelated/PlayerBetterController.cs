@@ -31,7 +31,7 @@ public class PlayerBetterController : MonoBehaviour
     private float _wallJumpTime;
     private float _gravity;
     private float _waitCounter;
-    public float _sittingCounter;
+    private float _sittingCounter;
     private float _slideCounter;
     #endregion
 
@@ -151,10 +151,7 @@ public class PlayerBetterController : MonoBehaviour
             
             #region Animation Related
             _waitCounter = playerData.waitTime;
-            isWaiting = false;
-            
             _sittingCounter = playerData.timeToSleep;
-            isSleeping = false;
             #endregion
         }
 
