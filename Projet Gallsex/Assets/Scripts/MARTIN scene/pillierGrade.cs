@@ -8,6 +8,10 @@ public class pillierGrade : MonoBehaviour
     public GameObject timer;
     public TextMesh text;
     public List<float> timeThreshold;
+    public int pillarNb;
+    public float triggeredTime;
+    public float timeSpent;
+    public GameObject manager;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,6 +20,11 @@ public class pillierGrade : MonoBehaviour
         {
             TimeSpan time = TimeSpan.FromSeconds(timer.GetComponent<prefabTimer>().currentTime);
             text.text = time.ToString(@"mm\:ss\:fff");
+            if (triggeredTime != 0)
+            {
+                triggeredTime = timer.GetComponent<prefabTimer>().currentTime;
+            }
+            manager.GetComponent<ManagerPillarGrade>().CalculateTime(pillarNb);
         }
     }
 }
