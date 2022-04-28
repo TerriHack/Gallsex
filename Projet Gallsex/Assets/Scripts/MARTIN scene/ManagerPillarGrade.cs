@@ -8,18 +8,18 @@ public class ManagerPillarGrade : MonoBehaviour
 {
     public GameObject stopwatch;
     [SerializeField] private List<GameObject> pillars;
+    private int loopVariable;
     public int rememberingPillar = 0;
     public int actingOnPillar = 0;
     void Start()
     {
-        GetComponentInChildren<pillierGrade>().timer = stopwatch;
-        for (int i = 0; i < pillars.Count; i++)
+        loopVariable = pillars.Count;
+        for (int i = 0; i < loopVariable; i++)
         {
             pillars[i].GetComponent<pillierGrade>().pillarNb = i;
-            Debug.Log(pillars.Count);
-            
+            pillars[i].GetComponent<pillierGrade>().timer = stopwatch;
         }
-        Debug.Log(pillars.Count);
+        Debug.Log(loopVariable);
     }
 
     public void CalculateTime(int whichPillar)

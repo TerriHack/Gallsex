@@ -27,4 +27,5 @@ public class pillierGrade : MonoBehaviour
             manager.GetComponent<ManagerPillarGrade>().CalculateTime(pillarNb);
         }
     }
+
 }
