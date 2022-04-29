@@ -13,4 +13,13 @@ public class movingPlatformManager : MonoBehaviour
             childrenMovingPlatforms.Add(child.gameObject);
         }
     }
+
+    public void OnPlayerDeath()
+    {
+        for (int i = 0; i < childrenMovingPlatforms.Count; i++)
+        {
+            childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().active = false;
+            childrenMovingPlatforms[i].transform.GetChild(0).transform.position = childrenMovingPlatforms[i].transform.GetChild(1).transform.position;
+        }
+    }
 }

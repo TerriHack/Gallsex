@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class TRAP : MonoBehaviour
 {
     public GameObject player;
     public GameObject cam;
+    private GameObject movingPlatformManager;
 
     [SerializeField] private Vector3 bossRespawn;
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,5 +27,10 @@ public class TRAP : MonoBehaviour
             
             
         }
+    }
+
+    private void Start()
+    {
+        movingPlatformManager = GameObject.FindGameObjectWithTag("MovingPlatformManager");
     }
 }
