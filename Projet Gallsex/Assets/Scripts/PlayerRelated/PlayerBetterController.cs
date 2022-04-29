@@ -15,6 +15,8 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Dash dash;
     [SerializeField] private Transform groundCheckTr;
     [SerializeField] private PhysicsMaterial2D playerMat;
+    [SerializeField] private GameObject vfxRun;    
+    [SerializeField] private GameObject vfxWallSlide;
     private Vector2 _feetPos;
     #endregion
     
@@ -57,7 +59,6 @@ public class PlayerBetterController : MonoBehaviour
     public bool isRising;
     public bool isDashingDown;
     public bool celesteModeOn;
-    public bool isDebug;
     #endregion
 
     #region Private bool
@@ -133,8 +134,10 @@ public class PlayerBetterController : MonoBehaviour
             GroundClamp();
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
+            vfxRun.SetActive(true);
         }
         else if (rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
+        else vfxRun.SetActive(false);
 
         if (_coyoteTimeCounter <= 0) _coyoteGrounded = false;
 
@@ -148,12 +151,13 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
-            
+            vfxWallSlide.SetActive(true);
+
             #region Animation Related
             _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
             #endregion
-        }
+        }else vfxWallSlide.SetActive(false);
 
         if (_wallJumpTime > 0f) _wallJumping = true;
         else _wallJumping = false;
