@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
+    private int doIWait;
     public bool active;
     [SerializeField] private GameObject[] wayPoints;
     private int currentWaypointIndex = 0;
@@ -19,9 +21,19 @@ public class PlatformMovement : MonoBehaviour
             if (active == false)
             {
                 active = true;
+                if (Vector2.Distance(wayPoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+                {
+                    waiting = false;
+                }
             }
         }
     }
+
+    private void Start()
+    {
+        waiting = false;
+    }
+
 
     void Update()
     {
@@ -29,13 +41,21 @@ public class PlatformMovement : MonoBehaviour
         {
             if (Vector2.Distance(wayPoints[currentWaypointIndex].transform.position, transform.position) < .1f)
             { currentWaypointIndex++;
+                doIWait ++;
                 if (currentWaypointIndex >= wayPoints.Length)
                 {
                     currentWaypointIndex = 0;
                 }
                 waitFor = waitTime;
                 waiting = true;
-                active = false;
+                if (doIWait < 2)
+                {
+                    
+                }
+                else
+                {
+                    active = false;
+                }
             }
 
             transform.position = Vector2.MoveTowards(transform.position,

@@ -573,6 +573,8 @@ MonoBehaviour:
       shown: 0
     - name: calculateCameraBox
       shown: 0
+    - name: movingPlatformManager
+      shown: 0
     - name: tentaculeTrigger
       shown: 0
     - name: triggerdash
