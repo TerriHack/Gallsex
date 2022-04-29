@@ -30,7 +30,6 @@ public class ManagerPillarGrade : MonoBehaviour
         if (rememberingPillar == -1)
         {
             lastPillar = 0;
-            Debug.Log("no last pillar");
         }
         else
         { 

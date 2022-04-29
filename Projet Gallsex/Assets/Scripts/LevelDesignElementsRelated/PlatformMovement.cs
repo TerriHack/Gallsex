@@ -52,7 +52,6 @@ public class PlatformMovement : MonoBehaviour
                     waiting = false;
                     active = true;
                 }
-                Debug.Log("isWaiting");   
             }
         }
         
