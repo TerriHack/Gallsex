@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Checks
   - Boundary
+  - MovingPlatformManager
   layers:
   - Default
   - TransparentFX
