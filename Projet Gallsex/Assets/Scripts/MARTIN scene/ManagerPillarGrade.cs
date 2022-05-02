@@ -38,6 +38,7 @@ public class ManagerPillarGrade : MonoBehaviour
         float thisPillar = pillars[actingOnPillar].GetComponent<pillierGrade>().triggeredTime;
         float calculatedTimeSpent = thisPillar - lastPillar;
         pillars[actingOnPillar].GetComponent<pillierGrade>().timeSpent = calculatedTimeSpent;
+        pillars[actingOnPillar].GetComponent<pillierGrade>().LightColorChange();
     }
 
 }

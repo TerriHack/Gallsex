@@ -1,10 +1,12 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class pillierGrade : MonoBehaviour
 {
     private float timerEnter;
+    public GameObject light;
     public GameObject timer;
     public TextMesh text;
     public List<float> timeThreshold;
@@ -26,6 +28,23 @@ public class pillierGrade : MonoBehaviour
                 manager.GetComponent<ManagerPillarGrade>().CalculateTime(pillarNb);
             }
         }
+    }
+
+    public void LightColorChange()
+    {
+        if (timeSpent < timeThreshold[0])
+        {
+            light.GetComponent<Light2D>().color = Color.green;
+        }
+        else if (timeSpent <= timeThreshold[1])
+        {
+            light.GetComponent<Light2D>().color = Color.yellow;
+        }
+        else
+        {
+            light.GetComponent<Light2D>().color = Color.red;
+        }
+        light.SetActive(true);
     }
 
 }
