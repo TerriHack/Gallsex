@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3014733565848904100}
   m_Layer: 0
   m_Name: Pillier grade
-  m_TagString: Untagged
+  m_TagString: PillarTime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

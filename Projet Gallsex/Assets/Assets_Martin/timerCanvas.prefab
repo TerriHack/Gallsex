@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8153320831571809875}
   - component: {fileID: 8153320831571809876}
   - component: {fileID: 8153320831571809877}
-  - component: {fileID: 8153320831571809874}
+  - component: {fileID: 2142067979}
   m_Layer: 5
-  m_Name: Timer
-  m_TagString: Untagged
+  m_Name: prefabTimer
+  m_TagString: StopWatch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8153320831571809874
+--- !u!114 &2142067979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59464b9a46d45a46a571c2e78cfedb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMinutes: 1
+  currentTime: 0
   currentTimeText: {fileID: 8153320831571809877}
 --- !u!1 &8153320831636344556
 GameObject:

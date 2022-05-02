@@ -13,6 +13,14 @@ public class ManagerPillarGrade : MonoBehaviour
     public int actingOnPillar = 0;
     void Start()
     {
+        stopwatch = GameObject.FindGameObjectWithTag("StopWatch");
+        pillars.Clear();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            pillars.Add(transform.GetChild(i).gameObject);
+        }
+        
+        
         loopVariable = pillars.Count;
         // put every children in the pillars[] list
         for (int i = 0; i < loopVariable; i++)
