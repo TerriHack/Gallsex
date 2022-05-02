@@ -12,6 +12,7 @@ public class DotweenCam : MonoBehaviour
     private float _inputX; 
     public float duration;
     public float distance;
+    private bool isReset;
 
     void Update()
     {
@@ -35,6 +36,16 @@ public class DotweenCam : MonoBehaviour
         {
             camTr.DOKill();
             camTr.DOMove(new Vector3(playerPosition.x + _inputX, playerPosition.y, camPosition.z), duration);
+            isReset = false;
+        }
+        else
+        {
+            isReset = false;
+            if (!isReset)
+            {
+                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, camPosition.z), duration);
+                isReset = true;
+            }
         }
     }
 }
