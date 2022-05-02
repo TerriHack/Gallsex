@@ -36,3 +36,4 @@ MonoBehaviour:
   waitTime: 2
   timeToSleep: 5
   dashDuration: 0.4
+  camOffset: 0.3

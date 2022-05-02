@@ -62,4 +62,7 @@ public class PlayerControllerData : ScriptableObject
     public float waitTime = 2f;
     public float timeToSleep = 2f;
     public float dashDuration = 1f;
+
+    [Space] [Header("Camera")] 
+    public float camOffset;
 }
