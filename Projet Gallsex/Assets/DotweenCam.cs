@@ -43,7 +43,7 @@ public class DotweenCam : MonoBehaviour
             isReset = false;
             if (!isReset)
             {
-                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, camPosition.z), duration);
+                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, camPosition.z),2);
                 isReset = true;
             }
         }
