@@ -24,7 +24,7 @@ public class DotweenCam : MonoBehaviour
         var camPosition = camTr.position;
 
 
-        if (distance < -5 || distance > 5)
+        if (distance < -3 || distance > 3)
         {
             duration = 0.7f;
         }else
@@ -41,6 +41,7 @@ public class DotweenCam : MonoBehaviour
         else
         {
             isReset = false;
+            
             if (!isReset)
             {
                 camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, camPosition.z),2);
