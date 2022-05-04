@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   globalData:
-    showActiveToggles: 1
-    showComponentIcons: 1
+    showActiveToggles: 0
+    showComponentIcons: 0
     showAllComponents: 1
-    twoToneBackground: 1
+    twoToneBackground: 0
     showLayers: 1
     editableLayers: 1
     applyChildLayers: 1
@@ -555,6 +555,8 @@ MonoBehaviour:
       shown: 0
     - name: camerafollow
       shown: 0
+    - name: movingPlatformManager
+      shown: 0
     - name: pillierGrade
       shown: 0
     - name: platformRotate
@@ -576,8 +578,6 @@ MonoBehaviour:
     - name: BossTriggers
       shown: 0
     - name: calculateCameraBox
-      shown: 0
-    - name: movingPlatformManager
       shown: 0
     - name: tentaculeTrigger
       shown: 0

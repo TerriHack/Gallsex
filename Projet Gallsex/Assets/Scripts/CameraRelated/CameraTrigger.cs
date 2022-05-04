@@ -13,7 +13,7 @@ public class CameraTrigger : MonoBehaviour
 
     private void Start()
     {
-        //manager = transform.parent.transform.parent.gameObject;
+        manager = transform.parent.gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D player)

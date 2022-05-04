@@ -12,6 +12,7 @@ TagManager:
   - PillarTime
   - StopWatch
   - MovingPlatform
+  - Cloud
   layers:
   - Default
   - TransparentFX
