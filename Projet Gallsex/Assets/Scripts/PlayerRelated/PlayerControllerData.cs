@@ -64,5 +64,6 @@ public class PlayerControllerData : ScriptableObject
     public float dashDuration = 1f;
 
     [Space] [Header("Camera")] 
-    public float camOffset;
+    public float camOffsetX;
+    public float camOffsetY = 6f;
 }

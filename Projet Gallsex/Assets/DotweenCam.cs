@@ -7,23 +7,25 @@ using DG.Tweening;
 public class DotweenCam : MonoBehaviour
 {
     [SerializeField] private Transform camTr;
-    [SerializeField] private Transform playerTr;
+    [SerializeField] private Transform lookAheadTr;
+    [SerializeField] private PlayerBetterController playerController;
     private float _offsetSpeed;
     private float _inputX; 
     public float duration;
     public float distance;
+    private bool isReset;
 
     void Update()
     {
-        distance = Vector2.Distance(camTr.position,playerTr.position);
+        distance = Vector2.Distance(camTr.position,lookAheadTr.position);
 
         _inputX = Input.GetAxisRaw("Horizontal");
 
-        var playerPosition = playerTr.position;
+        var playerPosition = lookAheadTr.position;
         var camPosition = camTr.position;
 
 
-        if (distance < -5 || distance > 5)
+        if (distance < -3 || distance > 3)
         {
             duration = 0.7f;
         }else
@@ -35,6 +37,17 @@ public class DotweenCam : MonoBehaviour
         {
             camTr.DOKill();
             camTr.DOMove(new Vector3(playerPosition.x + _inputX, playerPosition.y, camPosition.z), duration);
+            isReset = false;
+        }
+        else
+        {
+            isReset = false;
+            
+            if (!isReset)
+            {
+                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, camPosition.z),2);
+                isReset = true;
+            }
         }
     }
 }

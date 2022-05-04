@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9dcdd22491c954c9eb06974e05eaaf, type: 3}
   m_Name: PlayerControllerData04
   m_EditorClassIdentifier: 
-  speed: 6
-  airControl: 0.4
+  speed: 6.5
+  airControl: 0.45
   jumpForce: 21.5
   wallJumpTime: 0.1
   xWallForce: 22
@@ -36,4 +36,5 @@ MonoBehaviour:
   waitTime: 2
   timeToSleep: 5
   dashDuration: 0.4
-  camOffset: 0.3
+  camOffsetX: 0.1
+  camOffsetY: 3

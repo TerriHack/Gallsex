@@ -8,45 +8,85 @@ public class LookAhead : MonoBehaviour
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Transform tr;
     [SerializeField] private Transform playerTr;
+    [SerializeField] private Rigidbody2D playerRb;
+    [SerializeField] private PlayerBetterController playerController;
 
-
+    public bool _isWallJumping;
+    
     public bool isMoving;
- 
-    private float inputX;  
-    private float inputY;
-    public float lookAhead;
+    public bool _isReseted;
+
+    private float _wallJumpCounter;
+    private float inputX;
+    public float lookAheadX;
 
     private void Update()
     {
-    
         InputDetection();
-        
-        tr.position = new Vector2(playerTr.position.x + inputX * lookAhead, playerTr.position.y + inputY * lookAhead);
-        
+        LookAheadCalculation();
         LookAheadClamp();
-
+        LookAheadReset();
+        WallJumpDetection();
     }
 
     private void FixedUpdate()
     {
-        if(isMoving) lookAhead += playerData.camOffset;
+        CameraLookAhead();
     }
 
+    private void CameraLookAhead()
+    {
+        if (isMoving && playerController.airTime < 0.5f) tr.position = new Vector2(playerTr.position.x + inputX * lookAheadX, playerTr.position.y); //LookAhead while running on the ground
+        else if (_isWallJumping) //LookAhead while wallJumping
+        {
+            tr.position = new Vector2(playerTr.position.x, playerTr.position.y + playerData.camOffsetY);
+        }
+        else tr.position = new Vector2(playerTr.position.x, playerTr.position.y); //LookAhead static
+    }
+    private void LookAheadCalculation()
+    {
+        if(isMoving) lookAheadX += playerData.camOffsetX;
+    }
+    
     private void LookAheadClamp()
     {
-        if (lookAhead < -10f) lookAhead = -10f;
-        else if (lookAhead > 10f) lookAhead = 10f;
-
-        if (!isMoving) lookAhead = 0f;
+        if (lookAheadX < -10f) lookAheadX = -10f;
+        else if (lookAheadX > 10f) lookAheadX = 10f;
     }
-
-
     private void InputDetection()
     {
-        inputX = Input.GetAxisRaw("Horizontal"); 
-        inputY = Input.GetAxisRaw("Vertical");
+        inputX = Input.GetAxis("Horizontal");
 
-        if (inputX != 0 || inputY != 0) isMoving = true;
+        if (inputX != 0) isMoving = true;
         else isMoving = false;
+    }
+
+    private void LookAheadReset()
+    {
+        //Reset when slow or static 
+        if (playerRb.velocity.x > -0.2f && playerRb.velocity.x < 0.2f && playerRb.velocity.y > -0.2f && playerRb.velocity.y < 0.2f)
+        {
+            lookAheadX = 0f;
+        }
+        
+        //Reset when changing direction (Flip)
+        if (_isReseted != playerController.lookAheadReset)
+        {
+            lookAheadX = 0f; 
+            _isReseted = playerController.lookAheadReset;
+        }
+
+        //Reset when wallSlide
+        if (playerController.wallSliding) lookAheadX = 0f;
+    }
+
+    private void WallJumpDetection()
+    {
+        _wallJumpCounter += Time.deltaTime;
+        
+        if (playerController.wallJumping) _wallJumpCounter = 0;
+
+        if (_wallJumpCounter < 0.4f) _isWallJumping = true;
+        else _isWallJumping = false;
     }
 }
