@@ -15,6 +15,10 @@ public class pillierGrade : MonoBehaviour
     public float timeSpent;
     public GameObject manager;
 
+    private void Start()
+    {
+        manager = transform.parent.gameObject;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

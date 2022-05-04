@@ -48,18 +48,8 @@ public class CameraTriggerManager : MonoBehaviour
         DOTween.To(() => colliderCameraLeft.offset.x, x => colliderCameraLeft.offset = new Vector2(x, colliderCameraLeft.offset.y), newScale.x * -2 +0.5f, tweenTime);
         DOTween.To(() => colliderCameraLeft.size.y, x => colliderCameraLeft.size = new Vector2(colliderCameraLeft.size.x ,x), newScale.x * 2, tweenTime);
         
-        
         DOTween.To(() => cloud.transform.localPosition.x, x => cloud.transform.localPosition = new Vector3(x ,cloud.transform.localPosition.y, 10),  newScale.x * -2 + newScale.x /cloudPosition, tweenTime);
 
-        //DOTween.To(() => cloud.transform.position.x, x => cloud.transform.position = new Vector2(x,cloud.transform.position.y),new Vector2(newScale.x * 2 - newScale.x / 3, cloud.transform.position.y), tweenTime);
-        //DOTween.To(() => cloud.transform.position , x =>  = x, , tweenTime);
-        
-        
-        //colliderCameraRight.offset = new Vector2(newScale.x * 2 - 0.5f, colliderCameraRight.offset.y);
-        //colliderCameraRight.size = new Vector2(colliderCameraRight.size.x, newScale.x * 2);
-        
-        /*colliderCameraLeft.offset = new Vector2( newScale.x * -2 + 0.5f, colliderCameraLeft.offset.y);
-        colliderCameraLeft.size = new Vector2(colliderCameraLeft.size.x, newScale.x * 2);*/
     }
 
     public void EditOffset(Vector2 newOffset)

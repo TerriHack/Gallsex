@@ -17,7 +17,10 @@ public class ManagerPillarGrade : MonoBehaviour
         pillars.Clear();
         for (int i = 0; i < transform.childCount; i++)
         {
-            pillars.Add(transform.GetChild(i).gameObject);
+            if(transform.GetChild(i).GetComponent<pillierGrade>())
+            {
+                pillars.Add(transform.GetChild(i).gameObject);
+            }
         }
         
         

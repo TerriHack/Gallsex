@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class CameraTrigger : MonoBehaviour
 {
+    
     public GameObject manager;
     public float type = 0;
     public Vector2 variable;
+    public float cloudPositionX;
     public bool changeTracking;
-
 
     private void Start()
     {
         manager = transform.parent.gameObject;
     }
+
 
     private void OnTriggerEnter2D(Collider2D player)
     {
@@ -22,8 +24,7 @@ public class CameraTrigger : MonoBehaviour
         {
             if (type == 0) //Scale changer
             {
-                //manager.GetComponent<CameraTriggerManager>().EditScale(variable);
-                manager.GetComponent<CameraTriggersManager>().EditScale(variable);
+                manager.GetComponent<CameraTriggerManager>().EditScale(variable, cloudPositionX);
             }
             else if (type == 1)// Offset changer
             {
@@ -31,9 +32,8 @@ public class CameraTrigger : MonoBehaviour
             }
             else if (type == 2)// Tracking changer
             {
-                //manager.GetComponent<CameraTriggerManager>().EditTracking(changeTracking);
+                manager.GetComponent<CameraTriggerManager>().EditTracking(changeTracking);
             }
-            Debug.Log("hello");
         }
     }
 }
