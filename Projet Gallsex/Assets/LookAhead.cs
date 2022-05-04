@@ -11,14 +11,14 @@ public class LookAhead : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private PlayerBetterController playerController;
 
-
+    public bool _isWallJumping;
+    
     public bool isMoving;
     public bool _isReseted;
 
+    private float _wallJumpCounter;
     private float inputX;
-    private float inputY;
     public float lookAheadX;
-    public float lookAheadY;
 
     private void Update()
     {
@@ -26,6 +26,7 @@ public class LookAhead : MonoBehaviour
         LookAheadCalculation();
         LookAheadClamp();
         LookAheadReset();
+        WallJumpDetection();
     }
 
     private void FixedUpdate()
@@ -35,31 +36,26 @@ public class LookAhead : MonoBehaviour
 
     private void CameraLookAhead()
     {
-        if (isMoving) tr.position = new Vector2(playerTr.position.x + inputX * lookAheadX, playerTr.position.y);
-        else if (playerController.airTime != 0f)
+        if (isMoving && playerController.airTime < 0.5f) tr.position = new Vector2(playerTr.position.x + inputX * lookAheadX, playerTr.position.y); //LookAhead while running on the ground
+        else if (_isWallJumping) //LookAhead while wallJumping
         {
-            if (playerRb.velocity.y > 0.1f) tr.position = new Vector2(playerTr.position.x, playerTr.position.y + lookAheadY);
-            else if (playerRb.velocity.y < -0.1f) tr.position = new Vector2(playerTr.position.x, playerTr.position.y - lookAheadY);
+            tr.position = new Vector2(playerTr.position.x, playerTr.position.y + playerData.camOffsetY);
         }
-        else tr.position = new Vector2(playerTr.position.x, playerTr.position.y);
+        else tr.position = new Vector2(playerTr.position.x, playerTr.position.y); //LookAhead static
     }
     private void LookAheadCalculation()
     {
         if(isMoving) lookAheadX += playerData.camOffsetX;
-        if(isMoving) lookAheadY += playerData.camOffsetY;
     }
+    
     private void LookAheadClamp()
     {
         if (lookAheadX < -10f) lookAheadX = -10f;
         else if (lookAheadX > 10f) lookAheadX = 10f;
-        
-        if (lookAheadY < -15f) lookAheadY = -15f;
-        else if (lookAheadY > 15f) lookAheadY = 15f;
     }
     private void InputDetection()
     {
         inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
 
         if (inputX != 0) isMoving = true;
         else isMoving = false;
@@ -70,8 +66,7 @@ public class LookAhead : MonoBehaviour
         //Reset when slow or static 
         if (playerRb.velocity.x > -0.2f && playerRb.velocity.x < 0.2f && playerRb.velocity.y > -0.2f && playerRb.velocity.y < 0.2f)
         {
-            lookAheadX = 0f; 
-            if(!isMoving) lookAheadY = 0f;
+            lookAheadX = 0f;
         }
         
         //Reset when changing direction (Flip)
@@ -83,5 +78,15 @@ public class LookAhead : MonoBehaviour
 
         //Reset when wallSlide
         if (playerController.wallSliding) lookAheadX = 0f;
+    }
+
+    private void WallJumpDetection()
+    {
+        _wallJumpCounter += Time.deltaTime;
+        
+        if (playerController.wallJumping) _wallJumpCounter = 0;
+
+        if (_wallJumpCounter < 0.4f) _isWallJumping = true;
+        else _isWallJumping = false;
     }
 }

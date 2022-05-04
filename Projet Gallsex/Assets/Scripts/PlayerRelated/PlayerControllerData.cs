@@ -65,5 +65,5 @@ public class PlayerControllerData : ScriptableObject
 
     [Space] [Header("Camera")] 
     public float camOffsetX;
-    public float camOffsetY;
+    public float camOffsetY = 6f;
 }

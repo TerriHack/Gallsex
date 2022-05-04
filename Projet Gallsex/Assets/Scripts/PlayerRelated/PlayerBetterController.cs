@@ -68,10 +68,10 @@ public class PlayerBetterController : MonoBehaviour
     public bool celesteModeOn;
     public bool lookAheadReset;
     public bool wallSliding;
+    public bool wallJumping;
     #endregion
     
     #region Private bool
-    private bool wallJumping;
     private bool _coyoteGrounded;
     private bool _canNuance;
     private bool _isNuancing;

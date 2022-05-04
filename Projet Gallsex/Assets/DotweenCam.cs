@@ -7,7 +7,8 @@ using DG.Tweening;
 public class DotweenCam : MonoBehaviour
 {
     [SerializeField] private Transform camTr;
-    [SerializeField] private Transform playerTr;
+    [SerializeField] private Transform lookAheadTr;
+    [SerializeField] private PlayerBetterController playerController;
     private float _offsetSpeed;
     private float _inputX; 
     public float duration;
@@ -16,11 +17,11 @@ public class DotweenCam : MonoBehaviour
 
     void Update()
     {
-        distance = Vector2.Distance(camTr.position,playerTr.position);
+        distance = Vector2.Distance(camTr.position,lookAheadTr.position);
 
         _inputX = Input.GetAxisRaw("Horizontal");
 
-        var playerPosition = playerTr.position;
+        var playerPosition = lookAheadTr.position;
         var camPosition = camTr.position;
 
 
