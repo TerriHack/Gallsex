@@ -10,6 +10,12 @@ public class CameraTrigger : MonoBehaviour
     public Vector2 variable;
     public bool changeTracking;
 
+
+    private void Start()
+    {
+        //manager = transform.parent.transform.parent.gameObject;
+    }
+
     private void OnTriggerEnter2D(Collider2D player)
     {
         if (player.CompareTag("Player"))

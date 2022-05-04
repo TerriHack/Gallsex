@@ -101,6 +101,9 @@ MonoBehaviour:
   wayPoints:
   - {fileID: 6341075631393392002}
   - {fileID: 7212112088464367861}
+  waitTime: 1
+  waitFor: 0
+  waiting: 0
   speed: 5
 --- !u!61 &1584517486645271882
 BoxCollider2D:
@@ -165,7 +168,7 @@ GameObject:
   - component: {fileID: 342901480672737689}
   m_Layer: 0
   m_Name: MovingPlatform
-  m_TagString: JumpableGround
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class movingPlatformManager : MonoBehaviour
@@ -8,10 +10,7 @@ public class movingPlatformManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Transform child in transform)
-        {
-            childrenMovingPlatforms.Add(child.gameObject);
-        }
+        childrenMovingPlatforms = GameObject.FindGameObjectsWithTag("MovingPlatform").ToList();
     }
 
     public void OnPlayerDeath()
