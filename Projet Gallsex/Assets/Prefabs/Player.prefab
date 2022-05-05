@@ -63,7 +63,7 @@ Transform:
   - {fileID: 4893794574188605189}
   - {fileID: 5774259455804804586}
   m_Father: {fileID: 7178299340679101404}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5039203753028582076
 GameObject:
@@ -315,8 +315,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4208542158427282297}
   - {fileID: 5044844266871896788}
+  - {fileID: 4208542158427282297}
   - {fileID: 590629326630037513}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -471,7 +471,9 @@ MonoBehaviour:
   groundCheckTr: {fileID: 7824335608248257836}
   playerMat: {fileID: 6200000, guid: 0d9290e3876a85b49bc1fc6799b99824, type: 2}
   vfxRun: {fileID: 1030313107187109779}
+  vfxWallSlide: {fileID: 0}
   dustJump: {fileID: 5225242303262374427, guid: 258be6e99b742ea4b9dbf925c2b5c8f2, type: 3}
+  airTime: 0
   inputX: 0
   inputY: 0
   isGrounded: 0
@@ -490,7 +492,9 @@ MonoBehaviour:
   isRising: 0
   isDashingDown: 0
   celesteModeOn: 0
-  isDebug: 0
+  lookAheadReset: 0
+  wallSliding: 0
+  wallJumping: 0
 --- !u!114 &1195328312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621752128293229679, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7621752128293229679, guid: e7b3eb98948b0df41a35ae5025b5d266, type: 3}
       propertyPath: m_LocalPosition.x

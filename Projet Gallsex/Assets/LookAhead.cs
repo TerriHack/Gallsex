@@ -5,20 +5,28 @@ using UnityEngine;
 
 public class LookAhead : MonoBehaviour
 {
+    #region Components
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private Transform tr;
     [SerializeField] private Transform playerTr;
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private PlayerBetterController playerController;
-
-    public bool _isWallJumping;
+    #endregion
     
+    #region Public bool
+    public bool _isWallJumping;
     public bool isMoving;
     public bool _isReseted;
+    #endregion
 
+    #region Private float
     private float _wallJumpCounter;
     private float inputX;
+    #endregion
+
+    #region Public float
     public float lookAheadX;
+    #endregion
 
     private void Update()
     {
@@ -33,7 +41,9 @@ public class LookAhead : MonoBehaviour
     {
         CameraLookAhead();
     }
-
+    
+    //********************************
+    
     private void CameraLookAhead()
     {
         if (isMoving && playerController.airTime < 0.5f) tr.position = new Vector2(playerTr.position.x + inputX * lookAheadX, playerTr.position.y); //LookAhead while running on the ground
@@ -47,7 +57,6 @@ public class LookAhead : MonoBehaviour
     {
         if(isMoving) lookAheadX += playerData.camOffsetX;
     }
-    
     private void LookAheadClamp()
     {
         if (lookAheadX < -10f) lookAheadX = -10f;
@@ -60,7 +69,6 @@ public class LookAhead : MonoBehaviour
         if (inputX != 0) isMoving = true;
         else isMoving = false;
     }
-
     private void LookAheadReset()
     {
         //Reset when slow or static 
@@ -79,7 +87,6 @@ public class LookAhead : MonoBehaviour
         //Reset when wallSlide
         if (playerController.wallSliding) lookAheadX = 0f;
     }
-
     private void WallJumpDetection()
     {
         _wallJumpCounter += Time.deltaTime;
