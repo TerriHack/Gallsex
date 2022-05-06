@@ -493,8 +493,6 @@ MonoBehaviour:
       shown: 0
     - name: WindZone
       shown: 0
-    - name: BackCheck
-      shown: 0
     - name: BossFightTrigger
       shown: 0
     - name: DotweenCam
@@ -565,6 +563,8 @@ MonoBehaviour:
       shown: 0
     - name: prefabTimer
       shown: 0
+    - name: BackCheck
+      shown: 0
     - name: Dash
       shown: 0
     - name: FrontCheck
@@ -576,6 +576,8 @@ MonoBehaviour:
     - name: HatAnchor
       shown: 0
     - name: PlayerBetterController
+      shown: 0
+    - name: VFXManager
       shown: 0
     - name: BossTriggers
       shown: 0

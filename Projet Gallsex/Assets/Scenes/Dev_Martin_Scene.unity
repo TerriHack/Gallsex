@@ -4027,7 +4027,7 @@ MonoBehaviour:
   horizontal: 0
   offset: {x: 0, y: 3, z: -2}
   movementType: 0
-  speedDivision: 0
+  speedFactor: 0
   minSpeed: 0
   maxSpeed: 0
   toNextWaypoint: 0
@@ -4562,11 +4562,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315441861629669613, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: m_TagString
-      value: MainCamera
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4315441862191878613, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315441862191878613, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4315441862191878615, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7267,6 +7271,34 @@ Transform:
   m_Father: {fileID: 1486980609}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1705923706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4315441862191878613, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+  m_PrefabInstance: {fileID: 967741963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1705923708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705923706}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22020dc414099fa43b0c42ec348cb53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 0
+  offset: {x: 0, y: 0, z: 0}
+  movementType: 0
+  speedFactor: 1.018
+  minSpeed: 0.1
+  maxSpeed: 0
+  toNextWaypoint: 9
+  cloud: {fileID: 0}
+  respawnPosition: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  waypoints: []
 --- !u!1 &1723075616
 GameObject:
   m_ObjectHideFlags: 0
@@ -26129,34 +26161,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1732321712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4315441861629669613, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
-  m_PrefabInstance: {fileID: 967741963}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1732321714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732321712}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22020dc414099fa43b0c42ec348cb53f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: 0
-  offset: {x: 0, y: 0, z: 0}
-  movementType: 0
-  speedDivision: 1.02
-  minSpeed: 0
-  maxSpeed: 0
-  toNextWaypoint: 0
-  cloud: {fileID: 0}
-  respawnPosition: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
-  waypoints: []
 --- !u!1 &1753664507
 GameObject:
   m_ObjectHideFlags: 0
@@ -28213,6 +28217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 416348947, guid: b81efddebd8aeda4f86528cc47e7f765, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1813254416040427883, guid: b81efddebd8aeda4f86528cc47e7f765, type: 3}
       propertyPath: m_Name
       value: GameManager

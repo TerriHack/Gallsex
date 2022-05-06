@@ -12,7 +12,7 @@ public class camerafollow : MonoBehaviour
    public float movementType = 0; // 0(cineMachine), 1(Boss), 2(Tween After Boss)
    
    private float speed;
-   public float speedDivision;
+   public float speedFactor;
    public float minSpeed;
    public float maxSpeed;
    public float toNextWaypoint;
@@ -45,39 +45,37 @@ public class camerafollow : MonoBehaviour
       }
    }
 
-   private void FixedUpdate()
+   private void LateUpdate()
    {
-      
-      if (Vector2.Distance( waypoints[currentWaypointIndex], transform.position) < .1f)
+      if (Vector2.Distance(transform.position, waypoints[currentWaypointIndex]) < toNextWaypoint)
       {
-         currentWaypointIndex++;
-         if (currentWaypointIndex > waypoints.Count)
-         {
-            // make it stop
-         }
-      }
-      else if( Vector2.Distance( waypoints[currentWaypointIndex],transform.position) > toNextWaypoint)
-      {
-         Debug.Log( Vector2.Distance(waypoints[currentWaypointIndex], transform.position));
-         if (speed ! > maxSpeed) // go faster
-         {
-            speed *= speedDivision;
-            if (speed > maxSpeed)
-            {
-               speed = maxSpeed;
-            }
-         }
-      }
-      else if( Vector2.Distance( waypoints[currentWaypointIndex],transform.position) < toNextWaypoint)
-      {
-         speed /= speedDivision; // go slower
+         speed /= speedFactor;
          if (speed < minSpeed)
          {
             speed = minSpeed;
          }
       }
-      
-      transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
+      else
+      {
+         speed *= speedFactor;
+         if (speed > maxSpeed)
+         {
+            speed = maxSpeed;
+         }
+      }
+
+      if (Vector2.Distance(waypoints[currentWaypointIndex], transform.position) < .1f)
+      {
+         transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+         currentWaypointIndex++;
+         if (currentWaypointIndex >= waypoints.Count)
+         {
+            GetComponent<camerafollow>().enabled = false;
+            GetComponent<DotweenCam>().enabled = true;
+            currentWaypointIndex = 0;
+         }
+      }
+      transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
    }
 
    public void BossFight(Vector3 startPos, List<Vector3> waypointList, float tweenSpeed, bool isHorizontal)
@@ -88,8 +86,12 @@ public class camerafollow : MonoBehaviour
       waypoints = waypointList;
       speed = tweenSpeed;
       horizontal = isHorizontal;
-      transform.parent.GetComponent<DotweenCam>().enabled = false;
+      GetComponent<DotweenCam>().enabled = false;
       GetComponent<camerafollow>().enabled = true;
+      for (int i = 0; i < waypoints.Count; i++)
+      {
+         waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, -10);
+      }
    }
 
    public void OnDeath()
