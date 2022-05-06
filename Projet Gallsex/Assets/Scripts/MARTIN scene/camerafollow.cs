@@ -9,7 +9,6 @@ public class camerafollow : MonoBehaviour
 {
    public bool horizontal;
    public Vector3 offset;
-   public float movementType = 0; // 0(cineMachine), 1(Boss), 2(Tween After Boss)
    
    private float speed;
    public float speedFactor;
@@ -47,9 +46,10 @@ public class camerafollow : MonoBehaviour
 
    private void LateUpdate()
    {
-      if (Vector2.Distance(transform.position, waypoints[currentWaypointIndex]) < toNextWaypoint)
+      if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex]) < toNextWaypoint)
       {
          speed /= speedFactor;
+         //speed -= Time.deltaTime * 10;
          if (speed < minSpeed)
          {
             speed = minSpeed;
@@ -64,7 +64,7 @@ public class camerafollow : MonoBehaviour
          }
       }
 
-      if (Vector2.Distance(waypoints[currentWaypointIndex], transform.position) < .1f)
+      if (Vector2.Distance(waypoints[currentWaypointIndex], transform.position) < .5f)
       {
          transform.position = new Vector3(transform.position.x, transform.position.y, -10);
          currentWaypointIndex++;
@@ -76,6 +76,7 @@ public class camerafollow : MonoBehaviour
          }
       }
       transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
+      Debug.Log(speed);
    }
 
    public void BossFight(Vector3 startPos, List<Vector3> waypointList, float tweenSpeed, bool isHorizontal)
@@ -96,14 +97,12 @@ public class camerafollow : MonoBehaviour
 
    public void OnDeath()
    {
-      if (movementType != 0)
-      {
-         transform.position = respawnPosition;
-         speed = 0.1f;
-         currentWaypointIndex = 0;
-         cloud.transform.rotation = Quaternion.Euler(0,0,90);
-         cloud.transform.localPosition = new Vector3(0, 0, 10);
-      }
+      transform.position = respawnPosition;
+      speed = 0.1f;
+      currentWaypointIndex = 0;
+      cloud.transform.rotation = Quaternion.Euler(0,0,90);
+      cloud.transform.localPosition = new Vector3(0, 0, 10);
+      
    }
 
 }

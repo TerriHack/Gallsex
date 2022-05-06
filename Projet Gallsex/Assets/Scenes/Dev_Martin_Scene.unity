@@ -4026,7 +4026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: 0
   offset: {x: 0, y: 3, z: -2}
-  movementType: 0
   speedFactor: 0
   minSpeed: 0
   maxSpeed: 0
@@ -7290,11 +7289,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: 0
   offset: {x: 0, y: 0, z: 0}
-  movementType: 0
-  speedFactor: 1.018
-  minSpeed: 0.1
-  maxSpeed: 0
-  toNextWaypoint: 9
+  speedFactor: 1.005
+  minSpeed: 1
+  maxSpeed: 10
+  toNextWaypoint: 10
   cloud: {fileID: 0}
   respawnPosition: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
