@@ -7,8 +7,11 @@ using UnityEngine;
 public class Dash : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform playerTr;
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private PlayerBetterController playerController;
+    [SerializeField] private GameObject _dashVFXGameObject;   
+    [SerializeField] private ParticleSystemRenderer _dashVFX;
 
     private float _inputX;
     private float _inputY;
@@ -18,7 +21,8 @@ public class Dash : MonoBehaviour
     private float _dashDelay;
     private float _dashAnimCounter;
     private float _dashCooldownCounter;
-
+    
+    private Vector2 _playerPos;
     private Vector2 _direction;
     
     public bool isDashing;
@@ -57,6 +61,7 @@ public class Dash : MonoBehaviour
             {
                 if (_canDash == 0f)
                 {
+                    Instantiate(_dashVFXGameObject, playerTr.position, _dashVFX.transform.rotation);
                     _dashDelay = playerData.dashTime;
                     _dashAnimCounter = playerData.dashDuration;
                     _dashCooldownCounter = playerData.dashCooldown;
@@ -129,8 +134,16 @@ public class Dash : MonoBehaviour
     {
         if (playerController.isGrounded)
         {
-            if(_inputX > 0 && !playerController._facingRight && playerController.inputX !> 0f) playerController.Flip();
-            else if(_inputX < 0 && playerController._facingRight && playerController.inputX !< 0f) playerController.Flip();
+            if (_inputX > 0 && !playerController._facingRight && playerController.inputX !> 0f)
+            {
+                _dashVFX.flip = new Vector3(1, 0, 0);
+                playerController.Flip();
+            }
+            else if (_inputX < 0 && playerController._facingRight && playerController.inputX ! < 0f)
+            {
+                _dashVFX.flip = new Vector3(1, 0, 0);
+                playerController.Flip();
+            }
         }
         else
         {
