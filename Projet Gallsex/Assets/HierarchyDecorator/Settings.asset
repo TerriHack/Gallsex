@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   globalData:
-    showActiveToggles: 1
-    showComponentIcons: 1
+    showActiveToggles: 0
+    showComponentIcons: 0
     showAllComponents: 1
-    twoToneBackground: 1
+    twoToneBackground: 0
     showLayers: 1
     editableLayers: 1
     applyChildLayers: 1
@@ -493,7 +493,7 @@ MonoBehaviour:
       shown: 0
     - name: WindZone
       shown: 0
-    - name: BackCheck
+    - name: BossFightTrigger
       shown: 0
     - name: DotweenCam
       shown: 0
@@ -563,6 +563,8 @@ MonoBehaviour:
       shown: 0
     - name: prefabTimer
       shown: 0
+    - name: BackCheck
+      shown: 0
     - name: Dash
       shown: 0
     - name: FrontCheck
@@ -574,6 +576,8 @@ MonoBehaviour:
     - name: HatAnchor
       shown: 0
     - name: PlayerBetterController
+      shown: 0
+    - name: VFXManager
       shown: 0
     - name: BossTriggers
       shown: 0
