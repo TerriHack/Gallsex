@@ -27,6 +27,6 @@ public class VFXManager : MonoBehaviour
 
     private void DashVFX()
     {
-        Instantiate(_dashVFXGameObject, playerTr.position, _dashVFX.transform.rotation);
+        //Instantiate(_dashVFXGameObject, playerTr.position, _dashVFX.transform.rotation);
     }
 }
