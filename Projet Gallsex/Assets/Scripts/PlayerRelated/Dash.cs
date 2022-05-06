@@ -61,7 +61,7 @@ public class Dash : MonoBehaviour
             {
                 if (_canDash == 0f)
                 {
-                    Instantiate(_dashVFXGameObject, playerTr.position, _dashVFX.transform.rotation);
+
                     _dashDelay = playerData.dashTime;
                     _dashAnimCounter = playerData.dashDuration;
                     _dashCooldownCounter = playerData.dashCooldown;
@@ -136,12 +136,10 @@ public class Dash : MonoBehaviour
         {
             if (_inputX > 0 && !playerController._facingRight && playerController.inputX !> 0f)
             {
-                _dashVFX.flip = new Vector3(1, 0, 0);
                 playerController.Flip();
             }
             else if (_inputX < 0 && playerController._facingRight && playerController.inputX ! < 0f)
             {
-                _dashVFX.flip = new Vector3(1, 0, 0);
                 playerController.Flip();
             }
         }
