@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   globalData:
-    showActiveToggles: 1
-    showComponentIcons: 1
+    showActiveToggles: 0
+    showComponentIcons: 0
     showAllComponents: 1
-    twoToneBackground: 1
+    twoToneBackground: 0
     showLayers: 1
     editableLayers: 1
     applyChildLayers: 1
@@ -494,6 +494,8 @@ MonoBehaviour:
     - name: WindZone
       shown: 0
     - name: BackCheck
+      shown: 0
+    - name: BossFightTrigger
       shown: 0
     - name: DotweenCam
       shown: 0
