@@ -13,26 +13,27 @@ public class CameraTriggerManager : MonoBehaviour
     public BoxCollider2D colliderCameraTop;
     public GameObject cloud;
 
-    /*private void Start()
+    private void Start()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         cloud = GameObject.FindGameObjectWithTag("Cloud");
-        for (int i = 0; i < cam.transform.GetChild(3).childCount; i++)
+        GameObject boundaryCount = cam.transform.parent.GetChild(2).gameObject;
+        for (int i = 0; i < boundaryCount.transform.childCount; i++)
         {
             if (i == 0)
             {
-                colliderCameraRight = cam.transform.GetChild(3).GetChild(i).GetComponent<BoxCollider2D>();
+                colliderCameraRight = boundaryCount.transform.GetChild(i).GetComponent<BoxCollider2D>();
             }
             else if (i == 1)
-            {
-                colliderCameraLeft = cam.transform.GetChild(3).GetChild(i).GetComponent<BoxCollider2D>();
+            { 
+                colliderCameraLeft = boundaryCount.transform.GetChild(i).GetComponent<BoxCollider2D>();
             }
             else
             {
-                colliderCameraTop = cam.transform.GetChild(3).GetChild(i).GetComponent<BoxCollider2D>();
+                colliderCameraTop = boundaryCount.transform.GetChild(i).GetComponent<BoxCollider2D>();
             }
         }
-    }*/
+    }
 
     public void EditScale(Vector2 newScale,float cloudPosition)
     {
