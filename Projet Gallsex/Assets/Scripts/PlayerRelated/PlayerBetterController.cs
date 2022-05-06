@@ -17,6 +17,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private PhysicsMaterial2D playerMat;
     [SerializeField] private GameObject vfxRun;    
     [SerializeField] private GameObject vfxWallSlide;
+    [SerializeField] private VFXManager _vfxManager;
     private Vector2 _feetPos;
     #endregion
     
@@ -309,6 +310,8 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * inputX,playerData.yWallForce),ForceMode2D.Impulse);
             wallJumping = false;
+            if (inputX > 0f) _vfxManager.isWallJumpingLeft = true;
+            else if(inputX < 0f) _vfxManager.isWallJumpingRight = true;
         }
         
         if (isTouchingFront && inputX != 0)
@@ -316,6 +319,9 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -inputX,playerData.yWallForce),ForceMode2D.Impulse);
             wallJumping = false;
+
+            if (inputX > 0f) _vfxManager.isWallJumpingLeft = true;
+            else if(inputX < 0f) _vfxManager.isWallJumpingRight = true;
         }
     }
     

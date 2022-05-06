@@ -7,11 +7,9 @@ using UnityEngine;
 public class Dash : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform playerTr;
     [SerializeField] private PlayerControllerData playerData;
     [SerializeField] private PlayerBetterController playerController;
-    [SerializeField] private GameObject _dashVFXGameObject;   
-    [SerializeField] private ParticleSystemRenderer _dashVFX;
+    [SerializeField] private VFXManager _vfxManager;
 
     private float _inputX;
     private float _inputY;
@@ -61,7 +59,6 @@ public class Dash : MonoBehaviour
             {
                 if (_canDash == 0f)
                 {
-                    Instantiate(_dashVFXGameObject, playerTr.position, _dashVFX.transform.rotation);
                     _dashDelay = playerData.dashTime;
                     _dashAnimCounter = playerData.dashDuration;
                     _dashCooldownCounter = playerData.dashCooldown;
@@ -95,7 +92,10 @@ public class Dash : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_dashDelay >= 0f) Propulsion();
+        if (_dashDelay >= 0f)
+        {
+            Propulsion();
+        }
     }
 
     private void Propulsion()
@@ -107,6 +107,8 @@ public class Dash : MonoBehaviour
         {
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(_direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
+            dashVFX();
+            
             _canDash += 1f;
 
             if (_inputY > 0.3f) playerController.isDashingUp = true;
@@ -136,12 +138,10 @@ public class Dash : MonoBehaviour
         {
             if (_inputX > 0 && !playerController._facingRight && playerController.inputX !> 0f)
             {
-                _dashVFX.flip = new Vector3(1, 0, 0);
                 playerController.Flip();
             }
             else if (_inputX < 0 && playerController._facingRight && playerController.inputX ! < 0f)
             {
-                _dashVFX.flip = new Vector3(1, 0, 0);
                 playerController.Flip();
             }
         }
@@ -151,5 +151,19 @@ public class Dash : MonoBehaviour
             else if(_inputX < 0 && playerController._facingRight) playerController.Flip();
         }
 
+    }
+
+    private void dashVFX()
+    {
+        if (_inputX > 0)
+        {
+            _vfxManager.isDashingRight = true;
+            _vfxManager.isDashingLeft = false;
+        }
+        else if(_inputX < 0)
+        {
+            _vfxManager.isDashingRight = false;
+            _vfxManager.isDashingLeft = true;
+        }
     }
 }

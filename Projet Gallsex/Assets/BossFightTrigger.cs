@@ -1,27 +1,35 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BossFightTrigger : MonoBehaviour
 {
     public GameObject cam;
     public Vector3 startPosition;
-    public Vector3 waypoint1;
-    public Vector3 waypoint2;
+    private List<GameObject> waypointList;
+    public List<Vector3> waypointVector3List;
     public float speed;
+    private bool triggered;
 
     private void Start()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera");
+        waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
+        for (int i = 0; i < waypointList.Count; i++)
+        {
+            waypointVector3List.Add(waypointList[i].transform.position);
+        }
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       if (other.CompareTag("Player"))
+       if (other.CompareTag("Player") && triggered == false)
        {
-          cam.GetComponent<camerafollow>().BossFight(startPosition,waypoint1,waypoint2,speed,true);
+          cam.GetComponent<camerafollow>().BossFight(startPosition,waypointVector3List,speed,true);
+          triggered = true;
        }
     }
 }
