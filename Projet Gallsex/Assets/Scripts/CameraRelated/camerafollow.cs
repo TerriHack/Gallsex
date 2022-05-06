@@ -6,7 +6,6 @@ public class Camerafollow : MonoBehaviour
 {
    public Transform target;
 
-   public float smoothSpeed = 0.125f;
    public Vector3 offset;
    public float movementType = 0; // 0(cineMachine), 1(Boss), 2(Tween After Boss)
    public GameObject cinemachine;
@@ -14,7 +13,6 @@ public class Camerafollow : MonoBehaviour
    public float minSpeed;
    public float maxSpeed;
    public GameObject cloud;
-   public Vector3 respawnPosition;
    
    [SerializeField] private GameObject[] waypoints;
    private int currentWaypointIndex = 0;
@@ -54,7 +52,6 @@ public class Camerafollow : MonoBehaviour
             {
                movementType = 2;
                currentWaypointIndex = 0;
-               //cinemachine.GetComponent<CinemachineVirtualCamera>().enabled = true;
             }
             else
             {
@@ -82,14 +79,13 @@ public class Camerafollow : MonoBehaviour
       }
    }
 
-   public void BossFight(Vector3 StartPos, Vector3 waypoint1, Vector3 waypoint2, float transitionTime)
+   public void BossFight(Vector3 waypoint1, Vector3 waypoint2, float transitionTime)
    {
-      respawnPosition = StartPos;
       waypoints[0].transform.position = new Vector3(waypoint1.x,waypoint1.y,-10);
       waypoints[1].transform.position = new Vector3(waypoint2.x, waypoint2.y, -10);
       movementType = 1;
       speed = transitionTime;
-      cinemachine.GetComponent<CinemachineVirtualCamera>().enabled = false;
+      //cinemachine.GetComponent<CinemachineVirtualCamera>().enabled = false;
    }
 
 }

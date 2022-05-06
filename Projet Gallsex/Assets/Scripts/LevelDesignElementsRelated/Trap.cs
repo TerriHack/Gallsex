@@ -22,5 +22,6 @@ public class Trap : MonoBehaviour
     private void Start()
     {
         movingPlatformManager = GameObject.FindGameObjectWithTag("MovingPlatformManager");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }
