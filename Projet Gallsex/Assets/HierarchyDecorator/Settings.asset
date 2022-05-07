@@ -617,12 +617,6 @@ MonoBehaviour:
       shown: 0
     - name: ShadowCasterGroup2D
       shown: 0
-    - name: ExampleScript
-      shown: 0
-    - name: ExampleScript2
-      shown: 0
-    - name: ExampleScriptWithIcon
-      shown: 0
     - name: PlaymodeTestsController
       shown: 0
     - name: PlayModeRunnerCallback
@@ -932,6 +926,32 @@ MonoBehaviour:
     - name: PostProcessLayer
       shown: 0
     - name: PostProcessVolume
+      shown: 0
+    - name: ExampleScript
+      shown: 0
+    - name: ExampleScript2
+      shown: 0
+    - name: ExampleScriptWithIcon
+      shown: 0
+    - name: SpriteLibrary
+      shown: 0
+    - name: SpriteResolver
+      shown: 0
+    - name: SpriteSkin
+      shown: 0
+    - name: SpriteSkinEntity
+      shown: 0
+    - name: SpriteSkinManagerInternal
+      shown: 0
+    - name: CCDSolver2D
+      shown: 0
+    - name: FabrikSolver2D
+      shown: 0
+    - name: IKManager2D
+      shown: 0
+    - name: LimbSolver2D
+      shown: 0
+    - name: Solver2D
       shown: 0
     - name: DOTweenComponent
       shown: 0

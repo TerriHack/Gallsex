@@ -108,7 +108,7 @@ public class camerafollow : MonoBehaviour
       float positionX = transform.GetChild(0).GetComponent<Camera>().orthographicSize;
       cloud.transform.parent = transform;
       cloud.transform.position = new Vector3(positionX / 2, startPos.y, 0);
-      cloud.transform.localScale = new Vector3(1, transform.GetChild(0).GetComponent<Camera>().orthographicSize * 4, 1);
+      cloud.transform.localScale = new Vector3(1, transform.GetChild(0).GetComponent<Camera>().orthographicSize * 10, 1);
    }
 
    public void OnDeath()
