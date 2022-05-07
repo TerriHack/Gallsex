@@ -571,6 +571,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4315441862191878615}
     m_Modifications:
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809875, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809877, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_margin.w
+      value: -26.431396
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153320831571809877, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
+      propertyPath: m_margin.z
+      value: -80.82965
+      objectReference: {fileID: 0}
     - target: {fileID: 8153320831636344556, guid: 4ff59812a86a28b4c8aa8b50c95dd42e, type: 3}
       propertyPath: m_Name
       value: timerCanvas
@@ -771,11 +811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.3
+      value: -219.6
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: -241.1
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.z
