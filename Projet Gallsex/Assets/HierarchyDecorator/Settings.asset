@@ -549,6 +549,8 @@ MonoBehaviour:
       shown: 0
     - name: CameraTriggerManager
       shown: 0
+    - name: DataManager
+      shown: 0
     - name: ManagerPillarGrade
       shown: 0
     - name: PlatformDisappear
@@ -616,6 +618,12 @@ MonoBehaviour:
     - name: ShadowCaster2D
       shown: 0
     - name: ShadowCasterGroup2D
+      shown: 0
+    - name: ExampleScript
+      shown: 0
+    - name: ExampleScript2
+      shown: 0
+    - name: ExampleScriptWithIcon
       shown: 0
     - name: PlaymodeTestsController
       shown: 0
@@ -926,12 +934,6 @@ MonoBehaviour:
     - name: PostProcessLayer
       shown: 0
     - name: PostProcessVolume
-      shown: 0
-    - name: ExampleScript
-      shown: 0
-    - name: ExampleScript2
-      shown: 0
-    - name: ExampleScriptWithIcon
       shown: 0
     - name: SpriteLibrary
       shown: 0
