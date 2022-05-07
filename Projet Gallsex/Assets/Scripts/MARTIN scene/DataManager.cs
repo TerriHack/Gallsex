@@ -12,10 +12,6 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
-        if (whichLevel == 0)
-        {
-            whichLevel = 1;
-        }
         if (PlayerPrefs.HasKey("Level" + whichLevel))
         {
             endScore1 = PlayerPrefs.GetFloat("Level"+whichLevel+"Score1");
