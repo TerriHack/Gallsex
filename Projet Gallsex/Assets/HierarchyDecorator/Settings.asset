@@ -835,6 +835,16 @@ MonoBehaviour:
       shown: 0
     - name: DropdownItem
       shown: 0
+    - name: CCDSolver2D
+      shown: 0
+    - name: FabrikSolver2D
+      shown: 0
+    - name: IKManager2D
+      shown: 0
+    - name: LimbSolver2D
+      shown: 0
+    - name: Solver2D
+      shown: 0
     - name: CinemachineCameraOffset
       shown: 0
     - name: CinemachineRecomposer
@@ -944,16 +954,6 @@ MonoBehaviour:
     - name: SpriteSkinEntity
       shown: 0
     - name: SpriteSkinManagerInternal
-      shown: 0
-    - name: CCDSolver2D
-      shown: 0
-    - name: FabrikSolver2D
-      shown: 0
-    - name: IKManager2D
-      shown: 0
-    - name: LimbSolver2D
-      shown: 0
-    - name: Solver2D
       shown: 0
     - name: DOTweenComponent
       shown: 0
