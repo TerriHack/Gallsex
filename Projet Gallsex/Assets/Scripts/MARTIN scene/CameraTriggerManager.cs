@@ -55,13 +55,12 @@ public class CameraTriggerManager : MonoBehaviour
 
     public void EditOffset(Vector2 newOffset)
     {
-        DOTween.To(() => cam.transform.GetComponent<camerafollow>().offset,
-            x => cam.transform.GetComponent<camerafollow>().offset = x, new Vector3(newOffset.x,newOffset.y, -10), tweenTime);
+        //DOTween.To(() => cam.transform.GetComponent<camerafollow>().offset,x => cam.transform.GetComponent<camerafollow>().offset = x, new Vector3(newOffset.x,newOffset.y, -10), tweenTime);
     }
 
     public void EditTracking(bool newTracking)
     {
-        cam.GetComponent<camerafollow>().movementType = 1;
+        //cam.GetComponent<camerafollow>().movementType = 1;
     }
     
 }

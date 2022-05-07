@@ -4026,7 +4026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: 0
   offset: {x: 0, y: 3, z: -2}
-  movementType: 0
   speedFactor: 0
   minSpeed: 0
   maxSpeed: 0
@@ -4479,7 +4478,13 @@ MonoBehaviour:
   dash: {fileID: 3653358722695380688, guid: ab313b6a6fb69f84ca309bd82ba4007c, type: 3}
   dashVFX: {fileID: 3653358722695380689, guid: ab313b6a6fb69f84ca309bd82ba4007c, type: 3}
   landing: {fileID: 3632955707693278978, guid: ca45a79d1427ecb4581c24f2366a73d2, type: 3}
+  wallJump: {fileID: 78898489290633369, guid: 19fe82f5ab10c3b4f9913117c89c2fae, type: 3}
+  isDashingRight: 0
+  isDashingLeft: 0
   isLanding: 0
+  isWallJumping: 0
+  isWallJumpingRight: 0
+  isWallJumpingLeft: 0
 --- !u!1001 &962272352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4552,6 +4557,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4315441860533123054, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: _vfxManager
+      value: 
+      objectReference: {fileID: 956981068}
+    - target: {fileID: 4315441860783796423, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: _vfxManager
+      value: 
+      objectReference: {fileID: 956981068}
     - target: {fileID: 4315441860828407165, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: vfxManager
       value: 
@@ -7290,11 +7303,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: 0
   offset: {x: 0, y: 0, z: 0}
-  movementType: 0
-  speedFactor: 1.018
-  minSpeed: 0.1
-  maxSpeed: 0
-  toNextWaypoint: 9
+  speedFactor: 1.005
+  minSpeed: 1
+  maxSpeed: 10
+  toNextWaypoint: 10
   cloud: {fileID: 0}
   respawnPosition: {x: 0, y: 0, z: 0}
   target: {fileID: 0}

@@ -11,6 +11,7 @@ public class BossFightTrigger : MonoBehaviour
     private List<GameObject> waypointList;
     public List<Vector3> waypointVector3List;
     public float speed;
+    private bool triggered;
 
     private void Start()
     {
@@ -25,9 +26,10 @@ public class BossFightTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       if (other.CompareTag("Player"))
+       if (other.CompareTag("Player") && triggered == false)
        {
           cam.GetComponent<camerafollow>().BossFight(startPosition,waypointVector3List,speed,true);
+          triggered = true;
        }
     }
 }
