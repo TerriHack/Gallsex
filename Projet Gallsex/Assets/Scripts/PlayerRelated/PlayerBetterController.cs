@@ -14,18 +14,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
     [SerializeField] private Transform groundCheckTr;
-    [SerializeField] private PhysicsMaterial2D playerMat;
-    [SerializeField] private GameObject vfxRun;    
-    [SerializeField] private GameObject vfxWallSlide;
     [SerializeField] private VFXManager _vfxManager;
-    private Vector2 _feetPos;
-    #endregion
-    
-    #region Particle System
-    [SerializeField] private ParticleSystem dustJump;
-
-    [Space]
-
     #endregion
 
     #region Public float
@@ -143,13 +132,13 @@ public class PlayerBetterController : MonoBehaviour
             GroundClamp();
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
-            vfxRun.SetActive(true);
+            _vfxManager.isRunning = true;
             airTime = 0;
         }
         else if (rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
         else
         {
-            vfxRun.SetActive(false);
+            _vfxManager.isRunning = false;
             airTime += Time.deltaTime;
         }
 
@@ -165,13 +154,15 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
-            vfxWallSlide.SetActive(true);
+            _vfxManager.isWallSliding = true;
 
             #region Animation Related
             _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
             #endregion
-        }else vfxWallSlide.SetActive(false);
+            
+        }else _vfxManager.isWallSliding = false;
+
 
         if (_wallJumpTime > 0f) wallJumping = true;
         else wallJumping = false;
@@ -279,9 +270,8 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x,0);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
-            _feetPos = new Vector2(groundCheckTr.position.x, groundCheckTr.position.y - 0.15f); //Instanciation particules jump
-            Instantiate(dustJump, _feetPos, groundCheckTr.rotation);
-            
+            _vfxManager.isJumping = true;
+
             #region Animation Related
             _waitCounter = playerData.waitTime;
             isWaiting = false;
