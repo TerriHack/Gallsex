@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Drop
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 253005588072490991, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: 8788866114957560507, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: 4449804034329666902, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: 3032044938078382984, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: -4530884514433335378, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: 2457945676293540905, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: -3632284251637437662, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  - {fileID: -3199622508727185352, guid: 79f020217f30f184aadedb87dd4a5be9, type: 3}
+  m_MinSpeed: 7
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
