@@ -32,7 +32,11 @@ public class VFXManager : MonoBehaviour
     {
         if(isLanding) LandingVFX();
         if (isDashing) DashVFX();
-        if(isWallJumpingLeft || isWallJumpingRight) Walljump();
+        if (isWallJumpingLeft || isWallJumpingRight)
+        {
+            WallJumpDetection();
+            Walljump();
+        }
         WallSliding();
         Running();
         if(isJumping) Jumping();
@@ -55,22 +59,20 @@ public class VFXManager : MonoBehaviour
     }
     private void Walljump()
     {
-        _wallContact = new Vector2(playerTr.position.x + 0.5f, playerTr.position.y - 0.7f);
-
         if (isWallJumpingLeft)
         {
-            isWallJumpingRight = false;
             wallJump.transform.localScale = new Vector3(-1,1,1);
             Instantiate(wallJump, _wallContact, playerTr.rotation);
-            isWallJumpingLeft = false;
             
-
+            isWallJumpingRight = false;
+            isWallJumpingLeft = false;
         }
         else if(isWallJumpingRight)
         {
-            isWallJumpingLeft = false;
             wallJump.transform.localScale = new Vector3(1,1,1);
             Instantiate(wallJump, _wallContact, playerTr.rotation);
+            
+            isWallJumpingLeft = false;
             isWallJumpingRight = false;
 
         }
@@ -90,5 +92,21 @@ public class VFXManager : MonoBehaviour
         _feetPos = new Vector2(playerTr.position.x, playerTr.position.y - 1f);
         Instantiate(jump, _feetPos, playerTr.rotation);
         isJumping = false;
+    }
+    private void WallJumpDetection()
+    {
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, 0.5f);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, 0.5f);
+        
+        if (Physics2D.Raycast(transform.position, Vector2.left, 0.5f))
+        {
+            _wallContact = hitLeft.point;
+        }
+        
+        if (Physics2D.Raycast(transform.position, Vector2.right, 0.5f))
+        {
+            _wallContact = hitRight.point;
+        }
+
     }
 }
