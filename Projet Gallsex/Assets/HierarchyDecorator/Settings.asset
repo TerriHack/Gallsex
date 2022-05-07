@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   globalData:
-    showActiveToggles: 0
-    showComponentIcons: 0
+    showActiveToggles: 1
+    showComponentIcons: 1
     showAllComponents: 1
-    twoToneBackground: 0
+    twoToneBackground: 1
     showLayers: 1
     editableLayers: 1
     applyChildLayers: 1
@@ -615,6 +615,12 @@ MonoBehaviour:
       shown: 0
     - name: ShadowCasterGroup2D
       shown: 0
+    - name: ExampleScript
+      shown: 0
+    - name: ExampleScript2
+      shown: 0
+    - name: ExampleScriptWithIcon
+      shown: 0
     - name: PlaymodeTestsController
       shown: 0
     - name: PlayModeRunnerCallback
@@ -924,12 +930,6 @@ MonoBehaviour:
     - name: PostProcessLayer
       shown: 0
     - name: PostProcessVolume
-      shown: 0
-    - name: ExampleScript
-      shown: 0
-    - name: ExampleScript2
-      shown: 0
-    - name: ExampleScriptWithIcon
       shown: 0
     - name: DOTweenComponent
       shown: 0
