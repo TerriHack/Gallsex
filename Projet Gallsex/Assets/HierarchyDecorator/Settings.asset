@@ -493,6 +493,8 @@ MonoBehaviour:
       shown: 0
     - name: WindZone
       shown: 0
+    - name: AudioManager
+      shown: 0
     - name: BossFightTrigger
       shown: 0
     - name: DotweenCam
