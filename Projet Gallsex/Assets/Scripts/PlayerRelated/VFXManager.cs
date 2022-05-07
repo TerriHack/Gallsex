@@ -7,7 +7,8 @@ public class VFXManager : MonoBehaviour
 {
     [SerializeField] private Transform playerTr;
     [SerializeField] private GameObject dash;   
-    [SerializeField] private ParticleSystemRenderer dashVFX;
+    [SerializeField] private ParticleSystemRenderer dashVFXRen;  
+    [SerializeField] private ParticleSystem dashVFX;
     [SerializeField] private GameObject landing;
     [SerializeField] private GameObject wallJump;
     [SerializeField] private GameObject wallSlide;
@@ -17,19 +18,20 @@ public class VFXManager : MonoBehaviour
     private Vector2 _feetPos;
     private Vector2 _wallContact;
 
-    public bool isDashingRight;
-    public bool isDashingLeft;
+    public bool isDashing;
     public bool isLanding;
     public bool isWallJumpingRight;
     public bool isWallJumpingLeft;
     public bool isWallSliding;
     public bool isRunning;
     public bool isJumping;
+    
+    public float inputAngle;
 
     private void Update()
     {
         if(isLanding) LandingVFX();
-        if (isDashingRight || isDashingLeft) DashVFX();
+        if (isDashing) DashVFX();
         if(isWallJumpingLeft || isWallJumpingRight) Walljump();
         WallSliding();
         Running();
@@ -44,18 +46,12 @@ public class VFXManager : MonoBehaviour
     }
     private void DashVFX()
     {
-        if(isDashingLeft)
-        {
-            dash.transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            dash.transform.localScale = new Vector3(1, 1, 1);
-        }
-        
+        var dashVFXMain = dashVFX.main;
+        dashVFXMain.startRotation = inputAngle * Mathf.Deg2Rad;
+
         Instantiate(dash, playerTr.position, dashVFX.transform.rotation);
-        isDashingRight = false;    
-        isDashingLeft = false;
+        
+        isDashing = false;
     }
     private void Walljump()
     {

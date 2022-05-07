@@ -18,9 +18,7 @@ public class PlayerBetterController : MonoBehaviour
     #endregion
 
     #region Public float
-
     public float airTime;
-
     #endregion
     
     #region Private float
