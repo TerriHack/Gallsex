@@ -87,6 +87,7 @@ public class VFXManager : MonoBehaviour
     }
     private void Jumping()
     {
+        _feetPos = new Vector2(playerTr.position.x, playerTr.position.y - 1f);
         Instantiate(jump, _feetPos, playerTr.rotation);
         isJumping = false;
     }

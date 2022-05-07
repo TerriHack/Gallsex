@@ -292,6 +292,8 @@ public class PlayerBetterController : MonoBehaviour
     }
     private void WallJump()
     {
+        RaycastHit2D hit;
+        
         //When turning in the opposite side of the wall you're jumping to, you can still wall jump 
         if (isTouchingBack && inputX != 0)
         {
@@ -304,6 +306,12 @@ public class PlayerBetterController : MonoBehaviour
         
         if (isTouchingFront && inputX != 0)
         {
+            Debug.DrawRay(transform.position, Vector2.left, Color.red);
+            if(Physics2D.Raycast(transform.position, Vector2.left, 0.5f))
+            {
+                
+            }
+            
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -inputX,playerData.yWallForce),ForceMode2D.Impulse);
             wallJumping = false;
