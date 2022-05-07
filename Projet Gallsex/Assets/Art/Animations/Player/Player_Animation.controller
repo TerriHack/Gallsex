@@ -26,6 +26,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &-8139021107344924257
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DashDown_Animation
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 72a6d2679b571214c8479fc6c5865af0, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-7785299454625891334
 AnimatorState:
   serializedVersion: 6
@@ -171,13 +197,16 @@ AnimatorStateMachine:
     m_Position: {x: 970, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5365054995617889165}
-    m_Position: {x: 760, y: 60, z: 0}
+    m_Position: {x: -180, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1355678140006407603}
     m_Position: {x: 510, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4495247473191372524}
-    m_Position: {x: 510, y: -90, z: 0}
+    m_Position: {x: -180, y: 110, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8139021107344924257}
+    m_Position: {x: -180, y: 50, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

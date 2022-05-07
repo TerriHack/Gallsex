@@ -493,43 +493,77 @@ MonoBehaviour:
       shown: 0
     - name: WindZone
       shown: 0
-    - name: BackCheck
+    - name: BossFightTrigger
+      shown: 0
+    - name: DotweenCam
       shown: 0
     - name: LightIntensity
+      shown: 0
+    - name: LightOn
+      shown: 0
+    - name: LookAhead
+      shown: 0
+    - name: MyJointBecauseUnitySucks
+      shown: 0
+    - name: TriggerBossFight
+      shown: 0
+    - name: initiateBossFight
+      shown: 0
+    - name: CameraFollowTest
+      shown: 0
+    - name: CameraTrigger
+      shown: 0
+    - name: CameraTriggersManager
+      shown: 0
+    - name: Camerafollow
       shown: 0
     - name: ArrayCheckpoint
       shown: 0
     - name: Bouncer
       shown: 0
-    - name: CameraTrigger
-      shown: 0
-    - name: CameraTriggerManager
+    - name: BreakablePlatform
       shown: 0
     - name: CloudTrigger
       shown: 0
-    - name: MovingCloud
+    - name: MovingCLoud
       shown: 0
     - name: Parallax
-      shown: 0
-    - name: PlatformDisappear
       shown: 0
     - name: PlatformMovement
       shown: 0
     - name: PlatformRotation
       shown: 0
+    - name: Teleporter
+      shown: 0
+    - name: TeleporterToNextLevel
+      shown: 0
     - name: Trap
-      shown: 0
-    - name: TriggerBossFight
-      shown: 0
-    - name: camerafollow
       shown: 0
     - name: checkpoint
       shown: 0
-    - name: initiateBossFight
+    - name: Trigger_Boss_Fight
       shown: 0
-    - name: Haircontrol
+    - name: Camera_Trigger
       shown: 0
-    - name: HatAnchor
+    - name: CameraTriggerManager
+      shown: 0
+    - name: ManagerPillarGrade
+      shown: 0
+    - name: PlatformDisappear
+      shown: 0
+    - name: TRAP
+      shown: 0
+    - name: camerafollow
+      shown: 0
+    - name: movingPlatformManager
+      shown: 0
+    - name: pillierGrade
+      shown: 0
+    - name: platformRotate
+      shown: 0
+    - name: prefabTimer
+      shown: 0
+    - name: BackCheck
       shown: 0
     - name: Dash
       shown: 0
@@ -537,15 +571,19 @@ MonoBehaviour:
       shown: 0
     - name: GroundCheck
       shown: 0
-    - name: PlayerAnimatorManager
+    - name: Haircontrol
+      shown: 0
+    - name: HatAnchor
       shown: 0
     - name: PlayerBetterController
       shown: 0
-    - name: Teleporter
+    - name: VFXManager
       shown: 0
-    - name: TeleporterToLevel01
+    - name: BossTriggers
       shown: 0
-    - name: TeleporterToTuto
+    - name: calculateCameraBox
+      shown: 0
+    - name: tentaculeTrigger
       shown: 0
     - name: triggerdash
       shown: 0
@@ -576,12 +614,6 @@ MonoBehaviour:
     - name: ShadowCaster2D
       shown: 0
     - name: ShadowCasterGroup2D
-      shown: 0
-    - name: ExampleScript
-      shown: 0
-    - name: ExampleScript2
-      shown: 0
-    - name: ExampleScriptWithIcon
       shown: 0
     - name: PlaymodeTestsController
       shown: 0
@@ -892,6 +924,12 @@ MonoBehaviour:
     - name: PostProcessLayer
       shown: 0
     - name: PostProcessVolume
+      shown: 0
+    - name: ExampleScript
+      shown: 0
+    - name: ExampleScript2
+      shown: 0
+    - name: ExampleScriptWithIcon
       shown: 0
     - name: DOTweenComponent
       shown: 0

@@ -7,6 +7,16 @@ TagManager:
   - JumpableGround
   - Ground
   - Checks
+  - Boundary
+  - MovingPlatformManager
+  - PillarTime
+  - StopWatch
+  - MovingPlatform
+  - Cloud
+  - BossWaypoint
+  - CameraBoundaries
+  - camera
+  - BossKillTrigger
   layers:
   - Default
   - TransparentFX
@@ -58,6 +68,9 @@ TagManager:
     locked: 0
   - name: Assets_Lights
     uniqueID: 2415788335
+    locked: 0
+  - name: Default_Spike
+    uniqueID: 3339668421
     locked: 0
   - name: Default
     uniqueID: 0

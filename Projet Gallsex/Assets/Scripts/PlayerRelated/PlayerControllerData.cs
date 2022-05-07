@@ -33,6 +33,8 @@ public class PlayerControllerData : ScriptableObject
     public float coyoteTime = 0.1f;   
     [Range(0f,10f)]
     public float jumpBufferTime = 0.18f;
+    [Range(0f, 1f)] 
+    public float slideDuration = 0.08f;
     
     [Space]
     [Header("Clamp")]
@@ -60,4 +62,8 @@ public class PlayerControllerData : ScriptableObject
     public float waitTime = 2f;
     public float timeToSleep = 2f;
     public float dashDuration = 1f;
+
+    [Space] [Header("Camera")] 
+    public float camOffsetX;
+    public float camOffsetY = 6f;
 }

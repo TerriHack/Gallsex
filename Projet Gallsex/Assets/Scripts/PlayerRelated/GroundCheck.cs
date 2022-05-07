@@ -5,18 +5,16 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    [SerializeField] private Transform tr;
     [SerializeField] private PlayerBetterController playerController;
-    [SerializeField] private GameObject vfxLanding;
-    [SerializeField] private Vector2 feetPos;
-    
+    [SerializeField] private VFXManager vfxManager;
+
     void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.CompareTag("JumpableGround"))
         {
             playerController.isGrounded = true;
-            Instantiate(vfxLanding, feetPos, tr.rotation);
+            vfxManager.isLanding = true;
         }
     }
     
@@ -28,10 +26,5 @@ public class GroundCheck : MonoBehaviour
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("JumpableGround")) playerController.isGrounded = true;
-    }
-
-    private void Update()
-    {
-        feetPos = new Vector2(tr.position.x, tr.position.y - 0.15f);
     }
 }

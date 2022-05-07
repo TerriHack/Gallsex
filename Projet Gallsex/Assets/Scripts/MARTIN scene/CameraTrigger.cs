@@ -3,30 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraTrigger : MonoBehaviour
+public class Camera_Trigger : MonoBehaviour
 {
-    public GameObject manager;
-    public float type = 0;
-    public Vector2 variable;
-    public bool changeTracking;
+    public GameObject Manager;
+    public float TYPE = 0;
+    public Vector2 Variable;
+    public float cloudPositionX;
+    public bool ChangeTracking;
 
     private void OnTriggerEnter2D(Collider2D player)
     {
         if (player.CompareTag("Player"))
         {
-            if (type == 0) //Scale changer
+            if (TYPE == 0) //Scale changer
             {
-                manager.GetComponent<CameraTriggerManager>().EditScale(variable);
+                Manager.GetComponent<CameraTriggerManager>().EditScale(Variable, cloudPositionX);
             }
-            else if (type == 1)// Offset changer
+            else if (TYPE == 1)// Offset changer
             {
-                manager.GetComponent<CameraTriggerManager>().EditOffset(variable);
+                Manager.GetComponent<CameraTriggerManager>().EditOffset(Variable);
             }
-            else if (type == 2)// Tracking changer
+            else if (TYPE == 2)// Tracking changer
             {
-                //manager.GetComponent<CameraTriggerManager>().EditTracking(changeTracking);
+                Manager.GetComponent<CameraTriggerManager>().EditTracking(ChangeTracking);
             }
-            Debug.Log("hello");
         }
     }
 }
