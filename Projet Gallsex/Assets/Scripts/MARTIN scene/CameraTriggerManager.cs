@@ -15,7 +15,7 @@ public class CameraTriggerManager : MonoBehaviour
 
     private void Start()
     {
-        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        cam = GameObject.FindGameObjectWithTag("camera");
         cloud = GameObject.FindGameObjectWithTag("Cloud");
         GameObject boundaryCount = GameObject.FindGameObjectWithTag("CameraBoundaries");
         for (int i = 0; i < boundaryCount.transform.childCount; i++)

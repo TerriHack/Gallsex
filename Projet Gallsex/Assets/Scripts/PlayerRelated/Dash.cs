@@ -94,6 +94,7 @@ public class Dash : MonoBehaviour
     {
         if (_dashDelay >= 0f)
         {
+            InputDirection();
             Propulsion();
         }
     }
@@ -155,15 +156,11 @@ public class Dash : MonoBehaviour
 
     private void dashVFX()
     {
-        if (_inputX > 0)
-        {
-            _vfxManager.isDashingRight = true;
-            _vfxManager.isDashingLeft = false;
-        }
-        else if(_inputX < 0)
-        {
-            _vfxManager.isDashingRight = false;
-            _vfxManager.isDashingLeft = true;
-        }
+        _vfxManager.isDashing = true;
+    }
+    
+    private void InputDirection()
+    {
+        _vfxManager.inputAngle = (Mathf.Atan2(_inputX, _inputY) * Mathf.Rad2Deg) -90f;
     }
 }
