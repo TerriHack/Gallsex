@@ -61,15 +61,13 @@ public class VFXManager : MonoBehaviour
     {
         if (isWallJumpingLeft)
         {
-            wallJump.transform.localScale = new Vector3(-1,1,1);
             Instantiate(wallJump, _wallContact, playerTr.rotation);
-            
+
             isWallJumpingRight = false;
             isWallJumpingLeft = false;
         }
         else if(isWallJumpingRight)
         {
-            wallJump.transform.localScale = new Vector3(1,1,1);
             Instantiate(wallJump, _wallContact, playerTr.rotation);
             
             isWallJumpingLeft = false;
@@ -100,11 +98,13 @@ public class VFXManager : MonoBehaviour
         
         if (Physics2D.Raycast(transform.position, Vector2.left, 0.5f))
         {
+            wallJump.transform.localScale = new Vector3(-1,1,1);
             _wallContact = hitLeft.point;
         }
         
         if (Physics2D.Raycast(transform.position, Vector2.right, 0.5f))
         {
+            wallJump.transform.localScale = new Vector3(1,1,1);
             _wallContact = hitRight.point;
         }
 

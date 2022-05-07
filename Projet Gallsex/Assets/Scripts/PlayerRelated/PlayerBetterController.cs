@@ -153,8 +153,11 @@ public class PlayerBetterController : MonoBehaviour
             rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
             _vfxManager.isWallSliding = true;
-            
-            if (inputX > 0f && Input.GetButtonDown("Saut")) _vfxManager.isWallJumpingLeft = true;
+
+            if (inputX > 0f && Input.GetButtonDown("Saut"))
+            {
+                _vfxManager.isWallJumpingLeft = true;
+            }
             else if(inputX < 0f && Input.GetButtonDown("Saut")) _vfxManager.isWallJumpingRight = true;
 
             #region Animation Related
