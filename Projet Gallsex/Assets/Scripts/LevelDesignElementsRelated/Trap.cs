@@ -7,6 +7,7 @@ public class Trap : MonoBehaviour
 {
     public GameObject player;
     public GameObject movingPlatformManager;
+    public GameObject cam;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +17,7 @@ public class Trap : MonoBehaviour
             Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
             player.transform.position = pos;
             movingPlatformManager.GetComponent<movingPlatformManager>().OnPlayerDeath();
+            cam.GetComponent<camerafollow>().OnDeath();
         }
     }
 
@@ -23,5 +25,6 @@ public class Trap : MonoBehaviour
     {
         movingPlatformManager = GameObject.FindGameObjectWithTag("MovingPlatformManager");
         player = GameObject.FindGameObjectWithTag("Player");
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 }

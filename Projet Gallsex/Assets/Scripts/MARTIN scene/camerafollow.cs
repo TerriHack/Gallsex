@@ -27,7 +27,7 @@ public class camerafollow : MonoBehaviour
    private void Start()
    {
       target = GameObject.FindGameObjectWithTag("Player").transform;
-      cloud = GameObject.FindGameObjectWithTag("Cloud");
+      cloud = GameObject.FindGameObjectWithTag("BossKillTrigger");
       if (minSpeed > 0.1f || minSpeed == 0)
       {
          minSpeed = 0.1f;
@@ -73,10 +73,15 @@ public class camerafollow : MonoBehaviour
             GetComponent<camerafollow>().enabled = false;
             GetComponent<DotweenCam>().enabled = true;
             currentWaypointIndex = 0;
+            cloud.transform.parent = null;
+         }
+         else
+         {
+            TweenKillTrigger();
+            respawnPosition = waypoints[currentWaypointIndex];
          }
       }
       transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
-      Debug.Log(speed);
    }
 
    public void BossFight(Vector3 startPos, List<Vector3> waypointList, float tweenSpeed, bool isHorizontal)
@@ -93,6 +98,11 @@ public class camerafollow : MonoBehaviour
       {
          waypoints[i] = new Vector3(waypoints[i].x, waypoints[i].y, -10);
       }
+
+      float positionX = transform.GetChild(0).GetComponent<Camera>().orthographicSize;
+      cloud.transform.parent = transform;
+      cloud.transform.position = new Vector3(positionX, 0, 0);
+      cloud.transform.localScale = new Vector3(1, transform.GetChild(0).GetComponent<Camera>().orthographicSize * 4, 1);
    }
 
    public void OnDeath()
@@ -102,7 +112,34 @@ public class camerafollow : MonoBehaviour
       currentWaypointIndex = 0;
       cloud.transform.rotation = Quaternion.Euler(0,0,90);
       cloud.transform.localPosition = new Vector3(0, 0, 10);
-      
+      //cloud.transform.localScale.y = transform.GetChild(0).GetComponent<Camera>().orthographicSize;
+
+   }
+
+   private void TweenKillTrigger()
+   {
+      if (horizontal)
+      {
+         if (waypoints[currentWaypointIndex - 1].y > waypoints[currentWaypointIndex].y) // it do go down
+         {
+            Debug.Log("down");
+         }
+         else // no it don't
+         {
+            Debug.Log("Up");
+         }
+      }
+      else
+      {
+         if (waypoints[currentWaypointIndex - 1].x > waypoints[currentWaypointIndex].x)
+         {
+            Debug.Log("right");
+         }
+         else
+         {
+            Debug.Log("left");
+         }
+      }
    }
 
 }
