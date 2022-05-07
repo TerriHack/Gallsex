@@ -597,6 +597,8 @@ MonoBehaviour:
       shown: 0
     - name: triggertest
       shown: 0
+    - name: GridInformation
+      shown: 0
     - name: CinemachinePixelPerfect
       shown: 0
     - name: PixelPerfectCamera
@@ -833,6 +835,16 @@ MonoBehaviour:
       shown: 0
     - name: DropdownItem
       shown: 0
+    - name: CCDSolver2D
+      shown: 0
+    - name: FabrikSolver2D
+      shown: 0
+    - name: IKManager2D
+      shown: 0
+    - name: LimbSolver2D
+      shown: 0
+    - name: Solver2D
+      shown: 0
     - name: CinemachineCameraOffset
       shown: 0
     - name: CinemachineRecomposer
@@ -926,6 +938,22 @@ MonoBehaviour:
     - name: CinemachinePostProcessing
       shown: 0
     - name: CinemachineVolumeSettings
+      shown: 0
+    - name: PostProcessDebug
+      shown: 0
+    - name: PostProcessLayer
+      shown: 0
+    - name: PostProcessVolume
+      shown: 0
+    - name: SpriteLibrary
+      shown: 0
+    - name: SpriteResolver
+      shown: 0
+    - name: SpriteSkin
+      shown: 0
+    - name: SpriteSkinEntity
+      shown: 0
+    - name: SpriteSkinManagerInternal
       shown: 0
     - name: DOTweenComponent
       shown: 0

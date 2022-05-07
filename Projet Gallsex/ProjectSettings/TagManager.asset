@@ -51,6 +51,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background_Outdoor
+    uniqueID: 3696285277
+    locked: 0
   - name: Background
     uniqueID: 2257201829
     locked: 0
