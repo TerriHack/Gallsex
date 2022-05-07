@@ -36,7 +36,7 @@ public class DotweenCam : MonoBehaviour
         if (_inputX != 0f)
         {
             camTr.DOKill();
-            camTr.DOMove(new Vector3(playerPosition.x + _inputX, playerPosition.y, camPosition.z), duration);
+            camTr.DOMove(new Vector3(playerPosition.x + _inputX, playerPosition.y, -10), duration);
             isReset = false;
         }
         else
@@ -45,7 +45,7 @@ public class DotweenCam : MonoBehaviour
             
             if (!isReset)
             {
-                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, camPosition.z),2);
+                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, -10),2);
                 isReset = true;
             }
         }
