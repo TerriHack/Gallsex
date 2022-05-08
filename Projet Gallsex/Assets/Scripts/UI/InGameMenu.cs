@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class InGameMenu : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private GameObject OptionMenu;
-    public GameObject firstButtonSelected, firstOptionButton, OptionClosedButton;
+    [SerializeField] private GameObject optionMenu;
+    public GameObject firstButtonSelected, firstOptionButton, optionClosedButton;
 
     private bool _isPaused;
     
@@ -26,7 +26,7 @@ public class InGameMenu : MonoBehaviour
 
         if (Input.GetButtonDown("Cancel"))
         {
-            OptionMenu.SetActive(false);
+            optionMenu.SetActive(false);
             
             //Reset the event system
             EventSystem.current.SetSelectedGameObject(null);
@@ -79,7 +79,7 @@ public class InGameMenu : MonoBehaviour
 
     public void Option()
     {
-        if(_isPaused) OptionMenu.SetActive(true);
+        if(_isPaused) optionMenu.SetActive(true);
         
         //Reset the event system
         EventSystem.current.SetSelectedGameObject(null);
