@@ -495,6 +495,8 @@ MonoBehaviour:
       shown: 0
     - name: BossFightTrigger
       shown: 0
+    - name: BossKIllTrigger
+      shown: 0
     - name: DotweenCam
       shown: 0
     - name: LightIntensity
@@ -618,6 +620,12 @@ MonoBehaviour:
     - name: ShadowCaster2D
       shown: 0
     - name: ShadowCasterGroup2D
+      shown: 0
+    - name: ExampleScript
+      shown: 0
+    - name: ExampleScript2
+      shown: 0
+    - name: ExampleScriptWithIcon
       shown: 0
     - name: PlaymodeTestsController
       shown: 0
@@ -928,12 +936,6 @@ MonoBehaviour:
     - name: PostProcessLayer
       shown: 0
     - name: PostProcessVolume
-      shown: 0
-    - name: ExampleScript
-      shown: 0
-    - name: ExampleScript2
-      shown: 0
-    - name: ExampleScriptWithIcon
       shown: 0
     - name: SpriteLibrary
       shown: 0
