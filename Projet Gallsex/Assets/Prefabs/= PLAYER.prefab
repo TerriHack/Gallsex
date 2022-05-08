@@ -465,7 +465,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -530,7 +530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4315441862191878613}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -176, y: -222, z: -10}
+  m_LocalPosition: {x: 5, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4315441861629669612}
@@ -606,9 +606,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6670131494847968213}
     - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: vfxManager
+      value: 
+      objectReference: {fileID: 778059989}
+    - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: _vfxManager
       value: 
       objectReference: {fileID: 778059989}
+    - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 6670131494847968213}
     - target: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: vfxWallSlide
       value: 
@@ -681,6 +689,30 @@ PrefabInstance:
       propertyPath: InitialModule.randomizeRotationDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: maxTimer
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: runOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: fallOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: fallOffset.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: idleOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: jumpOffset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101392, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_Name
       value: Player
@@ -695,11 +727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -185.3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -226.9
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.z
