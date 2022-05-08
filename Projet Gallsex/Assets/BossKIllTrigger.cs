@@ -19,6 +19,9 @@ public class BossKIllTrigger : MonoBehaviour
     public float tweenTime;
     private bool horizontal;
 
+    private Vector2 lastPosition;
+    public GameObject particles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,8 +96,18 @@ public class BossKIllTrigger : MonoBehaviour
                 respawnPosition = waypoints[currentWaypointIndex];
             }
         }
-
+        //lastPosition = transform.position;
+        
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
+        /*
+        Vector2 newPosition;
+        newPosition.x = transform.position.x - lastPosition.x;
+        newPosition.y = transform.position.y - lastPosition.y;
+
+        particles.transform.position = new Vector3(particles.transform.position.x + newPosition.x,
+            particles.transform.position.y + newPosition.y);
+        
+        Debug.Log(newPosition);*/
     }
 
     public void Activate(Vector3 startPos, List<Vector3> waypointList, bool isHorizontal)
