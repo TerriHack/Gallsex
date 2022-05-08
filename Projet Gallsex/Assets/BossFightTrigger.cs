@@ -29,6 +29,7 @@ public class BossFightTrigger : MonoBehaviour
        if (other.CompareTag("Player") && triggered == false)
        {
           triggered = true;
+          bossKillTrigger.GetComponent<BossKIllTrigger>().Activate(startPosition,waypointVector3List, true);
        }
     }
 }
