@@ -21,6 +21,8 @@ public class InGameMenu : MonoBehaviour
     private void Pause()
     {
         _isPaused = !_isPaused;
-        
+
+        if(_isPaused) hud.position = new Vector2(hud.position.x, Mathf.Lerp(-255, 0, 3f * Time.unscaledTime));
+        else hud.position = new Vector2(hud.position.x, Mathf.Lerp(0, -255, 3f * Time.unscaledTime));
     }
 }
