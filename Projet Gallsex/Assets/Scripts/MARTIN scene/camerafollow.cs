@@ -23,9 +23,8 @@ public class camerafollow : MonoBehaviour
    [SerializeField] private List<Vector3> waypoints;
    private int currentWaypointIndex = 0;
 
-   public Vector2 tweenPositionHorizontal;
-   public Vector2 tweenPositionVertical;
    public float tweenTime;
+   public bool hasTweened;
 
 
    private void Start()
@@ -55,16 +54,7 @@ public class camerafollow : MonoBehaviour
 
    private void LateUpdate()
    {
-      if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex]) < toNextWaypoint)
-      {
-         speed /= speedFactor;
-         //speed -= Time.deltaTime * 10;
-         if (speed < minSpeed)
-         {
-            speed = minSpeed;
-         }
-      }
-      else
+      if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex]) > toNextWaypoint)
       {
          speed *= speedFactor;
          if (speed > maxSpeed)
@@ -72,12 +62,20 @@ public class camerafollow : MonoBehaviour
             speed = maxSpeed;
          }
       }
-
+      else if (currentWaypointIndex+1 < waypoints.Count)
+      {
+         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex]) < toNextWaypoint &&
+             hasTweened == false)
+         {
+            TweenKillTrigger();
+         } 
+      }
+      
       if (Vector2.Distance(waypoints[currentWaypointIndex], transform.position) < .5f)
       {
          transform.position = new Vector3(transform.position.x, transform.position.y, -10);
          currentWaypointIndex++;
-         Debug.Log(currentWaypointIndex);
+         hasTweened = false;
          if (currentWaypointIndex >= waypoints.Count)
          {
             GetComponent<camerafollow>().enabled = false;
@@ -87,8 +85,7 @@ public class camerafollow : MonoBehaviour
          }
          else
          {
-            TweenKillTrigger();
-            respawnPosition = waypoints[currentWaypointIndex - 1];
+            respawnPosition = waypoints[currentWaypointIndex];
          }
       }
       transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
@@ -111,54 +108,66 @@ public class camerafollow : MonoBehaviour
       float positionX = transform.GetChild(0).GetComponent<Camera>().orthographicSize;
       cloud.transform.parent = transform;
       cloud.transform.position = new Vector3(positionX / 2, startPos.y, 0);
-      cloud.transform.localScale = new Vector3(1, transform.GetChild(0).GetComponent<Camera>().orthographicSize * 4, 1);
+      cloud.transform.localScale = new Vector3(1, transform.GetChild(0).GetComponent<Camera>().orthographicSize * 10, 1);
    }
 
    public void OnDeath()
    {
-      transform.position = respawnPosition;
-      speed = 0.1f;
-      //currentWaypointIndex = 0;
-      //cloud.transform.localScale.y = transform.GetChild(0).GetComponent<Camera>().orthographicSize;
+      speed = minSpeed;
+      if (currentWaypointIndex == 0)
+      {
+         
+      }
+      else if (currentWaypointIndex == 1)
+      {
+         respawnPosition = waypoints[0];
+         cloud.transform.rotation = new Quaternion(0,0,0,cloud.transform.rotation.w);
+      }
+      else if (currentWaypointIndex == 2)
+      {
+         respawnPosition = waypoints[1];
+         //cloud.transform.rotation = new Quaternion();
+      }
 
+      transform.position = respawnPosition;
    }
 
    private void TweenKillTrigger()
    {
-      float positionX = transform.GetChild(0).GetComponent<Camera>().orthographicSize;
-      GameObject camera = transform.GetChild(0).transform.gameObject;
-      float cameraSize = camera.GetComponent<Camera>().orthographicSize;
+      Debug.Log("tweening");
+      GameObject cam = transform.GetChild(0).transform.gameObject;
       if (horizontal)
       {
-         if (waypoints[currentWaypointIndex - 1].y > waypoints[currentWaypointIndex].y) // it do go down
+         if (waypoints[currentWaypointIndex].y > waypoints[currentWaypointIndex + 1].y)
          {
-            Debug.Log("down");
+            // going down
          }
-         else // no it don't
+         else
          {
+            //going up
             DOTween.To(() => cloud.transform.rotation, x => cloud.transform.rotation = x,
                new Vector3(cloud.transform.rotation.x, cloud.transform.rotation.y, 90), tweenTime);
-            DOTween.To(() => cloud.transform.position, x => cloud.transform.position = x,
-               new Vector3(waypoints[currentWaypointIndex - 1].x, waypoints[currentWaypointIndex - 1].y - cameraSize/4), tweenTime);
-
          }
          horizontal = false;
       }
       else
       {
-         if (waypoints[currentWaypointIndex - 1].x < waypoints[currentWaypointIndex].x)
+         Debug.Log("aaaaa");
+         if (waypoints[currentWaypointIndex].x < waypoints[currentWaypointIndex + 1].x)
          {
-            DOTween.To(() => cloud.transform.rotation, x => cloud.transform.rotation = x,
-               new Vector3(cloud.transform.rotation.x, cloud.transform.rotation.y, 0), tweenTime);
-            DOTween.To( () => cloud.transform.position, x => cloud.transform.position = x, new Vector3(camera.transform.position.x - positionX, camera.transform.position.y, 0), tweenTime);
+            //going right
+            DOTween.To(() => cloud.transform.rotation, x => cloud.transform.rotation = x, new Vector3(cloud.transform.rotation.x,cloud.transform.rotation.y,0), tweenTime);
+            DOTween.To(() => cloud.transform.position, x => cloud.transform.position = x, new Vector3(cam.transform.position.x,cloud.transform.position.y, cloud.transform.position.y), tweenTime);
          }
          else
          {
-            DOTween.To(() => cloud.transform.rotation, x => cloud.transform.rotation = x,
-               new Vector3(cloud.transform.rotation.x, cloud.transform.rotation.y, 270), tweenTime);
-            DOTween.To( () => cloud.transform.position, x => cloud.transform.position = x, new Vector3( camera.transform.position.x - positionX, camera.transform.position.y, 0), tweenTime);
+            //going left
+            DOTween.To(() => cloud.transform.rotation, x => cloud.transform.rotation = x, new Vector3(cloud.transform.rotation.x,cloud.transform.rotation.y,180), tweenTime);
+            DOTween.To(() => cloud.transform.position, x => cloud.transform.position = x, new Vector3(cam.transform.position.x,cloud.transform.position.y, cloud.transform.position.y), tweenTime);
          }
+         horizontal = true;
       }
-   }
 
+      hasTweened = true;
+   }
 }

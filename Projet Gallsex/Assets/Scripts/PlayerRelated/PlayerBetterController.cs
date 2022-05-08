@@ -154,6 +154,12 @@ public class PlayerBetterController : MonoBehaviour
             ChangeAnimationState(PlayerWallSlide);
             _vfxManager.isWallSliding = true;
 
+            if (inputX > 0f && Input.GetButtonDown("Saut"))
+            {
+                _vfxManager.isWallJumpingLeft = true;
+            }
+            else if(inputX < 0f && Input.GetButtonDown("Saut")) _vfxManager.isWallJumpingRight = true;
+
             #region Animation Related
             _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
@@ -176,12 +182,6 @@ public class PlayerBetterController : MonoBehaviour
         if (rb.velocity.y < -0.3) isFalling = true;
         else isFalling = false;
         
-        #endregion
-
-        if (Input.GetButtonDown("CelesteMode")) celesteModeOn = !celesteModeOn;
-        
-        Animations();
-
         if (inputX == 0f && isGrounded)
         {
             _slideCounter -= Time.deltaTime;
@@ -195,6 +195,13 @@ public class PlayerBetterController : MonoBehaviour
         {
             _slideCounter = playerData.slideDuration;
         }
+        
+        #endregion
+
+        if (Input.GetButtonDown("CelesteMode")) celesteModeOn = !celesteModeOn;
+        
+        Animations();
+        
     }
     
     private void FixedUpdate()
@@ -292,32 +299,20 @@ public class PlayerBetterController : MonoBehaviour
     }
     private void WallJump()
     {
-        RaycastHit2D hit;
-        
         //When turning in the opposite side of the wall you're jumping to, you can still wall jump 
         if (isTouchingBack && inputX != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * inputX,playerData.yWallForce),ForceMode2D.Impulse);
             wallJumping = false;
-            if (inputX > 0f) _vfxManager.isWallJumpingLeft = true;
-            else if(inputX < 0f) _vfxManager.isWallJumpingRight = true;
+
         }
         
         if (isTouchingFront && inputX != 0)
         {
-            Debug.DrawRay(transform.position, Vector2.left, Color.red);
-            if(Physics2D.Raycast(transform.position, Vector2.left, 0.5f))
-            {
-                
-            }
-            
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(playerData.xWallForce * -inputX,playerData.yWallForce),ForceMode2D.Impulse);
             wallJumping = false;
-
-            if (inputX > 0f) _vfxManager.isWallJumpingLeft = true;
-            else if(inputX < 0f) _vfxManager.isWallJumpingRight = true;
         }
     }
     
