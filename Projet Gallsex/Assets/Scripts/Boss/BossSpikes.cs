@@ -1,17 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BossSpikes : MonoBehaviour
+namespace Boss
 {
-    
-    private void OnCollisionEnter(Collision collision)
+    public class BossSpikes : MonoBehaviour
     {
-        if (gameObject.CompareTag("Player"))
+    
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            SceneManager.LoadScene("Level_Boss_Scene");
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Debug.Log(3);
+                SceneManager.LoadScene("Level_Boss_Scene");
+            }
         }
     }
 }
