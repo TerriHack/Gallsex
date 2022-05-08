@@ -30,6 +30,8 @@ public class VFXManager : MonoBehaviour
     public bool isWallSliding;
     public bool isRunning;
     public bool isJumping;
+    public bool isCrouching;
+    public bool isSitting;
     
     public float inputAngle;
 
@@ -44,6 +46,8 @@ public class VFXManager : MonoBehaviour
         }
         WallSliding();
         Running();
+        Crouch();
+        Sit();
         if(isJumping) Jumping();
     }
     
@@ -133,5 +137,21 @@ public class VFXManager : MonoBehaviour
             _wallContact = hitRight.point;
         }
 
+    }
+
+    private void Crouch()
+    {
+        if (isCrouching)
+        {
+            audio.StartSound(5);
+        }
+    }
+
+    private void Sit()
+    {
+        if (isSitting)
+        {
+            audio.StartSound(4);
+        }
     }
 }
