@@ -134,7 +134,7 @@ public class BossKIllTrigger : MonoBehaviour
             {
                 //going left
                 DOTween.To(() => transform.rotation, x => transform.rotation = x,
-                    new Vector3(transform.rotation.x, transform.rotation.y, 0), tweenTime);
+                    new Vector3(transform.rotation.x, transform.rotation.y, 180), tweenTime);
             }
             Debug.Log("tweenHorizontal");
 
