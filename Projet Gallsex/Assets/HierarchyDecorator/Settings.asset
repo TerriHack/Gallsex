@@ -493,9 +493,9 @@ MonoBehaviour:
       shown: 0
     - name: WindZone
       shown: 0
-    - name: AudioManager
-      shown: 0
     - name: BossFightTrigger
+      shown: 0
+    - name: BossKIllTrigger
       shown: 0
     - name: DotweenCam
       shown: 0
@@ -506,6 +506,8 @@ MonoBehaviour:
     - name: LookAhead
       shown: 0
     - name: MyJointBecauseUnitySucks
+      shown: 0
+    - name: AudioManager
       shown: 0
     - name: TriggerBossFight
       shown: 0
@@ -835,16 +837,6 @@ MonoBehaviour:
       shown: 0
     - name: DropdownItem
       shown: 0
-    - name: CCDSolver2D
-      shown: 0
-    - name: FabrikSolver2D
-      shown: 0
-    - name: IKManager2D
-      shown: 0
-    - name: LimbSolver2D
-      shown: 0
-    - name: Solver2D
-      shown: 0
     - name: CinemachineCameraOffset
       shown: 0
     - name: CinemachineRecomposer
@@ -954,6 +946,16 @@ MonoBehaviour:
     - name: SpriteSkinEntity
       shown: 0
     - name: SpriteSkinManagerInternal
+      shown: 0
+    - name: CCDSolver2D
+      shown: 0
+    - name: FabrikSolver2D
+      shown: 0
+    - name: IKManager2D
+      shown: 0
+    - name: LimbSolver2D
+      shown: 0
+    - name: Solver2D
       shown: 0
     - name: DOTweenComponent
       shown: 0

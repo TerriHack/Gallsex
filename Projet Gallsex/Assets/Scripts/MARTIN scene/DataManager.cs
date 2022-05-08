@@ -12,17 +12,40 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("Level" + whichLevel))
+        // Vérifie s'il y a un temps sauvegardé pour chaque score
+        if (PlayerPrefs.HasKey("Level"+whichLevel+"Score1"))
         {
             endScore1 = PlayerPrefs.GetFloat("Level"+whichLevel+"Score1");
-            endScore1 = PlayerPrefs.GetFloat("Level"+whichLevel+"Score2");
-            endScore1 = PlayerPrefs.GetFloat("Level"+whichLevel+"Score3");
         }
+        if (PlayerPrefs.HasKey("Level"+whichLevel+"Score2"))
+        {
+            endScore2 = PlayerPrefs.GetFloat("Level"+whichLevel+"Score2");
+        }
+        if (PlayerPrefs.HasKey("Level"+whichLevel+"Score3"))
+        {
+            endScore3 = PlayerPrefs.GetFloat("Level"+whichLevel+"Score3");
+        }
+        
     }
 
     private void ComparingScore(float timerTime)
     {
-        if (timerTime > endScore1)
+        // Si un temps n'a pas été sauvegardé
+        if (endScore1 == 0)
+        {
+            PlayerPrefs.SetFloat("Level"+whichLevel+"Score1",timerTime);
+        }
+        else if (endScore2 == 0)
+        {
+            PlayerPrefs.SetFloat("Level"+whichLevel+"Score2",timerTime);
+        }
+        else if(endScore3 == 0)
+        {
+            PlayerPrefs.SetFloat("Level"+whichLevel+"Score3",timerTime);
+        }
+        
+        // si tous les temps ont été sauvegardés
+        else if (timerTime > endScore1)
         {
             PlayerPrefs.SetFloat("Level"+whichLevel+"Score1", timerTime);
             PlayerPrefs.SetFloat("Level"+whichLevel+"Score2", endScore1);
