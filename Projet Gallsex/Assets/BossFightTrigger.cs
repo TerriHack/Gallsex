@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BossFightTrigger : MonoBehaviour
 {
-    public GameObject cam;
+    public GameObject bossKillTrigger;
     public Vector3 startPosition;
     private List<GameObject> waypointList;
     public List<Vector3> waypointVector3List;
@@ -15,7 +15,7 @@ public class BossFightTrigger : MonoBehaviour
 
     private void Start()
     {
-        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        bossKillTrigger = GameObject.FindGameObjectWithTag("BossKillTrigger");
         waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
         for (int i = 0; i < waypointList.Count; i++)
         {
@@ -28,8 +28,8 @@ public class BossFightTrigger : MonoBehaviour
     {
        if (other.CompareTag("Player") && triggered == false)
        {
-          cam.GetComponent<camerafollow>().BossFight(startPosition,waypointVector3List,speed,true);
           triggered = true;
+          bossKillTrigger.GetComponent<BossKIllTrigger>().Activate(startPosition,waypointVector3List, true);
        }
     }
 }
