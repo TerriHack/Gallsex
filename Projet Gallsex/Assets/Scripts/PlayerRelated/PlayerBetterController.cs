@@ -391,7 +391,10 @@ public class PlayerBetterController : MonoBehaviour
             isCrouching = true;
             ChangeAnimationState(PlayerCrouch);
         }
-        else isCrouching = false;
+        else
+        {
+            isCrouching = false;
+        }
 
         if (_waitCounter <= 0f && !isSleeping && !wallSliding && !isFalling && !isCrouching)
         {

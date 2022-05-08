@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class VFXManager : MonoBehaviour
 {
+    [SerializeField] private PlayerBetterController playerController;
     [SerializeField] private Transform playerTr;
     [SerializeField] private GameObject dash;   
     [SerializeField] private ParticleSystemRenderer dashVFXRen;  
@@ -141,17 +142,11 @@ public class VFXManager : MonoBehaviour
 
     private void Crouch()
     {
-        if (isCrouching)
-        {
-            audio.StartSound(5);
-        }
+        audio.StartSound(5);
     }
 
     private void Sit()
-    {
-        if (isSitting)
-        {
-            audio.StartSound(4);
-        }
+    { 
+        audio.StartSound(4);
     }
 }
