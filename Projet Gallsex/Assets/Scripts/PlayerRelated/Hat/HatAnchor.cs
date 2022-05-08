@@ -21,19 +21,5 @@ public class HatAnchor : MonoBehaviour
 
             hairParts[i].position = newPositionLerped;
         }
-
-        /*
-        foreach (Transform hairPart in hairParts)
-        {
-            if (!hairPart.Equals(hairAnchor))
-            {
-                Vector2 targetPosition = (Vector2)piecetoFollow.position + partOffset;
-                Vector2 newPositionLerped = Vector2.Lerp(hairPart.position, targetPosition, Time.deltaTime * lerpSpeed);
-
-                hairPart.position = newPositionLerped;
-                piecetoFollow = hairPart;
-            }
-        }
-        */
     }
 }
