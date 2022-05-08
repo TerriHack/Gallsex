@@ -1,12 +1,17 @@
+using System;
 using System.Collections.Generic;
+using System.Security;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    #region Variables
 
-    [Header("AudioClips")]
-    [SerializeField] private AudioClip run;
+    [SerializeField] private AudioSource playerAudioSource;
+
+    [Header("AudioClips")] [SerializeField]
+    private AudioClip run;
+
     [SerializeField] private AudioClip jump;
     [SerializeField] private AudioClip landing;
     [SerializeField] private AudioClip wallSlide;
@@ -16,12 +21,19 @@ public class AudioManager : MonoBehaviour
 
     public List<AudioClip> soundList = new List<AudioClip>();
 
+    #endregion
+
+    #region PlayerSounds
+
     public void Awake()
     {
-        soundList.AddRange(new AudioClip[]{run, jump, landing, wallSlide, sit, crouch, dash});
+        soundList.AddRange(new AudioClip[] {run, jump, landing, wallSlide, sit, crouch, dash});
     }
+
     public void StartSound(int _clip)
     {
-        audioSource.PlayOneShot(soundList[_clip]);
+        playerAudioSource.PlayOneShot(soundList[_clip]);
     }
+
+    #endregion
 }
