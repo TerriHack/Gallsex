@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class VFXManager : MonoBehaviour
 {
+    [SerializeField] private PlayerBetterController playerController;
     [SerializeField] private Transform playerTr;
     [SerializeField] private GameObject dash;   
     [SerializeField] private ParticleSystemRenderer dashVFXRen;  
@@ -14,6 +15,11 @@ public class VFXManager : MonoBehaviour
     [SerializeField] private GameObject wallSlide;
     [SerializeField] private GameObject run;
     [SerializeField] private GameObject jump;
+
+    [Header("Audio")]
+    [SerializeField] private AudioManager audio;
+    [SerializeField] private GameObject runAudioObj;
+    [SerializeField] private GameObject wallSlideAudioObj;
 
     private Vector2 _feetPos;
     private Vector2 _wallContact;
@@ -25,7 +31,7 @@ public class VFXManager : MonoBehaviour
     public bool isWallSliding;
     public bool isRunning;
     public bool isJumping;
-    
+
     public float inputAngle;
 
     private void Update()
@@ -47,6 +53,7 @@ public class VFXManager : MonoBehaviour
         _feetPos = new Vector2(playerTr.position.x, playerTr.position.y - 1f);
         Instantiate(landing, _feetPos, playerTr.rotation);
         isLanding = false;
+        audio.StartSound(2);
     }
     private void DashVFX()
     {
@@ -56,6 +63,7 @@ public class VFXManager : MonoBehaviour
         Instantiate(dash, playerTr.position, dashVFX.transform.rotation);
         
         isDashing = false;
+        audio.StartSound(6);
     }
     private void Walljump()
     {
@@ -74,22 +82,40 @@ public class VFXManager : MonoBehaviour
             isWallJumpingRight = false;
 
         }
+        audio.StartSound(1);
     }
     private void WallSliding()
     {
-        if(isWallSliding) wallSlide.SetActive(true);
-        else wallSlide.SetActive(false);
+        if (isWallSliding)
+        {
+            wallSlide.SetActive(true);
+            wallSlideAudioObj.SetActive(true);
+        }
+        else
+        {
+            wallSlide.SetActive(false);
+            wallSlideAudioObj.SetActive(false);
+        }
     }
     private void Running()
-    { 
-        if(isRunning) run.SetActive(true);
-        else run.SetActive(false);
+    {
+        if (isRunning)
+        {
+            run.SetActive(true);
+            runAudioObj.SetActive(true);
+        }
+        else
+        {
+            run.SetActive(false);
+            runAudioObj.SetActive(false);
+        }
     }
     private void Jumping()
     {
         _feetPos = new Vector2(playerTr.position.x, playerTr.position.y - 1f);
         Instantiate(jump, _feetPos, playerTr.rotation);
         isJumping = false;
+        audio.StartSound(1);
     }
     private void WallJumpDetection()
     {
