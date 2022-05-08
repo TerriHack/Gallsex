@@ -15,6 +15,7 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Dash dash;
     [SerializeField] private Transform groundCheckTr;
     [SerializeField] private VFXManager _vfxManager;
+    [SerializeField] private AudioManager audio;
     #endregion
 
     #region Public float
@@ -130,15 +131,13 @@ public class PlayerBetterController : MonoBehaviour
             GroundClamp();
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
-            _vfxManager.isRunning = true;
             airTime = 0;
         }
         else if (rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
-        else
-        {
-            _vfxManager.isRunning = false;
-            airTime += Time.deltaTime;
-        }
+        else airTime += Time.deltaTime;
+
+        if (rb.velocity.x != 0 && isGrounded) _vfxManager.isRunning = true;
+        else _vfxManager.isRunning = false;
 
         if (_coyoteTimeCounter <= 0) _coyoteGrounded = false;
 
@@ -372,6 +371,14 @@ public class PlayerBetterController : MonoBehaviour
     {
         if(_currentState == newState) return;
         anim.Play(newState);
+        if (newState == PlayerSit)
+        {
+            audio.StartSound(4);
+        }
+        else if (newState == PlayerCrouch)
+        {
+            audio.StartSound(5);
+        }
         _currentState = newState;
     }
     private void Animations()
@@ -393,7 +400,10 @@ public class PlayerBetterController : MonoBehaviour
             isCrouching = true;
             ChangeAnimationState(PlayerCrouch);
         }
-        else isCrouching = false;
+        else
+        {
+            isCrouching = false;
+        }
 
         if (_waitCounter <= 0f && !isSleeping && !wallSliding && !isFalling && !isCrouching)
         {
