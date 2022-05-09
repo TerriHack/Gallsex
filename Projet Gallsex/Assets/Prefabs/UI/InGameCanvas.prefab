@@ -204,10 +204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2126950474}
-  OptionMenu: {fileID: 4435399115472476044}
+  optionMenu: {fileID: 4435399115472476044}
   firstButtonSelected: {fileID: 3131999047142566615}
   firstOptionButton: {fileID: 738071586144205153}
-  OptionClosedButton: {fileID: 3131999047232748800}
+  optionClosedButton: {fileID: 3131999047232748800}
 --- !u!1 &623976670589129936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1566,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3131999047423453284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2126950473}
+        m_TargetAssemblyTypeName: UI.InGameMenu, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3131999047433228539
 GameObject:
   m_ObjectHideFlags: 0

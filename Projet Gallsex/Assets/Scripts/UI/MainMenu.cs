@@ -15,6 +15,8 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        _playing = false;
+        
         //Reset the event system
         EventSystem.current.SetSelectedGameObject(null);
         //Set the new state in the event system
