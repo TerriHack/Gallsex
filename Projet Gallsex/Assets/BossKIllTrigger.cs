@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.Mathematics;
 
 public class BossKIllTrigger : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class BossKIllTrigger : MonoBehaviour
     [SerializeField] private bool hasTweened;
     public float tweenTime;
     private bool horizontal;
+
+    private Vector2 lastPosition;
+    public GameObject particles;
+    
+    private Vector3 mouthRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +62,9 @@ public class BossKIllTrigger : MonoBehaviour
 
     private void Update()
     {
+        GameObject playerWaypoint = GameObject.FindGameObjectWithTag("BossWaypoint");
+        waypoints[0] = playerWaypoint.transform.position;
+        
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex]) > toNextWaypoint)
         {
             speed *= speedFactor;
@@ -64,10 +73,6 @@ public class BossKIllTrigger : MonoBehaviour
                 speed = maxSpeed;
             }
 
-            if (hasTweened)
-            {
-                //hasTweened = false;
-            }
         }
         else if (currentWaypointIndex + 1 < waypoints.Count)
         {
@@ -93,8 +98,17 @@ public class BossKIllTrigger : MonoBehaviour
                 respawnPosition = waypoints[currentWaypointIndex];
             }
         }
-
+        
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
+        mouthRotation = playerWaypoint.transform.position - transform.position;
+        //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, Vector2.Angle(playerWaypoint.transform.position,transform.position));
+        /*transform.LookAt(mouthRotation);
+        transform.rotation = new quaternion(0, 0, transform.rotation.z *-1, transform.rotation.w);*/
+        //Debug.Log(Vector2.Angle(playerWaypoint.transform.position, transform.position));
+        
+        Vector2 angle = playerWaypoint.transform.position - transform.position;
+        transform.eulerAngles = new Vector3( transform.rotation.x, transform.rotation.y, Vector2.Angle(playerWaypoint.transform.position-transform.position,Vector2.right));
+        Debug.Log(angle);
     }
 
     public void Activate(Vector3 startPos, List<Vector3> waypointList, bool isHorizontal)

@@ -1,28 +1,102 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
-
-public class InGameMenu : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private Transform hud;
+    public class InGameMenu : MonoBehaviour
+    {
+        [SerializeField] private Animator anim;
+        [SerializeField] private GameObject optionMenu;
+        public GameObject firstButtonSelected, firstOptionButton, optionClosedButton;
 
-    private bool _isPaused;
+        private bool _isPaused;
     
-    private void Update()
-    {
-        if (Input.GetButtonDown("Pause"))
-        {
-            Pause();
-        }
-    }
-    private void Pause()
-    {
-        _isPaused = !_isPaused;
+        private const String Paused = "Pause";
+        private const String UnPaused = "UnPause";
+    
+        private string _currentState;
 
-        if(_isPaused) hud.position = new Vector2(hud.position.x, Mathf.Lerp(-255, 0, 3f * Time.unscaledTime));
-        else hud.position = new Vector2(hud.position.x, Mathf.Lerp(0, -255, 3f * Time.unscaledTime));
+        private void Update()
+        {
+            if (Input.GetButtonDown("Pause"))
+            {
+                Pause();
+            }
+
+            if (Input.GetButtonDown("Cancel"))
+            {
+                optionMenu.SetActive(false);
+            
+                //Reset the event system
+                EventSystem.current.SetSelectedGameObject(null);
+                //Set the new state in the event system
+                EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+            }
+        }
+        private void Pause()
+        {
+            _isPaused = !_isPaused;
+
+            if (_isPaused)
+            {
+                Time.timeScale = 0f;
+                ChangeAnimationState(Paused);
+            
+                //Reset the event system
+                EventSystem.current.SetSelectedGameObject(null);
+                //Set the new state in the event system
+                EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                ChangeAnimationState(UnPaused);
+            }
+        
+        }
+
+        public void Resume()
+        {
+            if (_isPaused)
+            {
+                Time.timeScale = 1f;
+                ChangeAnimationState(UnPaused);
+                _isPaused = false;
+            }
+
+        }
+    
+        public void Restart()
+        {
+            if (_isPaused)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Time.timeScale = 1f;
+            }
+
+        }
+
+        public void Option()
+        {
+            if(_isPaused) optionMenu.SetActive(true);
+        
+            //Reset the event system
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set the new state in the event system
+            EventSystem.current.SetSelectedGameObject(firstOptionButton);
+        }
+
+        public void Quit()
+        {
+            SceneManager.LoadScene("Main_Menu_Scene");
+        }
+        public void ChangeAnimationState(string newState)
+        {
+            if(_currentState == newState) return;
+            anim.Play(newState);
+            _currentState = newState;
+        }
     }
 }
