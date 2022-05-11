@@ -52,24 +52,9 @@ public class AudioManager : MonoBehaviour
         volumeList.AddRange(new float[] {runVolume, jumpVolume, landingVolume, wallSlideVolume, sitVolume, crouchVolume, dashVolume});
     }
 
-    //public void Update() //DEBUG : A SUPPRIMER ENSUITE
-    {
-        volumeList[0] = runVolume;
-        volumeList[1] = jumpVolume;
-        volumeList[2] = landingVolume;
-        volumeList[3] = wallSlideVolume;
-        volumeList[4] = sitVolume;
-        volumeList[5] = crouchVolume;
-        volumeList[6] = dashVolume;
-        
-    }
-
     public void StartSound(int _clip)
     {
         playerAudioSource.PlayOneShot(soundList[_clip], volumeList[_clip]);
-        Debug.Log("Clip number :" + _clip);
-        Debug.Log("Son :" + soundList[_clip]);
-        Debug.Log("Volume :" + volumeList[_clip]);
     }
 
     #endregion
