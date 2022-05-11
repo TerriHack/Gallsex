@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip crouch;
     [SerializeField] private AudioClip dash;
 
-    private List<AudioClip> soundList = new List<AudioClip>();
+    public List<AudioClip> soundList = new List<AudioClip>();
     
     #endregion
     
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float dashVolume;
     
-    private List<float> volumeList = new List<float>();
+    public List<float> volumeList = new List<float>();
 
     #endregion
 
@@ -52,9 +52,24 @@ public class AudioManager : MonoBehaviour
         volumeList.AddRange(new float[] {runVolume, jumpVolume, landingVolume, wallSlideVolume, sitVolume, crouchVolume, dashVolume});
     }
 
+    //public void Update() //DEBUG : A SUPPRIMER ENSUITE
+    {
+        volumeList[0] = runVolume;
+        volumeList[1] = jumpVolume;
+        volumeList[2] = landingVolume;
+        volumeList[3] = wallSlideVolume;
+        volumeList[4] = sitVolume;
+        volumeList[5] = crouchVolume;
+        volumeList[6] = dashVolume;
+        
+    }
+
     public void StartSound(int _clip)
     {
         playerAudioSource.PlayOneShot(soundList[_clip], volumeList[_clip]);
+        Debug.Log("Clip number :" + _clip);
+        Debug.Log("Son :" + soundList[_clip]);
+        Debug.Log("Volume :" + volumeList[_clip]);
     }
 
     #endregion
