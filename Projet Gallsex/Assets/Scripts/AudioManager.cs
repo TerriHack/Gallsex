@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip crouch;
     [SerializeField] private AudioClip dash;
 
-    private List<AudioClip> soundList = new List<AudioClip>();
+    public List<AudioClip> soundList = new List<AudioClip>();
     
     #endregion
     
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float dashVolume;
     
-    private List<float> volumeList = new List<float>();
+    public List<float> volumeList = new List<float>();
 
     #endregion
 

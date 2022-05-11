@@ -80229,7 +80229,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.2361111
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -80275,6 +80275,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1124167452727012605, guid: 9455a45db7edbbc4eb3cd076d1bee10a, type: 3}
+      propertyPath: m_Volume
+      value: 0.306
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124167452727012605, guid: 9455a45db7edbbc4eb3cd076d1bee10a, type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124167452727012605, guid: 9455a45db7edbbc4eb3cd076d1bee10a, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0.38055557
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124167452727012605, guid: 9455a45db7edbbc4eb3cd076d1bee10a, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.906
+      objectReference: {fileID: 0}
     - target: {fileID: 1124167452727012606, guid: 9455a45db7edbbc4eb3cd076d1bee10a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -80332,6 +80348,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3264360954441941594, guid: 3e781b7263446a2408e87b19c3f8b48b, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0.2361111
+      objectReference: {fileID: 0}
     - target: {fileID: 3264360954441941596, guid: 3e781b7263446a2408e87b19c3f8b48b, type: 3}
       propertyPath: m_Name
       value: WindCaster
@@ -80389,6 +80409,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202845734, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: m_Volume
+      value: 0.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 518105673, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: m_Volume
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 4315441860783796423, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: audio
       value: 
@@ -80475,16 +80503,40 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 7153afacb3d5b7c459434b54dcaa2c5e, type: 3}
     - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: runVolume
-      value: 0
+      value: 0.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: sitVolume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: wallSlide
       value: 
       objectReference: {fileID: 8300000, guid: 03bc300417eab5944b1e5592be2000c1, type: 3}
     - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: dashVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: jumpVolume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: windCaster
       value: 
       objectReference: {fileID: 309512538}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: crouchVolume
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: landingVolume
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: wallSlideVolume
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: windAudioSource
       value: 
