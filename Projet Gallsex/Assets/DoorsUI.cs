@@ -7,11 +7,11 @@ public class DoorsUI : MonoBehaviour
 {
     [SerializeField] private Animator animRightDoor;
     [SerializeField] private Animator animLeftDoor;
-    
+
     private float coolDown;
     
     private bool isClosing;
-    
+
     private string _currentRightDoorState;
     private string _currentLeftDoorState;
     
@@ -19,6 +19,8 @@ public class DoorsUI : MonoBehaviour
     private const string RightClose = "DoorClose";  
     private const string LeftOpen = "LeftDoorOpening";
     private const string LeftClose = "LeftDoorClosing";
+    private const string RightMenuClose = "SideMenuClosing";
+    private const string RightMenuOpen = "SideMenuOpening";
 
 
     private void Awake()
@@ -56,7 +58,17 @@ public class DoorsUI : MonoBehaviour
         ChangeRightDoorAnimationState(RightClose);
         ChangeLeftDoorAnimationState(LeftClose);
         isClosing = true;
-        coolDown = 3f;
+        coolDown = 1.8f;
+    }
+
+    public void OpenSelectionMenu()
+    {
+        ChangeRightDoorAnimationState(RightMenuOpen);
+    }
+
+    public void CloseSelectionMenu()
+    {
+        ChangeRightDoorAnimationState(RightMenuClose);
     }
     
     public void OpenTheDoors()
