@@ -952,11 +952,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAudioSource: {fileID: 5622140369879918245}
-  run: {fileID: 8300000, guid: 0360a81b48d83b14fbb4a45531bcf297, type: 3}
-  jump: {fileID: 8300000, guid: d46d0d9588d34244881e98769fd7edee, type: 3}
-  landing: {fileID: 8300000, guid: 374f1c324535ddf4282b55908c1262c5, type: 3}
-  wallSlide: {fileID: 8300000, guid: 86c1641b202aa5f46b3526fd9786c315, type: 3}
-  sit: {fileID: 8300000, guid: 7fc3805bfffdf384ba84320408c950d9, type: 3}
-  crouch: {fileID: 8300000, guid: d488332e0be1a7b45b0e3a83f604dcbc, type: 3}
-  dash: {fileID: 8300000, guid: ca24edee55f6bd1409d6cbcc3a9533a5, type: 3}
-  soundList: []
+  run: {fileID: 8300000, guid: 4fda1510912afb04c974d3389291f6ec, type: 3}
+  jump: {fileID: 8300000, guid: 896e8ae0e6b4b6648ae4dbceb068d74a, type: 3}
+  landing: {fileID: 8300000, guid: 7153afacb3d5b7c459434b54dcaa2c5e, type: 3}
+  wallSlide: {fileID: 8300000, guid: 03bc300417eab5944b1e5592be2000c1, type: 3}
+  sit: {fileID: 8300000, guid: 8520e681ad250b8458285d9a610223af, type: 3}
+  crouch: {fileID: 8300000, guid: d54574edce86a2c4d983d9e8aa7bef22, type: 3}
+  dash: {fileID: 8300000, guid: 5c596b0d1f723eb478a20f247c3a2322, type: 3}
+  runVolume: 0
+  jumpVolume: 0
+  landingVolume: 0
+  wallSlideVolume: 0
+  sitVolume: 0
+  crouchVolume: 0
+  dashVolume: 0

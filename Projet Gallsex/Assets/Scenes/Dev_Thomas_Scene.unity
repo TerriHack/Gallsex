@@ -80399,11 +80399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315441862468723162, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -189.2
       objectReference: {fileID: 0}
     - target: {fileID: 4315441862468723162, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -224.7
       objectReference: {fileID: 0}
     - target: {fileID: 4315441862468723162, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80446,9 +80446,41 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: run
+      value: 
+      objectReference: {fileID: 8300000, guid: 4fda1510912afb04c974d3389291f6ec, type: 3}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: sit
+      value: 
+      objectReference: {fileID: 8300000, guid: 8520e681ad250b8458285d9a610223af, type: 3}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: dash
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c596b0d1f723eb478a20f247c3a2322, type: 3}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 8300000, guid: 896e8ae0e6b4b6648ae4dbceb068d74a, type: 3}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: crouch
+      value: 
+      objectReference: {fileID: 8300000, guid: d54574edce86a2c4d983d9e8aa7bef22, type: 3}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 381480187}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: landing
+      value: 
+      objectReference: {fileID: 8300000, guid: 7153afacb3d5b7c459434b54dcaa2c5e, type: 3}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: runVolume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
+      propertyPath: wallSlide
+      value: 
+      objectReference: {fileID: 8300000, guid: 03bc300417eab5944b1e5592be2000c1, type: 3}
     - target: {fileID: 6670131494847968213, guid: c9aa2ff0e0fd19c4f93b9cdfc8b9b9b6, type: 3}
       propertyPath: windCaster
       value: 
