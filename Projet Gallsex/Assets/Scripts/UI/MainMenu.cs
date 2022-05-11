@@ -77,34 +77,26 @@ public class MainMenu : MonoBehaviour
 
     public void StartGameInTuto()
     {
-        doors.CloseTheDoors();
-        coolDown = 1.5f;
-        _playing = true;
         _selectedScene = "Level_Tuto_Scene";
+        StartCoroutine(StartWithLevelSelectionMenu());
     }
     
     public void StartGameInLevel1()
     {
-        doors.CloseTheDoors();
-        coolDown = 1.5f;
-        _playing = true;
         _selectedScene = "Level_1_Scene";
+        StartCoroutine(StartWithLevelSelectionMenu());
     }
     
     public void StartGameInLevel2()
     {
-        doors.CloseTheDoors();
-        coolDown = 1.5f;
-        _playing = true;
         _selectedScene = "Level_2_Scene";
+        StartCoroutine(StartWithLevelSelectionMenu());
     }
     
     public void StartGameInBoss()
     {
-        doors.CloseTheDoors();
-        coolDown = 1.5f;
-        _playing = true;
         _selectedScene = "Level_Boss_Scene";
+        StartCoroutine(StartWithLevelSelectionMenu());
     }
 
     IEnumerator CloseLevelSelectionMenu()
@@ -119,5 +111,18 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         
         levelSelectionMenu.SetActive(false);
+    }
+    
+    IEnumerator StartWithLevelSelectionMenu()
+    {
+        doors.OpenSelectionMenu();
+
+        yield return new WaitForSeconds(1f);
+        
+        levelSelectionMenu.SetActive(false);
+        
+        doors.CloseTheDoors();
+        coolDown = 1.5f;
+        _playing = true;
     }
 }
