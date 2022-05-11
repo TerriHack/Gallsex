@@ -53,6 +53,9 @@ namespace UI
             {
                 Time.timeScale = 1f;
                 ChangeAnimationState(UnPaused);
+                
+                //Reset the event system
+                EventSystem.current.SetSelectedGameObject(null);
             }
         
         }
@@ -75,7 +78,6 @@ namespace UI
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 Time.timeScale = 1f;
             }
-
         }
 
         public void Option()
