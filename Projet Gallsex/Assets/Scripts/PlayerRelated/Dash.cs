@@ -38,36 +38,33 @@ public class Dash : MonoBehaviour
         _inputYRightStick = Input.GetAxisRaw("Vertical");
 
         #region La vallé des IF
-
-        if (playerController.celesteModeOn)
+        
+        if (Input.GetButtonDown("Dash") && _inputXRightStick > 0.5 ||Input.GetButtonDown("Dash") && _inputXRightStick < -0.5 || Input.GetButtonDown("Dash") && _inputYRightStick > 0.5 || Input.GetButtonDown("Dash") && _inputYRightStick < -0.5)
         {
-            if (Input.GetButtonDown("Dash") && _inputXRightStick > 0.5 ||Input.GetButtonDown("Dash") && _inputXRightStick < -0.5 || Input.GetButtonDown("Dash") && _inputYRightStick > 0.5 || Input.GetButtonDown("Dash") && _inputYRightStick < -0.5)
-            {
-                if (_canDash == 0f)
-                {
-                    _dashDelay = playerData.dashTime;
-                    _dashAnimCounter = playerData.dashDuration;
-                    _dashCooldownCounter = playerData.dashCooldown;
-                }
-            
-                Flip();
+            if (_canDash == 0f)
+            { 
+                playerController.celesteModeOn = true;
+                _dashDelay = playerData.dashTime;
+                _dashAnimCounter = playerData.dashDuration;
+                _dashCooldownCounter = playerData.dashCooldown;
             }
+            
+            Flip();
         }
-        else
+
+        if (!playerController.celesteModeOn)
         {
             if (_inputX > 0.5 || _inputX < -0.5 || _inputY > 0.5 || _inputY < -0.5)
             {
                 if (_canDash == 0f)
                 {
                     _dashDelay = playerData.dashTime;
-                    _dashAnimCounter = playerData.dashDuration;
-                    _dashCooldownCounter = playerData.dashCooldown;
+                    _dashAnimCounter = playerData.dashDuration; _dashCooldownCounter = playerData.dashCooldown;
                 }
             
                 Flip();
-            }
+            } 
         }
-
 
         //Reset Dash (Ground/Cooldown) 
         if (playerController.isGrounded && _dashCooldownCounter <= 0f ||
@@ -117,20 +114,16 @@ public class Dash : MonoBehaviour
             
             if (_inputY < -0.3f) playerController.isDashingDown = true;
             else playerController.isDashingDown = false;
-        }
-        
-        if (_canDash == 0f && !playerController.isTouchingFront && !playerController.isGrounded)
-        {
-            rb.velocity = new Vector2(0, 0);
-            rb.AddForce(_direction.normalized * playerData.dashForce,ForceMode2D.Impulse); 
-            _canDash += 1f;
-
+            
             if (_inputYRightStick > 0.3f) playerController.isDashingUp = true;
             else playerController.isDashingUp = false;
             
             if (_inputYRightStick < -0.3f) playerController.isDashingDown = true;
             else playerController.isDashingDown = false;
+
+            playerController.celesteModeOn = false;
         }
+        
     }
 
     private void Flip()
@@ -161,6 +154,13 @@ public class Dash : MonoBehaviour
     
     private void InputDirection()
     {
-        _vfxManager.inputAngle = (Mathf.Atan2(_inputX, _inputY) * Mathf.Rad2Deg) -90f;
+        if (playerController.celesteModeOn)
+        {
+            _vfxManager.inputAngle = (Mathf.Atan2(_inputXRightStick, _inputYRightStick) * Mathf.Rad2Deg) -90f;
+        }
+        else
+        {
+            _vfxManager.inputAngle = (Mathf.Atan2(_inputX, _inputY) * Mathf.Rad2Deg) - 90f;
+        }
     }
 }

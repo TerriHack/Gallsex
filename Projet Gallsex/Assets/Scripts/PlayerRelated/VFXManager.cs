@@ -33,6 +33,7 @@ public class VFXManager : MonoBehaviour
     public bool isJumping;
 
     public float inputAngle;
+    public float inputLeftAngle;
 
     private void Update()
     {

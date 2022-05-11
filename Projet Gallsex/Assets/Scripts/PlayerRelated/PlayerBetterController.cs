@@ -196,8 +196,6 @@ public class PlayerBetterController : MonoBehaviour
         }
         
         #endregion
-
-        if (Input.GetButtonDown("CelesteMode")) celesteModeOn = !celesteModeOn;
         
         Animations();
         
