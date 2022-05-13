@@ -9,12 +9,14 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private DoorsUI doors;
     [SerializeField] private GameObject levelSelectionMenu;
-    public GameObject firstButtonSelected, firstOptionButton, selectionClosedButton, firstLevelSelectionButton;
+    [SerializeField] private GameObject optionMenu;
+    public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
 
     private float coolDown;
 
     private bool _playing;
     private bool selectionMenuOn;
+    private bool optionMenuOn;
 
     private string _selectedScene;
 
@@ -41,6 +43,9 @@ public class MainMenu : MonoBehaviour
         if (Input.GetButtonDown("Cancel") && selectionMenuOn)
         {
             StartCoroutine(CloseLevelSelectionMenu());
+        }else if(Input.GetButtonDown("Cancel") && optionMenuOn)
+        {
+            StartCoroutine(CloseOptionMenu());
         }
     }
 
@@ -124,5 +129,29 @@ public class MainMenu : MonoBehaviour
         doors.CloseTheDoors();
         coolDown = 1.5f;
         _playing = true;
+    }
+    
+    IEnumerator CloseOptionMenu()
+    {
+        doors.OpenOptionMenu();
+
+        //Reset the event system
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set the new state in the event system
+        EventSystem.current.SetSelectedGameObject(optionClosedButton);
+
+        yield return new WaitForSeconds(0.7f);
+        
+       optionMenu.SetActive(false);
+    }
+    
+    public void OptionMenu()
+    {
+        optionMenu.SetActive(true);
+        doors.CloseOptionMenu();
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set the new state in the event system
+        EventSystem.current.SetSelectedGameObject(firstOptionButton);
+        optionMenuOn = true;
     }
 }
