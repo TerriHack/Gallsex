@@ -21,7 +21,8 @@ public class DoorsUI : MonoBehaviour
     private const string LeftClose = "LeftDoorClosing";
     private const string RightMenuClose = "SideMenuClosing";
     private const string RightMenuOpen = "SideMenuOpening";
-
+    private const string LeftMenuClose = "LeftMenuClosing";
+    private const string LeftMenuOpen = "LeftMenuOpening";
 
     private void Awake()
     {
@@ -69,6 +70,16 @@ public class DoorsUI : MonoBehaviour
     public void CloseSelectionMenu()
     {
         ChangeRightDoorAnimationState(RightMenuClose);
+    }
+    
+    public void OpenOptionMenu()
+    {
+        ChangeLeftDoorAnimationState(LeftMenuOpen);
+    }
+    
+    public void CloseOptionMenu()
+    {
+        ChangeLeftDoorAnimationState(LeftMenuClose);
     }
     
     public void OpenTheDoors()
