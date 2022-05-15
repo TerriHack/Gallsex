@@ -49,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1c477126f3254696b7b633ddfd110071: 1
-    - Vector1_9e7b248d7bb84479b6d0d079f4055182: 1
+    - Vector1_9e7b248d7bb84479b6d0d079f4055182: 0.3
     - Vector1_b823ad99ffee4edd8a59e4e288efee54: 0.03
     - Vector1_bea3eee331dd4b59b47322a2329c56fe: 1000
     - _EnableExternalAlpha: 0
