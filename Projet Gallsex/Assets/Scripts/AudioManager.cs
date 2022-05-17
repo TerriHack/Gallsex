@@ -1,12 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private PlayerBetterController pbc;
+    #region AudioSources
 
-    [Header("AudioClips")]
+    [SerializeField] private AudioSource playerAudioSource;
+
+    [Header("AudioClips")] 
+    
     [SerializeField] private AudioClip run;
     [SerializeField] private AudioClip jump;
     [SerializeField] private AudioClip landing;
@@ -15,44 +17,45 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip crouch;
     [SerializeField] private AudioClip dash;
 
-    void Update()
+    public List<AudioClip> soundList = new List<AudioClip>();
+    
+    #endregion
+    
+    #region Volumes
+
+    [Header("Volumes")] 
+    
+    [Range(0f, 1f)]
+    [SerializeField] private float runVolume;
+    [Range(0f, 1f)]
+    [SerializeField] private float jumpVolume;
+    [Range(0f, 1f)]
+    [SerializeField] private float landingVolume;
+    [Range(0f, 1f)]
+    [SerializeField] private float wallSlideVolume;
+    [Range(0f, 1f)]
+    [SerializeField] private float sitVolume;
+    [Range(0f, 1f)]
+    [SerializeField] private float crouchVolume;
+    [Range(0f, 1f)]
+    [SerializeField] private float dashVolume;
+    
+    public List<float> volumeList = new List<float>();
+
+    #endregion
+
+    #region PlayerSounds
+
+    public void Awake()
     {
-        if (rb.velocity.x != 0 && pbc.isGrounded && audioSource.clip != run) // Lance le son de course
-        {
-            LoopSound(run);
-        }
-
-        if (rb.velocity.y != 0 && (pbc.wallSliding) && audioSource.clip != wallSlide) // Lance le son de wallslide
-        {
-            LoopSound(wallSlide);
-        }
-
-        if ((rb.velocity.x == 0 && rb.velocity.y == 0) || (!pbc.isGrounded && !pbc.wallSliding)) // Coupe les sons de run et de wallslide
-        {
-            StopLoopSound();
-        }
-
-        if (pbc.isJumping)
-        {
-            StartSound(jump);
-        }
+        soundList.AddRange(new AudioClip[] {run, jump, landing, wallSlide, sit, crouch, dash});
+        volumeList.AddRange(new float[] {runVolume, jumpVolume, landingVolume, wallSlideVolume, sitVolume, crouchVolume, dashVolume});
     }
 
-    void LoopSound(AudioClip _clip)
+    public void StartSound(int _clip)
     {
-        audioSource.clip = _clip;
-        audioSource.loop = true;
-        audioSource.Play();
-    } // Lance les sons qui se loop (run et wallslide)
-
-    void StopLoopSound()
-    {
-        audioSource.clip = null;
-        audioSource.loop = false;
-    } // Stop les sons qui se loop (run et wallslide)
-
-    void StartSound(AudioClip _clip)
-    {
-        audioSource.PlayOneShot(_clip);
+        playerAudioSource.PlayOneShot(soundList[_clip], volumeList[_clip]);
     }
+
+    #endregion
 }

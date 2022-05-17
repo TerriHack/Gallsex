@@ -15,59 +15,94 @@ public class Haircontrol : MonoBehaviour
 
     [SerializeField] private Vector2 fallOffset;
 
+    [SerializeField] private Vector2 RandomOffset;
+
+    [SerializeField] private Vector2 currentOffset;
+
+    [SerializeField] private float timer = 0;
+    [SerializeField] private float maxTimer;
+    private float state;
     [Header("Hair Anchor")]
     [SerializeField] private HatAnchor hairAnchor;
     [SerializeField] private Rigidbody2D rb;
-    private Vector2 Offsetplus;
-    private Vector2 Offsetbase;
     [SerializeField] public PlayerBetterController playerBetterController;
+
     private void FixedUpdate()
     {
-        UpdateHairOffset();
-    }
+        timer -= Time.deltaTime;
 
-    private void UpdateHairOffset()
-    {
-        Vector2 currentOffset = Vector2.zero;
-        // idle
-        if (rb.velocity.x == 0 && rb.velocity.y == 0)
+        UpdateHairOffset();
+        
+        if (timer <= 0)
         {
-            currentOffset = idleOffset;
+            if (state == 0)
+            {
+                float x = Random.Range(-0.02f, 0.02f);
+                float y = Random.Range(-0.005f, 0.005f);
+                RandomOffset = new Vector2(x, y);
+            }
+
+            else if (state == 1)
+            {
+                float x = Random.Range(-0.02f, 0.02f);
+                float y = Random.Range(-0.005f, 0.005f);
+                RandomOffset = new Vector2(x, y);
+            }
+
+            else if (state == 2)
+            {
+                float x = Random.Range(-0.03f, 0.02f);
+                float y = Random.Range(-0.005f, 0.005f);
+                RandomOffset = new Vector2(x, y);
+            }
+
+            else if (state == 3)
+            {
+                float x = Random.Range(-0.005f, 0.005f);
+                float y = Random.Range(-0.05f, 0.03f);
+                RandomOffset = new Vector2(x, y);
+            }
+
+            timer = maxTimer;
         }
-        // jump
-        if (rb.velocity.y > 0 && rb.velocity.x != 0)
-        {
-            Offsetplus = new Vector2(runOffset[0]/2, runOffset[1]/2);
-            Offsetbase = new Vector2(jumpOffset[0]/2, jumpOffset[1]/2);
-            currentOffset = Offsetbase + Offsetplus;
-        }
-        if (rb.velocity.y > 0)
-        {
-            currentOffset = jumpOffset;
-        }
-        //fall
-        if (rb.velocity.y < 0 && rb.velocity.x != 0)
-        {
-            Offsetplus = new Vector2(runOffset[0]/2, runOffset[1]/2);
-            Offsetbase = new Vector2(fallOffset[0]/2, fallOffset[1]);
-            currentOffset = Offsetbase + Offsetplus;
-        }
-        if (rb.velocity.y < 0)
-        {
-            currentOffset = fallOffset;
-        }
-        //run
-        if (rb.velocity.x != 0)
-        {
-            currentOffset = runOffset;
-        }
+        currentOffset += RandomOffset;
         //flip
-        Debug.Log(playerBetterController._facingRight);
         if (playerBetterController._facingRight == false)
         {
             currentOffset.x = currentOffset.x * -1;
         }
         hairAnchor.partOffset = currentOffset;
+    }
+
+    private void UpdateHairOffset()
+    {
+        currentOffset = Vector2.zero;
+
+        // idle
+        if (rb.velocity.x == 0 && rb.velocity.y == 0)
+        {
+            state = 0;
+            currentOffset = idleOffset + RandomOffset;
+        }
+        // jump
+        else if (rb.velocity.y > 1)
+        {
+            state = 1;
+            currentOffset = jumpOffset + RandomOffset;
+        }
+        //fall
+        else if (rb.velocity.y < -1)
+        {
+            state = 2;
+            currentOffset = fallOffset + RandomOffset;
+        }
+        //run
+        else if (rb.velocity.x != 0)
+        { 
+            state = 3;
+            currentOffset = runOffset + RandomOffset;
+        }
+        
     }
 
 }

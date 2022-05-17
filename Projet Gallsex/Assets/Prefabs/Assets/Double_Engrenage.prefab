@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6197563638470182585}
   - component: {fileID: 6197563638470182590}
-  - component: {fileID: 6197563638470182591}
   m_Layer: 0
   m_Name: SuperBack_2 (2)
   m_TagString: Untagged
@@ -70,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2037765467
-  m_SortingLayer: -6
+  m_SortingLayer: -7
   m_SortingOrder: 5
   m_Sprite: {fileID: 1239945117251681796, guid: 062410d554593894a95e092bbbbac817, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -83,27 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6197563638470182591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6197563638470182584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 202eb6da3fbb46245888d734a2e05af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repeatable: 0
-  offsetX: 0
-  offsetY: 0
-  boundsMinX: -100
-  boundsMinY: -100
-  boundsMaxX: 100
-  boundsMaxY: 100
-  cam: {fileID: 0}
-  parallaxEffect: 0.05
 --- !u!1 &6197563639135689691
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +92,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6197563639135689688}
   - component: {fileID: 6197563639135689689}
-  - component: {fileID: 6197563639135689694}
   m_Layer: 0
   m_Name: Double_Engrenage
   m_TagString: Untagged
@@ -175,7 +152,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2037765467
-  m_SortingLayer: -6
+  m_SortingLayer: -7
   m_SortingOrder: 5
   m_Sprite: {fileID: 1239945117251681796, guid: 062410d554593894a95e092bbbbac817, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,24 +165,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6197563639135689694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6197563639135689691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 202eb6da3fbb46245888d734a2e05af4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repeatable: 0
-  offsetX: 0
-  offsetY: 0
-  boundsMinX: -100
-  boundsMinY: -100
-  boundsMaxX: 100
-  boundsMaxY: 100
-  cam: {fileID: 0}
-  parallaxEffect: 0.05

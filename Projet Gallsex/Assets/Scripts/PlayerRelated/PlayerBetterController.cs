@@ -14,7 +14,8 @@ public class PlayerBetterController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Dash dash;
     [SerializeField] private Transform groundCheckTr;
-    [SerializeField] private VFXManager _vfxManager;
+    [SerializeField] private VFXManager vfxManager;
+    [SerializeField] private AudioManager audioManager;
     #endregion
 
     #region Public float
@@ -130,15 +131,13 @@ public class PlayerBetterController : MonoBehaviour
             GroundClamp();
             _coyoteGrounded = true;
             _coyoteTimeCounter = playerData.coyoteTime;
-            _vfxManager.isRunning = true;
             airTime = 0;
         }
         else if (rb.velocity.y < -0.1f) _coyoteTimeCounter -= Time.deltaTime;
-        else
-        {
-            _vfxManager.isRunning = false;
-            airTime += Time.deltaTime;
-        }
+        else airTime += Time.deltaTime;
+
+        if (rb.velocity.x != 0 && isGrounded) vfxManager.isRunning = true;
+        else vfxManager.isRunning = false;
 
         if (_coyoteTimeCounter <= 0) _coyoteGrounded = false;
 
@@ -152,20 +151,20 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
-            _vfxManager.isWallSliding = true;
+            vfxManager.isWallSliding = true;
 
             if (inputX > 0f && Input.GetButtonDown("Saut"))
             {
-                _vfxManager.isWallJumpingLeft = true;
+                vfxManager.isWallJumpingLeft = true;
             }
-            else if(inputX < 0f && Input.GetButtonDown("Saut")) _vfxManager.isWallJumpingRight = true;
+            else if(inputX < 0f && Input.GetButtonDown("Saut")) vfxManager.isWallJumpingRight = true;
 
             #region Animation Related
             _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
             #endregion
             
-        }else _vfxManager.isWallSliding = false;
+        }else vfxManager.isWallSliding = false;
 
 
         if (_wallJumpTime > 0f) wallJumping = true;
@@ -197,8 +196,6 @@ public class PlayerBetterController : MonoBehaviour
         }
         
         #endregion
-
-        if (Input.GetButtonDown("CelesteMode")) celesteModeOn = !celesteModeOn;
         
         Animations();
         
@@ -275,7 +272,7 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x,0);
             rb.AddForce(height, ForceMode2D.Impulse);
             _jumpBufferCounter = 0f;
-            _vfxManager.isJumping = true;
+            vfxManager.isJumping = true;
 
             #region Animation Related
             _waitCounter = playerData.waitTime;
@@ -372,6 +369,14 @@ public class PlayerBetterController : MonoBehaviour
     {
         if(_currentState == newState) return;
         anim.Play(newState);
+        if (newState == PlayerSit)
+        {
+            audioManager.StartSound(4);
+        }
+        else if (newState == PlayerCrouch)
+        {
+            audioManager.StartSound(5);
+        }
         _currentState = newState;
     }
     private void Animations()
@@ -393,7 +398,10 @@ public class PlayerBetterController : MonoBehaviour
             isCrouching = true;
             ChangeAnimationState(PlayerCrouch);
         }
-        else isCrouching = false;
+        else
+        {
+            isCrouching = false;
+        }
 
         if (_waitCounter <= 0f && !isSleeping && !wallSliding && !isFalling && !isCrouching)
         {
