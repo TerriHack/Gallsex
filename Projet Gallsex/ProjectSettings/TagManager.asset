@@ -17,6 +17,7 @@ TagManager:
   - CameraBoundaries
   - camera
   - BossKillTrigger
+  - BossWaypoint2
   layers:
   - Default
   - TransparentFX
