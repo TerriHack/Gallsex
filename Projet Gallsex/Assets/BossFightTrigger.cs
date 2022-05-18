@@ -10,7 +10,6 @@ public class BossFightTrigger : MonoBehaviour
     public Vector3 startPosition;
     private List<GameObject> waypointList;
     public List<Vector3> waypointVector3List;
-    public float speed;
     private bool triggered;
 
     private void Start()
@@ -29,7 +28,7 @@ public class BossFightTrigger : MonoBehaviour
        if (other.CompareTag("Player") && triggered == false)
        {
           triggered = true;
-          bossKillTrigger.GetComponent<BossKIllTrigger>().Activate(startPosition,waypointVector3List, true);
+          bossKillTrigger.GetComponent<BossMovement>().Activate(startPosition, waypointVector3List);
        }
     }
 }
