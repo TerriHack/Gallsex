@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace UI
@@ -9,6 +12,7 @@ namespace UI
     {
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject optionMenu;
+        [SerializeField] private TMP_Dropdown resolutionDropdown;
         public GameObject firstButtonSelected, firstOptionButton, optionClosedButton;
 
         private bool _isPaused;
@@ -17,6 +21,33 @@ namespace UI
         private const String UnPaused = "UnPause";
     
         private string _currentState;
+        
+        private Resolution[] _resolutions;
+
+        private void Start()
+        {
+            _resolutions = Screen.resolutions;
+        
+            resolutionDropdown.ClearOptions();
+
+            List<string> options = new List<string>();
+
+            int currentResolutionIndex = 0;
+            for (int i = 0; i < _resolutions.Length; i++)
+            {
+                string option = _resolutions[i].width + "x" + _resolutions[i].height;
+                options.Add(option);
+
+                if (_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
+                {
+                    currentResolutionIndex = i;
+                }
+            } 
+
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.value = currentResolutionIndex;
+            resolutionDropdown.RefreshShownValue();
+        }
 
         private void Update()
         {
@@ -99,6 +130,22 @@ namespace UI
             if(_currentState == newState) return;
             anim.Play(newState);
             _currentState = newState;
+        }
+        
+        public void SetQuality(int qualityIndex)
+        {
+            QualitySettings.SetQualityLevel(qualityIndex);
+        }
+
+        public void SetFullscreen(bool isFullscreen)
+        {
+            Screen.fullScreen = isFullscreen;
+        }
+
+        public void SetResolution(int resolutionIndex)
+        {
+            Resolution resolution = _resolutions[resolutionIndex];
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         }
     }
 }
