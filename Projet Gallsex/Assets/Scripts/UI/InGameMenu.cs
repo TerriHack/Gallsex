@@ -1,100 +1,151 @@
 using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-public class InGameMenu : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private Animator anim;
-    [SerializeField] private GameObject OptionMenu;
-    public GameObject firstButtonSelected, firstOptionButton, OptionClosedButton;
-
-    private bool _isPaused;
-    
-    private const String Paused = "Pause";
-    private const String UnPaused = "UnPause";
-    
-    private string _currentState;
-
-    private void Update()
+    public class InGameMenu : MonoBehaviour
     {
-        if (Input.GetButtonDown("Pause"))
+        [SerializeField] private Animator anim;
+        [SerializeField] private GameObject optionMenu;
+        [SerializeField] private TMP_Dropdown resolutionDropdown;
+        public GameObject firstButtonSelected, firstOptionButton, optionClosedButton;
+
+        private bool _isPaused;
+    
+        private const String Paused = "Pause";
+        private const String UnPaused = "UnPause";
+    
+        private string _currentState;
+        
+        private Resolution[] _resolutions;
+
+        private void Start()
         {
-            Pause();
+            _resolutions = Screen.resolutions;
+        
+            resolutionDropdown.ClearOptions();
+
+            List<string> options = new List<string>();
+
+            int currentResolutionIndex = 0;
+            for (int i = 0; i < _resolutions.Length; i++)
+            {
+                string option = _resolutions[i].width + "x" + _resolutions[i].height;
+                options.Add(option);
+
+                if (_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
+                {
+                    currentResolutionIndex = i;
+                }
+            } 
+
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.value = currentResolutionIndex;
+            resolutionDropdown.RefreshShownValue();
         }
 
-        if (Input.GetButtonDown("Cancel"))
+        private void Update()
         {
-            OptionMenu.SetActive(false);
+            if (Input.GetButtonDown("Pause"))
+            {
+                Pause();
+            }
+
+            if (Input.GetButtonDown("Cancel"))
+            {
+                optionMenu.SetActive(false);
             
+                //Reset the event system
+                EventSystem.current.SetSelectedGameObject(null);
+                //Set the new state in the event system
+                EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+            }
+        }
+        private void Pause()
+        {
+            _isPaused = !_isPaused;
+
+            if (_isPaused)
+            {
+                Time.timeScale = 0f;
+                ChangeAnimationState(Paused);
+            
+                //Reset the event system
+                EventSystem.current.SetSelectedGameObject(null);
+                //Set the new state in the event system
+                EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                ChangeAnimationState(UnPaused);
+                
+                //Reset the event system
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+        
+        }
+
+        public void Resume()
+        {
+            if (_isPaused)
+            {
+                Time.timeScale = 1f;
+                ChangeAnimationState(UnPaused);
+                _isPaused = false;
+            }
+
+        }
+    
+        public void Restart()
+        {
+            if (_isPaused)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Time.timeScale = 1f;
+            }
+        }
+
+        public void Option()
+        {
+            if(_isPaused) optionMenu.SetActive(true);
+        
             //Reset the event system
             EventSystem.current.SetSelectedGameObject(null);
             //Set the new state in the event system
-            EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+            EventSystem.current.SetSelectedGameObject(firstOptionButton);
         }
-    }
-    private void Pause()
-    {
-        _isPaused = !_isPaused;
 
-        if (_isPaused)
+        public void Quit()
         {
-            Time.timeScale = 0f;
-            ChangeAnimationState(Paused);
-            
-            //Reset the event system
-            EventSystem.current.SetSelectedGameObject(null);
-            //Set the new state in the event system
-            EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+            SceneManager.LoadScene("Main_Menu_Scene");
         }
-        else
+        public void ChangeAnimationState(string newState)
         {
-            Time.timeScale = 1f;
-            ChangeAnimationState(UnPaused);
+            if(_currentState == newState) return;
+            anim.Play(newState);
+            _currentState = newState;
         }
         
-    }
-
-    public void Resume()
-    {
-        if (_isPaused)
+        public void SetQuality(int qualityIndex)
         {
-            Time.timeScale = 1f;
-            ChangeAnimationState(UnPaused);
-            _isPaused = false;
+            QualitySettings.SetQualityLevel(qualityIndex);
         }
 
-    }
-    
-    public void Restart()
-    {
-        if (_isPaused)
+        public void SetFullscreen(bool isFullscreen)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Time.timeScale = 1f;
+            Screen.fullScreen = isFullscreen;
         }
 
-    }
-
-    public void Option()
-    {
-        if(_isPaused) OptionMenu.SetActive(true);
-        
-        //Reset the event system
-        EventSystem.current.SetSelectedGameObject(null);
-        //Set the new state in the event system
-        EventSystem.current.SetSelectedGameObject(firstOptionButton);
-    }
-
-    // private void Quit()
-    // {
-    //     SceneManager.LoadScene("MainMenu");
-    // }
-    public void ChangeAnimationState(string newState)
-    {
-        if(_currentState == newState) return;
-        anim.Play(newState);
-        _currentState = newState;
+        public void SetResolution(int resolutionIndex)
+        {
+            Resolution resolution = _resolutions[resolutionIndex];
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        }
     }
 }
