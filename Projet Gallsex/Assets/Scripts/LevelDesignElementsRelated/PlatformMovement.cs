@@ -11,6 +11,10 @@ public class PlatformMovement : MonoBehaviour
     public float waitFor;
     public bool waiting = false;
 
+    public AudioSource soundMovement;
+    public AudioSource soundStop;
+    public AudioClip stopClip;
+
     [SerializeField] public float speed = 2f;
 
     private void OnTriggerEnter2D(Collider2D collision2D)
@@ -48,6 +52,7 @@ public class PlatformMovement : MonoBehaviour
                 }
                 waitFor = waitTime;
                 waiting = true;
+                soundStop.PlayOneShot(stopClip, 0.3f);
                 if (doIWait < 2)
                 {
                     
@@ -74,7 +79,17 @@ public class PlatformMovement : MonoBehaviour
                 }
             }
         }
+
         
+        //Ajout du son (Thomas)
+        if (active) 
+        {
+            soundMovement.enabled = true;
+        }
+        else
+        {
+            soundMovement.enabled = false;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D Collision2D)
