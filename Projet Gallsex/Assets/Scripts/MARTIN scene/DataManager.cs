@@ -47,14 +47,14 @@ public class DataManager : MonoBehaviour
         // si tous les temps ont été sauvegardés
         else if (timerTime > endScore1)
         {
-            PlayerPrefs.SetFloat("Level"+whichLevel+"Score1", timerTime);
-            PlayerPrefs.SetFloat("Level"+whichLevel+"Score2", endScore1);
             PlayerPrefs.SetFloat("Level"+whichLevel+"Score3",endScore2);
+            PlayerPrefs.SetFloat("Level"+whichLevel+"Score2", endScore1);
+            PlayerPrefs.SetFloat("Level"+whichLevel+"Score1", timerTime);
         }
         else if (endScore1 > timerTime && timerTime > endScore2)
         {
-            PlayerPrefs.SetFloat("Level"+whichLevel+"Score2",timerTime);
             PlayerPrefs.SetFloat("Level"+whichLevel+"Score3",endScore2);
+            PlayerPrefs.SetFloat("Level"+whichLevel+"Score2",timerTime);
         }
         else if (endScore2 > timerTime && timerTime > endScore3)
         {
