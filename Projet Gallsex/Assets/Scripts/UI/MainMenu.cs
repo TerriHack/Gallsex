@@ -12,8 +12,11 @@ public class MainMenu : MonoBehaviour
 {
 
     [SerializeField] private DoorsUI doors;
+    [SerializeField] private CloudsUI clouds;
     [SerializeField] private GameObject levelSelectionMenu;
     [SerializeField] private GameObject optionMenu;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject scoreMenu;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
 
@@ -22,6 +25,7 @@ public class MainMenu : MonoBehaviour
     private bool _playing;
     private bool selectionMenuOn;
     private bool optionMenuOn;
+    private bool scoreMenuOn;
 
     private string _selectedScene;
 
@@ -78,6 +82,9 @@ public class MainMenu : MonoBehaviour
         }else if(Input.GetButtonDown("Cancel") && optionMenuOn)
         {
             StartCoroutine(CloseOptionMenu());
+        }else if (Input.GetButtonDown("Cancel") && scoreMenu)
+        {
+            CloseScoreMenu();
         }
     }
 
@@ -175,6 +182,42 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         
        optionMenu.SetActive(false);
+    }
+
+
+    public void OpenScoreMenu()
+    {
+        StartCoroutine(CloudsFalling());
+    }
+    
+    public void CloseScoreMenu()
+    {
+        StartCoroutine(CloudsRising());
+    }
+
+    IEnumerator CloudsFalling()
+    {
+        
+        clouds.ToScoreMenu();
+        
+        yield return new WaitForSeconds(0.7f);
+
+        mainMenu.SetActive(false);
+        scoreMenu.SetActive(true);
+        
+        scoreMenuOn = true;
+    }  
+    
+    IEnumerator CloudsRising()
+    {
+        clouds.ToMainMenu();
+
+        yield return new WaitForSeconds(0.7f);
+        
+        mainMenu.SetActive(true);
+        scoreMenu.SetActive(false);
+        
+        scoreMenuOn = false;
     }
     
     public void OptionMenu()
