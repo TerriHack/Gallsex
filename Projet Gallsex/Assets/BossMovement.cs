@@ -123,29 +123,31 @@ public class BossMovement : MonoBehaviour
         if (speed < newMaxSpeed)
         {
             speed *= speedFactor;
-            if (speed > newMaxSpeed)
-            {
-                speed = newMaxSpeed;
-            }
         }
-
-        if (speed < minSpeed)
+        else if (speed < minSpeed)
         {
             speed = minSpeed;
         }
-        
-        
-        
+        else if (speed > newMaxSpeed)
+        {
+            speed /= speedFactor;
+        }
+
+
+
         if (Vector2.Distance(transform.position, player.transform.position) > speedUpDistance)
         {
             newMaxSpeed = changeMaxSpeed;
             Debug.Log("speeding up");
         }
-
-        if (Vector2.Distance(transform.position, player.transform.position) < slowDownDistance)
+        else if (Vector2.Distance(transform.position, player.transform.position) < slowDownDistance)
         {
-            newMaxSpeed /= speedFactor * 2;
+            newMaxSpeed = maxSpeed;
             Debug.Log("slowing");
+        }
+        else
+        {
+            newMaxSpeed = 20;
         }
     }
     
