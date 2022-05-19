@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -294865404982767801, guid: a2ef654181591034da4edc12260d56df, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0360a81b48d83b14fbb4a45531bcf297, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3345
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -170,7 +170,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -294865404982767801, guid: a2ef654181591034da4edc12260d56df, type: 2}
   m_audioClip: {fileID: 8300000, guid: 86c1641b202aa5f46b3526fd9786c315, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.69
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -244,7 +244,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -441,7 +441,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4315441861629669613}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &4315441861629669615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,6 +769,11 @@ PrefabInstance:
     - {fileID: 8318423349195545318, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
     - {fileID: 1252955933955875670, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+--- !u!1 &2978697188539771449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1348250629617491695, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+  m_PrefabInstance: {fileID: 4315441861688964310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4315441860783796423 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1443644433, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
@@ -805,11 +810,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1030313107187109779, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
   m_PrefabInstance: {fileID: 4315441861688964310}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2978697188539771449 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1348250629617491695, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
-  m_PrefabInstance: {fileID: 4315441861688964310}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &778059989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +843,7 @@ MonoBehaviour:
   isRunning: 0
   isJumping: 0
   inputAngle: 0
+  inputLeftAngle: 0
 --- !u!82 &5622140369879918245
 AudioSource:
   m_ObjectHideFlags: 0
@@ -957,12 +958,22 @@ MonoBehaviour:
   landing: {fileID: 8300000, guid: 7153afacb3d5b7c459434b54dcaa2c5e, type: 3}
   wallSlide: {fileID: 8300000, guid: 03bc300417eab5944b1e5592be2000c1, type: 3}
   sit: {fileID: 8300000, guid: 8520e681ad250b8458285d9a610223af, type: 3}
-  crouch: {fileID: 8300000, guid: d54574edce86a2c4d983d9e8aa7bef22, type: 3}
-  dash: {fileID: 8300000, guid: 5c596b0d1f723eb478a20f247c3a2322, type: 3}
-  runVolume: 0
-  jumpVolume: 0
-  landingVolume: 0
-  wallSlideVolume: 0
-  sitVolume: 0
-  crouchVolume: 0
-  dashVolume: 0
+  crouch: {fileID: 8300000, guid: 9e30515a8bdee3e4e97a2960db1df0e3, type: 3}
+  dash: {fileID: 8300000, guid: f278f64617f1f184c9a4c2d8ab552c1f, type: 3}
+  soundList: []
+  runVolume: 0.5724
+  jumpVolume: 0.504
+  landingVolume: 0.63
+  wallSlideVolume: 0.324
+  sitVolume: 0.8115
+  crouchVolume: 1
+  dashVolume: 0.7995
+  volumeList: []
+--- !u!81 &381480198
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376523907264614150}
+  m_Enabled: 1

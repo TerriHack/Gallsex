@@ -1,15 +1,23 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
 
     [SerializeField] private DoorsUI doors;
+    [SerializeField] private CloudsUI clouds;
     [SerializeField] private GameObject levelSelectionMenu;
     [SerializeField] private GameObject optionMenu;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject scoreMenu;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
 
     private float coolDown;
@@ -17,8 +25,11 @@ public class MainMenu : MonoBehaviour
     private bool _playing;
     private bool selectionMenuOn;
     private bool optionMenuOn;
+    private bool scoreMenuOn;
 
     private string _selectedScene;
+
+    private Resolution[] _resolutions;
 
 
     private void Awake()
@@ -35,6 +46,31 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(firstButtonSelected);
     }
 
+    private void Start()
+    {
+        _resolutions = Screen.resolutions;
+        
+        resolutionDropdown.ClearOptions();
+
+        List<string> options = new List<string>();
+
+        int currentResolutionIndex = 0;
+        for (int i = 0; i < _resolutions.Length; i++)
+        {
+            string option = _resolutions[i].width + "x" + _resolutions[i].height;
+            options.Add(option);
+
+            if (_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        } 
+
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
+
     private void Update()
     {
         coolDown -= Time.deltaTime;
@@ -46,6 +82,9 @@ public class MainMenu : MonoBehaviour
         }else if(Input.GetButtonDown("Cancel") && optionMenuOn)
         {
             StartCoroutine(CloseOptionMenu());
+        }else if (Input.GetButtonDown("Cancel") && scoreMenu)
+        {
+            CloseScoreMenu();
         }
     }
 
@@ -144,6 +183,42 @@ public class MainMenu : MonoBehaviour
         
        optionMenu.SetActive(false);
     }
+
+
+    public void OpenScoreMenu()
+    {
+        StartCoroutine(CloudsFalling());
+    }
+    
+    public void CloseScoreMenu()
+    {
+        StartCoroutine(CloudsRising());
+    }
+
+    IEnumerator CloudsFalling()
+    {
+        
+        clouds.ToScoreMenu();
+        
+        yield return new WaitForSeconds(0.7f);
+
+        mainMenu.SetActive(false);
+        scoreMenu.SetActive(true);
+        
+        scoreMenuOn = true;
+    }  
+    
+    IEnumerator CloudsRising()
+    {
+        clouds.ToMainMenu();
+
+        yield return new WaitForSeconds(0.7f);
+        
+        mainMenu.SetActive(true);
+        scoreMenu.SetActive(false);
+        
+        scoreMenuOn = false;
+    }
     
     public void OptionMenu()
     {
@@ -153,5 +228,21 @@ public class MainMenu : MonoBehaviour
         //Set the new state in the event system
         EventSystem.current.SetSelectedGameObject(firstOptionButton);
         optionMenuOn = true;
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = _resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 }
