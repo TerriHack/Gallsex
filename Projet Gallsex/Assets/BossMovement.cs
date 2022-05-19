@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using DG.Tweening;
 using UnityEngine;
 
 public class BossMovement : MonoBehaviour
@@ -60,7 +62,6 @@ public class BossMovement : MonoBehaviour
     {
         ChangeSpeed();
         NormalMovement();
-        MoveMouth();
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
         
     }
@@ -76,46 +77,11 @@ public class BossMovement : MonoBehaviour
             if (currentWaypointIndex >= waypoints.Count)
             {
                 GetComponent<BossMovement>().enabled = false;
+                GetComponent<DotweenCam>().enabled = true;
                 currentWaypointIndex = 0;
             }
         }
 
-    }
-
-    private void MoveMouth()
-    {
-        if (isHorizontal)
-        {
-            if (Vector2.Distance(new Vector2(0, transform.position.y), new Vector2(0, player.transform.position.y)) < yPositionDifference)
-            {
-                Vector3.MoveTowards(transform.position,
-                    new Vector3(transform.position.x, transform.position.y + 1, transform.position.z),
-                    Time.deltaTime * speed);
-            }
-            else if (Vector2.Distance(new Vector2(0, transform.position.y), new Vector2(0, player.transform.position.y)) > -yPositionDifference)
-            {
-            
-                Vector3.MoveTowards(transform.position,
-                    new Vector3(transform.position.x, transform.position.y - 1, transform.position.z),
-                    Time.deltaTime * speed);
-            }
-        }
-        else
-        {
-            if (Vector2.Distance(new Vector2(transform.position.x,0), new Vector2(player.transform.position.x, 0)) < yPositionDifference)
-            {
-                Vector3.MoveTowards(transform.position,
-                    new Vector3(transform.position.x + 1, transform.position.y, transform.position.z),
-                    Time.deltaTime * speed);
-            }
-            else if (Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(player.transform.position.x, 0)) > -yPositionDifference)
-            {
-            
-                Vector3.MoveTowards(transform.position,
-                    new Vector3(transform.position.x - 1, transform.position.y, transform.position.z),
-                    Time.deltaTime * speed);
-            }
-        }
     }
 
     private void ChangeSpeed()
@@ -132,29 +98,13 @@ public class BossMovement : MonoBehaviour
         {
             speed /= speedFactor;
         }
-
-
-
-        if (Vector2.Distance(transform.position, player.transform.position) > speedUpDistance)
-        {
-            newMaxSpeed = changeMaxSpeed;
-            Debug.Log("speeding up");
-        }
-        else if (Vector2.Distance(transform.position, player.transform.position) < slowDownDistance)
-        {
-            newMaxSpeed = maxSpeed;
-            Debug.Log("slowing");
-        }
-        else
-        {
-            newMaxSpeed = 20;
-        }
     }
     
     public void Activate(Vector3 startPos, List<Vector3> list)
     {
         Start();
         GetComponent<BossMovement>().enabled = true;
+        GetComponent<DotweenCam>().enabled = false;
         transform.position = startPos;
         for (int i = 0; i < list.Count; i++)
         {

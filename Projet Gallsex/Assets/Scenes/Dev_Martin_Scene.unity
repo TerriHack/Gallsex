@@ -27814,7 +27814,7 @@ MonoBehaviour:
   maxSpeed: 0
   newMaxSpeed: 0
   changeMaxSpeed: 26
-  minSpeed: 0
+  minSpeed: 18
   newMinSpeed: 0
   speedFactor: 0
   speed: 0
@@ -27822,7 +27822,7 @@ MonoBehaviour:
   waypoints: []
   toNextWaypoint: 0.5
   speedUpDistance: 15.4
-  slowDownDistance: 8
+  slowDownDistance: 15.3
   isHorizontal: 1
 --- !u!114 &984741907
 MonoBehaviour:

@@ -11,6 +11,7 @@ public class BossFightTrigger : MonoBehaviour
     private List<GameObject> waypointList;
     public List<Vector3> waypointVector3List;
     private bool triggered;
+    public GameObject cam;
 
     private void Start()
     {
@@ -28,7 +29,9 @@ public class BossFightTrigger : MonoBehaviour
        if (other.CompareTag("Player") && triggered == false)
        {
           triggered = true;
-          bossKillTrigger.GetComponent<BossMovement>().Activate(startPosition, waypointVector3List);
+          cam.GetComponent<BossMovement>().Activate(startPosition, waypointVector3List);
+          //bossKillTrigger.transform.parent = cam.transform;
+          //bossKillTrigger.transform.position = new Vector3()  //cam.GetComponent<Camera>().orthographicSize
        }
     }
 }
