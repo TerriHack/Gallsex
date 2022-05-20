@@ -24,13 +24,10 @@ namespace UI
         
         private Resolution[] _resolutions;
 
-        private void Awake()
-        {
-            QualitySettings.SetQualityLevel(GameManager.instance.quality);
-        }
-
         private void Start()
         {
+            QualitySettings.SetQualityLevel(GameManager.instance.quality);
+            
             _resolutions = Screen.resolutions;
         
             resolutionDropdown.ClearOptions();
