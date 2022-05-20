@@ -497,6 +497,12 @@ MonoBehaviour:
       shown: 0
     - name: BossKIllTrigger
       shown: 0
+    - name: BossMovement
+      shown: 0
+    - name: CloudsUI
+      shown: 0
+    - name: DoorsUI
+      shown: 0
     - name: DotweenCam
       shown: 0
     - name: LightIntensity
@@ -504,6 +510,8 @@ MonoBehaviour:
     - name: LightOn
       shown: 0
     - name: LookAhead
+      shown: 0
+    - name: MoveMouth
       shown: 0
     - name: MyJointBecauseUnitySucks
       shown: 0
@@ -569,6 +577,8 @@ MonoBehaviour:
       shown: 0
     - name: prefabTimer
       shown: 0
+    - name: MixerController
+      shown: 0
     - name: BackCheck
       shown: 0
     - name: Dash
@@ -585,6 +595,8 @@ MonoBehaviour:
       shown: 0
     - name: VFXManager
       shown: 0
+    - name: MainMenu
+      shown: 0
     - name: BossTriggers
       shown: 0
     - name: calculateCameraBox
@@ -598,6 +610,10 @@ MonoBehaviour:
     - name: triggerland
       shown: 0
     - name: triggertest
+      shown: 0
+    - name: InGameMenu
+      shown: 0
+    - name: BossSpikes
       shown: 0
     - name: GridInformation
       shown: 0
@@ -837,6 +853,16 @@ MonoBehaviour:
       shown: 0
     - name: DropdownItem
       shown: 0
+    - name: CCDSolver2D
+      shown: 0
+    - name: FabrikSolver2D
+      shown: 0
+    - name: IKManager2D
+      shown: 0
+    - name: LimbSolver2D
+      shown: 0
+    - name: Solver2D
+      shown: 0
     - name: CinemachineCameraOffset
       shown: 0
     - name: CinemachineRecomposer
@@ -946,16 +972,6 @@ MonoBehaviour:
     - name: SpriteSkinEntity
       shown: 0
     - name: SpriteSkinManagerInternal
-      shown: 0
-    - name: CCDSolver2D
-      shown: 0
-    - name: FabrikSolver2D
-      shown: 0
-    - name: IKManager2D
-      shown: 0
-    - name: LimbSolver2D
-      shown: 0
-    - name: Solver2D
       shown: 0
     - name: DOTweenComponent
       shown: 0
