@@ -18,6 +18,7 @@ TagManager:
   - camera
   - BossKillTrigger
   - BossWaypoint2
+  - GameManager
   layers:
   - Default
   - TransparentFX
