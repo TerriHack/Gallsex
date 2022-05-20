@@ -24,6 +24,11 @@ namespace UI
         
         private Resolution[] _resolutions;
 
+        private void Awake()
+        {
+            QualitySettings.SetQualityLevel(GameManager.instance.quality);
+        }
+
         private void Start()
         {
             _resolutions = Screen.resolutions;
@@ -135,6 +140,7 @@ namespace UI
         public void SetQuality(int qualityIndex)
         {
             QualitySettings.SetQualityLevel(qualityIndex);
+            GameManager.instance.quality = qualityIndex;
         }
 
         public void SetFullscreen(bool isFullscreen)

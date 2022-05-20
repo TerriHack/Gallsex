@@ -233,6 +233,7 @@ public class MainMenu : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        GameManager.instance.quality = qualityIndex;
     }
 
     public void SetFullscreen(bool isFullscreen)
