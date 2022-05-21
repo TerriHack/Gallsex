@@ -152,7 +152,17 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
-            vfxManager.isWallSliding = true;
+            
+
+            if (inputX < 0)
+            {
+                vfxManager.isWallSlidingLeft = true;
+                
+            }else if (inputX > 0)
+            {
+                vfxManager.isWallSliding = true;
+            }
+            
 
             if (inputX > 0f && Input.GetButtonDown("Saut"))
             {
@@ -164,8 +174,12 @@ public class PlayerBetterController : MonoBehaviour
             _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
             #endregion
-            
-        }else vfxManager.isWallSliding = false;
+        }
+        else
+        {
+            vfxManager.isWallSlidingLeft = false;
+            vfxManager.isWallSliding = false;
+        }
 
 
         if (_wallJumpTime > 0f) wallJumping = true;
