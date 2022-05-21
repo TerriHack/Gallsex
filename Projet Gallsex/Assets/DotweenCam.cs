@@ -9,11 +9,13 @@ public class DotweenCam : MonoBehaviour
     [SerializeField] private Transform camTr;
     [SerializeField] private Transform lookAheadTr;
     [SerializeField] private PlayerBetterController playerController;
+    [SerializeField] private GameObject endTeleporter;
     private float _offsetSpeed;
     private float _inputX; 
     public float duration;
     public float distance;
     private bool isReset;
+    public bool levelEnded;
 
     void Update()
     {
@@ -32,22 +34,31 @@ public class DotweenCam : MonoBehaviour
         {
             duration = 3f;
         }
-        
-        if (_inputX != 0f)
+
+        if (!levelEnded)
         {
-            camTr.DOKill();
-            camTr.DOMove(new Vector3(playerPosition.x + _inputX, playerPosition.y, -10), duration);
-            isReset = false;
+            if (_inputX != 0f)
+            {
+                camTr.DOKill();
+                camTr.DOMove(new Vector3(playerPosition.x + _inputX, playerPosition.y, -10), duration);
+                isReset = false;
+            }
+            else
+            {
+                isReset = false;
+            
+                if (!isReset)
+                {
+                    camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, -10),2);
+                    isReset = true;
+                }
+            }
         }
         else
         {
-            isReset = false;
-            
-            if (!isReset)
-            {
-                camTr.DOMove(new Vector3(playerPosition.x, playerPosition.y, -10),2);
-                isReset = true;
-            }
+            camTr.DOKill();
+            var position = endTeleporter.transform.position;
+            camTr.DOMove(new Vector3(position.x, position.y, -10), duration);
         }
     }
 }
