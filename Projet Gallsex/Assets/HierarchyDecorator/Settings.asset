@@ -529,6 +529,8 @@ MonoBehaviour:
       shown: 0
     - name: Camerafollow
       shown: 0
+    - name: GameManager
+      shown: 0
     - name: ArrayCheckpoint
       shown: 0
     - name: Bouncer
