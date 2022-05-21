@@ -22,11 +22,7 @@ public class DotweenCam : MonoBehaviour
         distance = Vector2.Distance(camTr.position,lookAheadTr.position);
 
         _inputX = Input.GetAxisRaw("Horizontal");
-
-        var playerPosition = lookAheadTr.position;
-        var camPosition = camTr.position;
-
-
+        
         if (distance < -3 || distance > 3)
         {
             duration = 0.7f;
@@ -34,7 +30,14 @@ public class DotweenCam : MonoBehaviour
         {
             duration = 3f;
         }
+    }
 
+    private void FixedUpdate()
+    {
+        
+        var playerPosition = lookAheadTr.position;
+        var camPosition = camTr.position;
+        
         if (!levelEnded)
         {
             if (_inputX != 0f)
