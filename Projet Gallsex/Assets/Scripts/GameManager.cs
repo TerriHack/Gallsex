@@ -9,5 +9,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        quality = 2;
     }
 }

@@ -58,6 +58,7 @@ public class PlayerBetterController : MonoBehaviour
     public bool lookAheadReset;
     public bool wallSliding;
     public bool wallJumping;
+    public bool levelFinished;
     #endregion
     
     #region Private bool
@@ -203,8 +204,15 @@ public class PlayerBetterController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (inputX != 0) HorizontalMove();
-        
+        if (!levelFinished)
+        {
+            if (inputX != 0) HorizontalMove();
+        }
+        else
+        {
+            EndingRun();
+        }
+
         if (_isNuancing) JumpNuancer();
         
         if (isJumping) Jump();
@@ -213,10 +221,17 @@ public class PlayerBetterController : MonoBehaviour
 
         Gravity();
     }
+
+    private void EndingRun()
+    {
+        Vector2 movement;
+        movement = new Vector2(3 * playerData.speed, 0);
+        rb.AddForce(movement, ForceMode2D.Impulse);
+    }
     private void HorizontalMove()
     {
         Vector2 movement;
-        
+
         if (isGrounded)
         {
             movement = new Vector2(inputX * playerData.speed, 0);
@@ -383,7 +398,7 @@ public class PlayerBetterController : MonoBehaviour
     {
         _waitCounter -= Time.deltaTime;
 
-        if (isGrounded && !isMoving && !isWaiting && !isCrouching)
+        if (isGrounded && !isMoving && !isWaiting && !isCrouching && !levelFinished)
         {
             ChangeAnimationState(PlayerIdle);
         } 
