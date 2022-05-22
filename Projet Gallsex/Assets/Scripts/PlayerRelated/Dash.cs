@@ -27,7 +27,7 @@ public class Dash : MonoBehaviour
 
     private void Start()
     {
-        _canDash = 0f;
+        _canDash = 1f;
     }
 
     void Update()
