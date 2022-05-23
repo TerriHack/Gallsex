@@ -36,9 +36,12 @@ public class Trap : MonoBehaviour
         
         blink.SetBool("isDead", false);
         int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
+        player.GetComponent<PlayerBetterController>().enabled = false;
         Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
         player.transform.position = pos;
         playerRb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(0.4f);
+        player.GetComponent<PlayerBetterController>().enabled = true;
         movingPlatformManager.GetComponent<movingPlatformManager>().OnPlayerDeath();
     }
 }
