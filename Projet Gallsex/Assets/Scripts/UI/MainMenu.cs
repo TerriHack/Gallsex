@@ -11,6 +11,7 @@ using UnityEngine.UIElements;
 public class MainMenu : MonoBehaviour
 {
 
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private DoorsUI doors;
     [SerializeField] private CloudsUI clouds;
     [SerializeField] private GameObject levelSelectionMenu;
@@ -233,6 +234,7 @@ public class MainMenu : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        _gameManager.quality = qualityIndex;
     }
 
     public void SetFullscreen(bool isFullscreen)

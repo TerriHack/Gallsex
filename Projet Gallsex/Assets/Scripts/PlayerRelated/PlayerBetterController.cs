@@ -58,6 +58,8 @@ public class PlayerBetterController : MonoBehaviour
     public bool lookAheadReset;
     public bool wallSliding;
     public bool wallJumping;
+    public bool levelFinished;
+    public bool levelBeginning;
     #endregion
     
     #region Private bool
@@ -151,7 +153,17 @@ public class PlayerBetterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -playerData.wallSlidingSpeed, float.MaxValue));
             rb.AddForce(new Vector2(rb.velocity.x,rb.velocity.y - playerData.wallSlidingSpeed));
             ChangeAnimationState(PlayerWallSlide);
-            vfxManager.isWallSliding = true;
+            
+
+            if (inputX < 0)
+            {
+                vfxManager.isWallSlidingLeft = true;
+                
+            }else if (inputX > 0)
+            {
+                vfxManager.isWallSliding = true;
+            }
+            
 
             if (inputX > 0f && Input.GetButtonDown("Saut"))
             {
@@ -163,8 +175,12 @@ public class PlayerBetterController : MonoBehaviour
             _waitCounter = playerData.waitTime;
             _sittingCounter = playerData.timeToSleep;
             #endregion
-            
-        }else vfxManager.isWallSliding = false;
+        }
+        else
+        {
+            vfxManager.isWallSlidingLeft = false;
+            vfxManager.isWallSliding = false;
+        }
 
 
         if (_wallJumpTime > 0f) wallJumping = true;
@@ -203,8 +219,15 @@ public class PlayerBetterController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (inputX != 0) HorizontalMove();
-        
+        if (!levelFinished && !levelBeginning)
+        {
+            if (inputX != 0) HorizontalMove();
+        }
+        else if(levelBeginning || levelFinished)
+        {
+            EndingRun();
+        }
+
         if (_isNuancing) JumpNuancer();
         
         if (isJumping) Jump();
@@ -213,10 +236,21 @@ public class PlayerBetterController : MonoBehaviour
 
         Gravity();
     }
+
+    private void EndingRun()
+    {
+        if (!_facingRight)
+        {
+            Flip();
+        }
+        Vector2 movement;
+        movement = new Vector2(3 * playerData.speed, 0);
+        rb.AddForce(movement, ForceMode2D.Impulse);
+    }
     private void HorizontalMove()
     {
         Vector2 movement;
-        
+
         if (isGrounded)
         {
             movement = new Vector2(inputX * playerData.speed, 0);
@@ -383,7 +417,7 @@ public class PlayerBetterController : MonoBehaviour
     {
         _waitCounter -= Time.deltaTime;
 
-        if (isGrounded && !isMoving && !isWaiting && !isCrouching)
+        if (isGrounded && !isMoving && !isWaiting && !isCrouching && !levelFinished && !levelBeginning)
         {
             ChangeAnimationState(PlayerIdle);
         } 

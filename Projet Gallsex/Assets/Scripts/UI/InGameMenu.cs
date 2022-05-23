@@ -10,6 +10,7 @@ namespace UI
 {
     public class InGameMenu : MonoBehaviour
     {
+        [SerializeField] private GameManager _gameManager;
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject optionMenu;
         [SerializeField] private TMP_Dropdown resolutionDropdown;
@@ -24,8 +25,16 @@ namespace UI
         
         private Resolution[] _resolutions;
 
+
+        private void Awake()
+        {
+            _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        }
+
         private void Start()
         {
+            QualitySettings.SetQualityLevel(_gameManager.quality);
+            
             _resolutions = Screen.resolutions;
         
             resolutionDropdown.ClearOptions();
@@ -135,6 +144,7 @@ namespace UI
         public void SetQuality(int qualityIndex)
         {
             QualitySettings.SetQualityLevel(qualityIndex);
+            _gameManager.quality = qualityIndex;
         }
 
         public void SetFullscreen(bool isFullscreen)

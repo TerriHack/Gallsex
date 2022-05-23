@@ -13,6 +13,7 @@ public class VFXManager : MonoBehaviour
     [SerializeField] private GameObject landing;
     [SerializeField] private GameObject wallJump;
     [SerializeField] private GameObject wallSlide;
+    [SerializeField] private GameObject wallSlideLeft;
     [SerializeField] private GameObject run;
     [SerializeField] private GameObject jump;
 
@@ -29,6 +30,7 @@ public class VFXManager : MonoBehaviour
     public bool isWallJumpingRight;
     public bool isWallJumpingLeft;
     public bool isWallSliding;
+    public bool isWallSlidingLeft;
     public bool isRunning;
     public bool isJumping;
 
@@ -45,6 +47,7 @@ public class VFXManager : MonoBehaviour
             Walljump();
         }
         WallSliding();
+        WallSlidingLeft();
         Running();
         if(isJumping) Jumping();
     }
@@ -95,6 +98,19 @@ public class VFXManager : MonoBehaviour
         else
         {
             wallSlide.SetActive(false);
+            wallSlideAudioObj.SetActive(false);
+        }
+    }
+    private void WallSlidingLeft()
+    {
+        if (isWallSlidingLeft)
+        {
+            wallSlideLeft.SetActive(true);
+            wallSlideAudioObj.SetActive(true);
+        }
+        else
+        {
+            wallSlideLeft.SetActive(false);
             wallSlideAudioObj.SetActive(false);
         }
     }
