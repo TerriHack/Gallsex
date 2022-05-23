@@ -497,6 +497,10 @@ MonoBehaviour:
       shown: 0
     - name: BossKIllTrigger
       shown: 0
+    - name: BossMovement
+      shown: 0
+    - name: CloudsUI
+      shown: 0
     - name: DoorsUI
       shown: 0
     - name: DotweenCam
@@ -506,6 +510,8 @@ MonoBehaviour:
     - name: LightOn
       shown: 0
     - name: LookAhead
+      shown: 0
+    - name: MoveMouth
       shown: 0
     - name: MyJointBecauseUnitySucks
       shown: 0

@@ -15,7 +15,6 @@ public class BossFightTrigger : MonoBehaviour
 
     private void Start()
     {
-        bossKillTrigger = GameObject.FindGameObjectWithTag("BossKillTrigger");
         waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
         for (int i = 0; i < waypointList.Count; i++)
         {

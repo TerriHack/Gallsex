@@ -18,12 +18,10 @@ public class MoveMouth : MonoBehaviour
             if (player.transform.position.y > transform.position.y && Vector2.Distance(new Vector2(0,transform.position.y), new Vector2(0,player.transform.position.y)) > distance)
             {
                 transform.DOMoveY(transform.position.y + 1, speed);
-                Debug.Log("a");
             }
             else if (player.transform.position.y < transform.position.y && Vector2.Distance(new Vector2(0,transform.position.y), new Vector2(0,player.transform.position.y)) > distance)
             {
                 transform.DOMoveY(transform.position.y - 1, speed);
-                Debug.Log("b");
             }
             else
             {
