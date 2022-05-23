@@ -12,10 +12,10 @@ public class BossFightTrigger : MonoBehaviour
     public List<Vector3> waypointVector3List;
     private bool triggered;
     public GameObject cam;
+    public Rigidbody2D player;
 
     private void Start()
     {
-        bossKillTrigger = GameObject.FindGameObjectWithTag("BossKillTrigger");
         waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
         for (int i = 0; i < waypointList.Count; i++)
         {
@@ -26,12 +26,16 @@ public class BossFightTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       if (other.CompareTag("Player") && triggered == false)
-       {
-          triggered = true;
-          cam.GetComponent<BossMovement>().Activate(startPosition, waypointVector3List);
-          //bossKillTrigger.transform.parent = cam.transform;
-          //bossKillTrigger.transform.position = new Vector3()  //cam.GetComponent<Camera>().orthographicSize
-       }
+        waypointVector3List.Clear();
+        waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList(); 
+        for (int i = 0; i < waypointList.Count; i++) 
+        { 
+            waypointVector3List.Add(waypointList[i].transform.position); 
+        } 
+        if (other.CompareTag("Player") && triggered == false) 
+        { 
+            triggered = true; 
+            cam.GetComponent<BossMovement>().Activate(startPosition, waypointVector3List,player.velocity.x); 
+        }
     }
 }

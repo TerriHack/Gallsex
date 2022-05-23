@@ -14,19 +14,15 @@ public class BossMovement : MonoBehaviour
     public float speedFactor;
     [SerializeField] private float speed;
 
-    public GameObject player;
-
-    [SerializeField] private List<Vector3> waypoints;
+    public List<Vector3> waypoints;
     private int currentWaypointIndex;
-    public float toNextWaypoint;
 
     private float yPositionDifference;
-    public float speedUpDistance;
-    public float slowDownDistance;
 
-    public bool isHorizontal;
+    public bool hasBossStarted = false;
+    public float tweenSpeed;
+    public GameObject boss;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (maxSpeed == 0)
@@ -57,19 +53,19 @@ public class BossMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        ChangeSpeed();
-        NormalMovement();
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
-        
+        if (hasBossStarted)
+        {
+            ChangeSpeed();
+            NormalMovement();
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], Time.deltaTime * speed);
+        }
     }
 
 
     private void NormalMovement()
     {
-        
         if (Vector2.Distance(waypoints[currentWaypointIndex], transform.position) < .5f) // if at a waypoint
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -10);
@@ -79,9 +75,9 @@ public class BossMovement : MonoBehaviour
                 GetComponent<BossMovement>().enabled = false;
                 GetComponent<DotweenCam>().enabled = true;
                 currentWaypointIndex = 0;
+                boss.GetComponent<BossPhase1>().Sink();
             }
         }
-
     }
 
     private void ChangeSpeed()
@@ -98,17 +94,23 @@ public class BossMovement : MonoBehaviour
         {
             speed /= speedFactor;
         }
+
     }
     
-    public void Activate(Vector3 startPos, List<Vector3> list)
+    public void Activate(Vector3 startPos, List<Vector3> list, float playerVel)
     {
         Start();
         GetComponent<BossMovement>().enabled = true;
         GetComponent<DotweenCam>().enabled = false;
-        transform.position = startPos;
+        transform.DOMoveY(startPos.y,tweenSpeed).OnComplete(() => boss.GetComponent<BossPhase1>().activate(playerVel));
         for (int i = 0; i < list.Count; i++)
         {
             waypoints.Add(list[i]);
         }
+    }
+
+    public void StartBoss()
+    {
+        hasBossStarted = true;
     }
 }
