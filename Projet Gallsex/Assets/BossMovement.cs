@@ -14,7 +14,7 @@ public class BossMovement : MonoBehaviour
     public float speedFactor;
     [SerializeField] private float speed;
 
-    [SerializeField] private List<Vector3> waypoints;
+    public List<Vector3> waypoints;
     private int currentWaypointIndex;
 
     private float yPositionDifference;
@@ -22,7 +22,6 @@ public class BossMovement : MonoBehaviour
     public bool hasBossStarted = false;
     public float tweenSpeed;
     public GameObject boss;
-    public GameObject boss2;
 
     void Start()
     {
@@ -98,12 +97,12 @@ public class BossMovement : MonoBehaviour
 
     }
     
-    public void Activate(Vector3 startPos, List<Vector3> list)
+    public void Activate(Vector3 startPos, List<Vector3> list, float playerVel)
     {
         Start();
         GetComponent<BossMovement>().enabled = true;
         GetComponent<DotweenCam>().enabled = false;
-        transform.DOMoveY(startPos.y,tweenSpeed).OnComplete(() => boss.GetComponent<BossPhase1>().activate());
+        transform.DOMoveY(startPos.y,tweenSpeed).OnComplete(() => boss.GetComponent<BossPhase1>().activate(playerVel));
         for (int i = 0; i < list.Count; i++)
         {
             waypoints.Add(list[i]);
