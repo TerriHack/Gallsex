@@ -499,11 +499,15 @@ MonoBehaviour:
       shown: 0
     - name: BossMovement
       shown: 0
+    - name: BossPhase1
+      shown: 0
     - name: CloudsUI
       shown: 0
     - name: DoorsUI
       shown: 0
     - name: DotweenCam
+      shown: 0
+    - name: LevelBeginner
       shown: 0
     - name: LightIntensity
       shown: 0

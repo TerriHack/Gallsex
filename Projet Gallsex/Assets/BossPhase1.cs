@@ -20,6 +20,10 @@ public class BossPhase1 : MonoBehaviour
             transform.DOMoveX(position + distance, speed).OnComplete(() => cam.transform.parent.GetComponent<BossMovement>().StartBoss());
             transform.parent = cam.transform.parent.transform;
         }
+        else
+        {
+            
+        }
     }
 
     public void Sink()
