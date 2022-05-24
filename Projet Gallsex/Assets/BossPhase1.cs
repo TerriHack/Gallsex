@@ -6,31 +6,33 @@ using UnityEngine;
 
 public class BossPhase1 : MonoBehaviour
 {
-    public GameObject cam;
-    public bool isHorizontal;
+    public Rigidbody2D bossRb;
+    public Rigidbody2D playerRb;
+
     public float speed;
 
-    public void activate(float playerVel)
+    public bool isInDeadZone = false;
+
+    private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(transform.position.x);
-        Debug.Log(cam.transform.position.x);
-        if (isHorizontal == false)
+        if (other.CompareTag("Cloud"))
         {
-            float position = cam.GetComponent<Camera>().orthographicSize * -1 + cam.transform.position.x - 1;
-            
-            transform.DOMoveX(position, speed).OnComplete(() => cam.transform.parent.GetComponent<BossMovement>().StartBoss());
-            transform.parent = cam.transform.parent.transform;
-        }
-        else
-        {
-            float position2 = cam.GetComponent<Camera>().orthographicSize * -1 / 10;
-            transform.parent = cam.transform.parent.transform;
-            transform.DOMoveY(10, speed).OnComplete(() => cam.transform.parent.GetComponent<BossMovement>().StartBoss());
+            isInDeadZone = true;
+            Debug.Log("DeadZone");
         }
     }
 
-    public void Sink()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        transform.parent = null;
+        isInDeadZone = false;
+    }
+
+    void Update()
+    {
+        bossRb.velocity = Vector2.right * (speed - playerRb.velocity.x);
+        if (bossRb.velocity.x <= 0 && isInDeadZone)
+        {
+            bossRb.velocity = Vector2.zero;
+        }
     }
 }
