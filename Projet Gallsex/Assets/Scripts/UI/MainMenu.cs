@@ -28,11 +28,12 @@ public class MainMenu : MonoBehaviour
 
     private float coolDown;
 
-    private bool _playing;
-    private bool selectionMenuOn;
-    private bool optionMenuOn;
-    private bool scoreMenuOn;
-    private bool _splashScreened;
+    private bool canPress;
+    public bool _playing;
+    public bool selectionMenuOn;
+    public bool optionMenuOn;
+    public bool scoreMenuOn;
+    public bool _splashScreened;
 
     private string _selectedScene;
 
@@ -52,6 +53,8 @@ public class MainMenu : MonoBehaviour
         _selectedScene = "Level_Tuto_Scene";
         
         _playing = false;
+
+        StartCoroutine(Beginning());
     }
 
     private void Start()
@@ -83,21 +86,24 @@ public class MainMenu : MonoBehaviour
     {
         coolDown -= Time.deltaTime;
         StartGame();
+
+        if (canPress)
+        {
+            if (Input.GetButtonDown("Jump") && _splashScreened)
+            {
+                StartCoroutine(SplashScreenToMain());
+            }
         
-        if (Input.GetButtonDown("Jump") && _splashScreened)
-        {
-            StartCoroutine(SplashScreenToMain());
-        }
-        
-        if (Input.GetButtonDown("Cancel") && selectionMenuOn)
-        {
-            StartCoroutine(CloseLevelSelectionMenu());
-        }else if(Input.GetButtonDown("Cancel") && optionMenuOn)
-        {
-            StartCoroutine(CloseOptionMenu());
-        }else if (Input.GetButtonDown("Cancel") && scoreMenu)
-        {
-            CloseScoreMenu();
+            if (Input.GetButtonDown("Cancel") && selectionMenuOn)
+            {
+                StartCoroutine(CloseLevelSelectionMenu());
+            }else if(Input.GetButtonDown("Cancel") && optionMenuOn)
+            {
+                StartCoroutine(CloseOptionMenu());
+            }else if (Input.GetButtonDown("Cancel") && scoreMenuOn)
+            {
+                CloseScoreMenu();
+            }
         }
     }
 
@@ -160,6 +166,8 @@ public class MainMenu : MonoBehaviour
     {
         doors.OpenSelectionMenu();
 
+        selectionMenuOn = false;
+        
         //Reset the event system
         EventSystem.current.SetSelectedGameObject(null);
         //Set the new state in the event system
@@ -185,6 +193,7 @@ public class MainMenu : MonoBehaviour
     
     IEnumerator CloseOptionMenu()
     {
+        optionMenuOn = false;
         doors.OpenOptionMenu();
 
         //Reset the event system
@@ -200,11 +209,13 @@ public class MainMenu : MonoBehaviour
     public void OpenScoreMenu()
     {
         StartCoroutine(CloudsFalling());
+        scoreMenuOn = true;
     }
     
     public void CloseScoreMenu()
     {
         StartCoroutine(CloudsRising());
+        scoreMenuOn = false;
     }
 
     IEnumerator CloudsFalling()
@@ -216,8 +227,6 @@ public class MainMenu : MonoBehaviour
 
         mainMenu.SetActive(false);
         scoreMenu.SetActive(true);
-        
-        scoreMenuOn = true;
     }  
     
     IEnumerator CloudsRising()
@@ -228,8 +237,6 @@ public class MainMenu : MonoBehaviour
         
         mainMenu.SetActive(true);
         scoreMenu.SetActive(false);
-        
-        scoreMenuOn = false;
     }
     
     public void OptionMenu()
@@ -263,21 +270,25 @@ public class MainMenu : MonoBehaviour
     {
         blackScreen.SetBool("levelFinished", true);
 
-        yield return new WaitForSeconds(0.8f);
-        
+        yield return new WaitForSeconds(1f);
+        blackScreen.SetTrigger("levelTransition");
         pressAnyButtonScreen.SetActive(false);
-        mainMenu.SetActive(true);
         _splashScreened = false;
-        
+        mainMenu.SetActive(true);
+
         yield return new WaitForSeconds(0.2f);
         
         blackScreen.SetBool("levelFinished", false);
-        blackScreen.SetTrigger("isBeginning");
-
         //Reset the event system
         EventSystem.current.SetSelectedGameObject(null);
         //Set the new state in the event system
         EventSystem.current.SetSelectedGameObject(firstButtonSelected);
         
+    }
+
+    IEnumerator Beginning()
+    {
+        yield return new WaitForSeconds(2f);
+        canPress = true;
     }
 }
