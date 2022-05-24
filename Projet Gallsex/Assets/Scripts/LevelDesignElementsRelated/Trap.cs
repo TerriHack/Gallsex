@@ -9,13 +9,14 @@ public class Trap : MonoBehaviour
     public GameObject player;
     public GameObject movingPlatformManager;
     [SerializeField] private Animator blink;
+    [SerializeField] private DotweenCam cam;
     private Rigidbody2D playerRb;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            playerRb.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
+            playerRb.AddForce(Vector2.up * 40, ForceMode2D.Impulse);
             StartCoroutine(Death());
         }
     }
@@ -30,18 +31,20 @@ public class Trap : MonoBehaviour
 
     IEnumerator Death()
     {
+        cam.enabled = false;
         blink.SetBool("isDead", true);
-
-        yield return new WaitForSeconds(0.1f);
-        
-        blink.SetBool("isDead", false);
+        yield return new WaitForSeconds(0.3f);
         int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
         player.GetComponent<PlayerBetterController>().enabled = false;
         Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
         player.transform.position = pos;
         playerRb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(0.4f);
+        cam.enabled = true;
+        yield return new WaitForSeconds(0.8f);
         player.GetComponent<PlayerBetterController>().enabled = true;
+        blink.SetBool("isDead", false);
         movingPlatformManager.GetComponent<movingPlatformManager>().OnPlayerDeath();
+        
+
     }
 }
