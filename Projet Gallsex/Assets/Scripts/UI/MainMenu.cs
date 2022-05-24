@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -18,7 +19,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject scoreMenu;
+    [SerializeField] private GameObject pressAnyButtonScreen;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private Animation title;
+    [SerializeField] private Animation pressAnyButtonTxt;
+    [SerializeField] private Animator blackScreen;
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
 
     private float coolDown;
@@ -27,6 +32,7 @@ public class MainMenu : MonoBehaviour
     private bool selectionMenuOn;
     private bool optionMenuOn;
     private bool scoreMenuOn;
+    private bool _splashScreened;
 
     private string _selectedScene;
 
@@ -36,15 +42,16 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1f;
-    
+        
+        blackScreen.SetTrigger("isBeginning");
+        
+        _splashScreened = true;
+        pressAnyButtonTxt.Play();
+        title.Play();
+        
         _selectedScene = "Level_Tuto_Scene";
         
         _playing = false;
-        
-        //Reset the event system
-        EventSystem.current.SetSelectedGameObject(null);
-        //Set the new state in the event system
-        EventSystem.current.SetSelectedGameObject(firstButtonSelected);
     }
 
     private void Start()
@@ -76,6 +83,11 @@ public class MainMenu : MonoBehaviour
     {
         coolDown -= Time.deltaTime;
         StartGame();
+        
+        if (Input.GetButtonDown("Jump") && _splashScreened)
+        {
+            StartCoroutine(SplashScreenToMain());
+        }
         
         if (Input.GetButtonDown("Cancel") && selectionMenuOn)
         {
@@ -184,8 +196,7 @@ public class MainMenu : MonoBehaviour
         
        optionMenu.SetActive(false);
     }
-
-
+    
     public void OpenScoreMenu()
     {
         StartCoroutine(CloudsFalling());
@@ -246,5 +257,27 @@ public class MainMenu : MonoBehaviour
     {
         Resolution resolution = _resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    IEnumerator SplashScreenToMain()
+    {
+        blackScreen.SetBool("levelFinished", true);
+
+        yield return new WaitForSeconds(0.8f);
+        
+        pressAnyButtonScreen.SetActive(false);
+        mainMenu.SetActive(true);
+        _splashScreened = false;
+        
+        yield return new WaitForSeconds(0.2f);
+        
+        blackScreen.SetBool("levelFinished", false);
+        blackScreen.SetTrigger("isBeginning");
+
+        //Reset the event system
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set the new state in the event system
+        EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+        
     }
 }
