@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private Animation title;
     [SerializeField] private Animation pressAnyButtonTxt;
+    [SerializeField] private Animator blackScreen;
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
 
     private float coolDown;
@@ -41,7 +42,9 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1f;
-
+        
+        blackScreen.SetTrigger("isBeginning");
+        
         _splashScreened = true;
         pressAnyButtonTxt.Play();
         title.Play();
@@ -193,8 +196,7 @@ public class MainMenu : MonoBehaviour
         
        optionMenu.SetActive(false);
     }
-
-
+    
     public void OpenScoreMenu()
     {
         StartCoroutine(CloudsFalling());
@@ -259,21 +261,23 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator SplashScreenToMain()
     {
-        doors.CloseTheDoors();
+        blackScreen.SetBool("levelFinished", true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         
         pressAnyButtonScreen.SetActive(false);
         mainMenu.SetActive(true);
-            
+        _splashScreened = false;
+        
+        yield return new WaitForSeconds(0.2f);
+        
+        blackScreen.SetBool("levelFinished", false);
+        blackScreen.SetTrigger("isBeginning");
+
         //Reset the event system
         EventSystem.current.SetSelectedGameObject(null);
         //Set the new state in the event system
         EventSystem.current.SetSelectedGameObject(firstButtonSelected);
-
-        _splashScreened = false;
-
-        yield return new WaitForSeconds(1f);
-        doors.OpenTheDoors();
+        
     }
 }
