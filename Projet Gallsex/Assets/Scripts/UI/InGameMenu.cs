@@ -13,11 +13,14 @@ namespace UI
         [SerializeField] private GameManager _gameManager;
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject optionMenu;
+        [SerializeField] private GameObject quitMenu;
         [SerializeField] private TMP_Dropdown resolutionDropdown;
-        public GameObject firstButtonSelected, firstOptionButton, optionClosedButton;
+        public GameObject firstButtonSelected, firstOptionButton, optionClosedButton, firstQuitButton;
 
-        private bool _isPaused;
-    
+        public bool _isPaused;
+        public bool _quitMenued;
+        public bool _optionMenued;
+
         private const String Paused = "Pause";
         private const String UnPaused = "UnPause";
     
@@ -25,12 +28,12 @@ namespace UI
         
         private Resolution[] _resolutions;
 
+        //**************************************************************
 
         private void Awake()
         {
             _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         }
-
         private void Start()
         {
             QualitySettings.SetQualityLevel(_gameManager.quality);
@@ -57,7 +60,6 @@ namespace UI
             resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.RefreshShownValue();
         }
-
         private void Update()
         {
             if (Input.GetButtonDown("Pause"))
@@ -67,14 +69,35 @@ namespace UI
 
             if (Input.GetButtonDown("Cancel"))
             {
-                optionMenu.SetActive(false);
+                if (!_quitMenued && !_optionMenued)
+                {
+                    Resume();
+                }
+            }
             
+            if (Input.GetButtonDown("Cancel"))
+            {
+                if (_optionMenued)
+                {
+                    optionMenu.SetActive(false);
+                    _optionMenued = false;
+                }
+
+                if (_quitMenued)
+                {
+                    quitMenu.SetActive(false);
+                    _quitMenued = false;
+                }
+
                 //Reset the event system
                 EventSystem.current.SetSelectedGameObject(null);
                 //Set the new state in the event system
                 EventSystem.current.SetSelectedGameObject(firstButtonSelected);
             }
         }
+        
+        //**************************************************************
+        
         private void Pause()
         {
             _isPaused = !_isPaused;
@@ -99,7 +122,6 @@ namespace UI
             }
         
         }
-
         public void Resume()
         {
             if (_isPaused)
@@ -107,10 +129,9 @@ namespace UI
                 Time.timeScale = 1f;
                 ChangeAnimationState(UnPaused);
                 _isPaused = false;
+                optionMenu.SetActive(false);
             }
-
         }
-    
         public void Restart()
         {
             if (_isPaused)
@@ -119,20 +140,42 @@ namespace UI
                 Time.timeScale = 1f;
             }
         }
-
         public void Option()
         {
-            if(_isPaused) optionMenu.SetActive(true);
+            if (_isPaused)
+            {
+                _optionMenued = true;
+                optionMenu.SetActive(true);
+            }
         
             //Reset the event system
             EventSystem.current.SetSelectedGameObject(null);
             //Set the new state in the event system
             EventSystem.current.SetSelectedGameObject(firstOptionButton);
         }
-
-        public void Quit()
+        public void QuitButton()
+        {
+            _quitMenued = true;
+            quitMenu.SetActive(true);
+            
+            //Reset the event system
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set the new state in the event system
+            EventSystem.current.SetSelectedGameObject(firstQuitButton);
+        }
+        public void YesButton()
         {
             SceneManager.LoadScene("Main_Menu_Scene");
+        }
+        public void NoButton()
+        {
+            quitMenu.SetActive(false);
+            _quitMenued = true;
+            
+            //Reset the event system
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set the new state in the event system
+            EventSystem.current.SetSelectedGameObject(firstButtonSelected);
         }
         public void ChangeAnimationState(string newState)
         {
@@ -140,18 +183,15 @@ namespace UI
             anim.Play(newState);
             _currentState = newState;
         }
-        
         public void SetQuality(int qualityIndex)
         {
             QualitySettings.SetQualityLevel(qualityIndex);
             _gameManager.quality = qualityIndex;
         }
-
         public void SetFullscreen(bool isFullscreen)
         {
             Screen.fullScreen = isFullscreen;
         }
-
         public void SetResolution(int resolutionIndex)
         {
             Resolution resolution = _resolutions[resolutionIndex];
