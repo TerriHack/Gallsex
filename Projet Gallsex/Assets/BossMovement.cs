@@ -75,7 +75,6 @@ public class BossMovement : MonoBehaviour
                 GetComponent<BossMovement>().enabled = false;
                 GetComponent<DotweenCam>().enabled = true;
                 currentWaypointIndex = 0;
-                boss.GetComponent<BossPhase1>().Sink();
             }
         }
     }
@@ -95,22 +94,5 @@ public class BossMovement : MonoBehaviour
             speed /= speedFactor;
         }
 
-    }
-    
-    public void Activate(Vector3 startPos, List<Vector3> list, float playerVel)
-    {
-        Start();
-        GetComponent<BossMovement>().enabled = true;
-        GetComponent<DotweenCam>().enabled = false;
-        transform.DOMoveY(startPos.y,tweenSpeed).OnComplete(() => boss.GetComponent<BossPhase1>().activate(playerVel));
-        for (int i = 0; i < list.Count; i++)
-        {
-            waypoints.Add(list[i]);
-        }
-    }
-
-    public void StartBoss()
-    {
-        hasBossStarted = true;
     }
 }

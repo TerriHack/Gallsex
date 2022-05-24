@@ -6,36 +6,18 @@ using UnityEngine;
 
 public class BossFightTrigger : MonoBehaviour
 {
-    public GameObject bossKillTrigger;
-    public Vector3 startPosition;
-    private List<GameObject> waypointList;
-    public List<Vector3> waypointVector3List;
-    private bool triggered;
-    public GameObject cam;
-    public Rigidbody2D player;
-
-    private void Start()
-    {
-        waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
-        for (int i = 0; i < waypointList.Count; i++)
-        {
-            waypointVector3List.Add(waypointList[i].transform.position);
-        }
-    }
-
-
+    private bool triggered = false;
+    public GameObject boss;
+    public GameObject camera;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        waypointVector3List.Clear();
-        waypointList = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList(); 
-        for (int i = 0; i < waypointList.Count; i++) 
-        { 
-            waypointVector3List.Add(waypointList[i].transform.position); 
-        } 
-        if (other.CompareTag("Player") && triggered == false) 
-        { 
-            triggered = true; 
-            cam.GetComponent<BossMovement>().Activate(startPosition, waypointVector3List,player.velocity.x); 
+        if (other.CompareTag("Player") && triggered)
+        {
+            triggered = true;
+            boss.GetComponent<BossPhase1>().enabled = true;
+            boss.transform.SetParent(camera.transform);
+            
         }
     }
 }
