@@ -493,6 +493,8 @@ MonoBehaviour:
       shown: 0
     - name: WindZone
       shown: 0
+    - name: BossCutscene
+      shown: 0
     - name: BossFightTrigger
       shown: 0
     - name: BossKIllTrigger
@@ -500,6 +502,8 @@ MonoBehaviour:
     - name: BossMovement
       shown: 0
     - name: BossPhase1
+      shown: 0
+    - name: CameraBoss
       shown: 0
     - name: CloudsUI
       shown: 0
@@ -518,6 +522,8 @@ MonoBehaviour:
     - name: MoveMouth
       shown: 0
     - name: MyJointBecauseUnitySucks
+      shown: 0
+    - name: RepositionWaypointsBoss
       shown: 0
     - name: AudioManager
       shown: 0
@@ -606,6 +612,8 @@ MonoBehaviour:
     - name: BossTriggers
       shown: 0
     - name: calculateCameraBox
+      shown: 0
+    - name: stopPhase1
       shown: 0
     - name: tentaculeTrigger
       shown: 0
