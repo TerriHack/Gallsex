@@ -4,7 +4,7 @@ public class Parallax : MonoBehaviour
 {
     private float length, height, startPosX, startPosY;
     public bool repeatable = false;
-    public float offsetX, offsetY,boundsMinX,boundsMinY,boundsMaxX,boundsMaxY;
+    public float offsetX, offsetY;
 
     public GameObject cam;
 
@@ -28,15 +28,9 @@ public class Parallax : MonoBehaviour
         {
             InfiniteScroll();
         }
-
-        if (transform.position.x > boundsMaxX) transform.position = new Vector2(boundsMaxX,transform.position.y);
-        else if (transform.position.x < boundsMinX) transform.position = new Vector2(boundsMinX, transform.position.y);
-        else if (transform.position.y > boundsMaxY) transform.position = new Vector2(transform.position.x,boundsMaxY);
-        else if (transform.position.y < boundsMinY) transform.position = new Vector2(transform.position.x, boundsMinY);
         
 
     }
-
     void InfiniteScroll()
     {
         
