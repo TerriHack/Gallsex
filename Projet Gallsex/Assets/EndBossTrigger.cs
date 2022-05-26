@@ -9,9 +9,10 @@ public class EndBossTrigger : MonoBehaviour
     public GameObject camBoss;
     public GameObject camPlayer;
     public GameObject player;
+    private bool activated;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && activated == false)
         {
             camPlayer.transform.position = player.transform.position;
             camBoss.SetActive(false);
@@ -19,6 +20,7 @@ public class EndBossTrigger : MonoBehaviour
             camPlayer.GetComponent<DotweenCam>().enabled = true;
             boss.transform.parent = null;
             boss.GetComponent<BossPhase1>().speed += 4;
+            boss.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
