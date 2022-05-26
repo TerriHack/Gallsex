@@ -19,6 +19,7 @@ public class BreakablePlatform : MonoBehaviour
             time = 0;
             anim.Play();
             active = true;
+            Invoke("PlatformFall",0.1f);
         }
     }
     
@@ -51,7 +52,14 @@ public class BreakablePlatform : MonoBehaviour
                     active = false;
                 }
             }
-        }/*
+        }
+
+        void PlatformFall()
+        {
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        }
+
+        /*
         if (willDisappear)
         {
             time = time += Time.deltaTime;

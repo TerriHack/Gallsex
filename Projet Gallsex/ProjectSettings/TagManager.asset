@@ -19,6 +19,7 @@ TagManager:
   - BossKillTrigger
   - BossWaypoint2
   - GameManager
+  - BreakablePlatform
   layers:
   - Default
   - TransparentFX
