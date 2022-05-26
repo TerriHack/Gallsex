@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0571d878123afd48bb0fa951e765f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0.4
+  timer: 0.8
   active: 0
   spriteRenderer: {fileID: 3185122100254284986}
   boxCollider2D: {fileID: 4103720266536945813}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 4103720266536945813}
   m_Layer: 0
   m_Name: collision
-  m_TagString: JumpableGround
+  m_TagString: BreakablePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,5 +283,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
