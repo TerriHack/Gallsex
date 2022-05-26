@@ -19,7 +19,6 @@ public class stopPhase1 : MonoBehaviour
             {
                 bossCam.transform.position = new Vector3(playerCam.transform.position.x, boss.transform.position.y - 10);
                 boss.transform.position = new Vector3(bossCam.transform.position.x, bossCam.transform.position.y - 4, -10);
-                boss.transform.Rotate(0,0,90);
                 bossCam.SetActive(true);
                 playerCam.SetActive(false);
                 boss.transform.parent = bossCam.transform.parent;
