@@ -6,19 +6,20 @@ using UnityEngine;
 
 public class BossCutscene : MonoBehaviour
 {
-    private List<Vector3> waypoints;
+    public List<Vector3> waypoints;
+    public List<GameObject> list;
     private void Start()
     {
-        waypoints.Clear();
-        List<GameObject> list = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
-        for (int i = 0; i < list.Count - 1; i++)
-        {
-            waypoints.Add(list[i].transform.position);
-        }
+        list = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
     }
 
     public void Cutscene()
     {
+        for (int i = 0; i < list.Count; i++)
+        {
+            Debug.Log(list[i]);
+            waypoints.Add(list[i].transform.position);
+        }
         //tween(()).OnComplete() do next tween
     }
 }
