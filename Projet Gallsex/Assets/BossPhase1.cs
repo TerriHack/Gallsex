@@ -8,18 +8,21 @@ public class BossPhase1 : MonoBehaviour
 {
     public Rigidbody2D bossRb;
     public Rigidbody2D playerRb;
+    public GameObject bossCam;
 
     public float speed;
-
+    
     public bool isInDeadZone = false;
     public bool isHorizontal;
+    public float endValueSpeed;
+    public float tweenDuration;
+    public bool disappear;
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Cloud"))
         {
             isInDeadZone = true;
-            Debug.Log("DeadZone");
         }
     }
 
@@ -37,9 +40,11 @@ public class BossPhase1 : MonoBehaviour
             {
                 bossRb.velocity = Vector2.zero;
             }
+            
         }
         else
         {
+            disappear = false;
             transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
             bossRb.velocity = Vector2.up * (speed / 2 - playerRb.velocity.y);
             if (bossRb.velocity.y <= 0 && isInDeadZone)
@@ -47,5 +52,21 @@ public class BossPhase1 : MonoBehaviour
                 bossRb.velocity  = Vector2.zero;
             }
         }
+
+        if (disappear)
+        {
+            Debug.Log(Vector2.Distance(transform.position,bossCam.transform.position));
+            if (Vector2.Distance(transform.position, bossCam.transform.position) > bossCam.GetComponent<Camera>().orthographicSize * 3)
+            {
+                transform.gameObject.SetActive(false);
+                Debug.Log("disappear ?");
+            }
+        }
+    }
+
+    public void Cutscene()
+    {
+        disappear = true;
+        speed = endValueSpeed;
     }
 }

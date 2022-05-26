@@ -16,9 +16,9 @@ public class EndBossTrigger : MonoBehaviour
             camPlayer.transform.position = player.transform.position;
             camBoss.SetActive(false);
             camPlayer.SetActive(true);
+            camPlayer.GetComponent<DotweenCam>().enabled = true;
             boss.transform.parent = null;
             boss.GetComponent<BossPhase1>().speed += 4;
-            boss.GetComponent<BossCutscene>().EndCutscene();
         }
     }
 }

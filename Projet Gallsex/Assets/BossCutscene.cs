@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class BossCutscene : MonoBehaviour
@@ -12,17 +13,6 @@ public class BossCutscene : MonoBehaviour
     {
         list = GameObject.FindGameObjectsWithTag("BossWaypoint").ToList();
     }
-
-    public void Cutscene()
-    {
-        for (int i = 0; i < list.Count; i++)
-        {
-            Debug.Log(list[i]);
-            waypoints.Add(list[i].transform.position);
-        }
-        //tween(()).OnComplete() do next tween
-    }
-
     public void EndCutscene()
     {
         //Tween something

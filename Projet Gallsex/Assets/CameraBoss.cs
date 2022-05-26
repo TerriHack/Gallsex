@@ -15,7 +15,7 @@ public class CameraBoss : MonoBehaviour
     {
         if (isHorizontal)
         {
-            transform.position = new Vector3(player.transform.position.x + offsetX, 4, -10);
+            transform.position = new Vector3(player.transform.position.x + offsetX, offsetY, -10);
         }
         else
         {
