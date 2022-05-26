@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Post Process Profile
+  m_Name: The_Postprocess
   m_EditorClassIdentifier: 
   components:
   - {fileID: 8105120382692373158}
   - {fileID: 752110049427607801}
+  - {fileID: 4816391750559189902}
 --- !u!114 &752110049427607801
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -53,6 +54,25 @@ MonoBehaviour:
     m_Value: 12.5
     min: -100
     max: 100
+--- !u!114 &4816391750559189902
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.1
+    min: 0
+    max: 1
 --- !u!114 &8105120382692373158
 MonoBehaviour:
   m_ObjectHideFlags: 3
