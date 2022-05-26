@@ -19,7 +19,7 @@ public class CameraBoss : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(0, player.transform.position.y + offsetY, -10);
+            transform.position = new Vector3(498, player.transform.position.y + offsetY, -10);
         }
     }
     

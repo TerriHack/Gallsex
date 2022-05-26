@@ -22,4 +22,9 @@ public class BossCutscene : MonoBehaviour
         }
         //tween(()).OnComplete() do next tween
     }
+
+    public void EndCutscene()
+    {
+        //Tween something
+    }
 }
