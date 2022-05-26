@@ -1,13 +1,15 @@
 using TMPro;
 using UnityEngine;
 using System;
+using UnityEngine.EventSystems;
 
 public class prefabTimer : MonoBehaviour
 {
+
     private bool timerActive = true;
     public float currentTime;
     public TextMeshProUGUI currentTimeText;
-    
+
     void Start()
     {
         currentTime = 0;
