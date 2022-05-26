@@ -20,6 +20,7 @@ TagManager:
   - BossWaypoint2
   - GameManager
   - BreakablePlatform
+  - Timer
   layers:
   - Default
   - TransparentFX

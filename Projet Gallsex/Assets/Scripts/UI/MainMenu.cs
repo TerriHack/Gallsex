@@ -12,6 +12,18 @@ using UnityEngine.UIElements;
 public class MainMenu : MonoBehaviour
 {
 
+    [SerializeField] private GameObject runVFX;
+    [SerializeField] private GameObject optionVFX;
+    [SerializeField] private GameObject scoreVFX;
+    [SerializeField] private GameObject quitVFX;
+    [SerializeField] private GameObject selectionVFX;
+    [SerializeField] private GameObject lvlSelection;
+    [SerializeField] private GameObject quit;
+    [SerializeField] private GameObject option;
+    [SerializeField] private GameObject score;
+    [SerializeField] private GameObject run;
+
+    
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private DoorsUI doors;
     [SerializeField] private CloudsUI clouds;
@@ -104,6 +116,51 @@ public class MainMenu : MonoBehaviour
             {
                 CloseScoreMenu();
             }
+        }
+        
+        if (EventSystem.current.currentSelectedGameObject == lvlSelection)
+        {
+            selectionVFX.SetActive(true);
+            runVFX.SetActive(false);
+            optionVFX.SetActive(false);
+            quitVFX.SetActive(false);
+            scoreVFX.SetActive(false);
+        }
+        
+        if (EventSystem.current.currentSelectedGameObject == quit)
+        {
+            selectionVFX.SetActive(false);
+            runVFX.SetActive(false);
+            optionVFX.SetActive(false);
+            quitVFX.SetActive(true);
+            scoreVFX.SetActive(false);
+        }
+        
+        if (EventSystem.current.currentSelectedGameObject == run)
+        {
+            selectionVFX.SetActive(false);
+            runVFX.SetActive(true);
+            optionVFX.SetActive(false);
+            quitVFX.SetActive(false);
+            scoreVFX.SetActive(false);
+        }
+        
+        if (EventSystem.current.currentSelectedGameObject == score)
+        {
+            selectionVFX.SetActive(false);
+            runVFX.SetActive(false);
+            optionVFX.SetActive(false);
+            quitVFX.SetActive(false);
+            scoreVFX.SetActive(true);
+        }   
+        
+        if (EventSystem.current.currentSelectedGameObject == option)
+        {
+            selectionVFX.SetActive(false);
+            runVFX.SetActive(false);
+            optionVFX.SetActive(true);
+            quitVFX.SetActive(false);
+            scoreVFX.SetActive(false);
         }
     }
 
