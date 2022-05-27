@@ -45,7 +45,6 @@ public class BossPhase1 : MonoBehaviour
         else
         {
             disappear = false;
-            transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
             bossRb.velocity = Vector2.up * (speed / 2 - playerRb.velocity.y);
             if (bossRb.velocity.y <= 0 && isInDeadZone)
             {
