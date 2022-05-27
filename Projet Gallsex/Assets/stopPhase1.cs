@@ -36,15 +36,15 @@ public class stopPhase1 : MonoBehaviour
 
     private void StartPhase2()
     {
-        
         bossCam.transform.position = new Vector3(playerCam.transform.position.x, boss.transform.position.y - 10);
-        boss.transform.position = new Vector3(bossCam.transform.position.x, bossCam.transform.position.y - 20, 10);
+        playerCam.GetComponent<DotweenCam>().enabled = false;
         bossCam.SetActive(true);
-        playerCam.SetActive(false);
-        boss.transform.parent = bossCam.transform;
-        boss.GetComponent<BossPhase1>().enabled = true;
-        boss.GetComponent<BossPhase1>().isHorizontal = false;
+        playerCam.GetComponent<DotweenCam>().enabled = false;
         bossCam.GetComponent<CameraBoss>().isHorizontal = false;
+        boss.transform.position = new Vector3(bossCam.transform.position.x, bossCam.transform.position.y - 20, 10);
+        boss.transform.parent = bossCam.transform;
+        boss.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
+        boss.GetComponent<BossPhase1>().isHorizontal = false;
         //bossCam.GetComponent<CameraBoss>().offsetY = -4;
         deadZone.transform.position = new Vector3(bossCam.transform.position.x, -18, 0);
         deadZone.transform.rotation = Quaternion.Euler(0,0,90);

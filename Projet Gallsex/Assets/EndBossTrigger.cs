@@ -15,9 +15,10 @@ public class EndBossTrigger : MonoBehaviour
         if (other.CompareTag("Player") && activated == false)
         {
             camPlayer.transform.position = player.transform.position;
-            camBoss.SetActive(false);
             camPlayer.SetActive(true);
             camPlayer.GetComponent<DotweenCam>().enabled = true;
+            camBoss.GetComponent<CameraBoss>().enabled = false;
+            camBoss.SetActive(false);
             boss.transform.parent = null;
             boss.GetComponent<BossPhase1>().speed += 4;
             boss.GetComponent<BoxCollider2D>().enabled = false;
