@@ -2709,7 +2709,7 @@ MonoBehaviour:
   lvlSelection: {fileID: 1022043211}
   quit: {fileID: 1637202662}
   option: {fileID: 1666623474}
-  score: {fileID: 1666623474}
+  score: {fileID: 1133569212}
   run: {fileID: 714854563}
   _gameManager: {fileID: 745912084}
   doors: {fileID: 482904743}
