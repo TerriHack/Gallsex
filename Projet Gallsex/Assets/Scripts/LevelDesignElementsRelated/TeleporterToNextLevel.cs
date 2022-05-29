@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class TeleporterToNextLevel : MonoBehaviour
 {
  public string sceneName;
+ public string currentSceneName;
  [SerializeField] private GameManager _gameManager; 
  [SerializeField] private DotweenCam cam;
  [SerializeField] private Animator blackScreen;
@@ -44,7 +45,7 @@ public class TeleporterToNextLevel : MonoBehaviour
 
  private void SettingScore()
  {
-  if (sceneName == "Level_Tuto_Scene")
+  if (currentSceneName == "Level_Tuto_Scene")
   {
    if (PlayerPrefs.GetFloat("bestLevel1Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel1Time"))
    {
@@ -52,7 +53,7 @@ public class TeleporterToNextLevel : MonoBehaviour
    }
   }
   
-  if (sceneName == "Level_1_Scene")
+  if (currentSceneName == "Level_1_Scene")
   {
    if (PlayerPrefs.GetFloat("bestLevel2Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel2Time"))
    {
@@ -60,7 +61,7 @@ public class TeleporterToNextLevel : MonoBehaviour
    }
   }
   
-  if (sceneName == "Level_2_Scene")
+  if (currentSceneName == "Level_2_Scene")
   {
    if (PlayerPrefs.GetFloat("bestLevel3Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel3Time"))
    {
@@ -68,7 +69,7 @@ public class TeleporterToNextLevel : MonoBehaviour
    }
   }
   
-  if (sceneName == "Level_Boss_Scene")
+  if (currentSceneName == "Level_Boss_Scene")
   {
    if (PlayerPrefs.GetFloat("bestLevel4Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel4Time"))
    {
