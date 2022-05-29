@@ -27,7 +27,10 @@ public class triggerlight : MonoBehaviour
             currentTime = currentTime + Time.deltaTime;
             graphValue = curveIntensity.Evaluate(currentTime);
             projecteur.intensity = graphValue;
-           
+            if (currentTime == 1)
+            {
+                entered = false;
+            }
         }
     }
 }
