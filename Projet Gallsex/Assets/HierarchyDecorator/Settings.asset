@@ -505,11 +505,15 @@ MonoBehaviour:
       shown: 0
     - name: CameraBoss
       shown: 0
+    - name: ChangeCamera
+      shown: 0
     - name: CloudsUI
       shown: 0
     - name: DoorsUI
       shown: 0
     - name: DotweenCam
+      shown: 0
+    - name: EndBossTrigger
       shown: 0
     - name: LevelBeginner
       shown: 0
@@ -519,11 +523,15 @@ MonoBehaviour:
       shown: 0
     - name: LookAhead
       shown: 0
+    - name: MoveCameraUp
+      shown: 0
     - name: MoveMouth
       shown: 0
     - name: MyJointBecauseUnitySucks
       shown: 0
     - name: RepositionWaypointsBoss
+      shown: 0
+    - name: ScoreMenu
       shown: 0
     - name: AudioManager
       shown: 0
@@ -623,7 +631,11 @@ MonoBehaviour:
       shown: 0
     - name: triggerland
       shown: 0
+    - name: triggerlight
+      shown: 0
     - name: triggertest
+      shown: 0
+    - name: weirdo
       shown: 0
     - name: InGameMenu
       shown: 0
