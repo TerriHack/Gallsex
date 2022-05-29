@@ -23,9 +23,16 @@ public class TeleporterToNextLevel : MonoBehaviour
  
  private void OnTriggerEnter2D(Collider2D other)
  {
-  if (other.gameObject.CompareTag("Player"))
+  if (other.gameObject.CompareTag("Player") )
   {
-   StartCoroutine(LevelEnding());
+   if (currentSceneName == "Level_Boss_Scene")
+   {
+    StartCoroutine(GameEnding());
+   }
+   else
+   {
+    StartCoroutine(LevelEnding());
+   }
   }
  }
  
@@ -39,6 +46,17 @@ public class TeleporterToNextLevel : MonoBehaviour
   yield return new WaitForSeconds(0.6f);
   //Fade to black
   blackScreen.SetBool("levelFinished", true);
+  yield return new WaitForSeconds(1f);
+  SceneManager.LoadScene(sceneName);
+ }
+ 
+ IEnumerator GameEnding()
+ {
+  SettingScore();
+  cam.levelEnded = true;
+  yield return new WaitForSeconds(0.6f);
+  //Fade to white
+  blackScreen.SetBool("gameFinished", true);
   yield return new WaitForSeconds(1f);
   SceneManager.LoadScene(sceneName);
  }
