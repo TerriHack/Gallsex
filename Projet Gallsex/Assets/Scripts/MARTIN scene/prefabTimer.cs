@@ -26,14 +26,4 @@ public class prefabTimer : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\:fff");
     }
-
-    public void StartTimer()
-    {
-        timerActive = true;
-    }
-
-    public void StopTimer()
-    {
-        timerActive = false;
-    }
 }
