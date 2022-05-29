@@ -5603,6 +5603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1819400170}
+  - component: {fileID: 1819400171}
   m_Layer: 5
   m_Name: ScoreMenu
   m_TagString: Untagged
@@ -5634,6 +5635,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1819400171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819400169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fdbc7a32280ba44a21d9a289837c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldTimePillar: {fileID: 1094176905}
+  silverTimePillar: {fileID: 745444997}
+  bronzeTimePillar: {fileID: 1268598594}
 --- !u!1 &1848526825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3772103124004291081, guid: 5fb015ed74b22b049bde655dd8111091, type: 3}
