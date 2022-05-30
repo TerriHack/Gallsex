@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 6b96d63293acecd4999e2a0339ba85e9
+guid: c09afbf1be0a2ba42b67c9d243de03d9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2019123912481778560
-    second: bocal_araignee anim basik-Sheet_0
+      213: 7433154886873465520
+    second: bocal_araignee anim basik-Sheet 1_0
   - first:
-      213: -2925587655481202357
-    second: bocal_araignee anim basik-Sheet_1
+      213: 130161627325802815
+    second: bocal_araignee anim basik-Sheet 1_1
   - first:
-      213: 9202148489048354250
-    second: bocal_araignee anim basik-Sheet_2
+      213: 7298600103203577539
+    second: bocal_araignee anim basik-Sheet 1_2
   - first:
-      213: 3856228937204906993
-    second: bocal_araignee anim basik-Sheet_3
+      213: -2207208514451785825
+    second: bocal_araignee anim basik-Sheet 1_3
   - first:
-      213: 7605604776783773368
-    second: bocal_araignee anim basik-Sheet_4
+      213: -8943636435810076195
+    second: bocal_araignee anim basik-Sheet 1_4
   - first:
-      213: 5286200593070606356
-    second: bocal_araignee anim basik-Sheet_5
+      213: -7555389788780344892
+    second: bocal_araignee anim basik-Sheet 1_5
   - first:
-      213: 7375264298740671642
-    second: bocal_araignee anim basik-Sheet_6
+      213: 713115265123657833
+    second: bocal_araignee anim basik-Sheet 1_6
   - first:
-      213: 2086095038818637046
-    second: bocal_araignee anim basik-Sheet_7
+      213: 948863519590020957
+    second: bocal_araignee anim basik-Sheet 1_7
   - first:
-      213: -3376648771466143244
-    second: bocal_araignee anim basik-Sheet_8
+      213: -5029586491185679139
+    second: bocal_araignee anim basik-Sheet 1_8
   - first:
-      213: 3728160067784474642
-    second: bocal_araignee anim basik-Sheet_9
+      213: -115926399063469815
+    second: bocal_araignee anim basik-Sheet 1_9
   - first:
-      213: -3945213351391084537
-    second: bocal_araignee anim basik-Sheet_10
+      213: -4111122056236692858
+    second: bocal_araignee anim basik-Sheet 1_10
   - first:
-      213: 8438268061821083424
-    second: bocal_araignee anim basik-Sheet_11
+      213: -7079863733327514630
+    second: bocal_araignee anim basik-Sheet 1_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -163,7 +163,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_0
+      name: bocal_araignee anim basik-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 084d607df71aaf3e0800000000000000
-      internalID: -2019123912481778560
+      spriteID: 0b24d80bcfed72760800000000000000
+      internalID: 7433154886873465520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_1
+      name: bocal_araignee anim basik-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 35
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4966cb17893667d0800000000000000
-      internalID: -2925587655481202357
+      spriteID: f3924287f4d6ec100800000000000000
+      internalID: 130161627325802815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_2
+      name: bocal_araignee anim basik-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 70
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acdef14bb4994bf70800000000000000
-      internalID: 9202148489048354250
+      spriteID: 3ce141dcf16d94560800000000000000
+      internalID: 7298600103203577539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_3
+      name: bocal_araignee anim basik-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 105
@@ -240,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb3ea689c3148530800000000000000
-      internalID: 3856228937204906993
+      spriteID: f9732e6ec8b6e51e0800000000000000
+      internalID: -2207208514451785825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_4
+      name: bocal_araignee anim basik-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 140
@@ -261,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bef53e8f398c8960800000000000000
-      internalID: 7605604776783773368
+      spriteID: dd9bc4b0c02d1e380800000000000000
+      internalID: -8943636435810076195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_5
+      name: bocal_araignee anim basik-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 175
@@ -282,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 418ce619e6b5c5940800000000000000
-      internalID: 5286200593070606356
+      spriteID: 4c9422c640dd52790800000000000000
+      internalID: -7555389788780344892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_6
+      name: bocal_araignee anim basik-Sheet 1_6
       rect:
         serializedVersion: 2
         x: 210
@@ -303,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a94ee0bcdc33a5660800000000000000
-      internalID: 7375264298740671642
+      spriteID: 968aa9d2e8e75e900800000000000000
+      internalID: 713115265123657833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_7
+      name: bocal_araignee anim basik-Sheet 1_7
       rect:
         serializedVersion: 2
         x: 245
@@ -324,14 +324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f45d7c926c43fc10800000000000000
-      internalID: 2086095038818637046
+      spriteID: d577d71085a0b2d00800000000000000
+      internalID: 948863519590020957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_8
+      name: bocal_araignee anim basik-Sheet 1_8
       rect:
         serializedVersion: 2
         x: 280
@@ -345,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f9508525dbb321d0800000000000000
-      internalID: -3376648771466143244
+      spriteID: dd436c1fbb1533ab0800000000000000
+      internalID: -5029586491185679139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_9
+      name: bocal_araignee anim basik-Sheet 1_9
       rect:
         serializedVersion: 2
         x: 315
@@ -366,14 +366,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 210071a34d51db330800000000000000
-      internalID: 3728160067784474642
+      spriteID: 9015bb3ed85246ef0800000000000000
+      internalID: -115926399063469815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_10
+      name: bocal_araignee anim basik-Sheet 1_10
       rect:
         serializedVersion: 2
         x: 350
@@ -387,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 700c43b0c59cf39c0800000000000000
-      internalID: -3945213351391084537
+      spriteID: 68a0db1854c52f6c0800000000000000
+      internalID: -4111122056236692858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bocal_araignee anim basik-Sheet_11
+      name: bocal_araignee anim basik-Sheet 1_11
       rect:
         serializedVersion: 2
         x: 385
@@ -408,8 +408,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02f9e582810ca1570800000000000000
-      internalID: 8438268061821083424
+      spriteID: af3b7dcf1754fbd90800000000000000
+      internalID: -7079863733327514630
       vertices: []
       indices: 
       edges: []
@@ -417,7 +417,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 54ed9f495eb60e149abe36b0d63e1767
+    spriteID: 559abe2d89bc3154f96900ceb58d0e3a
     internalID: 0
     vertices: []
     indices: 
