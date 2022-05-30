@@ -118,6 +118,7 @@ namespace UI
 
             if (_isPaused)
             {
+                _gameManager.timerActive = false;
                 Time.timeScale = 0f;
                 ChangeAnimationState(Paused);
             
@@ -128,6 +129,7 @@ namespace UI
             }
             else
             {
+                _gameManager.timerActive = true;
                 Time.timeScale = 1f;
                 ChangeAnimationState(UnPaused);
                 
