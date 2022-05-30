@@ -64,7 +64,21 @@ namespace UI
         {
             if (Input.GetButtonDown("Pause"))
             {
-                Pause();
+                if (_optionMenued)
+                {
+                    optionMenu.SetActive(false);
+                    _optionMenued = false;
+                }
+                else if(_quitMenued)
+                {
+                    quitMenu.SetActive(false);
+                    _quitMenued = false;
+                }
+                else
+                {
+                    Pause();
+                }
+                
             }
 
             if (Input.GetButtonDown("Cancel"))
