@@ -65,10 +65,6 @@ public class PlatformMovement : MonoBehaviour
 
             transform.position = Vector2.MoveTowards(transform.position,
                     wayPoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
-            
-        }
-        else
-        {
             if (waiting)
             {
                 waitFor -= Time.deltaTime;
@@ -78,6 +74,10 @@ public class PlatformMovement : MonoBehaviour
                     active = true;
                 }
             }
+        }
+        else
+        {
+            
         }
 
         
