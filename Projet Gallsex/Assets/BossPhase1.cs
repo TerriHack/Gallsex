@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -24,6 +25,12 @@ public class BossPhase1 : MonoBehaviour
         {
             isInDeadZone = true;
         }
+    }
+
+    private void Start()
+    {
+        transform.position = new Vector3(-20, transform.position.y, 10); 
+        transform.DOMoveX(-17, 0.1f);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -67,5 +74,10 @@ public class BossPhase1 : MonoBehaviour
     {
         disappear = true;
         speed = endValueSpeed;
+    }
+
+    public void Phase2Tween()
+    {
+        transform.DOMoveY( bossCam.transform.position.y - 10, 0.1f);
     }
 }
