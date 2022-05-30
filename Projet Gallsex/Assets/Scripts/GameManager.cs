@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
         DontDestroyOnLoad(this.gameObject);
         quality = 2;
         timerActive = false;
