@@ -15,11 +15,11 @@ public class CameraBoss : MonoBehaviour
     {
         if (isHorizontal)
         {
-            transform.position = new Vector3(player.transform.position.x + offsetX, offsetY, 0);
+            transform.position = new Vector3(player.transform.position.x + offsetX, offsetY, -10);
         }
         else
         {
-            transform.position = new Vector3(498, player.transform.position.y + offsetY, 0);
+            transform.position = new Vector3(498, player.transform.position.y + offsetY, -10);
         }
     }
     
