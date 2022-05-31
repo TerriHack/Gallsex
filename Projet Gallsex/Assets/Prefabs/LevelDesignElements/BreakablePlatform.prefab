@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4a95d85f294c7484cb29992ec13049dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0571d878123afd48bb0fa951e765f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0.8
+  timer: 0.2
   active: 0
   spriteRenderer: {fileID: 3185122100254284986}
   boxCollider2D: {fileID: 4103720266536945813}
