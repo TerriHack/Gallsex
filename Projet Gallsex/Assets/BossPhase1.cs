@@ -35,7 +35,10 @@ public class BossPhase1 : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        isInDeadZone = false;
+        if (other.CompareTag("Cloud"))
+        {
+            isInDeadZone = false;
+        }
     }
 
     void Update()
@@ -61,11 +64,9 @@ public class BossPhase1 : MonoBehaviour
 
         if (disappear)
         {
-            Debug.Log(Vector2.Distance(transform.position,bossCam.transform.position));
             if (Vector2.Distance(transform.position, bossCam.transform.position) > bossCam.GetComponent<Camera>().orthographicSize * 3)
             {
                 transform.gameObject.SetActive(false);
-                Debug.Log("disappear ?");
             }
         }
     }
