@@ -23,10 +23,4 @@ public class LevelBeginner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         playerController.levelBeginning = false;
     }
-
-    public void SetBlackScreenOpacity()
-    {
-        blackScreen.color = new Color(0, 0, 0, 1);
-        Debug.Log(2);
-    }
 }
