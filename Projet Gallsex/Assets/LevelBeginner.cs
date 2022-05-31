@@ -1,17 +1,19 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 
 public class LevelBeginner : MonoBehaviour
 {
-
-    [SerializeField] private Animator blackScreen;
+    [SerializeField] private Animator blackScreenAnim;
     [SerializeField] private PlayerBetterController playerController;
+    [SerializeField] private Image blackScreen;
+    
+    
 
     private void Start()
     {
-        blackScreen.SetTrigger("isBeginning");
+        blackScreenAnim.SetTrigger("isBeginning");
         StartCoroutine(Begining());
     }
 
@@ -20,5 +22,11 @@ public class LevelBeginner : MonoBehaviour
         playerController.levelBeginning = true;
         yield return new WaitForSeconds(0.5f);
         playerController.levelBeginning = false;
+    }
+
+    public void SetBlackScreenOpacity()
+    {
+        blackScreen.color = new Color(0, 0, 0, 1);
+        Debug.Log(2);
     }
 }

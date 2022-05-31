@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 4103720266536945813}
   m_Layer: 0
   m_Name: collision
-  m_TagString: BreakablePlatform
+  m_TagString: JumpableGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
