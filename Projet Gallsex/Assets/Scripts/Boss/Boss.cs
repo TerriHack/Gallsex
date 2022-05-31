@@ -73,16 +73,17 @@ namespace Boss
             {
                 globalVolume.weight = 1;
             }
-
-
+            
+            //Debug des 3 zones
+            DebugZone();
         }
         
         //Randomise les multiplicateurs de vitesse
         private void Randomisation()
         {
             //random de la vitesse X
-            multClose = Random.Range(0.9f, 1.2f);
-            multMid = Random.Range(1.2f, 1.4f);
+            multClose = Random.Range(0.6f, 0.9f);
+            multMid = Random.Range(1f, 1.4f);
             multFar = Random.Range(1.4f, 1.8f);
             
             //random de la trajectoire Y
@@ -112,8 +113,20 @@ namespace Boss
         {
             bossRB.velocity = new Vector2(bossBaseSpeed * 3, bossYSpeed);
         }
-        
         #endregion
+        
+        void DebugZone()
+        {
+            var position = playerTransform.position;
+            var zone1Ray = new Vector2(position.x - zone1, -100);
+            var zone2Ray = new Vector2(position.x - zone2, -100);
+            var zone3Ray = new Vector2(position.x - zone3, -100);
+            var rayDir = new Vector3(0, 200, 0);
+            
+            Debug.DrawRay(zone1Ray, rayDir, Color.green);
+            Debug.DrawRay(zone2Ray, rayDir, Color.yellow);
+            Debug.DrawRay(zone3Ray, rayDir, Color.red);
+        }
     }
 }
 
