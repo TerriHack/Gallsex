@@ -134,7 +134,7 @@ namespace Boss
             if (distance > zone4) horizontalBoss.SetActive(false);
         }
         #endregion
-
+        
         public void ResetBoss()
         {
             horizontalBossTransform.position = new Vector3(1, 3, 0);
