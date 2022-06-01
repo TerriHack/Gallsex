@@ -41,7 +41,6 @@ public class stopPhase1 : MonoBehaviour
         playerCam.GetComponent<DotweenCam>().enabled = false;
         bossCam.SetActive(true);
         playerCam.GetComponent<DotweenCam>().enabled = false;
-        bossCam.GetComponent<CameraBoss>().isHorizontal = false;
         boss.transform.position = new Vector3(bossCam.transform.position.x, bossCam.transform.position.y - 10, 10);
         boss.transform.parent = bossCam.transform;
         boss.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
