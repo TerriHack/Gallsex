@@ -8,17 +8,17 @@ using static DG.Tweening.DOTween;
 public class CameraBoss : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private GameObject boss;
+    private Boss.Boss bossMovement;
     private Transform _camTr;
     
-    [Space]
     [Header("Offset Camera")]
     [Range(0f, 10f)] public float offsetX; 
     [Range(0f, 10f)] public float offsetY;
     
     [Header("Debug Phases")] 
     public int phaseCounter;
-
-    [Space]
+    
     [Header("Position Setting")]
     public float camX;
     public float camX3;
@@ -31,6 +31,7 @@ public class CameraBoss : MonoBehaviour
     void Start()
     {
         _camTr = gameObject.GetComponent<Transform>();
+        bossMovement = boss.GetComponent<Boss.Boss>();
         phaseCounter = 1;
     }
     void Update()
@@ -67,11 +68,12 @@ public class CameraBoss : MonoBehaviour
     }
     void CameraPhase4()
     {
-        //offsetX3 = 0 - (4 / 67.5f) * disWithTarget3;
         _camTr.position = new Vector3(player.position.x + offsetX, 15.5f-(0.213f *disWithTarget3), -10);
     }
     void CameraPhase5()
     {
         _camTr.DOMove(new Vector3(497.5f, player.position.y + offsetY, -10),1f);
+        boss.SetActive(gameObject);
+        bossMovement.verticalPhase = true;
     }
 }

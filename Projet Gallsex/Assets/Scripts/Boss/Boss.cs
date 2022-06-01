@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.Rendering;
@@ -7,12 +8,14 @@ namespace Boss
     public class Boss : MonoBehaviour
     {
         #region Variables
-
         [Header("GameObjects")]
-        private Transform bossTransform;
+        private Transform verticalBossTransform;
+        private Transform horizontalBossTransform;
+        [SerializeField] GameObject horizontalBoss;
         private Rigidbody2D bossRB;
         [SerializeField] Transform playerTransform;
         public Volume globalVolume;
+        [SerializeField] private CameraBoss _bossCam;
 
         [Header("Vitesse de base du boss")]
         [SerializeField] private float bossBaseSpeed;
@@ -22,12 +25,14 @@ namespace Boss
         [SerializeField] private float multClose;
         [SerializeField] private float multMid;
         [SerializeField] private float multFar;
+        [SerializeField] private float multPhase3;
         
         [Header("Distance et limites entre les zones")]
         [SerializeField] private float distance;
         [SerializeField] private float zone1;
         [SerializeField] private float zone2;
         [SerializeField] private float zone3;
+        [SerializeField] private float zone4;
 
         [Header("Timer de randomisation")]
         private float timerRandom;
@@ -39,12 +44,15 @@ namespace Boss
         [Range(0.1f, 5f)]
         private float sinusAmplitude;
 
+        [HideInInspector]
+        public bool verticalPhase;
         #endregion
         
         private void Awake()
         {
-            bossTransform = gameObject.GetComponent<Transform>();
+            horizontalBossTransform = gameObject.GetComponent<Transform>();
             bossRB = gameObject.GetComponent<Rigidbody2D>();
+            verticalPhase = false;
         }
         private void FixedUpdate()
         {
@@ -56,14 +64,18 @@ namespace Boss
             }
 
             bossYSpeed = Mathf.Sin(Time.time * sinusSpeed) * sinusAmplitude;
-            
-            //Calcule la distance entre le boss et le joueur et choisit la méthode en fonction
-            distance = Vector2.Distance(bossTransform.position, playerTransform.position);
 
-            if (distance > 0f && distance < zone1) CloseMovement();
-            else if (distance > zone1 && distance < zone2) MidMovement();
-            else if (distance > zone2 && distance < zone3) FarMovement();
-            else if (distance > zone3) AwayMovement();
+            //Calcule la distance entre le boss et le joueur et choisit la méthode en fonction
+            distance = Vector2.Distance(horizontalBossTransform.position, playerTransform.position);
+
+            if (_bossCam.phaseCounter != 3)
+            {
+                if (distance > 0f && distance < zone1) CloseMovement();
+                else if (distance > zone1 && distance < zone2) MidMovement();
+                else if (distance > zone2 && distance < zone3) FarMovement();
+                else if (distance > zone3) AwayMovement();
+            }   
+            else Phase3Movement();
 
             if (distance > 8)
             {
@@ -85,6 +97,7 @@ namespace Boss
             multClose = Random.Range(0.6f, 0.9f);
             multMid = Random.Range(1f, 1.4f);
             multFar = Random.Range(1.4f, 1.8f);
+            multPhase3 = Random.Range(-0.5f, -0.9f);
             
             //random de la trajectoire Y
             sinusSpeed = Random.Range(2f, 4f);
@@ -96,36 +109,51 @@ namespace Boss
         #region Fonctions de mouvements
         void CloseMovement()
         {
-            bossRB.velocity = new Vector2(bossBaseSpeed * multClose, bossYSpeed);
+            if (!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * multClose, bossYSpeed);
+            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multClose); 
         }
-        
         void MidMovement()
         {
-            bossRB.velocity = new Vector2(bossBaseSpeed * multMid, bossYSpeed);
+            if(!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * multMid, bossYSpeed);
+            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multMid); 
         }
-        
         void FarMovement()
         {
-            bossRB.velocity = new Vector2(bossBaseSpeed * multFar, bossYSpeed);
+            if(!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * multFar, bossYSpeed);
+            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multFar); 
         }
-        
         void AwayMovement()
         {
-            bossRB.velocity = new Vector2(bossBaseSpeed * 3, bossYSpeed);
+            if(!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * 3, bossYSpeed);
+            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * 3);
+        }
+        void Phase3Movement()
+        {
+            bossRB.velocity = new Vector2(bossBaseSpeed * multPhase3, bossYSpeed);
+
+            if (distance > zone4) horizontalBoss.SetActive(false);
         }
         #endregion
-        
+
+        public void ResetBoss()
+        {
+            horizontalBossTransform.position = new Vector3(1, 3, 0);
+            verticalBossTransform.position = new Vector3(497.5f, -8, 0);
+            _bossCam.phaseCounter = 1;
+        }
         void DebugZone()
         {
             var position = playerTransform.position;
             var zone1Ray = new Vector2(position.x - zone1, -100);
             var zone2Ray = new Vector2(position.x - zone2, -100);
             var zone3Ray = new Vector2(position.x - zone3, -100);
-            var rayDir = new Vector3(0, 200, 0);
-            
-            Debug.DrawRay(zone1Ray, rayDir, Color.green);
-            Debug.DrawRay(zone2Ray, rayDir, Color.yellow);
-            Debug.DrawRay(zone3Ray, rayDir, Color.red);
+            var zone4Ray = new Vector2(position.x - zone4, -100);
+            var rayDirX = new Vector3(0, 200, 0);
+
+            Debug.DrawRay(zone1Ray, rayDirX, Color.green);
+            Debug.DrawRay(zone2Ray, rayDirX, Color.yellow);
+            Debug.DrawRay(zone3Ray, rayDirX, Color.red);
+            Debug.DrawRay(zone4Ray, rayDirX, Color.cyan);
         }
     }
 }
