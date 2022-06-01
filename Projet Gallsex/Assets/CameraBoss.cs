@@ -7,6 +7,7 @@ using static DG.Tweening.DOTween;
 
 public class CameraBoss : MonoBehaviour
 {
+    #region Antoine
     public bool isHorizontal = false;
     
     
@@ -21,19 +22,21 @@ public class CameraBoss : MonoBehaviour
      private float multiplier;
      private float multiplierPhase4;
 
-    [Header("Debug Phases")]
-    public bool phase1Completed;
-    public bool phase2Completed;
-    public bool phase3Completed;
-    public bool phase4Completed;
-    public bool phase5Completed;
-    public bool phase6Completed;
-    public bool phase7Completed;
-
+     [Header("Debug Phases")] 
+     public int phaseCounter;
+    
     [Space]
     private Vector3 _initialCamPos;
     private Vector3 _initialCamPosPhase4;
     
+    //THOMAS
+
+    public float camX;
+    public float disWithTarget;
+    public float camX3;
+    public float disWithTarget3;
+    public float offsetX3;
+
     private void Start()
     {
         _camTr = gameObject.GetComponent<Transform>();
@@ -43,39 +46,29 @@ public class CameraBoss : MonoBehaviour
         _initialCamPosPhase4 = new Vector3(468, 3.75f, -10);
         multiplier = 0.1f;
         multiplierPhase4 = 0.1f;
+
+        phaseCounter = 1;
     }
     void Update()
     {
-        BossPhaseDetection();
-        if (phase7Completed) CameraPhase7();
-        else if (phase6Completed) CameraPhase6();
-        else if (phase5Completed) CameraPhase5();
-        else if (phase4Completed) CameraPhase4();
-        else if (phase3Completed) CameraPhase3();
-        else if (phase2Completed) CameraPhase2();
-        else if (phase1Completed) CameraPhase1();
+        if (phaseCounter >= 5) CameraPhase5();
+        else if (phaseCounter == 4) CameraPhase4();
+        else if (phaseCounter == 3) CameraPhase3();
+        else if (phaseCounter == 2) CameraPhase2();
+        else if (phaseCounter == 1) CameraPhase1();
+
+        disWithTarget = camX - _camTr.position.x;
+        disWithTarget3 = camX3 - _camTr.position.x;
     }
-    
-    void BossPhaseDetection()
-    {
-        if (player.position.x < 410) phase1Completed = true;
-        if (player.position.x > 410) phase2Completed = true;
-        if (_camTr.position.y >= 8) phase3Completed = true;
-        if (player.position.x >= 468) phase4Completed = true;
-        if (_camTr.position.y >= 17) phase5Completed = true;
-        if (player.position.x >= 492) phase6Completed = true;
-        if (_camTr.position.x >= 498) phase7Completed = true;
-    }
-    
+
     void CameraPhase1()
     {
         transform.position = new Vector3(player.position.x + offsetX, offsetY, -10);
     }
     void CameraPhase2()
     {
-        float camPosY = Vector3.Distance(player.position, _initialCamPos) * multiplier;
-        
-        transform.position = new Vector3(player.position.x + offsetX, offsetY * camPosY, -10);
+        if (_camTr.position.y < 8) _camTr.position = new Vector3(player.position.x + offsetX, 8f-(0.2f*disWithTarget), -10);
+        else _camTr.position = new Vector3(player.position.x + offsetX, 8, -10);
     }
     void CameraPhase3()
     {
@@ -83,20 +76,14 @@ public class CameraBoss : MonoBehaviour
     }
     void CameraPhase4()
     {
-        float camPosY = (Vector3.Distance(player.position, _initialCamPosPhase4) * multiplierPhase4);
-        
-        transform.position = new Vector3(player.position.x + offsetX, 8 * camPosY, -10);
+        offsetX3 = 0 - (4 / 67.5f) * disWithTarget3;
+        _camTr.position = new Vector3(player.position.x + offsetX, 15.5f-(0.213f *disWithTarget3), -10);
     }
     void CameraPhase5()
     {
-        transform.position = new Vector3(player.position.x + offsetX, 17, -10);
+        _camTr.DOMove(new Vector3(497.5f, player.position.y + offsetY, -10),1f);
     }
-    void CameraPhase6()
-    {
-        _camTr.DOMove(new Vector3(495, player.position.y + offsetY, -10),2);
-    }
-    void CameraPhase7()
-    {
-        transform.position = new Vector3(498, player.position.y + offsetY, -10);
-    }
+    #endregion
+     
+     
 }
