@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -22,6 +23,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject option;
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject run;
+    [SerializeField] private ScoreMenu scoreMenuScript;
 
     
     [SerializeField] private GameManager _gameManager;
@@ -165,6 +167,7 @@ public class MainMenu : MonoBehaviour
 
         if (Input.GetButtonDown("Pause") && scoreMenuOn)
         {
+            scoreMenuScript.SetTheScore();
             ResetTimers();
         }
     }
@@ -226,15 +229,15 @@ public class MainMenu : MonoBehaviour
 
     private void ResetTimers()
     {
-        float _resetTimer = 0;
-        _resetTimer = PlayerPrefs.GetFloat("goldTime");
-        _resetTimer = PlayerPrefs.GetFloat("silverTime");
-        _resetTimer = PlayerPrefs.GetFloat("bronzeTime");
         
-        _resetTimer = PlayerPrefs.GetFloat("bestLevel1Time");
-        _resetTimer = PlayerPrefs.GetFloat("bestLevel2Time");
-        _resetTimer = PlayerPrefs.GetFloat("bestLevel3Time");
-        _resetTimer = PlayerPrefs.GetFloat("bestLevel4Time");
+        PlayerPrefs.SetFloat("goldTime",0);
+        PlayerPrefs.SetFloat("silverTime",0); 
+        PlayerPrefs.SetFloat("bronzeTime",0);
+        
+        PlayerPrefs.SetFloat("bestLevel1Time",0);
+        PlayerPrefs.SetFloat("bestLevel2Time",0);
+        PlayerPrefs.SetFloat("bestLevel3Time",0);
+        PlayerPrefs.SetFloat("bestLevel4Time",0);
     }
 
     IEnumerator CloseLevelSelectionMenu()

@@ -3173,6 +3173,7 @@ MonoBehaviour:
   option: {fileID: 1666623474}
   score: {fileID: 1133569212}
   run: {fileID: 714854563}
+  scoreMenuScript: {fileID: 1123110261}
   _gameManager: {fileID: 745912084}
   doors: {fileID: 482904743}
   clouds: {fileID: 1113166903}

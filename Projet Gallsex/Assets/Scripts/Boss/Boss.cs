@@ -8,7 +8,8 @@ namespace Boss
     public class Boss : MonoBehaviour
     {
         #region Variables
-        [Header("GameObjects")]
+
+        [Header("GameObjects")] 
         private Transform BossTransform;
         [SerializeField] GameObject horizontalBoss;
         private Rigidbody2D bossRB;
@@ -164,6 +165,7 @@ namespace Boss
             BossTransform.position = new Vector3(-20, 3, 0);
             _bossCam.phaseCounter = 0;
         }
+
         void DebugZone()
         {
             var position = playerTransform.position;

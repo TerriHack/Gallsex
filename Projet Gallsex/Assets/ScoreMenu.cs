@@ -25,6 +25,11 @@ public class ScoreMenu : MonoBehaviour
 
     private void Start()
     {
+        SetTheScore();
+    }
+
+    public void SetTheScore()
+    {
         _goldTime = PlayerPrefs.GetFloat("goldTime");
         _silverTime = PlayerPrefs.GetFloat("silverTime");
         _bronzeTime = PlayerPrefs.GetFloat("bronzeTime");

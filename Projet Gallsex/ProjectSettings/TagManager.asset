@@ -23,6 +23,8 @@ TagManager:
   - Timer
   - BossTrigger
   - LastBossTrigger
+  - BossTrigger1
+  - BossTrigger2
   layers:
   - Default
   - TransparentFX
