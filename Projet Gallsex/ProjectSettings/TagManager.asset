@@ -22,6 +22,7 @@ TagManager:
   - BreakablePlatform
   - Timer
   - BossTrigger
+  - LastBossTrigger
   layers:
   - Default
   - TransparentFX

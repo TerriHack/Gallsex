@@ -49,9 +49,14 @@ public class CameraBoss : MonoBehaviour
     {
         if (phaseCounter >= 5) CameraPhase5();
         else if (phaseCounter == 4) CameraPhase4();
-        else if (phaseCounter == 3) CameraPhase3();
+        else if (phaseCounter == 3)
+        {
+            CameraPhase3();
+            
+            if(bossMovement.isGone) bossMovement.BossTeleportation();
+        }
         else if (phaseCounter == 2) CameraPhase2();
-        else if (phaseCounter == 1) CameraPhase1();
+        else if (phaseCounter <= 1) CameraPhase1();
     }
     void CameraPhase1()
     {
@@ -73,7 +78,10 @@ public class CameraBoss : MonoBehaviour
     void CameraPhase5()
     {
         _camTr.DOMove(new Vector3(497.5f, player.position.y + offsetY, -10),1f);
-        boss.SetActive(gameObject);
-        bossMovement.verticalPhase = true;
+    }
+
+    public void CameraAnnulation()
+    {
+        _camTr.DOKill();
     }
 }

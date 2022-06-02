@@ -20,7 +20,7 @@ public class LevelBeginner : MonoBehaviour
     IEnumerator Begining()
     {
         playerController.levelBeginning = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         playerController.levelBeginning = false;
     }
 }

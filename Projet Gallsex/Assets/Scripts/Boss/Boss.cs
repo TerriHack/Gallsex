@@ -9,8 +9,7 @@ namespace Boss
     {
         #region Variables
         [Header("GameObjects")]
-        private Transform verticalBossTransform;
-        private Transform horizontalBossTransform;
+        private Transform BossTransform;
         [SerializeField] GameObject horizontalBoss;
         private Rigidbody2D bossRB;
         [SerializeField] Transform playerTransform;
@@ -46,14 +45,15 @@ namespace Boss
 
         [HideInInspector]
         public bool verticalPhase;
+        public bool isGone;
         #endregion
         
         private void Awake()
-        {
-            horizontalBossTransform = gameObject.GetComponent<Transform>();
+        { 
+            BossTransform = gameObject.GetComponent<Transform>();
             bossRB = gameObject.GetComponent<Rigidbody2D>();
-            verticalPhase = false;
         }
+
         private void FixedUpdate()
         {
             // Timer pour randomiser la vitesse du boss
@@ -66,16 +66,22 @@ namespace Boss
             bossYSpeed = Mathf.Sin(Time.time * sinusSpeed) * sinusAmplitude;
 
             //Calcule la distance entre le boss et le joueur et choisit la méthode en fonction
-            distance = Vector2.Distance(horizontalBossTransform.position, playerTransform.position);
+            distance = Vector2.Distance(BossTransform.position, playerTransform.position);
 
-            if (_bossCam.phaseCounter != 3)
+            if (_bossCam.phaseCounter == 0)
+            {
+                MotionLess();
+            }else if (_bossCam.phaseCounter != 3)
             {
                 if (distance > 0f && distance < zone1) CloseMovement();
                 else if (distance > zone1 && distance < zone2) MidMovement();
                 else if (distance > zone2 && distance < zone3) FarMovement();
                 else if (distance > zone3) AwayMovement();
-            }   
-            else Phase3Movement();
+            }
+            else
+            {
+                Phase3Movement();
+            }
 
             if (distance > 8)
             {
@@ -97,7 +103,7 @@ namespace Boss
             multClose = Random.Range(0.6f, 0.9f);
             multMid = Random.Range(1f, 1.4f);
             multFar = Random.Range(1.4f, 1.8f);
-            multPhase3 = Random.Range(-0.5f, -0.9f);
+            multPhase3 = Random.Range(-1f, - 2f);
             
             //random de la trajectoire Y
             sinusSpeed = Random.Range(2f, 4f);
@@ -109,37 +115,54 @@ namespace Boss
         #region Fonctions de mouvements
         void CloseMovement()
         {
-            if (!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * multClose, bossYSpeed);
-            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multClose); 
+            if (_bossCam.phaseCounter >= 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multClose);
+            else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
+            else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multClose, bossYSpeed); 
         }
         void MidMovement()
         {
-            if(!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * multMid, bossYSpeed);
-            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multMid); 
+            if(_bossCam.phaseCounter >= 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multMid);
+            else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
+            else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multMid, bossYSpeed); 
         }
         void FarMovement()
         {
-            if(!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * multFar, bossYSpeed);
-            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multFar); 
+            if(_bossCam.phaseCounter >= 5)bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multFar);
+            else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
+            else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multFar, bossYSpeed); 
         }
         void AwayMovement()
         {
-            if(!verticalPhase) bossRB.velocity = new Vector2(bossBaseSpeed * 3, bossYSpeed);
-            else bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * 3);
+            if(_bossCam.phaseCounter >= 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * 3); 
+            else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
+            else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * 3, bossYSpeed);
         }
         void Phase3Movement()
         {
             bossRB.velocity = new Vector2(bossBaseSpeed * multPhase3, bossYSpeed);
 
-            if (distance > zone4) horizontalBoss.SetActive(false);
+            if (distance > zone4)
+            {
+                BossTeleportation();
+                isGone = true;
+            }
+        }
+
+        void MotionLess()
+        {
+            bossRB.velocity = Vector2.zero;
         }
         #endregion
-        
+
+        public void BossTeleportation()
+        {
+            transform.position = new Vector3(497.5f, -8, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
         public void ResetBoss()
         {
-            horizontalBossTransform.position = new Vector3(1, 3, 0);
-            verticalBossTransform.position = new Vector3(497.5f, -8, 0);
-            _bossCam.phaseCounter = 1;
+            BossTransform.position = new Vector3(-20, 3, 0);
+            _bossCam.phaseCounter = 0;
         }
         void DebugZone()
         {

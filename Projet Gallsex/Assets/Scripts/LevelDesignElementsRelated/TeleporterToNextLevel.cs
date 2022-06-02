@@ -56,7 +56,7 @@ public class TeleporterToNextLevel : MonoBehaviour
   cam.levelEnded = true;
   yield return new WaitForSeconds(0.6f);
   //Fade to white
-  blackScreen.SetBool("gameFinished", true);
+  blackScreen.SetBool("levelFinished", true);
   yield return new WaitForSeconds(1f);
   SceneManager.LoadScene(sceneName);
  }
