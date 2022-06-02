@@ -103,7 +103,7 @@ namespace Boss
             multClose = Random.Range(0.6f, 0.9f);
             multMid = Random.Range(1f, 1.4f);
             multFar = Random.Range(1.4f, 1.8f);
-            multPhase3 = Random.Range(-1f, - 2f);
+            multPhase3 = Random.Range(-0.3f, - 0.5f);
             
             //random de la trajectoire Y
             sinusSpeed = Random.Range(2f, 4f);

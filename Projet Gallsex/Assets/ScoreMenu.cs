@@ -31,7 +31,7 @@ public class ScoreMenu : MonoBehaviour
         
         _timeLevel1 = PlayerPrefs.GetFloat("bestLevel1Time");
         _timeLevel2 = PlayerPrefs.GetFloat("bestLevel2Time");
-        _timeLevel3 = PlayerPrefs.GetFloat("bestLevel3time");
+        _timeLevel3 = PlayerPrefs.GetFloat("bestLevel3Time");
         _timeLevel4 = PlayerPrefs.GetFloat("bestLevel4Time");
 
         TimeSpan time1 = TimeSpan.FromSeconds(_goldTime);       

@@ -79,7 +79,7 @@ public class TeleporterToNextLevel : MonoBehaviour
    }
   }
   
-  if (currentSceneName == "Level_2_Scene")
+  if (currentSceneName == "Level_2_scene")
   {
    if (PlayerPrefs.GetFloat("bestLevel3Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel3Time"))
    {

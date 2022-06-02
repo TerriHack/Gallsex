@@ -21,7 +21,7 @@ public class TriggerPhaseDetection : MonoBehaviour
     {
         if(col.CompareTag("BossTrigger"))
         {
-            bossCam.phaseCounter += 1;
+            bossCam.phaseCounter ++;
             boss.GetComponent<Boss.Boss>().enabled = false;
             col.gameObject.SetActive(false);
         }
