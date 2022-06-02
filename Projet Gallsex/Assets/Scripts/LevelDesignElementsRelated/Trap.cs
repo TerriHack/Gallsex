@@ -12,11 +12,11 @@ public class Trap : MonoBehaviour
     [SerializeField] private DotweenCam cam;
     private Rigidbody2D playerRb;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player"))
         {
-            playerRb.AddForce(Vector2.up * 40, ForceMode2D.Impulse);
+            //playerRb.AddForce(Vector2.up * 40, ForceMode2D.Impulse);
             StartCoroutine(Death());
         }
     }
