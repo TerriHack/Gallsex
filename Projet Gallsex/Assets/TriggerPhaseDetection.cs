@@ -46,5 +46,12 @@ public class TriggerPhaseDetection : MonoBehaviour
             boss.GetComponent<Boss.Boss>().enabled = true;
             col.gameObject.SetActive(false);
         }
+        
+        if(col.CompareTag("CreditsTrigger"))
+        {
+            bossCam.phaseCounter = 6;
+            boss.GetComponent<Boss.Boss>().enabled = true;
+            col.gameObject.SetActive(false);
+        }
     }
 }

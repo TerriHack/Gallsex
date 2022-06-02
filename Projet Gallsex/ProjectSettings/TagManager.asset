@@ -25,6 +25,7 @@ TagManager:
   - LastBossTrigger
   - BossTrigger1
   - BossTrigger2
+  - CreditsTrigger
   layers:
   - Default
   - TransparentFX

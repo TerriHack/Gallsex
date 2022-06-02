@@ -69,7 +69,7 @@ namespace Boss
             //Calcule la distance entre le boss et le joueur et choisit la méthode en fonction
             distance = Vector2.Distance(BossTransform.position, playerTransform.position);
 
-            if (_bossCam.phaseCounter == 0)
+            if (_bossCam.phaseCounter == 0 && _bossCam.phaseCounter == 6)
             {
                 MotionLess();
             }else if (_bossCam.phaseCounter != 3)
