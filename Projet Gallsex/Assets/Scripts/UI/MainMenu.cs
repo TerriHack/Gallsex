@@ -325,17 +325,16 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator SplashScreenToMain()
     {
-        blackScreen.SetBool("levelFinished", true);
+        blackScreen.SetBool("isPressed", true);
 
         yield return new WaitForSeconds(1f);
-        blackScreen.SetTrigger("levelTransition");
         pressAnyButtonScreen.SetActive(false);
         _splashScreened = false;
         mainMenu.SetActive(true);
 
         yield return new WaitForSeconds(0.2f);
         
-        blackScreen.SetBool("levelFinished", false);
+        blackScreen.SetBool("isPressed", false);
         //Reset the event system
         EventSystem.current.SetSelectedGameObject(null);
         //Set the new state in the event system
