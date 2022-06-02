@@ -162,6 +162,11 @@ public class MainMenu : MonoBehaviour
             quitVFX.SetActive(false);
             scoreVFX.SetActive(false);
         }
+
+        if (Input.GetButtonDown("Pause") && scoreMenuOn)
+        {
+            ResetTimers();
+        }
     }
 
     public void Play()
@@ -217,6 +222,19 @@ public class MainMenu : MonoBehaviour
     {
         _selectedScene = "Level_Boss_Scene";
         StartCoroutine(StartWithLevelSelectionMenu());
+    }
+
+    private void ResetTimers()
+    {
+        float _resetTimer = 0;
+        _resetTimer = PlayerPrefs.GetFloat("goldTime");
+        _resetTimer = PlayerPrefs.GetFloat("silverTime");
+        _resetTimer = PlayerPrefs.GetFloat("bronzeTime");
+        
+        _resetTimer = PlayerPrefs.GetFloat("bestLevel1Time");
+        _resetTimer = PlayerPrefs.GetFloat("bestLevel2Time");
+        _resetTimer = PlayerPrefs.GetFloat("bestLevel3Time");
+        _resetTimer = PlayerPrefs.GetFloat("bestLevel4Time");
     }
 
     IEnumerator CloseLevelSelectionMenu()
