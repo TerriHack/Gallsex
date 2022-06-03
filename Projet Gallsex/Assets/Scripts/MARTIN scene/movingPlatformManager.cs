@@ -18,7 +18,7 @@ public class movingPlatformManager : MonoBehaviour
         for (int i = 0; i < childrenMovingPlatforms.Count; i++)
         {
             childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().active = false;
-            childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().waitFor = 0;
+            childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().waitFor = 10;
             childrenMovingPlatforms[i].transform.GetChild(0).transform.position = childrenMovingPlatforms[i].transform.GetChild(1).transform.position;
         }
     }

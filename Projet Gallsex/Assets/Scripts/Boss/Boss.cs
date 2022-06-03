@@ -19,6 +19,7 @@ namespace Boss
 
         [Header("Vitesse de base du boss")]
         [SerializeField] private float bossBaseSpeed;
+        [SerializeField] private float bossBaseSpeedY;
         [SerializeField] private float bossYSpeed;
 
         [Header("Multiplicateurs")]
@@ -69,7 +70,7 @@ namespace Boss
             //Calcule la distance entre le boss et le joueur et choisit la méthode en fonction
             distance = Vector2.Distance(BossTransform.position, playerTransform.position);
 
-            if (_bossCam.phaseCounter == 0 && _bossCam.phaseCounter == 6)
+            if (_bossCam.phaseCounter == 0 || _bossCam.phaseCounter == 6)
             {
                 MotionLess();
             }else if (_bossCam.phaseCounter != 3)
@@ -116,25 +117,25 @@ namespace Boss
         #region Fonctions de mouvements
         void CloseMovement()
         {
-            if (_bossCam.phaseCounter >= 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multClose);
+            if (_bossCam.phaseCounter == 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeedY * multClose);
             else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
             else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multClose, bossYSpeed); 
         }
         void MidMovement()
         {
-            if(_bossCam.phaseCounter >= 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multMid);
+            if(_bossCam.phaseCounter == 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeedY * multMid);
             else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
             else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multMid, bossYSpeed); 
         }
         void FarMovement()
         {
-            if(_bossCam.phaseCounter >= 5)bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * multFar);
+            if(_bossCam.phaseCounter == 5)bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeedY * multFar);
             else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
             else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multFar, bossYSpeed); 
         }
         void AwayMovement()
         {
-            if(_bossCam.phaseCounter >= 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeed * 3); 
+            if(_bossCam.phaseCounter == 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeedY * 3); 
             else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
             else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * 3, bossYSpeed);
         }

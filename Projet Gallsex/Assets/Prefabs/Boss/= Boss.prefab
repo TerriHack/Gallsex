@@ -24228,6 +24228,7 @@ MonoBehaviour:
   globalVolume: {fileID: 0}
   _bossCam: {fileID: 0}
   bossBaseSpeed: 13
+  bossBaseSpeedY: 0
   bossYSpeed: 0
   multClose: 0
   multMid: 0
