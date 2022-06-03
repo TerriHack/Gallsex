@@ -17,7 +17,7 @@ public class GroundCheck : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("JumpableGround") || col.gameObject.CompareTag("BreakablePlatform"))
+        if (col.gameObject.CompareTag("JumpableGround") || col.gameObject.CompareTag("FallingPlatform"))
         {
             playerController.isGrounded = true;
             vfxManager.isLanding = true;
@@ -26,15 +26,15 @@ public class GroundCheck : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("JumpableGround") || col.gameObject.CompareTag("BreakablePlatform")) playerController.isGrounded = false;
+        if (col.gameObject.CompareTag("JumpableGround") || col.gameObject.CompareTag("FallingPlatform")) playerController.isGrounded = false;
     }
     
     void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("JumpableGround") || col.gameObject.CompareTag("BreakablePlatform")) playerController.isGrounded = true;
+        if (col.gameObject.CompareTag("JumpableGround") || col.gameObject.CompareTag("FallingPlatform")) playerController.isGrounded = true;
         
         
-        if (col.gameObject.CompareTag("BreakablePlatform"))
+        if ( col.gameObject.CompareTag("FallingPlatform"))
         {
             countdown = freezeTime;
 
