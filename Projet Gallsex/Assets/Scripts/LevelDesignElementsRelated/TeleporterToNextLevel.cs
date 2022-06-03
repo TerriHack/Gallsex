@@ -14,6 +14,8 @@ public class TeleporterToNextLevel : MonoBehaviour
  [SerializeField] private PlayerBetterController player;
  [SerializeField] private prefabTimer timer;
 
+ private int isFinishingAllLevel;
+
  private void Awake()
  {
   _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
@@ -52,6 +54,7 @@ public class TeleporterToNextLevel : MonoBehaviour
  
  IEnumerator GameEnding()
  {
+  SettingEndScore();
   cam.levelEnded = true;
   yield return new WaitForSeconds(0.6f);
   yield return new WaitForSeconds(25f);
@@ -64,6 +67,7 @@ public class TeleporterToNextLevel : MonoBehaviour
  {
   if (currentSceneName == "Level_Tuto_Scene")
   {
+   isFinishingAllLevel++;
    if (PlayerPrefs.GetFloat("bestLevel1Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel1Time"))
    {
     PlayerPrefs.SetFloat("bestLevel1Time", timer.currentTime);
@@ -72,6 +76,7 @@ public class TeleporterToNextLevel : MonoBehaviour
   
   if (currentSceneName == "Level_1_Scene")
   {
+   isFinishingAllLevel++;
    if (PlayerPrefs.GetFloat("bestLevel2Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel2Time"))
    {
     PlayerPrefs.SetFloat("bestLevel2Time", timer.currentTime);
@@ -80,13 +85,17 @@ public class TeleporterToNextLevel : MonoBehaviour
   
   if (currentSceneName == "Level_2_scene")
   {
+   isFinishingAllLevel++;
    if (PlayerPrefs.GetFloat("bestLevel3Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel3Time"))
    {
     PlayerPrefs.SetFloat("bestLevel3Time", timer.currentTime);
    }
   }
-  
-  if (currentSceneName == "Level_Boss_Scene")
+ }
+ 
+ private void SettingEndScore()
+ {
+  if (currentSceneName == "Level_Boss_Scene" && isFinishingAllLevel == 3)
   {
    if (PlayerPrefs.GetFloat("bestLevel4Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel4Time"))
    {
@@ -109,4 +118,5 @@ public class TeleporterToNextLevel : MonoBehaviour
    }
   }
  }
+ 
 }

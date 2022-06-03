@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
         {
             currentTime += Time.deltaTime;
         }
-
-        TimeSpan time = TimeSpan.FromSeconds(currentTime);
     }
 
     public void SetScore()
