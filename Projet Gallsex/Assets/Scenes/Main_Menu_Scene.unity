@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 472802138}
   - component: {fileID: 472802137}
   - component: {fileID: 472802136}
+  - component: {fileID: 472802140}
   m_Layer: 9
   m_Name: RightDoor
   m_TagString: Untagged
@@ -844,6 +845,19 @@ RectTransform:
   m_AnchoredPosition: {x: 1480, y: 0}
   m_SizeDelta: {x: 1040, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &472802140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472802135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eb9d8ab2908a244927763b3e8ecb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSound: {fileID: 482904744}
 --- !u!1 &482904738
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +871,7 @@ GameObject:
   - component: {fileID: 482904740}
   - component: {fileID: 482904739}
   - component: {fileID: 482904743}
+  - component: {fileID: 482904744}
   m_Layer: 5
   m_Name: = Doors
   m_TagString: Untagged
@@ -960,6 +975,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animRightDoor: {fileID: 472802136}
   animLeftDoor: {fileID: 1861499236}
+--- !u!82 &482904744
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482904738}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -3709068706627861150, guid: a2ef654181591034da4edc12260d56df, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 34c06c3fac8354d47924499a9cf3c7a8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &507787323 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8162352897749499662, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
@@ -5329,7 +5440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.22745098}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6269,6 +6380,7 @@ GameObject:
   - component: {fileID: 1861499238}
   - component: {fileID: 1861499237}
   - component: {fileID: 1861499236}
+  - component: {fileID: 1861499239}
   m_Layer: 9
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -6350,6 +6462,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861499234}
   m_CullTransparentMesh: 1
+--- !u!114 &1861499239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861499234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eb9d8ab2908a244927763b3e8ecb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSound: {fileID: 482904744}
 --- !u!1 &1887701147
 GameObject:
   m_ObjectHideFlags: 0
@@ -7621,7 +7746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8162352897749499656, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: Low
+      value: High
       objectReference: {fileID: 0}
     - target: {fileID: 8162352897749499656, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_Options.m_Options.Array.data[1].m_Text
@@ -7629,7 +7754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8162352897749499656, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: High
+      value: Low
       objectReference: {fileID: 0}
     - target: {fileID: 8162352897749499656, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
