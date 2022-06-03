@@ -24,7 +24,6 @@ public class CameraBoss : MonoBehaviour
     public float camX3;
     public float disWithTarget;
     public float disWithTarget3;
-    //public float offsetX3;
 
     //***********************************//
     

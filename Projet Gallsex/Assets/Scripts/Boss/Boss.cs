@@ -11,7 +11,6 @@ namespace Boss
 
         [Header("GameObjects")] 
         private Transform BossTransform;
-        [SerializeField] GameObject horizontalBoss;
         private Rigidbody2D bossRB;
         [SerializeField] Transform playerTransform;
         public Volume globalVolume;
@@ -46,7 +45,6 @@ namespace Boss
         private float sinusAmplitude;
 
         [HideInInspector]
-        public bool verticalPhase;
         public bool isGone;
         #endregion
         
@@ -70,10 +68,15 @@ namespace Boss
             //Calcule la distance entre le boss et le joueur et choisit la méthode en fonction
             distance = Vector2.Distance(BossTransform.position, playerTransform.position);
 
-            if (_bossCam.phaseCounter == 0 || _bossCam.phaseCounter == 6)
+            if (_bossCam.phaseCounter == 0)
             {
                 MotionLess();
-            }else if (_bossCam.phaseCounter != 3)
+            }
+            else if (_bossCam.phaseCounter == 6)
+            {
+                BossDefeated();
+            }
+            else if (_bossCam.phaseCounter != 3)
             {
                 if (distance > 0f && distance < zone1) CloseMovement();
                 else if (distance > zone1 && distance < zone2) MidMovement();
@@ -153,6 +156,11 @@ namespace Boss
         void MotionLess()
         {
             bossRB.velocity = Vector2.zero;
+        }
+        
+        void BossDefeated()
+        {
+            bossRB.velocity = Vector2.down * bossBaseSpeedY;
         }
         #endregion
 

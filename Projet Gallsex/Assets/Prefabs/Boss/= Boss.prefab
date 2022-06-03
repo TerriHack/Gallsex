@@ -24223,7 +24223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b429a569f9109e7409e3a959ab9d90b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalBoss: {fileID: 5998375840427111217}
   playerTransform: {fileID: 0}
   globalVolume: {fileID: 0}
   _bossCam: {fileID: 0}
@@ -24240,7 +24239,6 @@ MonoBehaviour:
   zone3: 19
   zone4: 20
   maxTimerRandom: 2
-  verticalPhase: 0
   isGone: 0
 --- !u!50 &5998375840427111226
 Rigidbody2D:
@@ -24313,6 +24311,8 @@ MonoBehaviour:
   playerRb: {fileID: 0}
   trigger4: {fileID: 0}
   trigger5: {fileID: 0}
+  music: {fileID: 0}
+  sound: {fileID: 0}
 --- !u!1 &5998375840678672147
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,6 +59,5 @@ public class SettingScoreEndGame : MonoBehaviour
  {
   hud.SetActive(false);
   endingTheme.Play();
-  
  }
 }

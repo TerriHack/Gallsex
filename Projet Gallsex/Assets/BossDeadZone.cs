@@ -11,6 +11,8 @@ public class BossDeadZone : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private GameObject trigger4;
     [SerializeField] private GameObject trigger5;
+    [SerializeField] private AudioSource music;
+    [SerializeField] private AudioSource sound;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,14 +31,16 @@ public class BossDeadZone : MonoBehaviour
             
             yield return new WaitForSeconds(0.4f);
             
+            music.volume = 1f;
+            sound.volume = 1f;
+            
             //STOP CAM MOVEMENT
             bossCam.phaseCounter = 3;
             bossCam.CameraAnnulation();
 
             trigger4.SetActive(true);
             trigger5.SetActive(true);
-            boss.verticalPhase = false;
-            
+
             player.GetComponent<PlayerBetterController>().enabled = false;
         
             int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;

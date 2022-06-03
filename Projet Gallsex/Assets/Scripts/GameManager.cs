@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
         DontDestroyOnLoad(this.gameObject);
-        quality = 2;
+        quality = 0;
         timerActive = false;
     }
 

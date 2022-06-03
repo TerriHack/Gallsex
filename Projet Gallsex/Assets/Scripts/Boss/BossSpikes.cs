@@ -16,6 +16,8 @@ namespace Boss
 
         [SerializeField] private GameObject trigger4;
         [SerializeField] private GameObject trigger5;
+        [SerializeField] private AudioSource music;
+        [SerializeField] private AudioSource sound;
 
     
         private void OnCollisionEnter2D(Collision2D collision)
@@ -35,6 +37,9 @@ namespace Boss
         
                 yield return new WaitForSeconds(0.3f);
 
+                music.volume = 1f;
+                sound.volume = 1f;
+                
                 trigger4.SetActive(true);
                 trigger5.SetActive(true);
                 
