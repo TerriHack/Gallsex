@@ -102,7 +102,9 @@ namespace UI
                     quitMenu.SetActive(false);
                     _quitMenued = false;
                 }
-
+                
+                LockMenu();
+                
                 //Reset the event system
                 EventSystem.current.SetSelectedGameObject(null);
                 //Set the new state in the event system
@@ -137,6 +139,15 @@ namespace UI
                 EventSystem.current.SetSelectedGameObject(null);
             }
         
+        }
+        
+        private void LockMenu()
+        {
+            if (!_isPaused)
+            {
+                _quitMenued = false;
+                _optionMenued = false;
+            }
         }
         public void Resume()
         {
