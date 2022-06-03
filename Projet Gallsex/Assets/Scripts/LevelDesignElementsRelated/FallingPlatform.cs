@@ -45,6 +45,10 @@ public class FallingPlatform : MonoBehaviour
         else
         {
             _rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            _rb.isKinematic = true;
+            _rb.velocity = Vector2.zero;
+            transform.position = _respawnPosition;
+            transform.rotation = _respawnRotation;
         }
         
         
