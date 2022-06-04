@@ -28,6 +28,7 @@ public class BossDeadZone : MonoBehaviour
         if (bossCam.phaseCounter >= 3)
         {
             blink.SetBool("isDead", true);
+            player.GetComponent<PlayerBetterController>().enabled = false;
             
             yield return new WaitForSeconds(0.4f);
             
@@ -41,8 +42,6 @@ public class BossDeadZone : MonoBehaviour
             trigger4.SetActive(true);
             trigger5.SetActive(true);
 
-            player.GetComponent<PlayerBetterController>().enabled = false;
-        
             int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
             Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
             
@@ -58,11 +57,10 @@ public class BossDeadZone : MonoBehaviour
         else
         {
             blink.SetBool("isDead", true);
+            player.GetComponent<PlayerBetterController>().enabled = false;
         
             yield return new WaitForSeconds(0.3f);
 
-            player.GetComponent<PlayerBetterController>().enabled = false;
-        
             int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
             Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
         

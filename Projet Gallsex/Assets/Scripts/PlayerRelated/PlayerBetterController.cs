@@ -219,14 +219,8 @@ public class PlayerBetterController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (!levelFinished && !levelBeginning)
-        {
-            if (inputX != 0) HorizontalMove();
-        }
-        else if(levelBeginning || levelFinished)
-        {
-            EndingRun();
-        }
+        if (levelBeginning || levelFinished) EndingRun();
+        else if (inputX != 0) HorizontalMove();
 
         if (_isNuancing) JumpNuancer();
         
@@ -253,6 +247,7 @@ public class PlayerBetterController : MonoBehaviour
 
         if (isGrounded)
         {
+            
             movement = new Vector2(inputX * playerData.speed, 0);
 
             #region Animation Related

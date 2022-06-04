@@ -24,7 +24,6 @@ namespace Boss
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                playerRb.AddForce(Vector2.up * 40, ForceMode2D.Impulse);
                 StartCoroutine(CheckpointDeath());
             }
         }
@@ -34,6 +33,7 @@ namespace Boss
             if (bossCam.phaseCounter >= 3)
             {
                 blink.SetBool("isDead", true);
+                player.GetComponent<PlayerBetterController>().enabled = false;
         
                 yield return new WaitForSeconds(0.3f);
 
@@ -44,9 +44,7 @@ namespace Boss
                 trigger5.SetActive(true);
                 
                 bossCam.phaseCounter = 3;
-        
-                player.GetComponent<PlayerBetterController>().enabled = false;
-        
+
                 int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
                 Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
         
@@ -62,11 +60,10 @@ namespace Boss
             else
             {
                 blink.SetBool("isDead", true);
+                player.GetComponent<PlayerBetterController>().enabled = false;
         
                 yield return new WaitForSeconds(0.3f);
 
-                player.GetComponent<PlayerBetterController>().enabled = false;
-        
                 int I = player.GetComponent<ArrayCheckpoint>().checkpointArray.Count;
                 Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
         

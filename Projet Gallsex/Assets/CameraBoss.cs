@@ -31,7 +31,7 @@ public class CameraBoss : MonoBehaviour
     {
         _camTr = gameObject.GetComponent<Transform>();
         bossMovement = boss.GetComponent<Boss.Boss>();
-        phaseCounter = 1;
+        phaseCounter = 0;
     }
     void Update()
     {
