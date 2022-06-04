@@ -13,6 +13,16 @@ using UnityEngine.UIElements;
 public class MainMenu : MonoBehaviour
 {
 
+    [SerializeField] private GameObject lvlTutoButton;
+    [SerializeField] private GameObject lvl1Button;
+    [SerializeField] private GameObject lvl2Button;
+    [SerializeField] private GameObject lvlBossButton;
+    [SerializeField] private GameObject lvlTuto;
+    [SerializeField] private GameObject lvl1;
+    [SerializeField] private GameObject lvl2;
+    [SerializeField] private GameObject lvlBoss;
+    [SerializeField] private AudioSource soundUI;
+    [SerializeField] private AudioClip navSound;
     [SerializeField] private GameObject runVFX;
     [SerializeField] private GameObject optionVFX;
     [SerializeField] private GameObject scoreVFX;
@@ -24,8 +34,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject run;
     [SerializeField] private ScoreMenu scoreMenuScript;
-
-    
+    [SerializeField] private GameObject gameManagerPrefab;
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private DoorsUI doors;
     [SerializeField] private CloudsUI clouds;
@@ -39,7 +48,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Animation pressAnyButtonTxt;
     [SerializeField] private Animator blackScreen;
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
-
+    [SerializeField] private MusicDisplayer music;
+    
     private float coolDown;
 
     private bool canPress;
@@ -56,6 +66,11 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        if (GameObject.FindWithTag("GameManager") == null)
+        {
+            Instantiate(gameManagerPrefab);
+        }
+
         Time.timeScale = 1f;
         
         blackScreen.SetTrigger("isBeginning");
@@ -73,6 +88,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        
+        _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+
         _resolutions = Screen.resolutions;
         
         resolutionDropdown.ClearOptions();
@@ -101,6 +119,8 @@ public class MainMenu : MonoBehaviour
         coolDown -= Time.deltaTime;
         StartGame();
 
+        Debug.Log(soundUI.isPlaying);
+
         if (canPress)
         {
             if (Input.GetButtonDown("Jump") && _splashScreened)
@@ -119,7 +139,7 @@ public class MainMenu : MonoBehaviour
                 CloseScoreMenu();
             }
         }
-        
+
         if (EventSystem.current.currentSelectedGameObject == lvlSelection)
         {
             selectionVFX.SetActive(true);
@@ -149,6 +169,7 @@ public class MainMenu : MonoBehaviour
         
         if (EventSystem.current.currentSelectedGameObject == score)
         {
+            
             selectionVFX.SetActive(false);
             runVFX.SetActive(false);
             optionVFX.SetActive(false);
@@ -163,6 +184,41 @@ public class MainMenu : MonoBehaviour
             optionVFX.SetActive(true);
             quitVFX.SetActive(false);
             scoreVFX.SetActive(false);
+        }
+        
+        
+        
+        
+        if (EventSystem.current.currentSelectedGameObject == lvlTutoButton)
+        {
+            lvlTuto.SetActive(true);
+            lvl1.SetActive(false);
+            lvl2.SetActive(false);
+            lvlBoss.SetActive(false);
+        }
+        
+        if (EventSystem.current.currentSelectedGameObject == lvl1Button)
+        {
+            lvlTuto.SetActive(false);
+            lvl1.SetActive(true);
+            lvl2.SetActive(false);
+            lvlBoss.SetActive(false);
+        }
+        
+        if (EventSystem.current.currentSelectedGameObject == lvl2Button )
+        {
+            lvlTuto.SetActive(false);
+            lvl1.SetActive(false);
+            lvl2.SetActive(true);
+            lvlBoss.SetActive(false);
+        }   
+        
+        if (EventSystem.current.currentSelectedGameObject == lvlBossButton)
+        { 
+            lvlTuto.SetActive(false);
+            lvl1.SetActive(false);
+            lvl2.SetActive(false);
+            lvlBoss.SetActive(true);
         }
 
         if (Input.GetButtonDown("Pause") && scoreMenuOn)

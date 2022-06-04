@@ -27,6 +27,7 @@ TagManager:
   - BossTrigger2
   - CreditsTrigger
   - FallingPlatform
+  - Teleporter
   layers:
   - Default
   - TransparentFX
