@@ -8,12 +8,16 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class SettingScoreEndGame : MonoBehaviour
 {
- public string currentSceneName; 
- [SerializeField] private GameManager gameManager; 
+ public string currentSceneName;
+ [SerializeField] private GameManager gameManager;
+
  [SerializeField] private prefabTimer timer;
+
  //private ChromaticAberration chroma;
  [SerializeField] private GameObject hud;
  [SerializeField] private AudioSource endingTheme;
+
+ private bool scoreSet;
 
  private void OnTriggerEnter2D(Collider2D other)
  {
@@ -23,41 +27,55 @@ public class SettingScoreEndGame : MonoBehaviour
    EndSetting();
   }
  }
- 
+
  private void Awake()
  {
   gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+  scoreSet = false;
  }
- 
+
  private void SettingScore()
-     {
-      if (currentSceneName == "Level_Boss_Scene")
-      {
-       if (PlayerPrefs.GetFloat("bestLevel4Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel4Time"))
-       {
-        PlayerPrefs.SetFloat("bestLevel4Time", timer.currentTime);
-       }
-       
-       if (PlayerPrefs.GetFloat("goldTime") == 0 || gameManager.currentTime < PlayerPrefs.GetFloat("goldTime"))
-       {
-        PlayerPrefs.SetFloat("goldTime", gameManager.currentTime);
-       }
-      
-       if (PlayerPrefs.GetFloat("silverTime") == 0 || gameManager.currentTime < PlayerPrefs.GetFloat("silverTime"))
-       {
-        PlayerPrefs.SetFloat("silverTime", gameManager.currentTime);
-       }
-      
-       if (PlayerPrefs.GetFloat("bronzeTime") == 0 || gameManager.currentTime < PlayerPrefs.GetFloat("bronzeTime"))
-       {
-        PlayerPrefs.SetFloat("bronzeTime", gameManager.currentTime);
-       }
-      }
-     }
+ {
+  if (currentSceneName == "Level_Boss_Scene")
+  {
+   if (PlayerPrefs.GetFloat("bestLevel4Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel4Time"))
+   {
+    PlayerPrefs.SetFloat("bestLevel4Time", timer.currentTime);
+   }
+
+   if (gameManager.isFinishingAllLevel >= 3 && !scoreSet)
+   {
+    if (PlayerPrefs.GetFloat("goldTime") == 0 && !scoreSet || gameManager.currentTime < PlayerPrefs.GetFloat("goldTime")&& !scoreSet)
+    {
+     scoreSet = true;
+     Debug.Log("Gold");
+     PlayerPrefs.SetFloat("bronzeTime", PlayerPrefs.GetFloat("silverTime"));
+     PlayerPrefs.SetFloat("silverTime", PlayerPrefs.GetFloat("goldTime"));
+     PlayerPrefs.SetFloat("goldTime", gameManager.currentTime);
+     
+    }
+    else if (PlayerPrefs.GetFloat("silverTime") == 0 && !scoreSet || gameManager.currentTime < PlayerPrefs.GetFloat("silverTime") && !scoreSet)
+    { 
+     scoreSet = true;
+     Debug.Log("Silver");
+     PlayerPrefs.SetFloat("bronzeTime", PlayerPrefs.GetFloat("silverTime"));
+     PlayerPrefs.SetFloat("silverTime", gameManager.currentTime);
+    }
+    else if (PlayerPrefs.GetFloat("bronzeTime") == 0 && !scoreSet|| gameManager.currentTime < PlayerPrefs.GetFloat("bronzeTime") && !scoreSet)
+    {
+     scoreSet = true;
+     Debug.Log("Bronze");
+     PlayerPrefs.SetFloat("bronzeTime", gameManager.currentTime);
+    }
+   }
+  }
+ }
 
  private void EndSetting()
- {
-  hud.SetActive(false);
-  endingTheme.Play();
- }
+  {
+   hud.SetActive(false);
+   endingTheme.Play();
+  }
+ 
 }
+

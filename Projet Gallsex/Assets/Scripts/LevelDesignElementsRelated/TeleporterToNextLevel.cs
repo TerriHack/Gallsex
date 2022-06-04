@@ -8,13 +8,13 @@ public class TeleporterToNextLevel : MonoBehaviour
 {
  public string sceneName;
  public string currentSceneName;
- [SerializeField] private GameManager _gameManager; 
+ [SerializeField] private GameManager _gameManager;
  [SerializeField] private DotweenCam cam;
  [SerializeField] private Animator blackScreen;
  [SerializeField] private PlayerBetterController player;
  [SerializeField] private prefabTimer timer;
 
- private int isFinishingAllLevel;
+ public bool scoreIsSet;
 
  private void Awake()
  {
@@ -22,10 +22,15 @@ public class TeleporterToNextLevel : MonoBehaviour
   timer = GameObject.FindWithTag("Timer").GetComponent<prefabTimer>();
   _gameManager.timerActive = true;
  }
- 
+
+ private void Start()
+ {
+  scoreIsSet = false;
+ }
+
  private void OnTriggerEnter2D(Collider2D other)
  {
-  if (other.gameObject.CompareTag("Player") )
+  if (other.gameObject.CompareTag("Player"))
   {
    if (currentSceneName == "Level_Boss_Scene")
    {
@@ -37,7 +42,37 @@ public class TeleporterToNextLevel : MonoBehaviour
    }
   }
  }
- 
+
+ private void SettingScore()
+ {
+  if (currentSceneName == "Level_Tuto_Scene")
+  {
+   _gameManager.isFinishingAllLevel++;
+   if (PlayerPrefs.GetFloat("bestLevel1Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel1Time"))
+   {
+    PlayerPrefs.SetFloat("bestLevel1Time", timer.currentTime);
+   }
+  }
+
+  if (currentSceneName == "Level_1_Scene")
+  {
+   _gameManager.isFinishingAllLevel++;
+   if (PlayerPrefs.GetFloat("bestLevel2Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel2Time"))
+   {
+    PlayerPrefs.SetFloat("bestLevel2Time", timer.currentTime);
+   }
+  }
+
+  if (currentSceneName == "Level_2_scene")
+  {
+   _gameManager.isFinishingAllLevel++;
+   if (PlayerPrefs.GetFloat("bestLevel3Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel3Time"))
+   {
+    PlayerPrefs.SetFloat("bestLevel3Time", timer.currentTime);
+   }
+  }
+ }
+
  IEnumerator LevelEnding()
  {
   SettingScore();
@@ -51,10 +86,9 @@ public class TeleporterToNextLevel : MonoBehaviour
   yield return new WaitForSeconds(1f);
   SceneManager.LoadScene(sceneName);
  }
- 
+
  IEnumerator GameEnding()
  {
-  SettingEndScore();
   cam.levelEnded = true;
   yield return new WaitForSeconds(0.6f);
   yield return new WaitForSeconds(25f);
@@ -63,60 +97,7 @@ public class TeleporterToNextLevel : MonoBehaviour
   SceneManager.LoadScene(sceneName);
  }
 
- private void SettingScore()
- {
-  if (currentSceneName == "Level_Tuto_Scene")
-  {
-   isFinishingAllLevel++;
-   if (PlayerPrefs.GetFloat("bestLevel1Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel1Time"))
-   {
-    PlayerPrefs.SetFloat("bestLevel1Time", timer.currentTime);
-   }
-  }
-  
-  if (currentSceneName == "Level_1_Scene")
-  {
-   isFinishingAllLevel++;
-   if (PlayerPrefs.GetFloat("bestLevel2Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel2Time"))
-   {
-    PlayerPrefs.SetFloat("bestLevel2Time", timer.currentTime);
-   }
-  }
-  
-  if (currentSceneName == "Level_2_scene")
-  {
-   isFinishingAllLevel++;
-   if (PlayerPrefs.GetFloat("bestLevel3Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel3Time"))
-   {
-    PlayerPrefs.SetFloat("bestLevel3Time", timer.currentTime);
-   }
-  }
+
  }
- 
- private void SettingEndScore()
- {
-  if (currentSceneName == "Level_Boss_Scene" && isFinishingAllLevel == 3)
-  {
-   if (PlayerPrefs.GetFloat("bestLevel4Time") == 0 || timer.currentTime < PlayerPrefs.GetFloat("bestLevel4Time"))
-   {
-    PlayerPrefs.SetFloat("bestLevel4Time", timer.currentTime);
-   }
-   
-   if (PlayerPrefs.GetFloat("goldTime") == 0 || _gameManager.currentTime < PlayerPrefs.GetFloat("goldTime"))
-   {
-    PlayerPrefs.SetFloat("goldTime", _gameManager.currentTime);
-   }
-  
-   if (PlayerPrefs.GetFloat("silverTime") == 0 || _gameManager.currentTime < PlayerPrefs.GetFloat("silverTime"))
-   {
-    PlayerPrefs.SetFloat("silverTime", _gameManager.currentTime);
-   }
-  
-   if (PlayerPrefs.GetFloat("bronzeTime") == 0 || _gameManager.currentTime < PlayerPrefs.GetFloat("bronzeTime"))
-   {
-    PlayerPrefs.SetFloat("bronzeTime", _gameManager.currentTime);
-   }
-  }
- }
- 
-}
+
+

@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     public bool timerActive = true;
 
+    public int isFinishingAllLevel;
+
+    public bool scoreSet;
+
     private void Awake()
     {
         Cursor.visible = false;
@@ -27,30 +31,18 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentTime = 0;
+        isFinishingAllLevel = 0;
+        scoreSet = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timerActive) 
+        if (timerActive)
         {
             currentTime += Time.deltaTime;
         }
     }
 
-    public void SetScore()
-    {
-        if (currentTime > goldTime)
-        {
-            goldTime = currentTime;
-        }
-        else if(currentTime > silverTime)
-        {
-            silverTime = currentTime;
-        }
-        else if (currentTime > bronzeTime)
-        {
-            bronzeTime = currentTime;
-        }
-    }
+
 }

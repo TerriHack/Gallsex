@@ -3427,8 +3427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fdbc7a32280ba44a21d9a289837c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldTimePillar: {fileID: 1094176905}
-  silverTimePillar: {fileID: 745444997}
+  goldTimePillar: {fileID: 745444997}
+  silverTimePillar: {fileID: 1094176905}
   bronzeTimePillar: {fileID: 1268598594}
   level1: {fileID: 219341687}
   level2: {fileID: 1090292333}
