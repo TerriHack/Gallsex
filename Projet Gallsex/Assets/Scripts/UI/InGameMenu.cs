@@ -171,8 +171,8 @@ namespace UI
                 {
                     Resume();
                     bossRestart.RestartBoss();
-                    timer.currentTime = 0f;
                     Time.timeScale = 1f;
+                    timer.currentTime = 0f;
                 }
                 else
                 {

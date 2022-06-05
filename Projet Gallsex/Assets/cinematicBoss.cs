@@ -8,7 +8,7 @@ public class cinematicBoss : MonoBehaviour
 
     [SerializeField] private Animator blackBarAnim;
     [SerializeField] private Animator bossAnim;
-    [SerializeField] private Animator PlayerAnim;
+    [SerializeField] private Animator anim;
     [SerializeField] private PlayerBetterController pBc;
     [SerializeField] private GameObject camHolder;
     [SerializeField] private GameObject camBoss;
@@ -16,6 +16,10 @@ public class cinematicBoss : MonoBehaviour
     [SerializeField] private GameObject bossScream;
     [SerializeField] private CameraBoss bossMovement;
     [SerializeField] private GameObject hud;
+    
+    private const String PlayerIdle = "Idle_Animation";
+    private string _currentState;
+    
     private GameManager gm;
     private MusicDisplayer mD;
 
@@ -25,6 +29,14 @@ public class cinematicBoss : MonoBehaviour
         mD = GameObject.FindWithTag("GameManager").GetComponent<MusicDisplayer>();
     }
 
+    public void ChangeAnimationState(string newState)
+    {
+        if(_currentState == newState) return;
+        anim.Play(newState);
+        
+        _currentState = newState;
+    }
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
@@ -35,31 +47,30 @@ public class cinematicBoss : MonoBehaviour
 
     IEnumerator Cinematic()
     {
+        
+        if (pBc._facingRight) pBc.Flip();
+        pBc.enabled = false;
+        ChangeAnimationState(PlayerIdle);
         hud.SetActive(false);
         gm.timerActive = false;
-        pBc.enabled = false;
         boss.SetActive(true);
         blackBarAnim.SetBool("InCinematic", true);
         camHolder.SetActive(false);
         camBoss.SetActive(true);
+        
         yield return new WaitForSeconds(1f);
-        pBc.enabled = true;
-        PlayerAnim.enabled = true;
-        if (pBc._facingRight)
-        {
-            pBc.Flip();
-        }
-        yield return new WaitForSeconds(0.1f);
-        PlayerAnim.enabled = false;
-        pBc.enabled = false;
+
         bossScream.SetActive(true);
+        
         yield return new WaitForSeconds(1.6f);
+        
         bossAnim.SetBool("inCinematic",true);
+        
         yield return new WaitForSeconds(3f);
+        
         bossAnim.SetBool("inCinematic",false);
         blackBarAnim.SetBool("InCinematic", false);
         mD.cinematicOver = true;
-        PlayerAnim.enabled = true;
         pBc.enabled = true;
         hud.SetActive(true);
         gm.timerActive = true;
