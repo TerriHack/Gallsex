@@ -12,6 +12,7 @@ public class MusicDisplayer : MonoBehaviour
     private bool menuMusicDisplayed;
     private bool musicDisplayed;
     private bool stopSearching;
+    public bool cinematicOver;
 
     public void PlayMenuTheme()
     {
@@ -36,21 +37,19 @@ public class MusicDisplayer : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Main_Menu_Scene" && musicDisplayer.clip != music[1])
         {
-            Debug.Log("Imdisplaying");
             PlayMenuTheme();
         }
         
         if (SceneManager.GetActiveScene().name == "Level_Tuto_Scene" && musicDisplayer.clip != music[0] || SceneManager.GetActiveScene().name == "Level_1_Scene" && musicDisplayer.clip != music[0]
             ||SceneManager.GetActiveScene().name == "Level_2_scene" && musicDisplayer.clip != music[0])
         {
-            Debug.Log("Imdisplaying");
             PlayMainTheme();
         }
 
-        if (SceneManager.GetActiveScene().name == "Main_Boss_Scene" && musicDisplayer.clip != music[2])
+        if (SceneManager.GetActiveScene().name == "Level_Boss_Scene" && musicDisplayer.clip != music[2])
         {
-            Debug.Log("Imdisplaying");
-            PlayBossTheme();
+            if(cinematicOver) PlayBossTheme();
+            else musicDisplayer.clip = null;
         }
             
     }

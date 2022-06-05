@@ -55,8 +55,10 @@ public class CameraBoss : MonoBehaviour
             if(bossMovement.isGone) bossMovement.BossTeleportation();
         }
         else if (phaseCounter == 2) CameraPhase2();
-        else if (phaseCounter <= 1) CameraPhase1();
+        else if (phaseCounter == 1) CameraPhase1();
+
     }
+
     void CameraPhase1()
     {
         _camTr.position = new Vector3(player.position.x + offsetX, offsetY, -10);

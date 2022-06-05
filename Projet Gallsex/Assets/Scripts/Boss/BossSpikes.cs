@@ -28,6 +28,11 @@ namespace Boss
             }
         }
 
+        public void RestartBoss()
+        {
+            StartCoroutine(CheckpointDeath());
+        }
+        
         IEnumerator CheckpointDeath()
         {
             if (bossCam.phaseCounter >= 3)
@@ -68,16 +73,16 @@ namespace Boss
                 Vector2 pos = player.GetComponent<ArrayCheckpoint>().checkpointArray[I-1];
         
                 player.transform.position = pos;
-
                 boss.ResetBoss();
         
                 yield return new WaitForSeconds(0.8f);
-        
-                player.GetComponent<PlayerBetterController>().enabled = true;
+
+                bossCam.transform.position = new Vector3(pos.x + 4, 4,-10);
                 blink.SetBool("isDead", false);
         
                 yield return new WaitForSeconds(0.5f);
 
+                player.GetComponent<PlayerBetterController>().enabled = true;
                 bossCam.phaseCounter = 1;
             }
         }

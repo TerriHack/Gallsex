@@ -171,7 +171,7 @@ namespace Boss
         }
         public void ResetBoss()
         {
-            BossTransform.position = new Vector3(-20, 3, 0);
+            BossTransform.position = new Vector3(-42.5f, 3, 0);
             _bossCam.phaseCounter = 0;
         }
 

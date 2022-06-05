@@ -13,7 +13,7 @@ public class BossDeadZone : MonoBehaviour
     [SerializeField] private GameObject trigger5;
     [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource sound;
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))

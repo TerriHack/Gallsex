@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Boss;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +11,7 @@ namespace UI
 {
     public class InGameMenu : MonoBehaviour
     {
+        [SerializeField] private BossSpikes bossRestart;
         [SerializeField] private GameManager _gameManager;
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject optionMenu;
@@ -163,8 +165,17 @@ namespace UI
         {
             if (_isPaused)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                Time.timeScale = 1f;
+                if (SceneManager.GetActiveScene().name == "Level_Boss_Scene")
+                {
+                    Resume();
+                    bossRestart.RestartBoss();
+                    Time.timeScale = 1f;
+                }
+                else
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    Time.timeScale = 1f;
+                }
             }
         }
         public void Option()
