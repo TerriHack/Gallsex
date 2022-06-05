@@ -41,9 +41,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -294865404982767801, guid: a2ef654181591034da4edc12260d56df, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0360a81b48d83b14fbb4a45531bcf297, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 75f2635044d4ea44a9f3dd55fa6df1a6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3345
+  m_Volume: 0.505
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -168,9 +168,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -294865404982767801, guid: a2ef654181591034da4edc12260d56df, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 86c1641b202aa5f46b3526fd9786c315, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e1d5b247f3cb07844b5101fd09e06b55, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.18
+  m_Volume: 0.537
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -773,6 +773,22 @@ PrefabInstance:
       propertyPath: InitialModule.randomizeRotationDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5044844266318500813, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Color.g
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266318500813, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266630394080, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6952356
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266630394080, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5166429
+      objectReference: {fileID: 0}
     - target: {fileID: 5044844266871896793, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: maxTimer
       value: 0.1
@@ -797,6 +813,14 @@ PrefabInstance:
       propertyPath: jumpOffset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5044844266973258586, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Color.g
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044844266973258586, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5176471
+      objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101392, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_Name
       value: Player
@@ -811,11 +835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -312.3
+      value: -305.74
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -232
+      value: -231.97
       objectReference: {fileID: 0}
     - target: {fileID: 7178299340679101404, guid: cf9dffda5d01cdd4dacc26def5d71781, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1053,18 +1077,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAudioSource: {fileID: 5622140369879918245}
   run: {fileID: 8300000, guid: 4fda1510912afb04c974d3389291f6ec, type: 3}
-  jump: {fileID: 8300000, guid: 896e8ae0e6b4b6648ae4dbceb068d74a, type: 3}
-  landing: {fileID: 8300000, guid: 7153afacb3d5b7c459434b54dcaa2c5e, type: 3}
+  jump: {fileID: 8300000, guid: 0810fc09fd1e2e644b267c8c1b6eaf11, type: 3}
+  landing: {fileID: 8300000, guid: d13d5a5043cd75347bb3b3b498ebd028, type: 3}
   wallSlide: {fileID: 8300000, guid: 03bc300417eab5944b1e5592be2000c1, type: 3}
-  sit: {fileID: 8300000, guid: 8520e681ad250b8458285d9a610223af, type: 3}
-  crouch: {fileID: 8300000, guid: 9e30515a8bdee3e4e97a2960db1df0e3, type: 3}
-  dash: {fileID: 8300000, guid: f278f64617f1f184c9a4c2d8ab552c1f, type: 3}
+  sit: {fileID: 8300000, guid: a39180fb3db10be46ad875ad4832450b, type: 3}
+  crouch: {fileID: 8300000, guid: e5d337e0cf1815e458bbd17a9f3595fd, type: 3}
+  dash: {fileID: 8300000, guid: 48dfa79b7a878a2478bec9659dfe546e, type: 3}
   soundList: []
   runVolume: 0.5724
-  jumpVolume: 0.504
-  landingVolume: 0.63
+  jumpVolume: 0.545
+  landingVolume: 0.446
   wallSlideVolume: 0.324
-  sitVolume: 0.8115
-  crouchVolume: 1
-  dashVolume: 0.7995
+  sitVolume: 0.423
+  crouchVolume: 0.306
+  dashVolume: 0.768
   volumeList: []
