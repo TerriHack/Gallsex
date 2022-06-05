@@ -13,9 +13,9 @@ public class FallingPlatform : MonoBehaviour
     private Vector3 _respawnPosition;
     private Quaternion _respawnRotation;
 
-    [Range(0.2f, 5f)]
+    [Range(0f, 5f)]
     public float _timeShaking;
-    [Range(0.2f,5f)]
+    [Range(0f,5f)]
     public float _timeBeforeRespawn;
     [Range(0.2f,15f)]
     public float fallSpeed;
