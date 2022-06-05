@@ -18,13 +18,14 @@ namespace UI
         [SerializeField] private GameObject quitMenu;
         [SerializeField] private TMP_Dropdown resolutionDropdown;
         private GameObject spikes;
-        private GameObject accessibilitySpikes;
+        [SerializeField] private GameObject accessibilitySpikes;
         private prefabTimer timer;
         public GameObject firstButtonSelected, firstOptionButton, optionClosedButton, firstQuitButton;
 
         public bool _isPaused;
         public bool _quitMenued;
         public bool _optionMenued;
+        public bool _noSpikes;
 
         private const String Paused = "Pause";
         private const String UnPaused = "UnPause";
@@ -223,11 +224,17 @@ namespace UI
             //Set the new state in the event system
             EventSystem.current.SetSelectedGameObject(firstButtonSelected);
         }
+        public void SetAccessibilitySpikes()
+        {
+            if(!_noSpikes) accessibilitySpikes.SetActive(true);
+            else accessibilitySpikes.SetActive(false);
+        }
 
         public void AccessibilityToggle(bool noSpikes)
         {
+            _noSpikes = noSpikes;
             spikes.SetActive(noSpikes);
-            accessibilitySpikes.SetActive(!noSpikes);
+            SetAccessibilitySpikes();
         }
         public void ChangeAnimationState(string newState)
         {
