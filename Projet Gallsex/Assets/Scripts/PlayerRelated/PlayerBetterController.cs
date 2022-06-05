@@ -29,7 +29,6 @@ public class PlayerBetterController : MonoBehaviour
     private float _wallJumpTime;
     private float _gravity;
     private float _waitCounter;
-    private float _sittingCounter;
     private float _slideCounter;
     #endregion
 
@@ -90,7 +89,6 @@ public class PlayerBetterController : MonoBehaviour
     {
         #region Animation Related
         _waitCounter = playerData.waitTime;
-        _sittingCounter = playerData.timeToSleep;
         #endregion
     }
     
@@ -173,7 +171,6 @@ public class PlayerBetterController : MonoBehaviour
 
             #region Animation Related
             _waitCounter = playerData.waitTime;
-            _sittingCounter = playerData.timeToSleep;
             #endregion
         }
         else
@@ -254,7 +251,6 @@ public class PlayerBetterController : MonoBehaviour
             _waitCounter = playerData.waitTime;
             isWaiting = false;
             
-            _sittingCounter = playerData.timeToSleep;
             isSleeping = false;
             #endregion
         }
@@ -263,10 +259,8 @@ public class PlayerBetterController : MonoBehaviour
             movement = new Vector2(inputX * playerData.speed * playerData.airControl, 0);
             
             #region Animation Related
-            _sittingCounter = playerData.timeToSleep;
             isWaiting = false;
             
-            _sittingCounter = playerData.timeToSleep;
             isSleeping = false;
             #endregion
         }
@@ -307,7 +301,6 @@ public class PlayerBetterController : MonoBehaviour
             _waitCounter = playerData.waitTime;
             isWaiting = false;
             
-            _sittingCounter = playerData.timeToSleep;
             isSleeping = false;
             #endregion
         }
@@ -421,7 +414,6 @@ public class PlayerBetterController : MonoBehaviour
         {
             #region Animation Related
             _waitCounter = playerData.waitTime;
-            _sittingCounter = playerData.timeToSleep;
             #endregion
             
             isCrouching = true;
@@ -436,13 +428,6 @@ public class PlayerBetterController : MonoBehaviour
         {
             isWaiting = true;
             ChangeAnimationState(PlayerSit);
-            _sittingCounter -= Time.deltaTime;
-        }
-
-        if (_sittingCounter <= 0f && !isCrouching)
-        {
-            isSleeping = true;
-            ChangeAnimationState(PlayerSleep);
         }
 
         if (!wallSliding && isFalling && !isDashing && !isGrounded)
