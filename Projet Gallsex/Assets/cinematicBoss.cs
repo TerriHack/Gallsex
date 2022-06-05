@@ -15,10 +15,13 @@ public class cinematicBoss : MonoBehaviour
     [SerializeField] private GameObject boss;
     [SerializeField] private GameObject bossScream;
     [SerializeField] private CameraBoss bossMovement;
+    [SerializeField] private GameObject hud;
+    private GameManager gm;
     private MusicDisplayer mD;
 
     private void Start()
     {
+        gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         mD = GameObject.FindWithTag("GameManager").GetComponent<MusicDisplayer>();
     }
 
@@ -32,6 +35,8 @@ public class cinematicBoss : MonoBehaviour
 
     IEnumerator Cinematic()
     {
+        hud.SetActive(false);
+        gm.timerActive = false;
         pBc.enabled = false;
         boss.SetActive(true);
         blackBarAnim.SetBool("InCinematic", true);
@@ -56,6 +61,8 @@ public class cinematicBoss : MonoBehaviour
         mD.cinematicOver = true;
         PlayerAnim.enabled = true;
         pBc.enabled = true;
+        hud.SetActive(true);
+        gm.timerActive = true;
         bossMovement.phaseCounter = 1;
     }
 }
