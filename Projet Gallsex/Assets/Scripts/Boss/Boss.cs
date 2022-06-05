@@ -13,6 +13,7 @@ namespace Boss
         private Transform BossTransform;
         private Rigidbody2D bossRB;
         [SerializeField] Transform playerTransform;
+        [SerializeField] private AudioSource bossSound;
         public Volume globalVolume;
         [SerializeField] private CameraBoss _bossCam;
 
@@ -49,7 +50,8 @@ namespace Boss
         #endregion
         
         private void Awake()
-        { 
+        {
+            bossSound = GetComponent<AudioSource>();
             BossTransform = gameObject.GetComponent<Transform>();
             bossRB = gameObject.GetComponent<Rigidbody2D>();
         }
@@ -120,7 +122,11 @@ namespace Boss
         #region Fonctions de mouvements
         void CloseMovement()
         {
-            if (_bossCam.phaseCounter == 5) bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeedY * multClose);
+            if (_bossCam.phaseCounter == 5)
+            {
+                bossSound.enabled = true;
+                bossRB.velocity = new Vector2(bossYSpeed, bossBaseSpeedY * multClose);
+            }
             else if(_bossCam.phaseCounter == 4) bossRB.velocity = Vector2.zero;
             else if(_bossCam.phaseCounter < 3) bossRB.velocity = new Vector2(bossBaseSpeed * multClose, bossYSpeed); 
         }
@@ -167,6 +173,7 @@ namespace Boss
         public void BossTeleportation()
         {
             transform.position = new Vector3(497.5f, -8, 0);
+            bossSound.enabled = false;
             transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         public void ResetBoss()
