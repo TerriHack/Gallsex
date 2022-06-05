@@ -17,6 +17,8 @@ namespace UI
         [SerializeField] private GameObject optionMenu;
         [SerializeField] private GameObject quitMenu;
         [SerializeField] private TMP_Dropdown resolutionDropdown;
+        private GameObject spikes;
+        private GameObject accessibilitySpikes;
         private prefabTimer timer;
         public GameObject firstButtonSelected, firstOptionButton, optionClosedButton, firstQuitButton;
 
@@ -37,6 +39,8 @@ namespace UI
         {
             _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
             timer = GetComponentInChildren<prefabTimer>();
+            spikes = GameObject.FindWithTag("Spikes");
+            accessibilitySpikes = GameObject.FindWithTag("noSpikes");
         }
         private void Start()
         {
@@ -218,6 +222,12 @@ namespace UI
             EventSystem.current.SetSelectedGameObject(null);
             //Set the new state in the event system
             EventSystem.current.SetSelectedGameObject(firstButtonSelected);
+        }
+
+        public void AccessibilityToggle(bool noSpikes)
+        {
+            spikes.SetActive(noSpikes);
+            accessibilitySpikes.SetActive(!noSpikes);
         }
         public void ChangeAnimationState(string newState)
         {

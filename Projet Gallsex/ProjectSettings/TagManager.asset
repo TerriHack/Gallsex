@@ -28,6 +28,8 @@ TagManager:
   - CreditsTrigger
   - FallingPlatform
   - Teleporter
+  - Spikes
+  - noSpikes
   layers:
   - Default
   - TransparentFX
