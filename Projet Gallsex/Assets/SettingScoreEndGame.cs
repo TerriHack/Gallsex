@@ -10,6 +10,7 @@ public class SettingScoreEndGame : MonoBehaviour
 {
  public string currentSceneName;
  [SerializeField] private GameManager gameManager;
+ [SerializeField] private Animator playerAnim;
  [SerializeField] private PlayerBetterController pBC;
  [SerializeField] private AudioSource runSound;
  [SerializeField] private Transform playerTr;
@@ -19,6 +20,9 @@ public class SettingScoreEndGame : MonoBehaviour
  [SerializeField] private GameObject hud;
  [SerializeField] private AudioSource endingTheme;
 
+ private const String PlayerIdle = "Idle_Animation";
+ private string _currentState;
+ 
  private bool scoreSet;
 
  private void OnTriggerEnter2D(Collider2D other)
@@ -34,6 +38,7 @@ public class SettingScoreEndGame : MonoBehaviour
  {
   playerTr.position = new Vector3(497.5f, playerTr.position.y, 0);
   pBC.enabled = false;
+  ChangeAnimationState(PlayerIdle);
   runSound.enabled = false;
  }
 
@@ -84,6 +89,14 @@ public class SettingScoreEndGame : MonoBehaviour
  {
   hud.SetActive(false);
   endingTheme.Play();
+ }
+ 
+ public void ChangeAnimationState(string newState)
+ {
+  if(_currentState == newState) return;
+  playerAnim.Play(newState);
+        
+  _currentState = newState;
  }
 }
 

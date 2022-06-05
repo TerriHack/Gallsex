@@ -24224,6 +24224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
+  bossSound: {fileID: 0}
   globalVolume: {fileID: 0}
   _bossCam: {fileID: 0}
   bossBaseSpeed: 13
