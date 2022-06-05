@@ -17,6 +17,7 @@ namespace UI
         [SerializeField] private GameObject optionMenu;
         [SerializeField] private GameObject quitMenu;
         [SerializeField] private TMP_Dropdown resolutionDropdown;
+        private prefabTimer timer;
         public GameObject firstButtonSelected, firstOptionButton, optionClosedButton, firstQuitButton;
 
         public bool _isPaused;
@@ -35,6 +36,7 @@ namespace UI
         private void Awake()
         {
             _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+            timer = GetComponentInChildren<prefabTimer>();
         }
         private void Start()
         {
@@ -169,6 +171,7 @@ namespace UI
                 {
                     Resume();
                     bossRestart.RestartBoss();
+                    timer.currentTime = 0f;
                     Time.timeScale = 1f;
                 }
                 else
