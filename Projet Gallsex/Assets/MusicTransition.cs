@@ -10,6 +10,11 @@ public class MusicTransition : MonoBehaviour
 
     [Range(0f,5f)]
     public float soundModifier;
+
+    void Start()
+    {
+        music = GameObject.FindWithTag("GameManager").GetComponent<AudioSource>();
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

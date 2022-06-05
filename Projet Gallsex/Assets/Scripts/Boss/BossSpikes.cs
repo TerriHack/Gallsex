@@ -12,14 +12,11 @@ namespace Boss
         [SerializeField] private Boss boss;
         [SerializeField] private CameraBoss bossCam;
         [SerializeField] private Animator blink;
-        [SerializeField] private Rigidbody2D playerRb;
 
         [SerializeField] private GameObject trigger4;
         [SerializeField] private GameObject trigger5;
-        [SerializeField] private AudioSource music;
-        [SerializeField] private AudioSource sound;
 
-    
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
@@ -42,9 +39,6 @@ namespace Boss
         
                 yield return new WaitForSeconds(0.3f);
 
-                music.volume = 1f;
-                sound.volume = 1f;
-                
                 trigger4.SetActive(true);
                 trigger5.SetActive(true);
                 

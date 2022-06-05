@@ -24311,8 +24311,6 @@ MonoBehaviour:
   playerRb: {fileID: 0}
   trigger4: {fileID: 0}
   trigger5: {fileID: 0}
-  music: {fileID: 0}
-  sound: {fileID: 0}
 --- !u!1 &5998375840678672147
 GameObject:
   m_ObjectHideFlags: 0
