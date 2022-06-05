@@ -23,4 +23,13 @@ public class MusicTransition : MonoBehaviour
             sound.volume -= soundModifier;
         }
     }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            music.volume = 0;
+            sound.volume = 0;
+        }
+    }
 }

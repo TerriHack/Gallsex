@@ -10,7 +10,9 @@ public class SettingScoreEndGame : MonoBehaviour
 {
  public string currentSceneName;
  [SerializeField] private GameManager gameManager;
-
+ [SerializeField] private PlayerBetterController pBC;
+ [SerializeField] private AudioSource runSound;
+ [SerializeField] private Transform playerTr;
  [SerializeField] private prefabTimer timer;
 
  //private ChromaticAberration chroma;
@@ -26,6 +28,13 @@ public class SettingScoreEndGame : MonoBehaviour
    SettingScore();
    EndSetting();
   }
+ }
+
+ private void OnTriggerExit2D(Collider2D other)
+ {
+  playerTr.position = new Vector3(497.5f, playerTr.position.y, 0);
+  pBC.enabled = false;
+  runSound.enabled = false;
  }
 
  private void Awake()
@@ -72,10 +81,9 @@ public class SettingScoreEndGame : MonoBehaviour
  }
 
  private void EndSetting()
-  {
-   hud.SetActive(false);
-   endingTheme.Play();
-  }
- 
+ {
+  hud.SetActive(false);
+  endingTheme.Play();
+ }
 }
 
