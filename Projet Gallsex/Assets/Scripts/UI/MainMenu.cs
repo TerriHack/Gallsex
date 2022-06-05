@@ -223,8 +223,8 @@ public class MainMenu : MonoBehaviour
 
         if (Input.GetButtonDown("Pause") && scoreMenuOn)
         {
-            scoreMenuScript.SetTheScore();
             ResetTimers();
+            scoreMenuScript.SetTheScore();
         }
     }
 

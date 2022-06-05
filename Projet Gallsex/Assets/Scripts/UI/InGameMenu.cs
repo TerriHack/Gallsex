@@ -114,6 +114,8 @@ namespace UI
                 //Set the new state in the event system
                 EventSystem.current.SetSelectedGameObject(firstButtonSelected);
             }
+
+            if (!_isPaused) EventSystem.current.SetSelectedGameObject(null);
         }
         
         //**************************************************************
@@ -144,7 +146,6 @@ namespace UI
             }
         
         }
-        
         private void LockMenu()
         {
             if (!_isPaused)
