@@ -14,6 +14,8 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI level2;  
     [SerializeField] private TextMeshProUGUI level3;
     [SerializeField] private TextMeshProUGUI level4;
+    
+    [SerializeField] private TextMeshProUGUI lastRunTime;
 
     private float _goldTime;
     private float _silverTime;
@@ -22,6 +24,7 @@ public class ScoreMenu : MonoBehaviour
     private float _timeLevel2;
     private float _timeLevel3;
     private float _timeLevel4;
+    private float _lastTime;
 
     private void Start()
     {
@@ -38,6 +41,8 @@ public class ScoreMenu : MonoBehaviour
         _timeLevel2 = PlayerPrefs.GetFloat("bestLevel2Time");
         _timeLevel3 = PlayerPrefs.GetFloat("bestLevel3Time");
         _timeLevel4 = PlayerPrefs.GetFloat("bestLevel4Time");
+        
+        _lastTime = PlayerPrefs.GetFloat("LastRun");
 
         TimeSpan time1 = TimeSpan.FromSeconds(_goldTime);       
         TimeSpan time2 = TimeSpan.FromSeconds(_silverTime);     
@@ -47,6 +52,8 @@ public class ScoreMenu : MonoBehaviour
         TimeSpan timeLevel2 = TimeSpan.FromSeconds(_timeLevel2);     
         TimeSpan timeLevel3 = TimeSpan.FromSeconds(_timeLevel3);
         TimeSpan timeLevel4 = TimeSpan.FromSeconds(_timeLevel4);
+        
+        TimeSpan lastTime = TimeSpan.FromSeconds(_lastTime);
 
         goldTimePillar.text = time1.ToString(@"mm\:ss\:fff");
         silverTimePillar.text = time2.ToString(@"mm\:ss\:fff");
@@ -56,5 +63,9 @@ public class ScoreMenu : MonoBehaviour
         level2.text = timeLevel2.ToString(@"mm\:ss\:fff");
         level3.text = timeLevel3.ToString(@"mm\:ss\:fff");
         level4.text = timeLevel4.ToString(@"mm\:ss\:fff");
+        
+        lastRunTime.text = lastTime.ToString(@"mm\:ss\:fff");
+        
+        
     }
 }

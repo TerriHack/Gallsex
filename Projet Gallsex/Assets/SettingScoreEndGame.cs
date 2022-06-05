@@ -59,6 +59,8 @@ public class SettingScoreEndGame : MonoBehaviour
 
    if (gameManager.isFinishingAllLevel >= 3 && !scoreSet)
    {
+    PlayerPrefs.SetFloat("LastRun", gameManager.currentTime);
+    
     if (PlayerPrefs.GetFloat("goldTime") == 0 && !scoreSet || gameManager.currentTime < PlayerPrefs.GetFloat("goldTime")&& !scoreSet)
     {
      scoreSet = true;
