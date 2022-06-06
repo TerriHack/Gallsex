@@ -6,7 +6,7 @@ public class PlatformMovement : MonoBehaviour
     private int doIWait;
     public bool active;
     [SerializeField] private GameObject[] wayPoints;
-    private int currentWaypointIndex = 0;
+    public int currentWaypointIndex = 0;
     public float waitTime = 1;
     public float waitFor;
     public bool waiting = false;
