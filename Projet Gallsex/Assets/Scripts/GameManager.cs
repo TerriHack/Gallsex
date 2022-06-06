@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Main_Menu_Scene")
         {
             timerActive = false;
+            currentTime = 0;
         }
         else timerActive = true;
         

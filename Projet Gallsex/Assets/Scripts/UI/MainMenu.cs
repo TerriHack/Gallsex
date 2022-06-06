@@ -66,10 +66,6 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (GameObject.FindWithTag("GameManager") == null)
-        {
-            Instantiate(gameManagerPrefab);
-        }
 
         Time.timeScale = 1f;
         
@@ -88,6 +84,11 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        if (GameObject.FindWithTag("GameManager") == null)
+        {
+            Debug.Log(3);
+            Instantiate(gameManagerPrefab);
+        }
         
         _gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
@@ -118,8 +119,7 @@ public class MainMenu : MonoBehaviour
     {
         coolDown -= Time.deltaTime;
         StartGame();
-
-        Debug.Log(soundUI.isPlaying);
+        
 
         if (canPress)
         {

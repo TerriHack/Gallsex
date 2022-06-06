@@ -10,6 +10,8 @@ public class cinematicBoss : MonoBehaviour
     [SerializeField] private Animator bossAnim;
     [SerializeField] private Animator anim;
     [SerializeField] private PlayerBetterController pBc;
+    [SerializeField] private Rigidbody2D playerRb;
+    [SerializeField] private Transform playerTr;
     [SerializeField] private GameObject camHolder;
     [SerializeField] private GameObject camBoss;
     [SerializeField] private GameObject boss;
@@ -47,7 +49,8 @@ public class cinematicBoss : MonoBehaviour
 
     IEnumerator Cinematic()
     {
-        
+        playerTr.position = new Vector3(-28,19.5f,0);
+        playerRb.velocity = Vector2.zero;
         if (pBc._facingRight) pBc.Flip();
         pBc.enabled = false;
         ChangeAnimationState(PlayerIdle);
