@@ -20,6 +20,7 @@ public class movingPlatformManager : MonoBehaviour
             childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().active = false;
             childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().waitFor = 10;
             childrenMovingPlatforms[i].transform.GetChild(0).transform.position = childrenMovingPlatforms[i].transform.GetChild(1).transform.position;
+            childrenMovingPlatforms[i].transform.GetChild(0).GetComponent<PlatformMovement>().currentWaypointIndex = 1;
         }
     }
 }
