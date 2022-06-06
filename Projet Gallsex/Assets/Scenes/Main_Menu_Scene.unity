@@ -156,6 +156,17 @@ Transform:
   m_Father: {fileID: 1123110260}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &45501021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162352896779218746, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+  m_PrefabInstance: {fileID: 8162352897988298549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &150766936
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +452,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191166332}
   m_CullTransparentMesh: 1
+--- !u!114 &201652569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162352896888844874, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+  m_PrefabInstance: {fileID: 8162352897988298549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &219341685
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +690,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb015ed74b22b049bde655dd8111091, type: 3}
+--- !u!114 &401826191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162352896647759607, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+  m_PrefabInstance: {fileID: 8162352897988298549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &437984287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,6 +2789,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &821722643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162352897980553135, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+  m_PrefabInstance: {fileID: 8162352897988298549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &915424135
 GameObject:
   m_ObjectHideFlags: 0
@@ -9276,6 +9320,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8162352896647759604, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMusic
+      value: 
+      objectReference: {fileID: 45501021}
+    - target: {fileID: 8162352896647759604, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderSound
+      value: 
+      objectReference: {fileID: 401826191}
+    - target: {fileID: 8162352896647759604, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMaster
+      value: 
+      objectReference: {fileID: 821722643}
+    - target: {fileID: 8162352896647759604, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderAmbient
+      value: 
+      objectReference: {fileID: 201652569}
     - target: {fileID: 8162352896647759605, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_SizeDelta.x
       value: 220
@@ -9300,6 +9360,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -261
       objectReference: {fileID: 0}
+    - target: {fileID: 8162352896779218747, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMusic
+      value: 
+      objectReference: {fileID: 45501021}
+    - target: {fileID: 8162352896779218747, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderSound
+      value: 
+      objectReference: {fileID: 401826191}
+    - target: {fileID: 8162352896779218747, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMaster
+      value: 
+      objectReference: {fileID: 821722643}
+    - target: {fileID: 8162352896779218747, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderAmbient
+      value: 
+      objectReference: {fileID: 201652569}
     - target: {fileID: 8162352896810757320, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9376,6 +9452,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -320
       objectReference: {fileID: 0}
+    - target: {fileID: 8162352896888844875, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMusic
+      value: 
+      objectReference: {fileID: 45501021}
+    - target: {fileID: 8162352896888844875, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderSound
+      value: 
+      objectReference: {fileID: 401826191}
+    - target: {fileID: 8162352896888844875, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMaster
+      value: 
+      objectReference: {fileID: 821722643}
+    - target: {fileID: 8162352896888844875, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderAmbient
+      value: 
+      objectReference: {fileID: 201652569}
     - target: {fileID: 8162352896921381230, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -33
@@ -9524,6 +9616,22 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 8162352897980553132, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMusic
+      value: 
+      objectReference: {fileID: 45501021}
+    - target: {fileID: 8162352897980553132, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderSound
+      value: 
+      objectReference: {fileID: 401826191}
+    - target: {fileID: 8162352897980553132, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderMaster
+      value: 
+      objectReference: {fileID: 821722643}
+    - target: {fileID: 8162352897980553132, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+      propertyPath: sliderAmbient
+      value: 
+      objectReference: {fileID: 201652569}
     - target: {fileID: 8162352897980553133, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -4

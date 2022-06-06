@@ -45,6 +45,8 @@ namespace UI
         }
         private void Start()
         {
+            _noSpikes = intTobool(PlayerPrefs.GetInt("SpikesOn"));
+            
             QualitySettings.SetQualityLevel(_gameManager.quality);
             
             _resolutions = Screen.resolutions;
@@ -228,6 +230,32 @@ namespace UI
         {
             if(!_noSpikes) accessibilitySpikes.SetActive(true);
             else accessibilitySpikes.SetActive(false);
+            
+            PlayerPrefs.SetInt("SpikesOn", boolToInt(_noSpikes));
+        }
+
+        private int boolToInt(bool val)
+        {
+            if (val)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private bool intTobool(int val)
+        {
+            if (val != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void AccessibilityToggle(bool noSpikes)
