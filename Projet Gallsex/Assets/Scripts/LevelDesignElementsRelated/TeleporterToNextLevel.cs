@@ -89,6 +89,8 @@ public class TeleporterToNextLevel : MonoBehaviour
 
  IEnumerator GameEnding()
  {
+  GameObject doors = GameObject.FindWithTag("Doors");
+  Destroy(doors);
   cam.levelEnded = true;
   yield return new WaitForSeconds(0.6f);
   yield return new WaitForSeconds(12f);
