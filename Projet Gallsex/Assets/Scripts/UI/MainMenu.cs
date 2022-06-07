@@ -44,7 +44,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject scoreMenu;
     [SerializeField] private GameObject pressAnyButtonScreen;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
-    [SerializeField] private Animation title;
     [SerializeField] private Animation pressAnyButtonTxt;
     [SerializeField] private Animator blackScreen;
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
@@ -73,7 +72,6 @@ public class MainMenu : MonoBehaviour
         
         _splashScreened = true;
         pressAnyButtonTxt.Play();
-        title.Play();
         
         _selectedScene = "Level_Tuto_Scene";
         
