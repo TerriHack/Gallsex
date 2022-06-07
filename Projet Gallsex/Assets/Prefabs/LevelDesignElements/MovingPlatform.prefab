@@ -202,7 +202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7192203140386747321, guid: 7276bf38b1f4dbb48b76ffa6f04f9835, type: 3}
+  m_Sprite: {fileID: 9063487041294543381, guid: f7f747d574fd6ba41aa66116dc5d4ab7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,17 +225,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5d0f8e7d10aee45a404498e61cead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doIWait: 0
   active: 0
   wayPoints:
   - {fileID: 6341075631393392002}
   - {fileID: 7212112088464367861}
+  currentWaypointIndex: 0
   waitTime: 1
   waitFor: 0
   waiting: 0
   soundMovement: {fileID: 673464256}
   soundStop: {fileID: 1474166744}
   stopClip: {fileID: 8300000, guid: 7d86724afd35d9e479a36d9c3e03e030, type: 3}
-  speed: 5
+  speed: 8
 --- !u!61 &1584517486645271882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -472,7 +474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7212112088464367861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 17, z: 0}
+  m_LocalPosition: {x: 0, y: 19.5, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 342901480672737689}
