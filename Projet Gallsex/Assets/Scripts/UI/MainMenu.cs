@@ -235,7 +235,10 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-
+        PlayerPrefs.SetInt("MasterVolume", 1);
+        PlayerPrefs.SetInt("MusicVolume", 1);
+        PlayerPrefs.SetInt("PlayerVolume", 1);
+        PlayerPrefs.SetInt("AmbientVolume", 1);
         PlayerPrefs.SetInt("SpikesOn", 1);
         Application.Quit();
     }
