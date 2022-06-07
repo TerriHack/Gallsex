@@ -235,6 +235,8 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
+
+        PlayerPrefs.SetInt("SpikesOn", 1);
         Application.Quit();
     }
 

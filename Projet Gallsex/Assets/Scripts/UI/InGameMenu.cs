@@ -11,7 +11,7 @@ namespace UI
 {
     public class InGameMenu : MonoBehaviour
     {
-        [SerializeField] private BossSpikes bossRestart;
+        [SerializeField] private Toggle accessibilityToggle;
         [SerializeField] private GameManager _gameManager;
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject optionMenu;
@@ -45,7 +45,8 @@ namespace UI
         }
         private void Start()
         {
-            _noSpikes = intTobool(PlayerPrefs.GetInt("SpikesOn"));
+            if (PlayerPrefs.GetInt("SpikesOn") == 1) accessibilityToggle.isOn = true;
+            else accessibilityToggle.isOn = false;
             
             QualitySettings.SetQualityLevel(_gameManager.quality);
             
@@ -218,35 +219,18 @@ namespace UI
         }
         public void SetAccessibilitySpikes()
         {
+            int spikesOn;
+            
             if(!_noSpikes) accessibilitySpikes.SetActive(true);
             else accessibilitySpikes.SetActive(false);
             
-            PlayerPrefs.SetInt("SpikesOn", boolToInt(_noSpikes));
+            if (_noSpikes) spikesOn = 1;
+            else spikesOn = 0;
+            
+            PlayerPrefs.SetInt("SpikesOn", spikesOn);
         }
-
-        private int boolToInt(bool val)
-        {
-            if (val)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        private bool intTobool(int val)
-        {
-            if (val != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
+        
 
         public void AccessibilityToggle(bool noSpikes)
         {
