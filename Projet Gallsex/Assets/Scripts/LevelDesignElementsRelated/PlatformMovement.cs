@@ -52,6 +52,7 @@ public class PlatformMovement : MonoBehaviour
                     currentWaypointIndex = 0;
                     if (SceneManager.GetActiveScene().name == "Level_Boss_Scene")
                     {
+                        currentWaypointIndex = 1;
                         doIWait = 0;
                     }
                 }

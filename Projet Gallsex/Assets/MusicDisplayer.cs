@@ -37,6 +37,7 @@ public class MusicDisplayer : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Main_Menu_Scene" && musicDisplayer.clip != music[1])
         {
+            Debug.Log("yes");
             PlayMenuTheme();
         }
         

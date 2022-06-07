@@ -175,18 +175,8 @@ namespace UI
         {
             if (_isPaused)
             {
-                if (SceneManager.GetActiveScene().name == "Level_Boss_Scene")
-                {
-                    Resume();
-                    bossRestart.RestartBoss();
-                    Time.timeScale = 1f;
-                    timer.currentTime = 0f;
-                }
-                else
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                    Time.timeScale = 1f;
-                }
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Time.timeScale = 1f;
             }
         }
         public void Option()

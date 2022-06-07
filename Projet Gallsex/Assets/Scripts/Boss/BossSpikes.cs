@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,6 @@ namespace Boss
         [SerializeField] private GameObject trigger4;
         [SerializeField] private GameObject trigger5;
 
-
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
@@ -25,11 +25,6 @@ namespace Boss
             }
         }
 
-        public void RestartBoss()
-        {
-            StartCoroutine(CheckpointDeath());
-        }
-        
         IEnumerator CheckpointDeath()
         {
             if (bossCam.phaseCounter >= 3)
@@ -58,6 +53,7 @@ namespace Boss
             }
             else
             {
+                
                 blink.SetBool("isDead", true);
                 player.GetComponent<PlayerBetterController>().enabled = false;
         
