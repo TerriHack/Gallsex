@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-    private int doIWait;
+    public int doIWait;
     public bool active;
     [SerializeField] private GameObject[] wayPoints;
     public int currentWaypointIndex = 0;
