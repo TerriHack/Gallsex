@@ -30,6 +30,7 @@ TagManager:
   - Teleporter
   - Spikes
   - noSpikes
+  - Doors
   layers:
   - Default
   - TransparentFX
