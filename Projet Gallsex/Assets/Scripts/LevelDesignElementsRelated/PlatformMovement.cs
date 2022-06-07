@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlatformMovement : MonoBehaviour
 {
@@ -49,7 +50,10 @@ public class PlatformMovement : MonoBehaviour
                 if (currentWaypointIndex >= wayPoints.Length)
                 {
                     currentWaypointIndex = 0;
-                    doIWait = 0;
+                    if (SceneManager.GetActiveScene().name == "Level_Boss_Scene")
+                    {
+                        doIWait = 0;
+                    }
                 }
                 waitFor = waitTime;
                 waiting = true;
