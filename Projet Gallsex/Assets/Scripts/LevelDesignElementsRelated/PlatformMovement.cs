@@ -49,6 +49,7 @@ public class PlatformMovement : MonoBehaviour
                 if (currentWaypointIndex >= wayPoints.Length)
                 {
                     currentWaypointIndex = 0;
+                    doIWait = 0;
                 }
                 waitFor = waitTime;
                 waiting = true;
