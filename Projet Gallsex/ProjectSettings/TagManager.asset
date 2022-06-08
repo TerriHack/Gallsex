@@ -31,6 +31,8 @@ TagManager:
   - Spikes
   - noSpikes
   - Doors
+  - Engrenage1
+  - Engrenage2
   layers:
   - Default
   - TransparentFX
@@ -100,4 +102,7 @@ TagManager:
     locked: 0
   - name: VFX
     uniqueID: 803059587
+    locked: 0
+  - name: UI
+    uniqueID: 4194885623
     locked: 0
