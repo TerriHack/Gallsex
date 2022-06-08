@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
+    [SerializeField] private Animator rouage1spin;
+    [SerializeField] private Animator rouage2spin;
     public int doIWait;
     public bool active;
     [SerializeField] private GameObject[] wayPoints;
@@ -21,6 +23,8 @@ public class PlatformMovement : MonoBehaviour
     {
         if (collision2D.gameObject.CompareTag("Player"))
         {
+            rouage1spin.SetBool("New Bool", true);
+            rouage2spin.SetBool("New Bool", true);
             collision2D.gameObject.transform.SetParent(transform);
             if (active == false)
             {

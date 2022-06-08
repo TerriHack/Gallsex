@@ -16,7 +16,7 @@ public class SettingScoreEndGame : MonoBehaviour
  [SerializeField] private Transform playerTr;
  [SerializeField] private prefabTimer timer;
 
- //private ChromaticAberration chroma;
+    //private ChromaticAberration chroma;
  [SerializeField] private GameObject hud;
  [SerializeField] private AudioSource endingTheme;
 
