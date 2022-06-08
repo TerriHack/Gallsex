@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         quality = 0;
         timerActive = false;
         music = GetComponent<AudioSource>();
+        
     }
     
     void Start()
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         Debug.Log( PlayerPrefs.GetInt("resWidth") + "width");
         Debug.Log( PlayerPrefs.GetInt("resHeight") + "height");
         Debug.Log(PlayerPrefs.GetInt("Quality") + "quality");
+        Debug.Log(PlayerPrefs.GetInt("isFullscreen") + "fullscreen");
         
         if (SceneManager.GetActiveScene().name == "Main_Menu_Scene")
         {

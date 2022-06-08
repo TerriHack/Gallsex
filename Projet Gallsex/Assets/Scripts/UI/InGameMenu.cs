@@ -12,7 +12,6 @@ namespace UI
     public class InGameMenu : MonoBehaviour
     {
         [SerializeField] private Toggle accessibilityToggle;
-        [SerializeField] private Toggle fullScreenToggle;
         [SerializeField] private GameManager _gameManager;
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject optionMenu;
@@ -24,7 +23,6 @@ namespace UI
         public GameObject firstButtonSelected, firstOptionButton, optionClosedButton, firstQuitButton;
 
         public bool _isPaused;
-        public bool _isFullscreen;
         public bool _quitMenued;
         public bool _optionMenued;
         public bool _noSpikes;
@@ -48,13 +46,9 @@ namespace UI
         private void Start()
         {
             QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Quality"));
-            Screen.SetResolution(PlayerPrefs.GetInt("resWidth"), PlayerPrefs.GetInt("resHeight"), Screen.fullScreen = _isFullscreen);
-            
+
             if (PlayerPrefs.GetInt("SpikesOn") == 1) accessibilityToggle.isOn = true;
             else accessibilityToggle.isOn = false;
-
-            if (PlayerPrefs.GetInt("isFullscreen") == 0) fullScreenToggle.isOn = true;
-            else fullScreenToggle.isOn = false;
 
             QualitySettings.SetQualityLevel(_gameManager.quality);
             
@@ -261,23 +255,12 @@ namespace UI
         }
         public void SetFullscreen(bool isFullscreen)
         {
-            _isFullscreen = isFullscreen;
             Screen.fullScreen = isFullscreen;
-            SetFullscreenMod();
         }
         public void SetResolution(int resolutionIndex)
         {
             Resolution resolution = _resolutions[resolutionIndex];
-            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen = _isFullscreen);
-            
-            PlayerPrefs.SetInt("resHeight", resolution.height);
-            PlayerPrefs.SetInt("resWidth", resolution.width);
-        }
-
-        public void SetFullscreenMod()
-        {
-            if (_isFullscreen) PlayerPrefs.SetInt("isFullscreen",1);
-            else PlayerPrefs.SetInt("isFullscreen",0);
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         }
     }
 }

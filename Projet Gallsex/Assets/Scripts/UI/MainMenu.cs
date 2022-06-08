@@ -11,7 +11,6 @@ using Toggle = UnityEngine.UI.Toggle;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private Toggle fullScreenToggle;
     [SerializeField] private GameObject lvlTutoButton;
     [SerializeField] private GameObject lvl1Button;
     [SerializeField] private GameObject lvl2Button;
@@ -82,13 +81,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Quality"));
-        Screen.SetResolution(PlayerPrefs.GetInt("resWidth"), PlayerPrefs.GetInt("resHeight"), Screen.fullScreen = _isFullscreen);
-        
-        if (PlayerPrefs.GetInt("isFullscreen") == 0) fullScreenToggle.isOn = true;
-        else fullScreenToggle.isOn = false;
-
-        
         if (GameObject.FindWithTag("GameManager") == null)
         {
             Instantiate(gameManagerPrefab);
@@ -388,24 +380,18 @@ public class MainMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         _gameManager.quality = qualityIndex;
-        
-        PlayerPrefs.SetInt("Quality", qualityIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
         _isFullscreen = isFullscreen;
         Screen.fullScreen = isFullscreen;
-        SetFullscreenMod();
     }
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = _resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen = _isFullscreen);
-        
-        PlayerPrefs.SetInt("resHeight", resolution.height);
-        PlayerPrefs.SetInt("resWidth", resolution.width);
     }
 
     IEnumerator SplashScreenToMain()
@@ -431,11 +417,5 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         canPress = true;
-    }
-    
-    public void SetFullscreenMod()
-    {
-        if (_isFullscreen) PlayerPrefs.SetInt("isFullscreen",1);
-        else PlayerPrefs.SetInt("isFullscreen",0);
     }
 }
