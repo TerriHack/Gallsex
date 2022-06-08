@@ -4314,6 +4314,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSound: {fileID: 482904744}
+--- !u!114 &1117810538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162352896356766543, guid: 9ea79b21958fe674da04cadb23a86394, type: 3}
+  m_PrefabInstance: {fileID: 8162352897988298549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123110255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4347,6 +4358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffe49d9458ef134bb84db71146f9440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullScreenToggle: {fileID: 1117810538}
   lvlTutoButton: {fileID: 688169212}
   lvl1Button: {fileID: 1134195356}
   lvl2Button: {fileID: 2100180929}
@@ -4386,6 +4398,7 @@ MonoBehaviour:
   firstLevelSelectionButton: {fileID: 688169212}
   optionClosedButton: {fileID: 1666623474}
   music: {fileID: 0}
+  _isFullscreen: 0
   _playing: 0
   selectionMenuOn: 0
   optionMenuOn: 0

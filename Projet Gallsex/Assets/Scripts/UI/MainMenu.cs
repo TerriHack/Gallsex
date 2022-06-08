@@ -4,15 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Toggle = UnityEngine.UI.Toggle;
 
 public class MainMenu : MonoBehaviour
 {
-
+    [SerializeField] private Toggle fullScreenToggle;
     [SerializeField] private GameObject lvlTutoButton;
     [SerializeField] private GameObject lvl1Button;
     [SerializeField] private GameObject lvl2Button;
@@ -49,9 +48,11 @@ public class MainMenu : MonoBehaviour
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
     [SerializeField] private MusicDisplayer music;
     
+    
     private float coolDown;
 
     private bool canPress;
+    public bool _isFullscreen;
     public bool _playing;
     public bool selectionMenuOn;
     public bool optionMenuOn;
@@ -82,11 +83,14 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Quality"));
-        Screen.SetResolution(PlayerPrefs.GetInt("resWidth"), PlayerPrefs.GetInt("resHeight"), Screen.fullScreen);
+        Screen.SetResolution(PlayerPrefs.GetInt("resWidth"), PlayerPrefs.GetInt("resHeight"), Screen.fullScreen = _isFullscreen);
+        
+        if (PlayerPrefs.GetInt("isFullscreen") == 0) fullScreenToggle.isOn = true;
+        else fullScreenToggle.isOn = false;
+
         
         if (GameObject.FindWithTag("GameManager") == null)
         {
-            Debug.Log(3);
             Instantiate(gameManagerPrefab);
         }
         
@@ -390,13 +394,15 @@ public class MainMenu : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
+        _isFullscreen = isFullscreen;
         Screen.fullScreen = isFullscreen;
+        SetFullscreenMod();
     }
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = _resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen = _isFullscreen);
         
         PlayerPrefs.SetInt("resHeight", resolution.height);
         PlayerPrefs.SetInt("resWidth", resolution.width);
@@ -425,5 +431,11 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         canPress = true;
+    }
+    
+    public void SetFullscreenMod()
+    {
+        if (_isFullscreen) PlayerPrefs.SetInt("isFullscreen",1);
+        else PlayerPrefs.SetInt("isFullscreen",0);
     }
 }

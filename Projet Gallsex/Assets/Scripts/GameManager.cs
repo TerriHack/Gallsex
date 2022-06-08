@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", 1);
         PlayerPrefs.SetFloat("PlayerVolume", 1);
         PlayerPrefs.SetFloat("AmbientVolume", 1);
-        PlayerPrefs.SetInt("SpikesOn", 0);
+        PlayerPrefs.SetInt("SpikesOn", 1);
         
         currentTime = 0;
         isFinishingAllLevel = 0;
@@ -38,6 +38,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+        Debug.Log( PlayerPrefs.GetFloat("MasterVolume") + "master");
+        Debug.Log( PlayerPrefs.GetFloat("MusicVolume") + "music");
+        Debug.Log( PlayerPrefs.GetFloat("PlayerVolume") + "sound" );
+        Debug.Log( PlayerPrefs.GetFloat("AmbientVolume") + "ambience");
+        Debug.Log( PlayerPrefs.GetInt("SpikesOn") + "Spikes");
+        Debug.Log( PlayerPrefs.GetInt("resWidth") + "width");
+        Debug.Log( PlayerPrefs.GetInt("resHeight") + "height");
+        Debug.Log(PlayerPrefs.GetInt("Quality") + "quality");
+        
         if (SceneManager.GetActiveScene().name == "Main_Menu_Scene")
         {
             timerActive = false;
