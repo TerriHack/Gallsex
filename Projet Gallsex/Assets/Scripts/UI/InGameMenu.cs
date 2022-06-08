@@ -45,6 +45,9 @@ namespace UI
         }
         private void Start()
         {
+            QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Quality"));
+            Screen.SetResolution(PlayerPrefs.GetInt("resWidth"), PlayerPrefs.GetInt("resHeight"), Screen.fullScreen);
+            
             if (PlayerPrefs.GetInt("SpikesOn") == 1) accessibilityToggle.isOn = true;
             else accessibilityToggle.isOn = false;
             
@@ -248,6 +251,8 @@ namespace UI
         {
             QualitySettings.SetQualityLevel(qualityIndex);
             _gameManager.quality = qualityIndex;
+            
+            PlayerPrefs.SetInt("Quality", qualityIndex);
         }
         public void SetFullscreen(bool isFullscreen)
         {
@@ -257,6 +262,9 @@ namespace UI
         {
             Resolution resolution = _resolutions[resolutionIndex];
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+            
+            PlayerPrefs.SetInt("resHeight", resolution.height);
+            PlayerPrefs.SetInt("resWidth", resolution.width);
         }
     }
 }

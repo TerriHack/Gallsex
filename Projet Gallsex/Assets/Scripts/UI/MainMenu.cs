@@ -65,7 +65,6 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-
         Time.timeScale = 1f;
         
         blackScreen.SetTrigger("isBeginning");
@@ -82,6 +81,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Quality"));
+        Screen.SetResolution(PlayerPrefs.GetInt("resWidth"), PlayerPrefs.GetInt("resHeight"), Screen.fullScreen);
+        
         if (GameObject.FindWithTag("GameManager") == null)
         {
             Debug.Log(3);
@@ -183,10 +185,7 @@ public class MainMenu : MonoBehaviour
             quitVFX.SetActive(false);
             scoreVFX.SetActive(false);
         }
-        
-        
-        
-        
+
         if (EventSystem.current.currentSelectedGameObject == lvlTutoButton)
         {
             lvlTuto.SetActive(true);
@@ -235,11 +234,6 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        PlayerPrefs.SetInt("MasterVolume", 1);
-        PlayerPrefs.SetInt("MusicVolume", 1);
-        PlayerPrefs.SetInt("PlayerVolume", 1);
-        PlayerPrefs.SetInt("AmbientVolume", 1);
-        PlayerPrefs.SetInt("SpikesOn", 1);
         Application.Quit();
     }
 
@@ -390,6 +384,8 @@ public class MainMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         _gameManager.quality = qualityIndex;
+        
+        PlayerPrefs.SetInt("Quality", qualityIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -401,6 +397,9 @@ public class MainMenu : MonoBehaviour
     {
         Resolution resolution = _resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        
+        PlayerPrefs.SetInt("resHeight", resolution.height);
+        PlayerPrefs.SetInt("resWidth", resolution.width);
     }
 
     IEnumerator SplashScreenToMain()

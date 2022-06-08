@@ -11,16 +11,25 @@ public class GameManager : MonoBehaviour
     public bool timerActive = true;
     public int isFinishingAllLevel;
     public bool scoreSet;
+    private AudioSource music;
     void Awake()
     {
         Cursor.visible = false;
         DontDestroyOnLoad(this.gameObject);
         quality = 0;
         timerActive = false;
+        music = GetComponent<AudioSource>();
     }
     
     void Start()
     {
+        music.volume = 1f;
+        PlayerPrefs.SetFloat("MasterVolume", 1);
+        PlayerPrefs.SetFloat("MusicVolume", 1);
+        PlayerPrefs.SetFloat("PlayerVolume", 1);
+        PlayerPrefs.SetFloat("AmbientVolume", 1);
+        PlayerPrefs.SetInt("SpikesOn", 0);
+        
         currentTime = 0;
         isFinishingAllLevel = 0;
         scoreSet = true;
