@@ -22,8 +22,18 @@ public class SoundTransition : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            nightmare.volume = 0.1f * Vector2.Distance(playerTr.position, transform.position);
-            music.volume = -0.1f * Vector2.Distance(playerTr.position, transform.position);
+            nightmare.Play();
+            if ( Vector2.Distance(playerTr.position, transform.position) > 0)
+            {
+                nightmare.volume = 0.1f * Vector2.Distance(playerTr.position, new Vector2(285, 245 ));
+                music.volume = 0.1f * Vector2.Distance(playerTr.position, transform.position);
+            }
+            else
+            {
+                nightmare.volume = 1f;
+                music.Stop();
+            }
+            
         }
     }
 }

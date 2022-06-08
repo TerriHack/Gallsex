@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class PlatformMovement : MonoBehaviour
 {
-    [SerializeField] private Animator rouage1spin;
-    [SerializeField] private Animator rouage2spin;
     public int doIWait;
     public bool active;
     [SerializeField] private GameObject[] wayPoints;
@@ -24,8 +22,7 @@ public class PlatformMovement : MonoBehaviour
     {
         if (collision2D.gameObject.CompareTag("Player"))
         {
-            rouage1spin.SetBool("New Bool", true);
-            rouage2spin.SetBool("New Bool", true);
+            
             collision2D.gameObject.transform.SetParent(transform);
             if (active == false)
             {
@@ -34,6 +31,15 @@ public class PlatformMovement : MonoBehaviour
                 {
                     waiting = false;
                 }
+            }
+
+            if (SceneManager.GetActiveScene().name == "Level_Boss_Scene")
+            {
+                Animator animRouage1 = GameObject.FindGameObjectWithTag("Engrenage1").GetComponent<Animator>();
+                Animator animRouage2 = GameObject.FindGameObjectWithTag("Engrenage2").GetComponent<Animator>();
+                
+                animRouage1.SetBool("New Bool", true);
+                animRouage2.SetBool("New Bool", true);
             }
         }
     }
