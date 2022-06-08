@@ -173,7 +173,7 @@ namespace Boss
         public void BossTeleportation()
         {
             transform.position = new Vector3(497.5f, -8, 0);
-            bossSound.enabled = false;
+            bossSound.clip = null;
             transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         public void ResetBoss()

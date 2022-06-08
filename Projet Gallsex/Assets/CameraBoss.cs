@@ -9,6 +9,8 @@ public class CameraBoss : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private GameObject boss;
+    [SerializeField] private AudioSource bossSound;
+    [SerializeField] private AudioClip jawClack;
     private Boss.Boss bossMovement;
     private Transform _camTr;
     
@@ -79,6 +81,7 @@ public class CameraBoss : MonoBehaviour
     void CameraPhase5()
     {
         _camTr.DOMove(new Vector3(497.5f, player.position.y + offsetY, -10),1f);
+        bossSound.clip = jawClack;
     }
 
     public void CameraAnnulation()

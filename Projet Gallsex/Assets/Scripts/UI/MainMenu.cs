@@ -4,15 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Toggle = UnityEngine.UI.Toggle;
 
 public class MainMenu : MonoBehaviour
 {
-
     [SerializeField] private GameObject lvlTutoButton;
     [SerializeField] private GameObject lvl1Button;
     [SerializeField] private GameObject lvl2Button;
@@ -49,9 +47,11 @@ public class MainMenu : MonoBehaviour
     public GameObject firstButtonSelected, firstOptionButton ,selectionClosedButton, firstLevelSelectionButton, optionClosedButton;
     [SerializeField] private MusicDisplayer music;
     
+    
     private float coolDown;
 
     private bool canPress;
+    public bool _isFullscreen;
     public bool _playing;
     public bool selectionMenuOn;
     public bool optionMenuOn;
@@ -65,7 +65,6 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-
         Time.timeScale = 1f;
         
         blackScreen.SetTrigger("isBeginning");
@@ -84,7 +83,6 @@ public class MainMenu : MonoBehaviour
     {
         if (GameObject.FindWithTag("GameManager") == null)
         {
-            Debug.Log(3);
             Instantiate(gameManagerPrefab);
         }
         
@@ -183,10 +181,7 @@ public class MainMenu : MonoBehaviour
             quitVFX.SetActive(false);
             scoreVFX.SetActive(false);
         }
-        
-        
-        
-        
+
         if (EventSystem.current.currentSelectedGameObject == lvlTutoButton)
         {
             lvlTuto.SetActive(true);
@@ -389,13 +384,14 @@ public class MainMenu : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
+        _isFullscreen = isFullscreen;
         Screen.fullScreen = isFullscreen;
     }
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = _resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen = _isFullscreen);
     }
 
     IEnumerator SplashScreenToMain()
