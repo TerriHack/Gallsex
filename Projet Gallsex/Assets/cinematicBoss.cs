@@ -18,10 +18,12 @@ public class cinematicBoss : MonoBehaviour
     [SerializeField] private GameObject bossScream;
     [SerializeField] private CameraBoss bossMovement;
     [SerializeField] private GameObject hud;
+    [SerializeField] private GameObject deathScreen;
     
     private const String PlayerIdle = "Idle_Animation";
     private string _currentState;
-    
+
+    private bool beforeCine;
     private GameManager gm;
     private MusicDisplayer mD;
 
@@ -29,6 +31,7 @@ public class cinematicBoss : MonoBehaviour
     {
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         mD = GameObject.FindWithTag("GameManager").GetComponent<MusicDisplayer>();
+        beforeCine = false;
     }
 
     public void ChangeAnimationState(string newState)
@@ -38,7 +41,12 @@ public class cinematicBoss : MonoBehaviour
         
         _currentState = newState;
     }
-    
+
+    private void Update()
+    {
+        DetectMusic();
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
@@ -47,6 +55,15 @@ public class cinematicBoss : MonoBehaviour
         }
     }
 
+    private void DetectMusic()
+    {
+        if (beforeCine)
+        {
+            gm.GetComponent<AudioSource>().Play();
+            beforeCine = false;
+        }
+    }
+    
     IEnumerator Cinematic()
     {
         playerTr.position = new Vector3(-28,19.5f,0);
@@ -55,6 +72,7 @@ public class cinematicBoss : MonoBehaviour
         pBc.enabled = false;
         ChangeAnimationState(PlayerIdle);
         hud.SetActive(false);
+        deathScreen.SetActive(false);
         gm.timerActive = false;
         boss.SetActive(true);
         camBoss.SetActive(true);
@@ -75,10 +93,14 @@ public class cinematicBoss : MonoBehaviour
         bossAnim.SetBool("inCinematic",false);
         blackBarAnim.SetBool("InCinematic", false);
         mD.cinematicOver = true;
-        gm.GetComponent<AudioSource>().Play();
+        beforeCine = true;
         pBc.enabled = true;
         hud.SetActive(true);
         gm.timerActive = true;
         bossMovement.phaseCounter = 1;
+
+        yield return new WaitForSeconds(1);
+        deathScreen.SetActive(true);
+
     }
 }

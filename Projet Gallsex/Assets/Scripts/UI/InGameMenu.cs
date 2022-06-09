@@ -180,6 +180,14 @@ namespace UI
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 Time.timeScale = 1f;
+
+                if (SceneManager.GetActiveScene().name == "Level_Boss_Scene")
+                {
+                    _gameManager.GetComponent<AudioSource>().Stop();
+                }
+                {
+                    
+                }
             }
         }
         public void Option()

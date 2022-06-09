@@ -18,12 +18,14 @@ public class MusicDisplayer : MonoBehaviour
     {
         musicDisplayer.clip = music[1];
         musicDisplayer.Play();
+        cinematicOver = false;
     }
 
     public void PlayMainTheme()
     {
         musicDisplayer.clip = music[0];
         musicDisplayer.Play();
+        cinematicOver = false;
     }
 
     public void PlayBossTheme()
@@ -52,6 +54,5 @@ public class MusicDisplayer : MonoBehaviour
             if(cinematicOver) PlayBossTheme();
             else musicDisplayer.clip = null;
         }
-            
     }
 }

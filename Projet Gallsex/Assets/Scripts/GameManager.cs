@@ -55,11 +55,6 @@ public class GameManager : MonoBehaviour
             timerActive = false;
             currentTime = 0;
         }
-        else if(SceneManager.GetActiveScene().name == "Level_Boss_Scene")
-        {
-            music.Stop();
-            timerActive = true;
-        }
         else timerActive = true;
         
         if (timerActive)
