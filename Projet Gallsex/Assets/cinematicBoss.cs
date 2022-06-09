@@ -57,9 +57,10 @@ public class cinematicBoss : MonoBehaviour
         hud.SetActive(false);
         gm.timerActive = false;
         boss.SetActive(true);
+        camBoss.SetActive(true);
         blackBarAnim.SetBool("InCinematic", true);
         camHolder.SetActive(false);
-        camBoss.SetActive(true);
+        
         
         yield return new WaitForSeconds(1f);
 

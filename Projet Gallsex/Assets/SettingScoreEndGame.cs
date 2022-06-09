@@ -10,6 +10,8 @@ public class SettingScoreEndGame : MonoBehaviour
 {
  public string currentSceneName;
  [SerializeField] private GameManager gameManager;
+ [SerializeField] private Animator engrenage1;
+ [SerializeField] private Animator engrenage2;
  [SerializeField] private Animator playerAnim;
  [SerializeField] private PlayerBetterController pBC;
  [SerializeField] private AudioSource runSound;
@@ -31,6 +33,9 @@ public class SettingScoreEndGame : MonoBehaviour
   {
    SettingScore();
    EndSetting();
+   
+   engrenage1.SetBool("IsOn", true);
+   engrenage2.SetBool("IsOn", true);
   }
  }
 
