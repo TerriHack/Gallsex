@@ -15,7 +15,6 @@ public class SoundTransition : MonoBehaviour
 
     private void Start()
     {
-        isOn = false;
         music = GameObject.FindWithTag("GameManager").GetComponent<AudioSource>();
         playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
@@ -24,7 +23,9 @@ public class SoundTransition : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            isOn = false;
             nightmare.Play();
+            music.volume = 0.1f;
         }
     }
     
@@ -32,6 +33,7 @@ public class SoundTransition : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            music.volume = 0.1f;
             isOn = false;
         }
     }

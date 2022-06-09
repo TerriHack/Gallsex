@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
         DontDestroyOnLoad(this.gameObject);
-        quality = 0;
+        quality = 2;
         timerActive = false;
         music = GetComponent<AudioSource>();
         

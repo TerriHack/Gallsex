@@ -1,13 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Toggle = UnityEngine.UI.Toggle;
 
 public class MainMenu : MonoBehaviour
 {
@@ -51,7 +47,6 @@ public class MainMenu : MonoBehaviour
     private float coolDown;
 
     private bool canPress;
-    public bool _isFullscreen;
     public bool _playing;
     public bool selectionMenuOn;
     public bool optionMenuOn;
@@ -384,7 +379,6 @@ public class MainMenu : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
-        _isFullscreen = isFullscreen;
         Screen.fullScreen = isFullscreen;
     }
 
