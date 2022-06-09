@@ -81,8 +81,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        Screen.fullScreen = true;
-        
         if (GameObject.FindWithTag("GameManager") == null)
         {
             Instantiate(gameManagerPrefab);
@@ -393,7 +391,7 @@ public class MainMenu : MonoBehaviour
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = _resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen = _isFullscreen);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     IEnumerator SplashScreenToMain()
