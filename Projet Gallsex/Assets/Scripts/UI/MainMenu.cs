@@ -81,6 +81,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Screen.fullScreen = true;
+        
         if (GameObject.FindWithTag("GameManager") == null)
         {
             Instantiate(gameManagerPrefab);
