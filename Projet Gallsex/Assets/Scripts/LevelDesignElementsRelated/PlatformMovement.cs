@@ -64,6 +64,7 @@ public class PlatformMovement : MonoBehaviour
                     {
                         currentWaypointIndex = 1;
                         doIWait = 0;
+                        soundMovement.Stop();
                     }
                 }
                 waitFor = waitTime;

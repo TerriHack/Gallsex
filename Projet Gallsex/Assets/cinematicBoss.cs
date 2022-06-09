@@ -75,6 +75,7 @@ public class cinematicBoss : MonoBehaviour
         bossAnim.SetBool("inCinematic",false);
         blackBarAnim.SetBool("InCinematic", false);
         mD.cinematicOver = true;
+        gm.GetComponent<AudioSource>().Play();
         pBc.enabled = true;
         hud.SetActive(true);
         gm.timerActive = true;

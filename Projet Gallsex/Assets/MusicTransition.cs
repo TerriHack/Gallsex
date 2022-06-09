@@ -10,6 +10,8 @@ public class MusicTransition : MonoBehaviour
 
     [Range(0f,5f)]
     public float soundModifier;
+    [Range(0f,5f)]
+    public float musicModifier;
 
     void Start()
     {
@@ -19,8 +21,8 @@ public class MusicTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            music.volume -= soundModifier;
-            sound.volume -= soundModifier;
+            music.volume -= musicModifier * Time.deltaTime;
+            sound.volume += soundModifier;
         }
     }
     

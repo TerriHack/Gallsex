@@ -44,8 +44,8 @@ public class SoundTransition : MonoBehaviour
         {
             if ( Vector2.Distance(playerTr.position, transform.position) > 2f && !isOn)
             {
-                nightmare.volume = 0.1f * Vector2.Distance(playerTr.position, new Vector2(285, 245 ));
-                music.volume = 0.1f * Vector2.Distance(playerTr.position, transform.position);
+                nightmare.volume = nightmare.volume * Vector2.Distance(playerTr.position, new Vector2(285, 245 ));
+                music.volume = nightmare.volume * Vector2.Distance(playerTr.position, transform.position);
             }
             else
             {

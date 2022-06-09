@@ -12,11 +12,12 @@ public class GameManager : MonoBehaviour
     public int isFinishingAllLevel;
     public bool scoreSet;
     private AudioSource music;
+    private bool musicReset;
     void Awake()
     {
         Cursor.visible = false;
         DontDestroyOnLoad(this.gameObject);
-        quality = 2;
+        quality = 0;
         timerActive = false;
         music = GetComponent<AudioSource>();
         
@@ -53,6 +54,11 @@ public class GameManager : MonoBehaviour
         {
             timerActive = false;
             currentTime = 0;
+        }
+        else if(SceneManager.GetActiveScene().name == "Level_Boss_Scene")
+        {
+            music.Stop();
+            timerActive = true;
         }
         else timerActive = true;
         
