@@ -32,6 +32,7 @@ public class MusicDisplayer : MonoBehaviour
     {
         musicDisplayer.clip = music[2];
         musicDisplayer.Play();
+        musicDisplayer.volume = 0.5f;
 
     }
 

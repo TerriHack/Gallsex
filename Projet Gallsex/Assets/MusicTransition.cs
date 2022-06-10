@@ -17,6 +17,16 @@ public class MusicTransition : MonoBehaviour
     {
         music = GameObject.FindWithTag("GameManager").GetComponent<AudioSource>();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            music.volume = 0.5f;
+            sound.volume = 0.3f;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
