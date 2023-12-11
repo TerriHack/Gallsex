@@ -495,6 +495,8 @@ MonoBehaviour:
       shown: 0
     - name: BossCutscene
       shown: 0
+    - name: BossDeadZone
+      shown: 0
     - name: BossFightTrigger
       shown: 0
     - name: BossKIllTrigger
@@ -505,6 +507,8 @@ MonoBehaviour:
       shown: 0
     - name: CameraBoss
       shown: 0
+    - name: CameraBossBegin
+      shown: 0
     - name: ChangeCamera
       shown: 0
     - name: CloudsUI
@@ -514,6 +518,10 @@ MonoBehaviour:
     - name: DotweenCam
       shown: 0
     - name: EndBossTrigger
+      shown: 0
+    - name: HideSquare
+      shown: 0
+    - name: JawSound
       shown: 0
     - name: LevelBeginner
       shown: 0
@@ -526,6 +534,10 @@ MonoBehaviour:
     - name: MoveCameraUp
       shown: 0
     - name: MoveMouth
+      shown: 0
+    - name: MusicDisplayer
+      shown: 0
+    - name: MusicTransition
       shown: 0
     - name: MyJointBecauseUnitySucks
       shown: 0
@@ -556,6 +568,8 @@ MonoBehaviour:
     - name: BreakablePlatform
       shown: 0
     - name: CloudTrigger
+      shown: 0
+    - name: FallingPlatform
       shown: 0
     - name: MovingCLoud
       shown: 0
@@ -615,11 +629,27 @@ MonoBehaviour:
       shown: 0
     - name: VFXManager
       shown: 0
+    - name: DropDownMenu
+      shown: 0
     - name: MainMenu
+      shown: 0
+    - name: SettingScoreEndGame
+      shown: 0
+    - name: SoundTransition
       shown: 0
     - name: BossTriggers
       shown: 0
+    - name: TriggerPhase1
+      shown: 0
+    - name: TriggerPhase2
+      shown: 0
+    - name: TriggerPhaseDetection
+      shown: 0
+    - name: Trigger_rouages
+      shown: 0
     - name: calculateCameraBox
+      shown: 0
+    - name: cinematicBoss
       shown: 0
     - name: stopPhase1
       shown: 0
@@ -637,7 +667,11 @@ MonoBehaviour:
       shown: 0
     - name: weirdo
       shown: 0
+    - name: weirdoy
+      shown: 0
     - name: InGameMenu
+      shown: 0
+    - name: Boss
       shown: 0
     - name: BossSpikes
       shown: 0
