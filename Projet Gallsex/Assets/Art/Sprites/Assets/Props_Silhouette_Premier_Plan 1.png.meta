@@ -1,0 +1,720 @@
+fileFormatVersion: 2
+guid: f4212a0e10edc6b45bf96bbb85e09baf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6135197429927553858
+    second: Props_Silhouette_Premier_Plan 1_0
+  - first:
+      213: -1413394453873600179
+    second: Props_Silhouette_Premier_Plan 1_1
+  - first:
+      213: -4320544142597402361
+    second: Props_Silhouette_Premier_Plan 1_2
+  - first:
+      213: 2583412174967344323
+    second: Props_Silhouette_Premier_Plan 1_4
+  - first:
+      213: -7738126109596707973
+    second: Props_Silhouette_Premier_Plan 1_5
+  - first:
+      213: -2518141714608551060
+    second: Props_Silhouette_Premier_Plan 1_7
+  - first:
+      213: 6395369705261498585
+    second: Props_Silhouette_Premier_Plan 1_8
+  - first:
+      213: -6965846474949271845
+    second: Props_Silhouette_Premier_Plan 1_9
+  - first:
+      213: -2883744147333336902
+    second: Props_Silhouette_Premier_Plan 1_10
+  - first:
+      213: -8695060633966516311
+    second: Props_Silhouette_Premier_Plan 1_11
+  - first:
+      213: 8074317118566230575
+    second: Props_Silhouette_Premier_Plan 1_12
+  - first:
+      213: -3760496362078286901
+    second: Props_Silhouette_Premier_Plan 1_13
+  - first:
+      213: 7814420931056672105
+    second: Props_Silhouette_Premier_Plan 1_14
+  - first:
+      213: 3574969931829596763
+    second: Props_Silhouette_Premier_Plan 1_15
+  - first:
+      213: -5834296632087613665
+    second: Props_Silhouette_Premier_Plan 1_16
+  - first:
+      213: 6165608890076716901
+    second: Props_Silhouette_Premier_Plan 1_17
+  - first:
+      213: 724188728598199272
+    second: Props_Silhouette_Premier_Plan 1_18
+  - first:
+      213: -7552620057064811077
+    second: Props_Silhouette_Premier_Plan 1_19
+  - first:
+      213: 363772493639091396
+    second: Props_Silhouette_Premier_Plan 1_20
+  - first:
+      213: 6893991706998832057
+    second: Props_Silhouette_Premier_Plan 1_3
+  - first:
+      213: -7323270006950270004
+    second: Props_Silhouette_Premier_Plan 1_6
+  - first:
+      213: 7042472422175543543
+    second: Props_Silhouette_Premier_Plan 1_21
+  - first:
+      213: 3390818147118184541
+    second: Props_Silhouette_Premier_Plan 1_22
+  - first:
+      213: -4339102744861459833
+    second: Props_Silhouette_Premier_Plan 1_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 66
+        width: 4
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ba8bd8e89942550800000000000000
+      internalID: 6135197429927553858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 85
+        width: 32
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d495b519b3d926ce0800000000000000
+      internalID: -1413394453873600179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 67
+        width: 16
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70156185ef75a04c0800000000000000
+      internalID: -4320544142597402361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 87
+        width: 16
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc09558faf1ad320800000000000000
+      internalID: 2583412174967344323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_5
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 79
+        width: 13
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73105a3d47ac9490800000000000000
+      internalID: -7738126109596707973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_7
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 171
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b0aa6c373cd0dd0800000000000000
+      internalID: -2518141714608551060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_8
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 64
+        width: 40
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d00861ecdae0c850800000000000000
+      internalID: 6395369705261498585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_9
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 66
+        width: 35
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdeddb4a987545f90800000000000000
+      internalID: -6965846474949271845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 18
+        width: 14
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0b51b0af1eaf7d0800000000000000
+      internalID: -2883744147333336902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_11
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 18
+        width: 14
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a761fbfb60f45780800000000000000
+      internalID: -8695060633966516311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 111
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2aeef7c3acbd0070800000000000000
+      internalID: 8074317118566230575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_13
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 66
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbcc2f8b7800dbc0800000000000000
+      internalID: -3760496362078286901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 10
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d92092f66627c60800000000000000
+      internalID: 7814420931056672105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 9
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52d7654638dc9130800000000000000
+      internalID: 3574969931829596763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_16
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 9
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fe822ef1a680fa0800000000000000
+      internalID: -5834296632087613665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_17
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 9
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f53056e94a09550800000000000000
+      internalID: 6165608890076716901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_18
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 9
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebff6ecfc5dc0a00800000000000000
+      internalID: 724188728598199272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_19
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 8
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb55927d214bf2790800000000000000
+      internalID: -7552620057064811077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_20
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 11
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c48a66d7216c0500800000000000000
+      internalID: 363772493639091396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 76
+        width: 3
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb772c7ee06caf50800000000000000
+      internalID: 6893991706998832057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_6
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 104
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccbe471aab48e5a90800000000000000
+      internalID: -7323270006950270004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 67
+        width: 2
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f01248fa53ebb160800000000000000
+      internalID: 7042472422175543543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_22
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 49
+        width: 183
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d587de4b32b9e0f20800000000000000
+      internalID: 3390818147118184541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props_Silhouette_Premier_Plan 1_23
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 49
+        width: 96
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a3c980b0968c3c0800000000000000
+      internalID: -4339102744861459833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5c274987682e7d14ba0ee8ed8c5d68ee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

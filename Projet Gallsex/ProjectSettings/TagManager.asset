@@ -3,18 +3,47 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - JumpableGround
+  - Ground
+  - Checks
+  - Boundary
+  - MovingPlatformManager
+  - PillarTime
+  - StopWatch
+  - MovingPlatform
+  - Cloud
+  - BossWaypoint
+  - CameraBoundaries
+  - camera
+  - BossKillTrigger
+  - BossWaypoint2
+  - GameManager
+  - BreakablePlatform
+  - Timer
+  - BossTrigger
+  - LastBossTrigger
+  - BossTrigger1
+  - BossTrigger2
+  - CreditsTrigger
+  - FallingPlatform
+  - Teleporter
+  - Spikes
+  - noSpikes
+  - Doors
+  - Engrenage1
+  - Engrenage2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Lights
+  - Background
+  - Bounce boss
   - 
   - 
   - 
@@ -38,6 +67,42 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background_Outdoor
+    uniqueID: 3696285277
+    locked: 0
+  - name: Background
+    uniqueID: 2257201829
+    locked: 0
+  - name: Background_Assets_01
+    uniqueID: 1316971291
+    locked: 0
+  - name: Background_Assets_02
+    uniqueID: 398588481
+    locked: 0
+  - name: Background_Assets_03
+    uniqueID: 3878500315
+    locked: 0
+  - name: Background_Assets_04
+    uniqueID: 740241687
+    locked: 0
+  - name: Assets_Lights
+    uniqueID: 2415788335
+    locked: 0
+  - name: Default_Spike
+    uniqueID: 3339668421
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2100058639
+    locked: 0
+  - name: ForegroundWL
+    uniqueID: 3126362639
+    locked: 0
+  - name: VFX
+    uniqueID: 803059587
+    locked: 0
+  - name: UI
+    uniqueID: 4194885623
     locked: 0

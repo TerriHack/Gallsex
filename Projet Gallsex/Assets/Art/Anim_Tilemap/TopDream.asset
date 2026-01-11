@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: TopDream
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 6972517153534562644, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: 8786501173227855333, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: -3838262262596556891, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: -7432807503391501948, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: -5123129633447548847, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: 3210677199951276979, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: -3372422482359489224, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  - {fileID: 7856688706424092116, guid: f540bcfc1d586e142a889f5d63af6e5d, type: 3}
+  m_MinSpeed: 6
+  m_MaxSpeed: 8
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0

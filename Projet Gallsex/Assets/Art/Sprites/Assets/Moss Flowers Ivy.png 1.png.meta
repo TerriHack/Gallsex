@@ -1,0 +1,1872 @@
+fileFormatVersion: 2
+guid: 00f40744bb678da4c94a9c279549b727
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1235489038354466690
+    second: Moss Flowers Ivy.png 1_0
+  - first:
+      213: 3537504131320394178
+    second: Moss Flowers Ivy.png 1_1
+  - first:
+      213: 190233406171469200
+    second: Moss Flowers Ivy.png 1_2
+  - first:
+      213: 8968738440993915747
+    second: Moss Flowers Ivy.png 1_3
+  - first:
+      213: -8697151182737576280
+    second: Moss Flowers Ivy.png 1_4
+  - first:
+      213: 3620893975514999547
+    second: Moss Flowers Ivy.png 1_5
+  - first:
+      213: 1301351918402708837
+    second: Moss Flowers Ivy.png 1_6
+  - first:
+      213: -2773719909710792028
+    second: Moss Flowers Ivy.png 1_9
+  - first:
+      213: 5592278667533279000
+    second: Moss Flowers Ivy.png 1_10
+  - first:
+      213: 4164543652046764252
+    second: Moss Flowers Ivy.png 1_11
+  - first:
+      213: 6892843352983264030
+    second: Moss Flowers Ivy.png 1_12
+  - first:
+      213: -5573877231366651776
+    second: Moss Flowers Ivy.png 1_13
+  - first:
+      213: 5617625478519043281
+    second: Moss Flowers Ivy.png 1_14
+  - first:
+      213: -3256486358585225495
+    second: Moss Flowers Ivy.png 1_15
+  - first:
+      213: 2749975264469197025
+    second: Moss Flowers Ivy.png 1_16
+  - first:
+      213: -3701968454358053270
+    second: Moss Flowers Ivy.png 1_17
+  - first:
+      213: 7656745084355957125
+    second: Moss Flowers Ivy.png 1_18
+  - first:
+      213: 9061666215281186721
+    second: Moss Flowers Ivy.png 1_19
+  - first:
+      213: -4951363153016466024
+    second: Moss Flowers Ivy.png 1_20
+  - first:
+      213: 827342210528432886
+    second: Moss Flowers Ivy.png 1_21
+  - first:
+      213: 7806662644763315145
+    second: Moss Flowers Ivy.png 1_22
+  - first:
+      213: 2503778845185402710
+    second: Moss Flowers Ivy.png 1_23
+  - first:
+      213: -1721333777092594603
+    second: Moss Flowers Ivy.png 1_24
+  - first:
+      213: -7393911997611222413
+    second: Moss Flowers Ivy.png 1_25
+  - first:
+      213: 1716827267526047291
+    second: Moss Flowers Ivy.png 1_26
+  - first:
+      213: -6698082509750061703
+    second: Moss Flowers Ivy.png 1_27
+  - first:
+      213: -1307897566154071713
+    second: Moss Flowers Ivy.png 1_28
+  - first:
+      213: -4094793166502576669
+    second: Moss Flowers Ivy.png 1_29
+  - first:
+      213: 3257007468706064308
+    second: Moss Flowers Ivy.png 1_30
+  - first:
+      213: 7830621186094610913
+    second: Moss Flowers Ivy.png 1_32
+  - first:
+      213: 1331617263865392795
+    second: Moss Flowers Ivy.png 1_33
+  - first:
+      213: -1355542966506899004
+    second: Moss Flowers Ivy.png 1_34
+  - first:
+      213: 4331253800478193241
+    second: Moss Flowers Ivy.png 1_35
+  - first:
+      213: 1696548468933789842
+    second: Moss Flowers Ivy.png 1_36
+  - first:
+      213: -1550152498900816516
+    second: Moss Flowers Ivy.png 1_37
+  - first:
+      213: 5285790964404395643
+    second: Moss Flowers Ivy.png 1_38
+  - first:
+      213: 149336979617515436
+    second: Moss Flowers Ivy.png 1_39
+  - first:
+      213: -5734837376121501870
+    second: Moss Flowers Ivy.png 1_40
+  - first:
+      213: -4871480237583781538
+    second: Moss Flowers Ivy.png 1_41
+  - first:
+      213: -2443008550517005276
+    second: Moss Flowers Ivy.png 1_42
+  - first:
+      213: 8941796625708225071
+    second: Moss Flowers Ivy.png 1_43
+  - first:
+      213: -8016349821495884759
+    second: Moss Flowers Ivy.png 1_44
+  - first:
+      213: 8234846267689450690
+    second: Moss Flowers Ivy.png 1_45
+  - first:
+      213: -1004019722990272806
+    second: Moss Flowers Ivy.png 1_46
+  - first:
+      213: 2731147246866243400
+    second: Moss Flowers Ivy.png 1_47
+  - first:
+      213: 8268148024996524430
+    second: Moss Flowers Ivy.png 1_48
+  - first:
+      213: 4130076680467895684
+    second: Moss Flowers Ivy.png 1_49
+  - first:
+      213: 5305286657134794559
+    second: Moss Flowers Ivy.png 1_50
+  - first:
+      213: 6348207647989800396
+    second: Moss Flowers Ivy.png 1_51
+  - first:
+      213: -7532736928306191763
+    second: Moss Flowers Ivy.png 1_52
+  - first:
+      213: -3287579163267107140
+    second: Moss Flowers Ivy.png 1_53
+  - first:
+      213: 4851629696232573124
+    second: Moss Flowers Ivy.png 1_54
+  - first:
+      213: 9074691793199319853
+    second: Moss Flowers Ivy.png 1_55
+  - first:
+      213: -7276156657189263255
+    second: Moss Flowers Ivy.png 1_57
+  - first:
+      213: 224493790080900769
+    second: Moss Flowers Ivy.png 1_59
+  - first:
+      213: -6162251453125484
+    second: Moss Flowers Ivy.png 1_60
+  - first:
+      213: 4462592624052189848
+    second: Moss Flowers Ivy.png 1_61
+  - first:
+      213: -4813063536564738551
+    second: Moss Flowers Ivy.png 1_62
+  - first:
+      213: -5881512699835129367
+    second: Moss Flowers Ivy.png 1_63
+  - first:
+      213: 2518546767292122637
+    second: Moss Flowers Ivy.png 1_64
+  - first:
+      213: 8273558731336011279
+    second: Moss Flowers Ivy.png 1_65
+  - first:
+      213: 7886339213583642551
+    second: Moss Flowers Ivy.png 1_66
+  - first:
+      213: -1337866674108868685
+    second: Moss Flowers Ivy.png 1_67
+  - first:
+      213: -8760320411524970412
+    second: Moss Flowers Ivy.png 1_68
+  - first:
+      213: 7990589687086514934
+    second: Moss Flowers Ivy.png 1_69
+  - first:
+      213: -5897162014263618787
+    second: Moss Flowers Ivy.png 1_71
+  - first:
+      213: 3296729843702953321
+    second: Moss Flowers Ivy.png 1_73
+  - first:
+      213: 8065593833402479203
+    second: Moss Flowers Ivy.png 1_75
+  - first:
+      213: 8658730162272084349
+    second: Moss Flowers Ivy.png 1_76
+  - first:
+      213: -4983351988169338030
+    second: Moss Flowers Ivy.png 1_7
+  - first:
+      213: 611018757603368839
+    second: Moss Flowers Ivy.png 1_8
+  - first:
+      213: 8480414493784140284
+    second: Moss Flowers Ivy.png 1_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 307
+        width: 150
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287c1070cb6552110800000000000000
+      internalID: 1235489038354466690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_1
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 307
+        width: 150
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c134d2d34db71130800000000000000
+      internalID: 3537504131320394178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 409
+        width: 26
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09553476648d3a200800000000000000
+      internalID: 190233406171469200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 409
+        width: 24
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36345daf71c577c70800000000000000
+      internalID: 8968738440993915747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 409
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aeee0b24138d4780800000000000000
+      internalID: -8697151182737576280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_5
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 412
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa6cebe2efff3230800000000000000
+      internalID: 3620893975514999547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_6
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 412
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565aa28cca45f0210800000000000000
+      internalID: 1301351918402708837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_9
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 384
+        width: 91
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa724b1074c189d0800000000000000
+      internalID: -2773719909710792028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 370
+        width: 7
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fd057a1d3cb9d40800000000000000
+      internalID: 5592278667533279000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_11
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 370
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8fad7036e6bc930800000000000000
+      internalID: 4164543652046764252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_12
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 370
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bdafa728c48af50800000000000000
+      internalID: 6892843352983264030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_13
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 370
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080c0c2903c95a2b0800000000000000
+      internalID: -5573877231366651776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_14
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 352
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4bf48fb90d5fd40800000000000000
+      internalID: 5617625478519043281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_15
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 352
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee4f9419e2aec2d0800000000000000
+      internalID: -3256486358585225495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_16
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 352
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e02ccbdeefd92620800000000000000
+      internalID: 2749975264469197025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_17
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 352
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e494cfd47ff9cc0800000000000000
+      internalID: -3701968454358053270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_18
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 335
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58151c84619324a60800000000000000
+      internalID: 7656745084355957125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_19
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 335
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a75efa796181cd70800000000000000
+      internalID: 9061666215281186721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_20
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 272
+        width: 61
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895de7e1279394bb0800000000000000
+      internalID: -4951363153016466024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_21
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 336
+        width: 96
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2db366b5f4b7b00800000000000000
+      internalID: 827342210528432886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_22
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 304
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbcd6e5056d65c60800000000000000
+      internalID: 7806662644763315145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_23
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 304
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657e96718953fb220800000000000000
+      internalID: 2503778845185402710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_24
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 304
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554b38cbc089c18e0800000000000000
+      internalID: -1721333777092594603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_25
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 304
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a52e9763c836990800000000000000
+      internalID: -7393911997611222413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36389dbd4563d710800000000000000
+      internalID: 1716827267526047291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_27
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 320
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97537120271ab03a0800000000000000
+      internalID: -6698082509750061703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_28
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 320
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51e9c6d71a69dde0800000000000000
+      internalID: -1307897566154071713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_29
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 304
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3edbae96f4f5c27c0800000000000000
+      internalID: -4094793166502576669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_30
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 304
+        width: 41
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7e4035907333d20800000000000000
+      internalID: 3257007468706064308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_32
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 304
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e931d7fa74fbac60800000000000000
+      internalID: 7830621186094610913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_33
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 224
+        width: 20
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e6975a8dada7210800000000000000
+      internalID: 1331617263865392795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_34
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 224
+        width: 17
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9b39b9ad4203de0800000000000000
+      internalID: -1355542966506899004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_35
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 224
+        width: 17
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95630913264bb1c30800000000000000
+      internalID: 4331253800478193241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_36
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 224
+        width: 20
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298080308d95b8710800000000000000
+      internalID: 1696548468933789842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_37
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 224
+        width: 17
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d255be380cc7ae0800000000000000
+      internalID: -1550152498900816516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_38
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 278
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e1b4670e6ea5940800000000000000
+      internalID: 5285790964404395643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_39
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 272
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca78ee5113d821200800000000000000
+      internalID: 149336979617515436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_40
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 272
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25705a77ac3c960b0800000000000000
+      internalID: -5734837376121501870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_41
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 272
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51bb7cb886056cb0800000000000000
+      internalID: -4871480237583781538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_42
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 272
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424213bbaa0b81ed0800000000000000
+      internalID: -2443008550517005276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f221029c7a4a71c70800000000000000
+      internalID: 8941796625708225071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_44
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 224
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924c87e4f4430c090800000000000000
+      internalID: -8016349821495884759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_45
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 224
+        width: 16
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ccb495ec0d084270800000000000000
+      internalID: 8234846267689450690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_46
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 224
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adebda7a1610112f0800000000000000
+      internalID: -1004019722990272806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_47
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 224
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f9fb663fbf6e520800000000000000
+      internalID: 2731147246866243400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_48
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 224
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81f34c72dc5eb270800000000000000
+      internalID: 8268148024996524430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_49
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 224
+        width: 18
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485d96adbdaf05930800000000000000
+      internalID: 4130076680467895684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_50
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 224
+        width: 16
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3793262b1a20a940800000000000000
+      internalID: 5305286657134794559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_51
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 208
+        width: 59
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd99dab83d591850800000000000000
+      internalID: 6348207647989800396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_52
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 208
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62a7d18ca7567790800000000000000
+      internalID: -7532736928306191763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_53
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 208
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6fc7a5b2c2062d0800000000000000
+      internalID: -3287579163267107140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_54
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 208
+        width: 57
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8cda1f083745340800000000000000
+      internalID: 4851629696232573124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_55
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 208
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b4ccb2b18cfed70800000000000000
+      internalID: 9074691793199319853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_57
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 208
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968e32e2216e50b90800000000000000
+      internalID: -7276156657189263255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_59
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 208
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae9d04a9ef8d1300800000000000000
+      internalID: 224493790080900769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_60
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 96
+        width: 96
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cae17077b1aeff0800000000000000
+      internalID: -6162251453125484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_61
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 96
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ab8e509505eed30800000000000000
+      internalID: 4462592624052189848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_62
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 96
+        width: 77
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9066ca5d630943db0800000000000000
+      internalID: -4813063536564738551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_63
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 96
+        width: 77
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1e0607c5ba06ea0800000000000000
+      internalID: -5881512699835129367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_64
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 96
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06c7a6e0fca3f220800000000000000
+      internalID: 2518546767292122637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_65
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 96
+        width: 96
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e4d99b4d591d270800000000000000
+      internalID: 8273558731336011279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_66
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 96
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfe2eb2bb7e17d60800000000000000
+      internalID: 7886339213583642551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_67
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 95
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b758e42951fe6de0800000000000000
+      internalID: -1337866674108868685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_68
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 96
+        width: 25
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4584378fff61d6680800000000000000
+      internalID: -8760320411524970412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_69
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 59
+        width: 293
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f201b40cf644ee60800000000000000
+      internalID: 7990589687086514934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_71
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 54
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13d3ec7462192ea0800000000000000
+      internalID: -5897162014263618787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_73
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 55
+        width: 69
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965f756735650cd20800000000000000
+      internalID: 3296729843702953321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_75
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 25
+        width: 229
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362398eabdebeef60800000000000000
+      internalID: 8065593833402479203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_76
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2
+        width: 293
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d712038e43df92870800000000000000
+      internalID: 8658730162272084349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_7
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 304
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2531e6a05c397dab0800000000000000
+      internalID: -4983351988169338030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_8
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 304
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f9c0e9256ca7800800000000000000
+      internalID: 611018757603368839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moss Flowers Ivy.png 1_31
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9e31a0d0c70b570800000000000000
+      internalID: 8480414493784140284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 379c84f848a98de4aa3f0f9389d2b0ce
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

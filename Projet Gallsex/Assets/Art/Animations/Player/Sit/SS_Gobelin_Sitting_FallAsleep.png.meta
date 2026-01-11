@@ -1,0 +1,2400 @@
+fileFormatVersion: 2
+guid: e4ba1a692caa32c41b21adffc8daf550
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3092125017931910805
+    second: Sitting and Fall Asleep-Sheet-export_0
+  - first:
+      213: 6216211007976478101
+    second: Sitting and Fall Asleep-Sheet-export_1
+  - first:
+      213: -6997929428659739051
+    second: Sitting and Fall Asleep-Sheet-export_2
+  - first:
+      213: -2819494537021057375
+    second: Sitting and Fall Asleep-Sheet-export_3
+  - first:
+      213: -5200063813197555125
+    second: Sitting and Fall Asleep-Sheet-export_4
+  - first:
+      213: -238808000182701816
+    second: Sitting and Fall Asleep-Sheet-export_5
+  - first:
+      213: -641014650614427245
+    second: Sitting and Fall Asleep-Sheet-export_6
+  - first:
+      213: 2235868443891722930
+    second: Sitting and Fall Asleep-Sheet-export_7
+  - first:
+      213: 3639077279277997451
+    second: Sitting and Fall Asleep-Sheet-export_8
+  - first:
+      213: -6676630607560533396
+    second: Sitting and Fall Asleep-Sheet-export_9
+  - first:
+      213: -2339214287084484180
+    second: Sitting and Fall Asleep-Sheet-export_10
+  - first:
+      213: 8165353087086576662
+    second: Sitting and Fall Asleep-Sheet-export_11
+  - first:
+      213: 7818650557553276445
+    second: Sitting and Fall Asleep-Sheet-export_12
+  - first:
+      213: -1135438693637941598
+    second: Sitting and Fall Asleep-Sheet-export_13
+  - first:
+      213: 8309672332154293710
+    second: Sitting and Fall Asleep-Sheet-export_14
+  - first:
+      213: -3036861244929470594
+    second: Sitting and Fall Asleep-Sheet-export_15
+  - first:
+      213: -1089090625796665229
+    second: Sitting and Fall Asleep-Sheet-export_16
+  - first:
+      213: 2828548114793945599
+    second: Sitting and Fall Asleep-Sheet-export_17
+  - first:
+      213: 1682731611983560598
+    second: Sitting and Fall Asleep-Sheet-export_18
+  - first:
+      213: 8312841808523172444
+    second: Sitting and Fall Asleep-Sheet-export_19
+  - first:
+      213: -7012595892906739575
+    second: Sitting and Fall Asleep-Sheet-export_20
+  - first:
+      213: 977711434464832098
+    second: Sitting and Fall Asleep-Sheet-export_21
+  - first:
+      213: -5444851416777941805
+    second: Sitting and Fall Asleep-Sheet-export_22
+  - first:
+      213: -7628902072890303930
+    second: Sitting and Fall Asleep-Sheet-export_23
+  - first:
+      213: 1507931973141802252
+    second: Sitting and Fall Asleep-Sheet-export_24
+  - first:
+      213: -7395677535620726071
+    second: Sitting and Fall Asleep-Sheet-export_25
+  - first:
+      213: -7629874683295257241
+    second: Sitting and Fall Asleep-Sheet-export_26
+  - first:
+      213: -7094278322536232159
+    second: Sitting and Fall Asleep-Sheet-export_27
+  - first:
+      213: 7240672159261624496
+    second: Sitting and Fall Asleep-Sheet-export_28
+  - first:
+      213: 8987337125186528914
+    second: Sitting and Fall Asleep-Sheet-export_29
+  - first:
+      213: -1147526062735857276
+    second: Sitting and Fall Asleep-Sheet-export_30
+  - first:
+      213: 8447490982721157396
+    second: Sitting and Fall Asleep-Sheet-export_31
+  - first:
+      213: -7294646425391557699
+    second: Sitting and Fall Asleep-Sheet-export_32
+  - first:
+      213: -3333086742570050726
+    second: Sitting and Fall Asleep-Sheet-export_33
+  - first:
+      213: 3766549758037165346
+    second: Sitting and Fall Asleep-Sheet-export_34
+  - first:
+      213: 5847883656682043516
+    second: Sitting and Fall Asleep-Sheet-export_35
+  - first:
+      213: -1768870137483743719
+    second: Sitting and Fall Asleep-Sheet-export_36
+  - first:
+      213: 1185617755532082740
+    second: Sitting and Fall Asleep-Sheet-export_37
+  - first:
+      213: 3634822762478944981
+    second: Sitting and Fall Asleep-Sheet-export_38
+  - first:
+      213: -8290331426550622674
+    second: Sitting and Fall Asleep-Sheet-export_39
+  - first:
+      213: 4223592453321602070
+    second: Sitting and Fall Asleep-Sheet-export_40
+  - first:
+      213: 6844769187252126625
+    second: Sitting and Fall Asleep-Sheet-export_41
+  - first:
+      213: -2270018700143211634
+    second: Sitting and Fall Asleep-Sheet-export_42
+  - first:
+      213: -6546933244055273177
+    second: Sitting and Fall Asleep-Sheet-export_43
+  - first:
+      213: -2878404540241358670
+    second: Sitting and Fall Asleep-Sheet-export_44
+  - first:
+      213: -2059289498422467653
+    second: Sitting and Fall Asleep-Sheet-export_45
+  - first:
+      213: -4506772954295372317
+    second: Sitting and Fall Asleep-Sheet-export_46
+  - first:
+      213: -7091957869485107204
+    second: Sitting and Fall Asleep-Sheet-export_47
+  - first:
+      213: -923755197764653743
+    second: Sitting and Fall Asleep-Sheet-export_48
+  - first:
+      213: -2073395923665799668
+    second: Sitting and Fall Asleep-Sheet-export_49
+  - first:
+      213: -513915441360781574
+    second: Sitting and Fall Asleep-Sheet-export_50
+  - first:
+      213: -5178146025994455032
+    second: Sitting and Fall Asleep-Sheet-export_51
+  - first:
+      213: -5442869580403355218
+    second: Sitting and Fall Asleep-Sheet-export_52
+  - first:
+      213: 3485968523805409056
+    second: Sitting and Fall Asleep-Sheet-export_53
+  - first:
+      213: 7331160022464066103
+    second: Sitting and Fall Asleep-Sheet-export_54
+  - first:
+      213: -8575027057509561297
+    second: Sitting and Fall Asleep-Sheet-export_55
+  - first:
+      213: -4699271829368357293
+    second: Sitting and Fall Asleep-Sheet-export_56
+  - first:
+      213: 3299515270972451612
+    second: Sitting and Fall Asleep-Sheet-export_57
+  - first:
+      213: -8435251338312824852
+    second: Sitting and Fall Asleep-Sheet-export_58
+  - first:
+      213: -3873060310700854564
+    second: Sitting and Fall Asleep-Sheet-export_59
+  - first:
+      213: -2301297665717642979
+    second: Sitting and Fall Asleep-Sheet-export_60
+  - first:
+      213: -3920120427992188155
+    second: Sitting and Fall Asleep-Sheet-export_61
+  - first:
+      213: -1340406246269288519
+    second: Sitting and Fall Asleep-Sheet-export_62
+  - first:
+      213: 4591061208904970667
+    second: Sitting and Fall Asleep-Sheet-export_63
+  - first:
+      213: -6825016396006320953
+    second: Sitting and Fall Asleep-Sheet-export_64
+  - first:
+      213: -5912469655872732042
+    second: Sitting and Fall Asleep-Sheet-export_65
+  - first:
+      213: 1927212860236794177
+    second: Sitting and Fall Asleep-Sheet-export_66
+  - first:
+      213: -7983898572345075461
+    second: Sitting and Fall Asleep-Sheet-export_67
+  - first:
+      213: -3740025143561587526
+    second: Sitting and Fall Asleep-Sheet-export_68
+  - first:
+      213: 3768889874011886944
+    second: Sitting and Fall Asleep-Sheet-export_69
+  - first:
+      213: 9069530442284588439
+    second: Sitting and Fall Asleep-Sheet-export_70
+  - first:
+      213: 1142511075962095371
+    second: Sitting and Fall Asleep-Sheet-export_71
+  - first:
+      213: 2000821986011029020
+    second: Sitting and Fall Asleep-Sheet-export_72
+  - first:
+      213: -4390649071579468939
+    second: Sitting and Fall Asleep-Sheet-export_73
+  - first:
+      213: 2175525885176920484
+    second: Sitting and Fall Asleep-Sheet-export_74
+  - first:
+      213: -6859548357532546287
+    second: Sitting and Fall Asleep-Sheet-export_75
+  - first:
+      213: 8184506944895471944
+    second: Sitting and Fall Asleep-Sheet-export_76
+  - first:
+      213: 4848896587980217504
+    second: Sitting and Fall Asleep-Sheet-export_77
+  - first:
+      213: 4647957283110188170
+    second: Sitting and Fall Asleep-Sheet-export_78
+  - first:
+      213: -3133007191610407290
+    second: Sitting and Fall Asleep-Sheet-export_79
+  - first:
+      213: -6807379510143114517
+    second: Sitting and Fall Asleep-Sheet-export_80
+  - first:
+      213: 3082542832520283543
+    second: Sitting and Fall Asleep-Sheet-export_81
+  - first:
+      213: 8208939080647026860
+    second: Sitting and Fall Asleep-Sheet-export_82
+  - first:
+      213: -7929926706697165200
+    second: Sitting and Fall Asleep-Sheet-export_83
+  - first:
+      213: -333619865996859185
+    second: Sitting and Fall Asleep-Sheet-export_84
+  - first:
+      213: 8522846185355282917
+    second: Sitting and Fall Asleep-Sheet-export_85
+  - first:
+      213: 1614065322711636652
+    second: Sitting and Fall Asleep-Sheet-export_86
+  - first:
+      213: 6391139813142310948
+    second: Sitting and Fall Asleep-Sheet-export_87
+  - first:
+      213: -1325764280611315290
+    second: Sitting and Fall Asleep-Sheet-export_88
+  - first:
+      213: -8532517320857806080
+    second: Sitting and Fall Asleep-Sheet-export_89
+  - first:
+      213: -162753056638379052
+    second: Sitting and Fall Asleep-Sheet-export_90
+  - first:
+      213: -8878090774517655337
+    second: Sitting and Fall Asleep-Sheet-export_91
+  - first:
+      213: 8876768910153279217
+    second: Sitting and Fall Asleep-Sheet-export_92
+  - first:
+      213: 7316295191336606398
+    second: Sitting and Fall Asleep-Sheet-export_93
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61f111dda09615d0800000000000000
+      internalID: -3092125017931910805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5959f431afa644650800000000000000
+      internalID: 6216211007976478101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556eb71e24c52ee90800000000000000
+      internalID: -6997929428659739051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a694ba28a42fd8d0800000000000000
+      internalID: -2819494537021057375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a1ff45389a5d7b0800000000000000
+      internalID: -5200063813197555125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801b69b93659facf0800000000000000
+      internalID: -238808000182701816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3915e4e4298aa17f0800000000000000
+      internalID: -641014650614427245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2baebaae086670f10800000000000000
+      internalID: 2235868443891722930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d5f8d3189908230800000000000000
+      internalID: 3639077279277997451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a9ad336d7d753a0800000000000000
+      internalID: -6676630607560533396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca98fc4eff0798fd0800000000000000
+      internalID: -2339214287084484180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6144f6dee59215170800000000000000
+      internalID: 8165353087086576662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d167fd1d14d618c60800000000000000
+      internalID: 7818650557553276445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a61a71268c1e30f0800000000000000
+      internalID: -1135438693637941598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdc2f5a5f2e15370800000000000000
+      internalID: 8309672332154293710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f04d7a9c6ead5d0800000000000000
+      internalID: -3036861244929470594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3709e2998d5c2e0f0800000000000000
+      internalID: -1089090625796665229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_17
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9d46c2685014720800000000000000
+      internalID: 2828548114793945599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fb9905c734a5710800000000000000
+      internalID: 1682731611983560598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_19
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a1a0fd4952d5370800000000000000
+      internalID: 8312841808523172444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9883ee190314eae90800000000000000
+      internalID: -7012595892906739575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a2d189e57819d00800000000000000
+      internalID: 977711434464832098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_22
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc1b280c700074b0800000000000000
+      internalID: -5444851416777941805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_23
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ad12ffbf1b02690800000000000000
+      internalID: -7628902072890303930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_24
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d2294e3204de410800000000000000
+      internalID: 1507931973141802252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_25
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c28dff17764d5990800000000000000
+      internalID: -7395677535620726071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_26
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76da07d766d3d1690800000000000000
+      internalID: -7629874683295257241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_27
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b4977e37f0c8d90800000000000000
+      internalID: -7094278322536232159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_28
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b889d357f80c7460800000000000000
+      internalID: 7240672159261624496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_29
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2966c679f7f69bc70800000000000000
+      internalID: 8987337125186528914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_30
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4896024302b2310f0800000000000000
+      internalID: -1147526062735857276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_31
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419f864ca448b3570800000000000000
+      internalID: 8447490982721157396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3967c89b534ca90800000000000000
+      internalID: -7294646425391557699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_33
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b5c8f544f7eb1d0800000000000000
+      internalID: -3333086742570050726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_34
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22583a48c09754430800000000000000
+      internalID: 3766549758037165346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_35
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78785cc33bd72150800000000000000
+      internalID: 5847883656682043516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_36
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e2c795bf5b377e0800000000000000
+      internalID: -1768870137483743719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_37
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43eb2e52119247010800000000000000
+      internalID: 1185617755532082740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_38
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2cf0b5b0c717230800000000000000
+      internalID: 3634822762478944981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_39
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26513add73d2fc80800000000000000
+      internalID: -8290331426550622674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_40
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614314075f63d9a30800000000000000
+      internalID: 4223592453321602070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_41
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3c3b78f418dfe50800000000000000
+      internalID: 6844769187252126625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_42
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b4870f4064f70e0800000000000000
+      internalID: -2270018700143211634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_43
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721c3e3d6ee9425a0800000000000000
+      internalID: -6546933244055273177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_44
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0da03325add08d0800000000000000
+      internalID: -2878404540241358670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_45
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb326dc9c1feb63e0800000000000000
+      internalID: -2059289498422467653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_46
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5f2ef30e9b471c0800000000000000
+      internalID: -4506772954295372317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_47
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7dd4b74ed449d90800000000000000
+      internalID: -7091957869485107204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_48
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d21d9ba892e23f0800000000000000
+      internalID: -923755197764653743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_49
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06382b8461d933e0800000000000000
+      internalID: -2073395923665799668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_50
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe3a1101a43ed8f0800000000000000
+      internalID: -513915441360781574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_51
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808ff75df978328b0800000000000000
+      internalID: -5178146025994455032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_52
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1574544fa0774b0800000000000000
+      internalID: -5442869580403355218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_53
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f3d9727e5a06030800000000000000
+      internalID: 3485968523805409056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_54
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732f382c2338db560800000000000000
+      internalID: 7331160022464066103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_55
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c87c9d2526ff880800000000000000
+      internalID: -8575027057509561297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_56
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ebf734b25d8ceb0800000000000000
+      internalID: -4699271829368357293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_57
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b2a4948ab3acd20800000000000000
+      internalID: 3299515270972451612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_58
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7c9b48997ffea80800000000000000
+      internalID: -8435251338312824852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_59
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2f203fa20204ac0800000000000000
+      internalID: -3873060310700854564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_60
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19d67047f52010e0800000000000000
+      internalID: -2301297665717642979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_61
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bf5cc8d3fe899c0800000000000000
+      internalID: -3920120427992188155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_62
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf776cee9be56de0800000000000000
+      internalID: -1340406246269288519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_63
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba13bd258d9b6bf30800000000000000
+      internalID: 4591061208904970667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_64
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c493d19fbba841a0800000000000000
+      internalID: -6825016396006320953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_65
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6740e607c20b2fda0800000000000000
+      internalID: -5912469655872732042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_66
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1498af4b2e5deba10800000000000000
+      internalID: 1927212860236794177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_67
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf89f988c8e733190800000000000000
+      internalID: -7983898572345075461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_68
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab47bfa82f2c81cc0800000000000000
+      internalID: -3740025143561587526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_69
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0659b0a3f59cd4430800000000000000
+      internalID: 3768889874011886944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_70
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dd6f382e17ddd70800000000000000
+      internalID: 9069530442284588439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_71
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b078ba235c30bdf00800000000000000
+      internalID: 1142511075962095371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_72
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e9af6def854cb10800000000000000
+      internalID: 2000821986011029020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_73
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b6b1b9ee74113c0800000000000000
+      internalID: -4390649071579468939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_74
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a933a12445013e10800000000000000
+      internalID: 2175525885176920484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_75
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b88adbc1dfdc0a0800000000000000
+      internalID: -6859548357532546287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_76
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8415638f3b5359170800000000000000
+      internalID: 8184506944895471944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_77
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac1a2791cdba4340800000000000000
+      internalID: 4848896587980217504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_78
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84f8f6e58cd08040800000000000000
+      internalID: 4647957283110188170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_79
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68641510f825584d0800000000000000
+      internalID: -3133007191610407290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_80
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2a5ae07645781a0800000000000000
+      internalID: -6807379510143114517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_81
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7954c49cf5467ca20800000000000000
+      internalID: 3082542832520283543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_82
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8a9ccd9920ce170800000000000000
+      internalID: 8208939080647026860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_83
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076ae60ccad33f190800000000000000
+      internalID: -7929926706697165200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_84
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc86e3ddf7ebe5bf0800000000000000
+      internalID: -333619865996859185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_85
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e90569137b374670800000000000000
+      internalID: 8522846185355282917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_86
+      rect:
+        serializedVersion: 2
+        x: 2752
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caad08cfbdf466610800000000000000
+      internalID: 1614065322711636652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_87
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42034306cc3e1b850800000000000000
+      internalID: 6391139813142310948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_88
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1e2463960f99de0800000000000000
+      internalID: -1325764280611315290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_89
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b176234b8669980800000000000000
+      internalID: -8532517320857806080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_90
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbd5f015f8cdbdf0800000000000000
+      internalID: -162753056638379052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_91
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8d33d8a7faac480800000000000000
+      internalID: -8878090774517655337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_92
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6eaeaea4e903b70800000000000000
+      internalID: 8876768910153279217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sitting and Fall Asleep-Sheet-export_93
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 0
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba548f86b3b88560800000000000000
+      internalID: 7316295191336606398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2023a1b4458b63e4fbbef4dafc899f84
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

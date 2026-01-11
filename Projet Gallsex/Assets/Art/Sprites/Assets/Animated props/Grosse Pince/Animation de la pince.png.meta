@@ -1,0 +1,1032 @@
+fileFormatVersion: 2
+guid: 3ca2cb9f686cae242a161ecd007c8930
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7318178029873460002
+    second: Animation de la pince_0
+  - first:
+      213: -8073469622198861363
+    second: Animation de la pince_1
+  - first:
+      213: -7244715927678646845
+    second: Animation de la pince_2
+  - first:
+      213: 3377429299029009743
+    second: Animation de la pince_3
+  - first:
+      213: -1559251299817489423
+    second: Animation de la pince_4
+  - first:
+      213: 675824682992817622
+    second: Animation de la pince_5
+  - first:
+      213: 8722163259095816698
+    second: Animation de la pince_6
+  - first:
+      213: 512488785299328460
+    second: Animation de la pince_7
+  - first:
+      213: -7335403236841175104
+    second: Animation de la pince_8
+  - first:
+      213: 9076104620103586822
+    second: Animation de la pince_9
+  - first:
+      213: -8524487987209901519
+    second: Animation de la pince_10
+  - first:
+      213: 638220120610775881
+    second: Animation de la pince_11
+  - first:
+      213: -4741668897883908745
+    second: Animation de la pince_12
+  - first:
+      213: 808749756864941927
+    second: Animation de la pince_13
+  - first:
+      213: 3438707628133270012
+    second: Animation de la pince_14
+  - first:
+      213: 9093879377891621054
+    second: Animation de la pince_15
+  - first:
+      213: 8619433498752584605
+    second: Animation de la pince_16
+  - first:
+      213: 451869683781445682
+    second: Animation de la pince_17
+  - first:
+      213: -5759778347870190763
+    second: Animation de la pince_18
+  - first:
+      213: 8678731633726649012
+    second: Animation de la pince_19
+  - first:
+      213: 8879528768819624976
+    second: Animation de la pince_20
+  - first:
+      213: -5085780100384780491
+    second: Animation de la pince_21
+  - first:
+      213: 4608698671488423371
+    second: Animation de la pince_22
+  - first:
+      213: -4711344870037354951
+    second: Animation de la pince_23
+  - first:
+      213: 6157277025857038334
+    second: Animation de la pince_24
+  - first:
+      213: 5650056608270458176
+    second: Animation de la pince_25
+  - first:
+      213: 8023774799970254949
+    second: Animation de la pince_26
+  - first:
+      213: 3997890329378633705
+    second: Animation de la pince_27
+  - first:
+      213: -5907953049975626390
+    second: Animation de la pince_28
+  - first:
+      213: 6218339938148156354
+    second: Animation de la pince_29
+  - first:
+      213: 2976648875463136824
+    second: Animation de la pince_30
+  - first:
+      213: -1516986428937408120
+    second: Animation de la pince_31
+  - first:
+      213: 4360771903854818378
+    second: Animation de la pince_32
+  - first:
+      213: 7694518382794429847
+    second: Animation de la pince_33
+  - first:
+      213: 5529768978761036095
+    second: Animation de la pince_34
+  - first:
+      213: 1150673329801648685
+    second: Animation de la pince_35
+  - first:
+      213: -5910617455991436464
+    second: Animation de la pince_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Animation de la pince_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223fca115246f8560800000000000000
+      internalID: 7318178029873460002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc10ee7572645ff80800000000000000
+      internalID: -8073469622198861363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c589187f39957b90800000000000000
+      internalID: -7244715927678646845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45ee969d0a0fde20800000000000000
+      internalID: 3377429299029009743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbffce343d6c5ae0800000000000000
+      internalID: -1559251299817489423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_5
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d55a30f7f2016900800000000000000
+      internalID: 675824682992817622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_6
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af99e5ba5495b0970800000000000000
+      internalID: 8722163259095816698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd432fb5d9bc1700800000000000000
+      internalID: 512488785299328460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_8
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7c4d7ee99633a90800000000000000
+      internalID: -7335403236841175104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_9
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6045e81901dc4fd70800000000000000
+      internalID: 9076104620103586822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_10
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ae44e175fe2b980800000000000000
+      internalID: -8524487987209901519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_11
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943238971d96bd800800000000000000
+      internalID: 638220120610775881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_12
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7759c138245323eb0800000000000000
+      internalID: -4741668897883908745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_13
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f4e127e91493b00800000000000000
+      internalID: 808749756864941927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_14
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf14f456e5eb8bf20800000000000000
+      internalID: 3438707628133270012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_15
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8fa7ddc13f33e70800000000000000
+      internalID: 9093879377891621054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_16
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b004279116e9770800000000000000
+      internalID: 8619433498752584605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_17
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238af82551d554600800000000000000
+      internalID: 451869683781445682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_18
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5530636fb182110b0800000000000000
+      internalID: -5759778347870190763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_19
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2f831607c017870800000000000000
+      internalID: 8678731633726649012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_20
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01cfa569e5c6a3b70800000000000000
+      internalID: 8879528768819624976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_21
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f80deb1fdab69b0800000000000000
+      internalID: -5085780100384780491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_22
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5d1e6160365ff30800000000000000
+      internalID: 4608698671488423371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_23
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936801f6dc0fd9eb0800000000000000
+      internalID: -4711344870037354951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_24
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7e1e515da037550800000000000000
+      internalID: 6157277025857038334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_25
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d1fc8cc88096e40800000000000000
+      internalID: 5650056608270458176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_26
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56045f53bac2a5f60800000000000000
+      internalID: 8023774799970254949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_27
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e73595a21c5b7730800000000000000
+      internalID: 3997890329378633705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_28
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a656482b00cb20ea0800000000000000
+      internalID: -5907953049975626390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_29
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c302f14a3bfb4650800000000000000
+      internalID: 6218339938148156354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_30
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836db0b916e2f4920800000000000000
+      internalID: 2976648875463136824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_31
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881f81651e492fae0800000000000000
+      internalID: -1516986428937408120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_32
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4435c331f2948c30800000000000000
+      internalID: 4360771903854818378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_33
+      rect:
+        serializedVersion: 2
+        x: 2409
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795dc2ca3bb68ca60800000000000000
+      internalID: 7694518382794429847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_34
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31b605969fadbc40800000000000000
+      internalID: 5529768978761036095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_35
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ad7530c4308ff00800000000000000
+      internalID: 1150673329801648685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation de la pince_36
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 0
+        width: 73
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b48645db449fda0800000000000000
+      internalID: -5910617455991436464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 602d66ae4c8103a4e9770738c43c0bb0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
